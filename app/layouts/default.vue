@@ -1,5 +1,5 @@
 <template>
-  <div :dir="$i18n.locale === 'ar' ? 'rtl' : 'ltr'">
+  <div dir="ltr">
     <Header />
     <main>
       <slot></slot>
@@ -17,5 +17,6 @@ import FooterOne from "~/components/common/FooterOne.vue";
 <style scoped>
 main {
   min-height: calc(100vh - 200px);
+  height: 100vh;
 }
 </style>

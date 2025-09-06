@@ -8,7 +8,7 @@
         >
           <div class="container mx-auto flex justify-between items-center">
             <NuxtLink class="px-4 py-1 bg-white text-blue-600 rounded-md text-sm font-medium" to="/course-details">
-              {{ $t("JoinFreeTrialLessons") }}
+              Join Free Trial Lessons
             </NuxtLink>
             <div class="flex gap-3">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -42,35 +42,13 @@
                 <button class="flex items-center gap-1">
                   🌐
                 </button>
-                <ul class="absolute right-0 mt-2 w-32 bg-white shadow rounded-md">
-                  <li
-                    v-for="item in locales"
-                    :key="item.code"
-                    class="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-                    @click="handleChangeLanguage(item)"
-                  >
-                    {{ item.name }}
-                  </li>
-                </ul>
               </div>
   
               <!-- Auth -->
-              <div v-if="!authStore.user" class="hidden md:flex gap-4">
-                <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">{{ $t("SignIn") }}</NuxtLink>
+              <div class="hidden md:flex gap-4">
+                <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">Sign In</NuxtLink>
                 <NuxtLink to="/signup" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700">
-                  {{ $t("SignUp") }}
-                </NuxtLink>
-              </div>
-              <div v-else>
-                <NuxtLink to="/student-profile" class="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-8 w-8 text-gray-600" viewBox="0 0 24 24">
-                    <path
-                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4
-                         1.79-4 4 1.79 4 4 4zm0 2c-2.67
-                         0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                    />
-                  </svg>
-                  <h4 class="mb-0">{{ authStore.user.firstName }}</h4>
+                  Sign Up
                 </NuxtLink>
               </div>
   
@@ -102,14 +80,12 @@
 
 <script setup>
 import { ref, reactive, onMounted, onBeforeUnmount, watch } from "vue";
-import { useI18n } from "vue-i18n";
-import { useAuthStore } from "@/stores/authStore";
+// import { useAuthStore } from "~/stores/authStore";
 
 import MainNav from "./MainNav.vue";
 
-// i18n + store
-const { locales, setLocale } = useI18n();
-const authStore = useAuthStore();
+// store - temporarily disabled
+// const authStore = useAuthStore();
 
 // reactive state
 const langDir = ref("ltr");
@@ -147,30 +123,17 @@ const handleReminder = () => {
   hideReminder.value = !hideReminder.value;
 };
 
-const handleChangeLanguage = (locale) => {
-  setLocale(locale.code);
-  window.localStorage.setItem("locale", locale.code);
-  langDir.value = locale.dir;
-};
+// Language switching temporarily disabled
 
-const getUser = async () => {
-  await authStore.verifyUser();
-};
+// Temporarily disable auth store to isolate the issue
+// const getUser = async () => {
+//   await authStore.verifyUser();
+// };
 
 // lifecycle hooks
 onMounted(async () => {
   window.addEventListener("scroll", handleSticky);
-  await getUser();
-
-  // load locale from localStorage
-  const savedLocale = localStorage.getItem("locale");
-  if (savedLocale) {
-    const locale = locales.find((l) => l.code === savedLocale);
-    if (locale) {
-      setLocale(locale.code);
-      langDir.value = locale.dir;
-    }
-  }
+  // await getUser();
 });
 
 onBeforeUnmount(() => {
