@@ -4,7 +4,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-swiper", "@pinia/nuxt"],
   // css: ["./app/css/tailwind.css"],
   // ssr: false,
   // i18n: {

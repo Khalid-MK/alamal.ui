@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center space-x-8">
+  <nav class="flex flex-col space-y-4 xl:flex-row xl:items-center xl:space-y-0 xl:space-x-8">
     <!-- Home -->
     <NuxtLink to="/" class="text-gray-700 hover:text-blue-600 font-medium">
       Home
