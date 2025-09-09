@@ -1,5 +1,8 @@
 <template>
-  <slider />
+  <HomeSlider />
+  <HomeHowSiteWork />
+  <HomeCourseList />
+  <!-- <HomeFeatureSection /> -->
 </template>
 
 <script lang="ts" setup>

@@ -16,7 +16,7 @@ import FooterOne from "~/components/common/FooterOne.vue";
 
 <style scoped>
 main {
-  min-height: calc(100vh - 200px);
-  height: 100vh;
+  /* min-height: calc(100vh - 200px);
+  height: 100vh; */
 }
 </style>

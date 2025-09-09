@@ -1,0 +1,777 @@
+{
+	"courses": [
+		{
+			"id": 1,
+			"category": [
+				"Quraan",
+				"Tajweed",
+				"Arabic"
+			],
+			"courseImage": "/img/courses/tag/course_نورانية 1.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Alphabetical Foundation According to Noorani Qaida",
+			"level": "Beginner:",
+			"beginer": "Beginner",
+			"requirements": "No Requirements.",
+			"description": "Learn to correctly read the Quran with Tajweed by linking letters and sounds with words and sentences. Noorani Qaida serves as a practical Tajweed tool and Arabic language phonetics.",
+			"infoList": [
+				{
+					"infoListTitle": "Learn the individual letters: Arabic letters distinguishing between extended and shortened."
+				},
+				{
+					"infoListTitle": "Combined letters: Learn how letters merge to form words."
+				},
+				{
+					"infoListTitle": "Movements: Open, close, and break letters while learning extensions."
+				},
+				{
+					"infoListTitle": "Practical application: Read Quran while applying learned concepts."
+				},
+				{
+					"infoListTitle": "Practice on words and sentences: Gradual transition to Quranic verses."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "36 Hours Across 36 Lessons",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$12.57",
+			"priceOld": "$24.50",
+			"courseTitle": "Noorani Qaida",
+			"instructor": "Islam Al-Muslimani",
+			"instructorImage": "/img/portfilo/course-tutor-01.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(25)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "1:33 Min",
+			"credit": "8 Credit",
+			"network": "Fresh",
+			"shortDesc": "Learn to correctly read the Quran with Tajweed by linking letters and sounds with words and sentences. Noorani Qaida serves as a practical Tajweed tool and Arabic language phonetics.",
+			"outcomes": [
+				"Learn the individual letters: Arabic letters distinguishing between extended and shortened.",
+				"Combined letters: Learn how letters merge to form words.",
+				"Movements: Open, close, and break letters while learning extensions.",
+				"Practical application: Read Quran while applying learned concepts.",
+				"Practice on words and sentences: Gradual transition to Quranic verses."
+			],
+			"curriculums": [
+				{
+					"title": "Introduction to the Noorani Qaida",
+					"lessons": [
+						"Definition of the Noorani Qaida, and an introduction to the letters of the alphabet, then studying the letter Hamza in terms of (shape, sound, place of articulation, its characteristic in terms of emphasis and softening)"
+					]
+				},
+				{
+					"title": "Basic Letters and Articulation",
+					"lessons": [
+						"Studying the letters (B T Th) in terms of: shape, sound, place of articulation, characteristic in terms of emphasis and softening",
+						"Studying the letters (J H Kh) in terms of: shape, sound, place of articulation, characteristic in terms of emphasis and softening",
+						"Studying the letters (D, Dh, R, Z) in terms of: shape, sound, place of articulation, characteristic in terms of emphasis and softening"
+					]
+				},
+				{
+					"title": "Phonetics and Characteristics of Arabic Letters",
+					"lessons": [
+						"Studying the letters (S, Sh) in terms of: shape, sound, place of articulation, characteristic in terms of emphasis and softening, then referring to the characteristic of the whistle and its letters",
+						"Studying the letters (S, D, T, Z) in terms of: shape, sound, place of articulation, characteristic in terms of emphasis and softening, then referring to the characteristic of closure and elevation",
+						"Studying the letters (ع, غ, ف, ق) in terms of: shape, sound, point of articulation, and the characteristic in terms of emphasis and softening"
+					]
+				},
+				{
+					"title": "Advanced Letter Forms",
+					"lessons": [
+						"Studying the letters (ك, ل, م, ن) in terms of shape, sound, point of articulation, and the characteristic in terms of emphasis and softening",
+						"Studying the letters (ه, و, ي, the long alif) in terms of: shape, sound, point of articulation, and the characteristic in terms of emphasis and softening, then indicating the point of articulation of the cavity",
+						"Studying the letters in a compound form, and learning about the types of Arabic fonts, and drawing the Ottoman Qur’an and distinguishing between the different forms of each letter"
+					]
+				},
+				{
+					"title": "Compound Letters and Disconnected Letters",
+					"lessons": [
+						"Continue studying the compound letters",
+						"Learning about the disconnected letters and what is related to them in terms of number and the rules of extensions, and the sayings of scholars on their meanings"
+					]
+				},
+				{
+					"title": "Movements and Tanween",
+					"lessons": [
+						"Types of movements in the Arabic language",
+						"Types of tanween, and the difference between it and the silent nun",
+						"Exercises on the movements Tanween"
+					]
+				},
+				{
+					"title": "Extension and Softness",
+					"lessons": [
+						"Small Alif, Small Ya, and Small Waw",
+						"Letters of extension and softness, first: extension, and explanation of natural extension",
+						"Second: Letters of softness",
+						"Exercises on Tanween and the three extension letters, and the two letters of softness"
+					]
+				},
+				{
+					"title": "Sukun Rules and Practice",
+					"lessons": [
+						"Sakun and what is related to it from the rules of Qalqalah and the lunar Lam",
+						"Spelling exercises on sakun and what came before",
+						"Continue exercises on sakun",
+						"Continue exercises on sakun"
+					]
+				},
+				{
+					"title": "Shadda Rules and Practice",
+					"lessons": [
+						"Shadda and what is related to it from the rules (the doubled Meem and Noon)",
+						"Exercises on Shadda",
+						"Continue exercises on Shadda"
+					]
+				},
+				{
+					"title": "Review and Test",
+					"lessons": [
+						"Exercises and review of the above",
+						"Test on what came before"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 2,
+			"category": [
+				"Arabic"
+			],
+			"courseImage": "/img/courses/tag/course-02.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Arabic Between Your Hands Part 1",
+			"level": "Beginner:",
+			"beginer": "Beginner",
+			"requirements": "Knowledge of the Arabic alphabet, distinguishing between similar-looking and similar-sounding letters, knowledge of short and long vowels.",
+			"description": "The book aims to teach Arabic to non-native speakers in a simplified and comprehensive way, focusing on basic language skills such as listening, speaking, reading, and writing.",
+			"infoList": [
+				{
+					"infoListTitle": "Enhance basic language skills: listening, speaking, reading, and writing."
+				},
+				{
+					"infoListTitle": "Teach basic Arabic vocabulary and structures."
+				},
+				{
+					"infoListTitle": "Enable learners to build a strong linguistic foundation that includes important daily vocabulary."
+				},
+				{
+					"infoListTitle": "Understand the basic structures of the Arabic language that help in practical communication."
+				},
+				{
+					"infoListTitle": "Develop the Arabic language gradually, helping students to speak, write, and understand Arabic with high proficiency."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "90 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$15.00",
+			"priceOld": "$30.00",
+			"courseTitle": "Arabic Between Your Hands",
+			"instructor": "Dr. Abdulrahman Al-Fawzan",
+			"instructorImage": "/img/portfilo/course-tutor-02.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(30)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "2:00 Min",
+			"credit": "10 Credit",
+			"network": "Fresh",
+			"shortDesc": "The book aims to teach Arabic to non-native speakers in a simplified and comprehensive way, focusing on basic language skills such as listening, speaking, reading, and writing.",
+			"outcomes": [
+				"Enhance basic language skills: listening, speaking, reading, and writing.",
+				"Teach basic Arabic vocabulary and structures.",
+				"Enable learners to build a strong linguistic foundation that includes important daily vocabulary.",
+				"Understand the basic structures of the Arabic language that help in practical communication.",
+				"Develop the Arabic language gradually, helping students to speak, write, and understand Arabic with high proficiency."
+			],
+			"curriculums": [
+				{
+					"title": "Unit 1: Introduction and Filling Out Forms",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Grammar Structures Lesson",
+						"Summary of Structures and Listening Comprehension",
+						"Reading and Dictation Lesson"
+					]
+				},
+				{
+					"title": "Unit 2: Family",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"The Family of the Prophet (PBUH) and Dialogue 3",
+						"Grammar Structures Lesson and Summary of Structures",
+						"Listening Comprehension and Pronunciation",
+						"Reading and Dictation Lesson",
+						"Review of Units 1 and 2",
+						"Test"
+					]
+				},
+				{
+					"title": "Unit 3: Housing",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Summary of Structures",
+						"Listening Comprehension and Reading",
+						"Speaking and Dictation"
+					]
+				},
+				{
+					"title": "Unit 4: Daily Life",
+					"lessons": [
+						"Dialogue 1 and Explanation of the Present Tense",
+						"Dialogue 2 and 3",
+						"Grammar Structures Lesson and Summary of Structures",
+						"Listening Comprehension",
+						"Reading and Speaking Lesson",
+						"Dictation Lesson",
+						"Review of Units 3 and 4",
+						"Test"
+					]
+				},
+				{
+					"title": "Unit 5: Food and Drink",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Explanation of the Present Tense for Feminine",
+						"Grammar Structures Lesson and Summary of Structures",
+						"Listening Comprehension, Pronunciation, and Speaking",
+						"Reading and Dictation Lesson"
+					]
+				},
+				{
+					"title": "Unit 6: Prayer",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Grammar Structures Lesson",
+						"Summary of Structures and Listening Comprehension",
+						"Reading and Dictation Lesson",
+						"Review of Units 5 and 6",
+						"Test"
+					]
+				},
+				{
+					"title": "Unit 7: Study",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Grammar Structures Lesson",
+						"Summary of Structures and Listening Comprehension",
+						"Pronunciation and Speaking Lesson",
+						"Reading and Dictation Lesson"
+					]
+				},
+				{
+					"title": "Unit 8: Work",
+					"lessons": [
+						"Dialogue 1 and 2",
+						"Dialogue 3 and Grammar Structures Lesson",
+						"Summary of Structures, Listening Comprehension, and Pronunciation",
+						"Speaking and Reading Lesson",
+						"Dictation Lesson and Some Exercises",
+						"Review of Units 7 and 8",
+						"Test on Part 1"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 4,
+			"category": [
+				"Arabic"
+			],
+			"courseImage": "/img/courses/tag/course_نورانية 1.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Madinah Book (Level 1)",
+			"level": "Beginner:",
+			"beginer": "Beginner",
+			"requirements": "Knowledge of the Arabic alphabet, distinguishing between similar-looking and similar-sounding letters, knowledge of short and long vowels.",
+			"description": "Madinah Book is part of a famous educational series known as 'Teaching Arabic to Non-Native Speakers,' which is used to teach Arabic in a systematic and easy way to learners of different ages and levels.",
+			"infoList": [
+				{
+					"infoListTitle": "Focuses on basics such as letters, basic words, and forming simple sentences."
+				},
+				{
+					"infoListTitle": "Introduces simple and essential vocabulary from daily life, such as names of objects, daily verbs, and common phrases."
+				},
+				{
+					"infoListTitle": "Helps students improve listening skills and imitate correct pronunciation through dialogues between the student and teacher."
+				},
+				{
+					"infoListTitle": "Includes writing exercises that train learners to write letters, words, and sentences correctly."
+				},
+				{
+					"infoListTitle": "Presents words and sentences in real-life contexts such as greetings, introductions, describing objects, and daily interactions."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "57 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$15.00",
+			"priceOld": "$30.00",
+			"courseTitle": "Madinah Book",
+			"instructor": "Dr. Abdulrahman Al-Fawzan",
+			"instructorImage": "/img/portfilo/course-tutor-02.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(30)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "2:00 Min",
+			"credit": "10 Credit",
+			"network": "Fresh",
+			"shortDesc": "Madinah Book is part of a famous educational series known as 'Teaching Arabic to Non-Native Speakers,' which is used to teach Arabic in a systematic and easy way to learners of different ages and levels.",
+			"outcomes": [
+				"Establish the learner in Arabic through learning letters and basic words.",
+				"Develop reading and writing skills through gradual exercises.",
+				"Build basic vocabulary from daily life, such as names of objects and daily verbs.",
+				"Improve pronunciation and listening through dialogues and audio exercises.",
+				"Present Arabic in real-life contexts such as greetings and daily interactions."
+			],
+			"curriculums": [
+				{
+					"title": "Lesson 1: Introduction and Letters",
+					"lessons": [
+						"Dialogue 1 and Exercise 1",
+						"Dialogue 2 and Exercise 2",
+						"Exercise 3 and Explanation"
+					]
+				},
+				{
+					"title": "Lesson 2: Nouns and Verbs",
+					"lessons": [
+						"Explanation of Lesson 2",
+						"Explanation of Lesson 3",
+						"Exercises on Lesson 3"
+					]
+				},
+				{
+					"title": "Lesson 3: Pronouns",
+					"lessons": [
+						"Explanation of Pronouns",
+						"Exercises on Pronouns",
+						"Review of Previous Lessons"
+					]
+				},
+				{
+					"title": "Lesson 4: Simple Sentences",
+					"lessons": [
+						"Explanation of Simple Sentences",
+						"Exercises on Simple Sentences",
+						"Review of Previous Lessons"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 5,
+			"category": [
+				"Tajweed"
+			],
+			"courseImage": "/img/courses/tag/course_نورانية2.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Al-Manhaj Al-Mufid - Part 1",
+			"level": "Intermediate:",
+			"beginer": "Intermediate",
+			"requirements": "Completion of a foundational Arabic phonetics course (e.g., Noorani Qaida or Noor Bayan).",
+			"description": "A comprehensive book designed to teach Tajweed rules and proper Quran recitation, including practical examples and exercises.",
+			"infoList": [
+				{
+					"infoListTitle": "Learn Tajweed rules in an innovative and structured way."
+				},
+				{
+					"infoListTitle": "Practical exercises for mastering Tajweed rules."
+				},
+				{
+					"infoListTitle": "Improve Quran recitation with proper articulation."
+				},
+				{
+					"infoListTitle": "Master rules of stopping and starting recitation."
+				},
+				{
+					"infoListTitle": "Enhance recitation skills and encourage continuous learning."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "60 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$20.00",
+			"priceOld": "$40.00",
+			"courseTitle": "Al-Manhaj Al-Mufid",
+			"instructor": "Hussain Karim Mohammed",
+			"instructorImage": "/img/portfilo/course-tutor-03.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(35)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "2:30 Min",
+			"credit": "12 Credit",
+			"network": "Fresh",
+			"shortDesc": "Master Tajweed and Quran recitation with practical exercises.",
+			"outcomes": [
+				"Understand Tajweed rules through practical exercises.",
+				"Improve articulation and pronunciation of letters.",
+				"Master stopping and starting recitation correctly.",
+				"Encourage students to perfect Quran recitation.",
+				"Comprehensive review and application of all rules."
+			],
+			"curriculums": [
+				{
+					"title": "Introduction to Tajweed",
+					"lessons": [
+						"The Virtue and Etiquette of Quran Recitation",
+						"Definition of Tajweed",
+						"Levels of Recitation and Practical Application"
+					]
+				},
+				{
+					"title": "Letter Articulation and Characteristics",
+					"lessons": [
+						"Definition and Types of Articulation",
+						"Articulation of Throat, Tongue, and Lips",
+						"Different Letter Characteristics and Applications"
+					]
+				},
+				{
+					"title": "Rules of Noon Sakinah and Tanween",
+					"lessons": [
+						"Clear Pronunciation (Izhar)",
+						"Merging Sounds (Idgham)",
+						"Substitution and Concealment (Iqlab & Ikhfa)"
+					]
+				},
+				{
+					"title": "Rules of Prolongation, Emphasis, and Softening",
+					"lessons": [
+						"Types of Prolongation and Practical Applications",
+						"Emphasizing and Softening Letters",
+						"Rules of Stopping and Starting Recitation"
+					]
+				},
+				{
+					"title": "Review and Test",
+					"lessons": [
+						"Comprehensive Practical Review",
+						"Final Exam on Tajweed"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 6,
+			"category": [
+				"Tajweed"
+			],
+			"courseImage": "/img/courses/tag/course_مخارج الحروف.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Al-Manhaj Al-Mufid - Part 2",
+			"level": "Advanced:",
+			"beginer": "Advanced",
+			"requirements": "Completion of a foundational Arabic phonetics course (e.g., Noorani Qaida, Noor Bayan, or Muallim Thani).",
+			"description": "A comprehensive book designed to teach advanced Tajweed rules and correct Quran recitation through visual aids, practical examples, and exercises.",
+			"infoList": [
+				{
+					"infoListTitle": "Detailed explanation of all Tajweed rules."
+				},
+				{
+					"infoListTitle": "Practical exercises to enhance recitation skills."
+				},
+				{
+					"infoListTitle": "In-depth review of common pronunciation mistakes."
+				},
+				{
+					"infoListTitle": "Learn letter articulation and phonetic characteristics."
+				},
+				{
+					"infoListTitle": "Regular reviews and assessments to track progress."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "99 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$25.00",
+			"priceOld": "$50.00",
+			"courseTitle": "Al-Manhaj Al-Mufid",
+			"instructor": "Hussain Karim Mohammed",
+			"instructorImage": "/img/portfilo/course-tutor-04.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(40)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "3:00 Min",
+			"credit": "15 Credit",
+			"network": "Fresh",
+			"shortDesc": "A comprehensive course on Tajweed with intensive recitation correction training.",
+			"outcomes": [
+				"Master advanced Tajweed rules.",
+				"Learn articulation points and phonetic features of letters.",
+				"Develop recitation skills and train on correct pronunciation.",
+				"Apply Tajweed rules while reading the Quran.",
+				"Analyze and correct common Tajweed mistakes."
+			],
+			"curriculums": [
+				{
+					"title": "Introduction to Advanced Tajweed",
+					"lessons": [
+						"The Virtue of Quran Recitation",
+						"How the Prophet (PBUH) Conveyed the Quran",
+						"Recitation Levels and Pillars"
+					]
+				},
+				{
+					"title": "Letter Articulation and Phonetics",
+					"lessons": [
+						"Tooth Division and Jaw Articulation",
+						"Study of articulation and general letter characteristics",
+						"Emphasizing and Softening Letters"
+					]
+				},
+				{
+					"title": "Rules of Noon Sakinah and Tanween",
+					"lessons": [
+						"Clear Pronunciation (Izhar)",
+						"Merging Sounds (Idgham)",
+						"Substitution and Concealment (Iqlab & Ikhfa)"
+					]
+				},
+				{
+					"title": "Prolongation, Stopping, and Starting Rules",
+					"lessons": [
+						"Types of Prolongation and Practical Applications",
+						"Stopping and Pausing Rules",
+						"Analysis of Special Words in the Quran"
+					]
+				},
+				{
+					"title": "Review and Final Test",
+					"lessons": [
+						"Comprehensive Review with Practical Application",
+						"Final Exam on Tajweed"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 7,
+			"category": [
+				"Quraan",
+				"Tajweed"
+			],
+			"courseImage": "/img/courses/tag/course_نورانية 1.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Tashih Juz Amma",
+			"level": "Intermediate:",
+			"beginer": "Intermediate",
+			"requirements": "Completion of a foundational Arabic phonetics course (e.g., Noorani Qaida, Noor Bayan, or Muallim Thani).",
+			"description": "A specialized course focused on correcting the recitation of the 30th Juz of the Quran according to Tajweed rules, with practical exercises to enhance recitation skills.",
+			"infoList": [
+				{
+					"infoListTitle": "Master most Tajweed rules through hands-on practice."
+				},
+				{
+					"infoListTitle": "Learn proper letter pronunciation and correct recitation."
+				},
+				{
+					"infoListTitle": "Review and correct common mistakes in Quranic recitation."
+				},
+				{
+					"infoListTitle": "Memorize short Surahs for daily prayers and supplications."
+				},
+				{
+					"infoListTitle": "Final assessment to evaluate recitation improvement."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "35 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$18.00",
+			"priceOld": "$36.00",
+			"courseTitle": "Tashih Juz Amma",
+			"instructor": "Unknown",
+			"instructorImage": "/img/portfilo/course-tutor-05.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(30)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "2:00 Min",
+			"credit": "10 Credit",
+			"network": "Fresh",
+			"shortDesc": "A specialized course for correcting the recitation of Juz Amma with intensive Tajweed training.",
+			"outcomes": [
+				"Correct Tajweed errors in Quran recitation.",
+				"Improve pronunciation and articulation.",
+				"Develop recitation skills following proper rules.",
+				"Master short Surahs commonly used in prayer.",
+				"Pass a final assessment on Tajweed proficiency."
+			],
+			"curriculums": [
+				{
+					"title": "Correcting Recitation of Juz Amma Surahs",
+					"lessons": [
+						"Correcting Al-Fatiha, Al-Ikhlas, Al-Falaq, and An-Nas",
+						"Correcting Surah Al-Kawthar, Al-Ma'un, and Quraish",
+						"Correcting Surah Al-Adiyat and Az-Zalzalah"
+					]
+				},
+				{
+					"title": "Regular Reviews and Tests",
+					"lessons": [
+						"Review of the first half of the Juz",
+						"Test on corrected Surahs",
+						"Final correction and assessment of Surah An-Naba"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "6 Years"
+		},
+		{
+			"id": 8,
+			"category": [
+				"Quraan",
+				"Tajweed",
+				"Arabic"
+			],
+			"courseImage": "/img/courses/tag/course_نورانية 1.png",
+			"development": false,
+			"badge": "Arabic",
+			"badgeClass": "category-color category-color-1",
+			"title": "Muallim Thani",
+			"level": "Beginner:",
+			"beginer": "Beginner",
+			"requirements": "No requirements, suitable for children and beginners.",
+			"description": "An innovative teaching method for helping children and beginners read the Quran correctly. It follows an approach similar to Noorani Qaida and focuses on developing recitation skills and reading comprehension.",
+			"infoList": [
+				{
+					"infoListTitle": "Learn Arabic letters, sounds, and articulation."
+				},
+				{
+					"infoListTitle": "Practical exercises on vowel extensions, emphasis, and tanween."
+				},
+				{
+					"infoListTitle": "Correction of common pronunciation mistakes."
+				},
+				{
+					"infoListTitle": "Strong foundation in reading and writing for beginners."
+				},
+				{
+					"infoListTitle": "Regular reviews and assessments to track progress."
+				}
+			],
+			"viewBtn": "View Details",
+			"wishIcon": "flaticon-like",
+			"shareIcon": "fal fa-shopping-cart",
+			"duration": "55 Hours",
+			"lessonIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16.471\" height=\"16.471\"viewBox=\"0 0 16.471 16.471\"><g id=\"blackboard-8\"transform=\"translate(-0.008)\"><path id=\"Path_106\" data-name=\"Path 101\"d=\"M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z\"fill=\"#575757\" /></g></svg>",
+			"price": "$15.00",
+			"priceOld": "$30.00",
+			"courseTitle": "Muallim Thani",
+			"instructor": "Ahmad Hadi Maqsoudi",
+			"instructorImage": "/img/portfilo/course-tutor-06.png",
+			"instructorUrl": "/instructor-profile",
+			"rating": "(45)",
+			"productRating": [
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fas fa-star",
+				"fal fa-star"
+			],
+			"clock": "2:30 Min",
+			"credit": "8 Credit",
+			"network": "Fresh",
+			"shortDesc": "A comprehensive method for establishing correct Quranic reading skills for beginners.",
+			"outcomes": [
+				"Master the pronunciation of Arabic letters and phonetics.",
+				"Train on vowel extensions, emphasis, and tanween rules.",
+				"Correct common pronunciation errors.",
+				"Enable students to read the Quran accurately.",
+				"Periodic reviews to assess student skills."
+			],
+			"curriculums": [
+				{
+					"title": "Studying Letters and Phonetics",
+					"lessons": [
+						"Introduction to Arabic Letters and Proper Pronunciation",
+						"Studying vowel extensions and their rules",
+						"Practice on emphasis and tanween"
+					]
+				},
+				{
+					"title": "Recitation Correction and Assessment",
+					"lessons": [
+						"Review of extended and emphasized letters",
+						"Test on words and Quranic sentences",
+						"Correction of short Surah recitation"
+					]
+				}
+			],
+			"applyBtn": "Apply Now",
+			"year": "5 Years"
+		}
+	]
+}
