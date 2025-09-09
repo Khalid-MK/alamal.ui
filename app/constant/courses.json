@@ -1,0 +1,393 @@
+[
+    {
+        "id": 1,
+        "en": "Quran Classes",
+        "ar": "دورات القرآن",
+        "departments": [
+            {
+                "id": 1,
+                "en": "Adults",
+                "ar": "البالغين",
+                "courses": [
+                    {
+                        "id": 1,
+                        "en": "Learn Quran With Tajweed",
+                        "ar": "تعلم القرآن بالتجويد"
+                    },
+                    {
+                        "id": 2,
+                        "en": "Quran Recitation Course",
+                        "ar": "دورة تلاوة القرآن"
+                    },
+                    {
+                        "id": 3,
+                        "en": "Quran Reading Course",
+                        "ar": "دورة قراءة القرآن"
+                    },
+                    {
+                        "id": 4,
+                        "en": "Quran Classes For Beginners",
+                        "ar": "دورات القرآن للمبتدئين"
+                    },
+                    {
+                        "id": 5,
+                        "en": "Weekend Quran Classes",
+                        "ar": "دورات القرآن في عطلة نهاية الأسبوع"
+                    },
+                    {
+                        "id": 6,
+                        "en": "Sunni Quran Classes",
+                        "ar": "دورات القرآن السنية"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "en": "Sisters",
+                "ar": "الأخوات",
+                "courses": [
+                    {
+                        "id": 7,
+                        "en": "Learn Quran With Tajweed",
+                        "ar": "تعلم القرآن بالتجويد"
+                    },
+                    {
+                        "id": 8,
+                        "en": "Quran Recitation Course",
+                        "ar": "دورة تلاوة القرآن"
+                    },
+                    {
+                        "id": 9,
+                        "en": "Quran Reading Course",
+                        "ar": "دورة قراءة القرآن"
+                    },
+                    {
+                        "id": 10,
+                        "en": "Quran Classes For Beginners",
+                        "ar": "دورات القرآن للمبتدئين"
+                    },
+                    {
+                        "id": 11,
+                        "en": "Weekend Quran Classes",
+                        "ar": "دورات القرآن في عطلة نهاية الأسبوع"
+                    },
+                    {
+                        "id": 12,
+                        "en": "Sunni Quran Classes",
+                        "ar": "دورات القرآن السنية"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "en": "Kids",
+                "ar": "الأطفال",
+                "courses": [
+                    {
+                        "id": 13,
+                        "en": "Learn Quran With Tajweed",
+                        "ar": "تعلم القرآن بالتجويد"
+                    },
+                    {
+                        "id": 14,
+                        "en": "Quran Recitation Course",
+                        "ar": "دورة تلاوة القرآن"
+                    },
+                    {
+                        "id": 15,
+                        "en": "Quran Reading Course",
+                        "ar": "دورة قراءة القرآن"
+                    },
+                    {
+                        "id": 16,
+                        "en": "Quran Classes For Beginners",
+                        "ar": "دورات القرآن للمبتدئين"
+                    },
+                    {
+                        "id": 17,
+                        "en": "Weekend Quran Classes",
+                        "ar": "دورات القرآن في عطلة نهاية الأسبوع"
+                    },
+                    {
+                        "id": 18,
+                        "en": "Sunni Quran Classes",
+                        "ar": "دورات القرآن السنية"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "en": "Quran Memorization",
+        "ar": "حفظ القرآن",
+        "courses": [
+            {
+                "id": 19,
+                "en": "Hifz Quran Course",
+                "ar": "دورة حفظ القرآن"
+            },
+            {
+                "id": 20,
+                "en": "Hifz class for beginners",
+                "ar": "دورة حفظ للمبتدئين"
+            },
+            {
+                "id": 21,
+                "en": "Intensive Hifz Course",
+                "ar": "دورة حفظ مكثفة"
+            },
+            {
+                "id": 22,
+                "en": "Weekend Hifz Classes",
+                "ar": "دورات حفظ في عطلة نهاية الأسبوع"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "en": "Tajweed",
+        "ar": "التجويد",
+        "departments": [
+            {
+                "id": 4,
+                "en": "Beginners",
+                "ar": "المبتدئين",
+                "courses": [
+                    {
+                        "id": 23,
+                        "en": "The Noorani Qaida",
+                        "ar": "القاعدة النورانية"
+                    },
+                    {
+                        "id": 24,
+                        "en": "Second teacher",
+                        "ar": "معلم ثان"
+                    },
+                    {
+                        "id": 25,
+                        "en": "Simplified Judgment Course",
+                        "ar": "دورة احكام مبسطة"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "en": "Advanced Level",
+                "ar": "مستوى متقدم",
+                "courses": [
+                    {
+                        "id": 26,
+                        "en": "(Useful Curriculum) book course",
+                        "ar": "دورة كتاب (المنهج المفيد)"
+                    },
+                    {
+                        "id": 27,
+                        "en": "Illustrated Tajweed Course",
+                        "ar": "دورة التجويد المصور"
+                    }
+                ]
+            }
+        ],
+        "courses": [
+            {
+                "id": 28,
+                "en": "Correction of pronunciation course",
+                "ar": "دورة تصحيح المخارج"
+            },
+            {
+                "id": 29,
+                "en": "A course in drawing the Holy Quran",
+                "ar": "دورة فى رسم المصحف"
+            },
+            {
+                "id": 30,
+                "en": "The Ten Readings Course",
+                "ar": "دورة القراءات العشرة"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "en": "Islamic Studies",
+        "ar": "الدراسات الإسلامية",
+        "departments": [
+            {
+                "id": 6,
+                "en": "Kids",
+                "ar": "اطفال",
+                "courses": [
+                    {
+                        "id": 31,
+                        "en": "Islamic Classes For Beginners",
+                        "ar": "دورات إسلامية للمبتدئين"
+                    },
+                    {
+                        "id": 32,
+                        "en": "New Muslim Convets Course",
+                        "ar": "دورة للمسلمين الجدد"
+                    },
+                    {
+                        "id": 33,
+                        "en": "Tafseer Quraan Course",
+                        "ar": "دورة تفسير القرآن"
+                    },
+                    {
+                        "id": 34,
+                        "en": "Fiqh Course",
+                        "ar": "دورة الفقه"
+                    },
+                    {
+                        "id": 35,
+                        "en": "Hadith Course",
+                        "ar": "دورة الحديث"
+                    },
+                    {
+                        "id": 36,
+                        "en": "Aqeedah Course",
+                        "ar": "دورة العقيدة"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "en": "Adults",
+                "ar": "بالغين",
+                "courses": [
+                    {
+                        "id": 37,
+                        "en": "Islamic Classes For Beginners",
+                        "ar": "دورات إسلامية للمبتدئين"
+                    },
+                    {
+                        "id": 38,
+                        "en": "New Muslim Convets Course",
+                        "ar": "دورة للمسلمين الجدد"
+                    },
+                    {
+                        "id": 39,
+                        "en": "Tafseer Quraan Course",
+                        "ar": "دورة تفسير القرآن"
+                    },
+                    {
+                        "id": 40,
+                        "en": "Fiqh Course",
+                        "ar": "دورة الفقه"
+                    },
+                    {
+                        "id": 41,
+                        "en": "Hadith Course",
+                        "ar": "دورة الحديث"
+                    },
+                    {
+                        "id": 42,
+                        "en": "Aqeedah Course",
+                        "ar": "دورة العقيدة"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "en": "Sisters",
+                "ar": "الأخوات",
+                "courses": [
+                    {
+                        "id": 43,
+                        "en": "Islamic Classes For Beginners",
+                        "ar": "دورات إسلامية للمبتدئين"
+                    },
+                    {
+                        "id": 44,
+                        "en": "New Muslim Convets Course",
+                        "ar": "دورة للمسلمين الجدد"
+                    },
+                    {
+                        "id": 45,
+                        "en": "Tafseer Quraan Course",
+                        "ar": "دورة تفسير القرآن"
+                    },
+                    {
+                        "id": 46,
+                        "en": "Fiqh Course",
+                        "ar": "دورة الفقه"
+                    },
+                    {
+                        "id": 47,
+                        "en": "Hadith Course",
+                        "ar": "دورة الحديث"
+                    },
+                    {
+                        "id": 48,
+                        "en": "Aqeedah Course",
+                        "ar": "دورة العقيدة"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "en": "Arabic Language",
+        "ar": "اللغة العربية",
+        "departments": [
+            {
+                "id": 9,
+                "en": "Language Study (Skills/Communication)",
+                "ar": "دراسة اللغة (المهارات/التواصل)",
+                "courses": [
+                    {
+                        "id": 49,
+                        "en": "Arabic Between your hands",
+                        "ar": "العربية بين يديك"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "en": "Practical practice",
+                "ar": "الممارسة العملية",
+                "courses": [
+                    {
+                        "id": 50,
+                        "en": "Listening and Speaking Skills Practice Course",
+                        "ar": "دورة ممارسة مهاراتي الاستماع والتحدث"
+                    },
+                    {
+                        "id": 51,
+                        "en": "Reading and Writing Skills Practice Course",
+                        "ar": "دورة ممارسة مهارات القراءة والكتابة"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "en": "Study of grammar",
+                "ar": "دراسة القواعد",
+                "courses": [
+                    {
+                        "id": 52,
+                        "en": "Madina Book Course",
+                        "ar": "دورة كتاب المدينة"
+                    },
+                    {
+                        "id": 53,
+                        "en": "Arabic Grammar for Beginners",
+                        "ar": "دورة النحو للمبتدئين"
+                    },
+                    {
+                        "id": 54,
+                        "en": "Arabic Grammar Advanced Level",
+                        "ar": "دورة النحو مستوى متقدم"
+                    }
+                ]
+            }
+        ],
+        "courses": [
+            {
+                "id": 55,
+                "en": "Intensive courses, integrated study program",
+                "ar": "دورات مكثفة برنامج دراسى متكامل"
+            }
+        ]
+    }
+]

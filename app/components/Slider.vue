@@ -1,22 +1,45 @@
 <script setup lang="ts">
+const slides = [
+  {
+    id: "quraan",
+    image: "/img/new_cover_quran.png",
+    title: "Quran Courses",
+    subtitle: "Understand the Holy Quran",
+    buttonText: "Know More",
+  },
+  {
+    id: "tjweed",
+    image: "/img/new_cover_tajweed.png",
+    title: "Tajweed Courses",
+    subtitle: "Master Tajweed rules",
+    buttonText: "Know More",
+  },
+  {
+    id: "arabic",
+    image: "/img/new_cover_arabic.png",
+    title: "Quran Courses",
+    subtitle: "Memorize Quran with meaning",
+    buttonText: "Know More",
+  },
+];
 const containerRef = ref(null);
-const slides = ref([1,2,3,4]);
+// const slides = ref([1, 2, 3, 4]);
 const swiper = useSwiper(containerRef, {
   effect: "slide",
-  loop: true,
-  autoplay: {
-    delay: 3000,
-  },
-//   creativeEffect: {
-//     prev: {
-//       shadow: true,
-//       translate: [0, 0, -400],
-//     },
-//     next: {
-//       shadow: true,
-//       translate: [0, 0, -400],
-//     },
-//   },
+  // loop: true,
+  // autoplay: {
+  //   delay: 3000,
+  // },
+  //   creativeEffect: {
+  //     prev: {
+  //       shadow: true,
+  //       translate: [0, 0, -400],
+  //     },
+  //     next: {
+  //       shadow: true,
+  //       translate: [0, 0, -400],
+  //     },
+  //   },
 });
 
 onMounted(() => {
@@ -26,27 +49,190 @@ onMounted(() => {
 
 <template>
   <ClientOnly>
-    <swiper-container ref="containerRef" :init="false">
-      <swiper-slide
-        v-for="(slide, idx) in slides"
-        :key="idx"
-        style="background-color: rgb(32, 233, 70); color: white"
-      >
-        Slide {{ idx + 1 }}
-      </swiper-slide>
-    </swiper-container>
+    <div class="home-slider">
+
+      <swiper-container ref="containerRef" :init="false">
+        <swiper-slide v-for="(slide, idx) in slides" :key="idx"
+          style="background-color: rgb(32, 233, 70); color: white">
+          <!-- Slide {{ idx + 1 }} -->
+          <div class="slider-content-wrapper">
+            <div class="slider-content-container">
+              <div class="background-image-container">
+                <img :src="slide.image" alt="" />
+              </div>
+              <div class="verse-text-container">
+                <div class="verse-image-container">
+                  <img src="/img/home-slider/home-05.png" alt="" />
+                </div>
+                <ul class="text-container">
+                  <li class="title">{{ slide.title }}</li>
+                  <li class="subtitle">{{ slide.subtitle }}</li>
+                  <!-- <li class="button"> -->
+                  <button class="free-trial-btn edu-btn" style="width: fit-content">
+                    {{ slide.buttonText }}
+                  </button>
+                  <!-- </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
   </ClientOnly>
 </template>
 
 <style lang="css">
-swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  height: 20vh;
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .slider-content-wrapper {
+    text-align: center;
+  }
 }
+
+swiper-slide {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+
+.home-slider .slider-content-wrapper {
+  height: 60%;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container {
+  display: flex;
+  width: 100%;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .background-image-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .background-image-container img {
+  width: 100%;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: 85%;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  padding: 15px 0;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container .verse-image-container {
+  width: 80%;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container .verse-image-container img {
+  width: 100%;
+}
+
+/* text-container */
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  gap: 1rem;
+  font-size: 20px;
+  color: navy;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .button {
+  align-self: flex-end;
+}
+
+.free-trial-btn {
+  border-radius: 0 !important;
+  font-size: 20px;
+}
+
+@media (max-width: 575px),
+only screen and (min-width: 576px) and (max-width: 767px) {
+  .free-trial-btn {
+    width: 100%;
+  }
+}
+
+.edu-btn {
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2467EC;
+  padding: 0 40px;
+  border-radius: 4px;
+  transition: all 0.3s ease-out 0s;
+  border: 1px solid transparent;
+}
+
+.edu-btn:hover {
+  background-color: #FFB013;
+  color: #141517;
+}
+
+.edu-btn:focus {
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+@media (max-width:576px) {
+  .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
+    font-size: 15px;
+  }
+
+  .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container {
+    gap: 0.5rem;
+    font-size: 10px;
+  }
+
+  .edu-btn {
+    font-size: 10px;
+    font-weight: 600;
+    height: 30px;
+    color: #ffffff;
+    background-color: #2467EC;
+    padding: 0 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease-out 0s;
+    border: 1px solid transparent;
+  }
+}
+
+@media (max-width:373px) {
+  .edu-btn {
+
+    height: 20px;
+
+  }
+
+  .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
+    font-size: 12px;
+  }
+
+  .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container {
+    gap: 0.3rem;
+    font-size: 9px;
+  }
+
+}
+
+/*# sourceMappingURL=main.css.map */
 </style>
