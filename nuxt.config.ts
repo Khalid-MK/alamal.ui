@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "nuxt-swiper", "@pinia/nuxt"],
-  // css: ["./app/css/tailwind.css"],
+  css: ["~/css/tailwind.css", "~/css/flaticon.css"],
   // ssr: false,
   // i18n: {
   //   /* module options */
@@ -35,10 +35,10 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
-          rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'
-        }
-      ]
-    }
-  }
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css",
+        },
+      ],
+    },
+  },
 });

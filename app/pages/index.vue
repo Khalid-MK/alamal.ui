@@ -2,7 +2,8 @@
   <HomeSlider />
   <HomeHowSiteWork />
   <HomeCourseList />
-  <!-- <HomeFeatureSection /> -->
+  <HomeFeatureSection />
+  <HomeAboutSection />
 </template>
 
 <script lang="ts" setup>

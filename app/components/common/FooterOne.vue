@@ -9,7 +9,7 @@
         <div class="flex-1 max-w-sm">
           <NuxtLink to="/" class="inline-block mb-4">
             <img
-              src="/img/logo/footer-logo.png"
+              src="/img/logo/coliouredlogo&text.svg"
               alt="footer-logo"
               class="h-12"
             />

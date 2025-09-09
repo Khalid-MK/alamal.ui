@@ -7,7 +7,15 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
     studentSpace: ''
 })
-
+const highlights = ref<string[]>([
+    "We believe deeply in our mission and our responsibility to our students.",
+    "We deliver high-quality content taught by the best teachers — native speakers and Quran memorizers.",
+    "We provide flexible learning opportunities, anytime and anywhere in the world.",
+    "We connect with students easily online, without the hassle of travel.",
+    "We offer a variety of curricula and learning paths to suit all levels.",
+    "We ensure simple and secure payment methods.",
+    "We provide a wide range of courses at affordable prices, accessible to everyone.",
+]);
 // Computed class for section
 const sectionClass = computed(() => {
     return props.studentSpace || 'py-20 lg:py-28'
@@ -16,7 +24,7 @@ const sectionClass = computed(() => {
 
 <template>
     <div :class="sectionClass">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pl-14">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
                 <!-- Left Side - Image Section -->
@@ -25,7 +33,7 @@ const sectionClass = computed(() => {
                         <!-- Decorative Shapes -->
                         <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-200 rounded-full opacity-60"></div>
 
-                        <div class="absolute top-8 -right-6 z-10">
+                        <div class="absolute top-8 right-0 z-10">
                             <img src="/img/shape/student-shape-03.png" alt="Decorative shape"
                                 class="w-12 h-12 opacity-70">
                         </div>
@@ -52,7 +60,7 @@ const sectionClass = computed(() => {
 
                         <!-- Main Image -->
                         <div class="relative z-20 rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="/img/home _why students choose us_.png" alt="Why students choose us"
+                            <img src="/img/home _why students choose us_ تعديل2.png" alt="Why students choose us"
                                 class="w-full h-auto object-cover">
                         </div>
                     </div>
@@ -73,51 +81,36 @@ const sectionClass = computed(() => {
                     <div class="space-y-6">
                         <!-- Title -->
                         <div class="mb-8">
-                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                                Why
-                                <span class="relative inline-block mx-2">
-                                    Students
-                                    <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span>
+                            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                                What is the most important thing that
+                                <span class="down-mark-line-2">
+                                    makes us unique
+                                    <!-- <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span> -->
                                 </span>
-                                Gain Knowledge
+                                and why you choose us and join?
                             </h2>
                         </div>
 
                         <!-- Content Description -->
                         <div class="mb-6">
-                            <p class="text-lg text-gray-700 font-medium">
-                                - What makes us different:
+                            <p class="text-sm text-gray-700 font-medium">
+                                - Learning the Qur'an, teaching it, explaining it to people, facilitating their
+                                recitation, and correcting their pronunciations are among the best and most noble deeds
+                                by which a Muslim draws closer to God. Learning the Arabic language chosen by God for
+                                His Book is among the most noble and greatest of sciences, especially for non-native
+                                speakers. Therefore, we
                             </p>
                         </div>
 
                         <!-- Feature List -->
                         <div class="mb-8">
                             <ul class="space-y-4">
-                                <li class="flex items-start space-x-3">
+                                <li v-for="value in highlights" class="flex items-start space-x-3">
                                     <div class="flex-shrink-0 mt-1">
                                         <i class="fas fa-check-circle text-green-500 text-xl"></i>
                                     </div>
-                                    <span class="text-gray-700 text-lg leading-relaxed">
-                                        Personalized learning experience tailored to each student
-                                    </span>
-                                </li>
-
-                                <li class="flex items-start space-x-3">
-                                    <div class="flex-shrink-0 mt-1">
-                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
-                                    </div>
-                                    <span class="text-gray-700 text-lg leading-relaxed">
-                                        Expert instructors with years of teaching experience
-                                    </span>
-                                </li>
-
-                                <li class="flex items-start space-x-3">
-                                    <div class="flex-shrink-0 mt-1">
-                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
-                                    </div>
-                                    <span class="text-gray-700 text-lg leading-relaxed">
-                                        Interactive and engaging learning methodology
-                                    </span>
+                                    <span class="text-gray-700 text-sm leading-relaxed">
+                                        {{ value }} </span>
                                 </li>
                             </ul>
                         </div>
@@ -137,3 +130,50 @@ const sectionClass = computed(() => {
         </div>
     </div>
 </template>
+
+<style lang="css" scoped>
+.down-mark-line-2 {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.down-mark-line-2::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -29%;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background: url(/img/icon/down-mark-line-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    animation: section-animation 3s infinite;
+}
+
+@keyframes section-animation {
+    0% {
+        width: 0;
+    }
+
+    15% {
+        width: 100%;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    90% {
+        width: 100%;
+        opacity: 0;
+    }
+
+    to {
+        width: 0;
+        opacity: 0;
+    }
+}
+</style>
