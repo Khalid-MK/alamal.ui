@@ -234,5 +234,4 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 }
 
-/*# sourceMappingURL=main.css.map */
 </style>
