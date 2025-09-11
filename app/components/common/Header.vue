@@ -62,9 +62,9 @@
 
             <!-- Auth -->
             <div class="hidden md:flex gap-4">
-              <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">Sign In</NuxtLink>
+              <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">{{ $t("SignIn") }}</NuxtLink>
               <NuxtLink to="/signup" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700">
-                Sign Up
+                {{ $t("SignUp") }}
               </NuxtLink>
             </div>
 
@@ -114,7 +114,7 @@ import MainNav from "./MainNav.vue";
 
 // reactive state
 const { locale, setLocale } = useI18n()
-const langDir = ref("ltr");
+const langDir = ref(locale.value == "en" ? "ltr" : "rtl");
 const showCart = ref(false);
 const hideReminder = ref(false);
 const isSticky = ref(false);
@@ -177,9 +177,17 @@ onBeforeUnmount(() => {
 });
 
 // watchers (if you want to debug langDir)
-watch(langDir, (newVal) => {
-  console.log("Language direction changed:", newVal);
+watch(
+  () => locale.value,
+  (newVal, oldVal) => {
+    console.log("Language changed from", oldVal, "to", newVal);
+  }
+);
+
+watchEffect(() => {
+  console.log("Language changed:", locale.value);
 });
+
 
 function handleChangeLanguage(item) {
   setLocale(item.name)

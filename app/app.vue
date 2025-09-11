@@ -19,3 +19,15 @@ import NuxtLayout from "@/layouts/default.vue";
 //   ],
 // });
 </script>
+<style lang="css">
+html[lang="ar"] {
+  direction: rtl;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[lang="en"] {
+  direction: ltr;
+  text-align: left;
+}
+</style>
