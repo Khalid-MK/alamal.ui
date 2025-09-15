@@ -1,144 +1,60 @@
 <template>
   <nav class="relative">
-    <ul>
-      <li class="menu-item-has-children">
-        <a href="javascript:void(0)">{{ "Test Courses" }}</a>
-        <ul class="sub-menu">
-          <template v-for="section in courses">
-            <li v-if="section.departments" class="menu-item-has-children" :key="section.id">
-              <a href="javascript:void(0)">{{ section[locale] }}</a>
-              <ul class="sub-menu">
-                <template v-for="dept in section.departments">
-                  <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
-                    <a href="javascript:void(0)">{{ dept[locale] }}</a>
-                    <ul class="sub-menu">
-                      <li v-for="course in dept.courses" :key="course.id">
-                        <NuxtLink :to="'/shop?course=' + slugify(course[locale])">{{ course[locale] }}
-                        </NuxtLink>
-                      </li>
-                    </ul>
+     <!--  Link -->
+    <div class="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
+      <ul>
+        <li class="menu-item-has-children">
+          <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
+            class="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1 focus:outline-none">
+            {{ $t("Courses") }}
+            <Arrow :is-open="isCoursesOpen" />
+          </button>
+          <ul class="sub-menu">
+            <template v-for="section in courses">
+              <li v-if="section.departments" class="menu-item-has-children" :key="section.id">
+                <button class="flex justify-between items-center  text-gray-700">{{ section[locale] }}
+                  <Arrow />
+                </button>
+  
+                <ul class="sub-menu">
+                  <template v-for="dept in section.departments">
+                    <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
+                      <button class="flex justify-between items-center">
+                        <!-- {{ dept[locale] }} -->
+                        <span class="flex-grow text-left">{{ dept[locale] }}</span>
+                        <Arrow />
+                      </button>
+                      <ul class="sub-menu w-full">
+                        <li v-for="course in dept.courses" :key="course.id">
+                          <button @click="goToCourse" class="text-left">{{ course[locale] }}</button>
+                        </li>
+                      </ul>
+                    </li>
+                  </template>
+                </ul>
+              </li>
+              <li v-if="section.courses" class="menu-item-has-children" :key="'section-courses-' + section.id">
+                <button class="flex justify-between items-center">
+                  {{ section[locale] }}
+                  <Arrow />
+                </button>
+                <ul class="sub-menu">
+                  <li v-for="course in section.courses" class="w-[200px]" :key="course.id">
+                    <button @click="goToCourse" class="text-left">
+                      {{ course[locale] }}
+                    </button>
                   </li>
-                </template>
-              </ul>
-            </li>
-            <li v-if="section.courses" class="menu-item-has-children" :key="'section-courses-' + section.id">
-              <a href="javascript:void(0)">{{ section[locale] }}</a>
-              <ul class="sub-menu">
-                <li v-for="course in section.courses" :key="course.id">
-                  <NuxtLink :to="'/shop?course=' + slugify(course[locale])">{{ course[locale] }}
-                  </NuxtLink>
-                </li>
-              </ul>
-            </li>
-          </template>
-        </ul>
-      </li>
-    </ul>
-    <div class="flex flex-col space-y-4 xl:flex-row xl:items-center xl:space-y-0 xl:space-x-8">
+                </ul>
+              </li>
+            </template>
+          </ul>
+        </li>
+      </ul>
       <!-- About Link -->
       <NuxtLink to="/about"
         class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1">
         {{ $t("About") }}
       </NuxtLink>
-
-      <!-- Courses Dropdown -->
-      <div class="relative dropdown-container">
-        <button type="button"
-          class="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1 focus:outline-none"
-          @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu">
-          {{ $t("Courses") }}
-          <svg class="w-4 h-4 ml-1 transform transition-transform duration-200" :class="{ 'rotate-180': isCoursesOpen }"
-            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <!-- Main Dropdown Menu -->
-        <div class="dropdown-menu" :class="{ 'dropdown-visible': isCoursesOpen }" @mouseenter="showDropdown"
-          @mouseleave="hideDropdown">
-          <div class="py-3 relative max-h-96 overflow-y-auto">
-            <template class="relative" v-for="section in courses" :key="section.id">
-              <!-- Section Header -->
-              <div class="px-6 py-2">
-                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wide border-b border-gray-100 pb-2">
-                  {{ section[locale] }}
-                </h3>
-              </div>
-
-              <!-- Departments with Courses -->
-              <div class="space-y-1" v-if="section.departments">
-                <div v-for="dept in section.departments" :key="dept.id" class="absolute department-item">
-                  <!-- Department Item -->
-                  <div class="px-6 py-2 hover:bg-gray-50 cursor-pointer">
-                    <div
-                      class="flex items-center justify-between text-gray-700 hover:text-blue-600 transition-colors duration-150">
-                      <span class="font-medium">{{ dept[locale] }}</span>
-                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <!-- Department Submenu -->
-                  <div class="department-submenu" v-if="dept.courses && dept.courses.length > 0">
-                    <div class="py-3 max-h-80 overflow-y-auto">
-                      <div class="px-4 py-2 border-b border-gray-100">
-                        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                          {{ dept[locale] }} Courses
-                        </h4>
-                      </div>
-                      <div class="py-1">
-                        <NuxtLink v-for="course in dept.courses" :key="course.id"
-                          :to="'/shop?course=' + slugify(course[locale])"
-                          class="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-150 border-l-4 border-transparent hover:border-blue-500">
-                          <div class="flex-1">
-                            <div class="font-medium">
-                              {{ course[locale] }}
-                            </div>
-                            <div class="text-xs text-gray-500 mt-1">
-                              {{ course.description || "Course details" }}
-                            </div>
-                          </div>
-                        </NuxtLink>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Direct Section Courses (if no departments) -->
-              <div class="py-1" v-else-if="section.courses">
-                <NuxtLink v-for="course in section.courses" :key="course.id"
-                  :to="'/shop?course=' + slugify(course[locale])"
-                  class="flex items-center px-6 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-150">
-                  <div class="flex-1">
-                    <div class="font-medium">{{ course[locale] }}</div>
-                    <div class="text-xs text-gray-500 mt-1">
-                      {{ course.description || "Course details" }}
-                    </div>
-                  </div>
-                </NuxtLink>
-              </div>
-
-              <!-- Divider between sections -->
-              <div v-if="courses.indexOf(section) < courses.length - 1" class="mx-4 my-2 border-t border-gray-100">
-              </div>
-            </template>
-
-            <!-- View All Courses Link -->
-            <div class="px-6 py-3 border-t border-gray-200 bg-gray-50">
-              <NuxtLink to="/courses"
-                class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 hover:border-blue-300 transition-colors duration-150">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {{ ("ViewAllCourses") }}
-              </NuxtLink>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- FAQs Link -->
       <NuxtLink to="/faq-page"
@@ -165,6 +81,7 @@
 import courses from "@/constant/courses.json";
 import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
+import Arrow from "~/assets/icons/Arrow.vue";
 
 const { locale } = useI18n({ useScope: "global" }); // get the global locale
 
@@ -186,6 +103,11 @@ function slugify(text) {
     .toLowerCase();
 }
 
+const router = useRouter() // ✅ works in Nuxt 4
+
+const goToCourse = () => {
+  router.push(`/shop?course=${slugify(props.course[props.locale])}`)
+}
 function toggleCoursesMenu() {
   isCoursesOpen.value = !isCoursesOpen.value;
 }
@@ -196,9 +118,9 @@ function showDropdown() {
 }
 
 function hideDropdown() {
-  // hoverTimeout = setTimeout(() => {
-  //   isCoursesOpen.value = false;
-  // }, 150);
+  hoverTimeout = setTimeout(() => {
+    isCoursesOpen.value = false;
+  }, 150);
 }
 
 onMounted(() => {
@@ -212,101 +134,25 @@ onMounted(() => {
 
 
 <style scoped>
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 0.5rem;
-  /* width: 20rem;*/
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-radius: 0.5rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0.5rem);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 50;
-}
-
-.dropdown-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Department Submenu */
-.department-submenu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 0.5rem;
-  width: 16rem;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-radius: 0.5rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-0.5rem);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 50;
-}
-
-.department-item:hover .department-submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-}
-
-/* Hover effects for dropdown container */
-.dropdown-container:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Custom scrollbar */
-.overflow-y-auto::-webkit-scrollbar {
-  width: 4px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 2px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 2px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
 /* Mobile responsive */
-@media (max-width: 1279px) {
-  .dropdown-menu {
+@media (max-width: 767px) {
+  /* .menu-item-has-children {
     position: static;
     opacity: 1;
-    visibility: visible;
+    display: block;
     transform: none;
     margin-top: 0.5rem;
     box-shadow: none;
     border: 1px solid #e5e7eb;
-  }
+  } */
 
-  .department-submenu {
-    position: static;
-    margin-left: 1rem;
-    margin-top: 0.25rem;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+  .sub-menu {
+    position: static !important;
+    display: block !important;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    box-shadow: none;
+    background: transparent;
   }
 }
 
@@ -346,26 +192,21 @@ nav {
   position: relative;
 }
 
+/* first level */
 .sub-menu {
   position: absolute;
   top: 0;
   left: 100%;
   right: auto;
   z-index: 999;
-  width: fit-content;
-  max-width: 220px;
+  width: 230px;
+  max-width: 350px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   display: none;
-  white-space: normal;
-  /* word-break: break-word; */
-  padding: 0.5rem 0;
-  /* background: red; */
-}
 
-.sub-menu li {
-  max-width: 100%;
-  padding: 0 1.2rem;
+  padding: 10px 0;
+
 }
 
 .menu-item-has-children:hover>.sub-menu,
@@ -383,9 +224,53 @@ nav {
   text-align: right;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ul li .sub-menu li {
+  margin: 0px;
+  padding: 8px 25px 8px 25px;
+}
+
+/* second level */
+ul li .sub-menu li .sub-menu {
+  left: 100%;
+  top: 20%;
+  transition: all 0.3s ease-out 0s;
+  width: fit-content !important;
+}
+
+/* ul li ul li ul li{
+  width: 190px;
+} */
+/* thrid level */
+ul li .sub-menu li .sub-menu li .sub-menu {
+  left: 100%;
+  top: 20%;
+  transition: all 0.3s ease-out 0s;
+  width: 210px !important;
+}
+
+/* ssssssssssssssssssssssssss */
+ul li .sub-menu li button {
+  padding: 0px;
+  width: 100%;
+  color: #212237;
+  position: relative;
+}
+
+ul li .sub-menu li button:hover {
+  color: #2467EC;
+}
+
+ul li .sub-menu li button:before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+ul li:hover button {
+  color: #2467EC;
+}
+
+ul li:hover.menu-item-has-children::after {
+  color: #2467EC;
 }
 </style>

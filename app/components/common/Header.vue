@@ -28,7 +28,7 @@
               <img src="/img/logo/coliouredlogo&text.svg" alt="logo" class="h-10" />
             </NuxtLink>
             <!-- Desktop Menu -->
-            <div class="hidden xl:block">
+            <div class="hidden md:block">
               <MainNav />
             </div>
           </div>
@@ -69,7 +69,7 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button class="xl:hidden flex flex-col gap-1" @click="handleSidebar">
+            <button class="md:hidden flex flex-col gap-1" @click="handleSidebar">
               <span class="w-6 h-0.5 bg-gray-800"></span>
               <span class="w-6 h-0.5 bg-gray-800"></span>
               <span class="w-6 h-0.5 bg-gray-800"></span>
@@ -87,7 +87,8 @@
           ✕
         </button>
         <div class="mt-8">
-          <MainNav />
+          <!-- Use MobileNav instead of MainNav -->
+          <MobileNav />
         </div>
       </div>
     </div>
@@ -108,6 +109,7 @@ import { ref, reactive, onMounted, onBeforeUnmount, watch } from "vue";
 // import { useAuthStore } from "~/stores/authStore";
 
 import MainNav from "./MainNav.vue";
+import MobileNav from "./MobileNav.vue";
 
 // store - temporarily disabled
 // const authStore = useAuthStore();
