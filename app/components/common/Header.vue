@@ -1,5 +1,5 @@
 <template>
-  <div :dir="langDir" class="w-full">
+  <div :dir="direction" class="w-full">
     <header>
       <!-- Reminder bar -->
       <div v-if="!hideReminder" class="hidden md:block bg-blue-600 text-white py-2 px-5">
@@ -36,7 +36,7 @@
           <!-- Right -->
           <div class="flex items-center gap-6">
             <!-- Language Switch -->
-            <div class="menu-item-has-children" :class="{ open: isOpen }">
+            <div   :dir="direction" class="menu-item-has-children" :class="{ open: isOpen }">
               <button @click="toggleDropdown">
                 <Translation />
               </button>
@@ -74,18 +74,31 @@
     </header>
 
     <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
     <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
+      <div class="absolute top-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto"
+        :class="direction === 'rtl' ? 'left-0' : 'right-0'" @click.stop>
+        <button class="absolute top-4 text-gray-600 text-xl font-bold hover:text-gray-800"
+          :class="direction === 'rtl' ? 'left-4' : 'right-4'" @click="handleSidebarClose">
+          ✕
+        </button>
+        <div class="mt-8">
+          <MobileNav />
+        </div>
+      </div>
+    </div>
+    <!-- <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
       <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto" @click.stop>
         <button class="absolute top-4 right-4 text-gray-600 text-xl font-bold hover:text-gray-800"
           @click="handleSidebarClose">
           ✕
         </button>
         <div class="mt-8">
-          <!-- Use MobileNav instead of MainNav -->
+          Use MobileNav instead of MainNav
           <MobileNav />
         </div>
-      </div>
-    </div>
+      </div> 
+  </div>-->
   </div>
 </template>
 
@@ -109,7 +122,21 @@ const langDir = ref(locale.value == "en" ? "ltr" : "rtl");
 const hideReminder = ref(false);
 const isSticky = ref(false);
 const showSidebar = ref(false);
+// Watch for locale changes and update document
+// watch(locale, (newLocale) => {
+//   if (process.client) {
+//     document.documentElement.setAttribute('dir', newLocale === "en" ? "ltr" : "rtl")
+//   }
+// }, { immediate: true })
+const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
 
+// // Use Nuxt's head management (recommended)
+// useHead({
+//   htmlAttrs: {
+//     dir: direction,
+//     lang: locale
+//   }
+// })
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
@@ -178,13 +205,13 @@ function changeLocale(locale: "en" | "ar") {
 </script>
 
 <style scoped>
-[dir="rtl"] .header-area {
+/* [dir="rtl"] .header-area {
   direction: rtl;
 }
 
 [dir="ltr"] .header-area {
   direction: ltr;
-}
+} */
 
 /* Custom transitions for mobile menu */
 .max-h-0 {

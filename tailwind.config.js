@@ -14,10 +14,5 @@ export default {
   experimental: {
     matchVariant: true,
   },
-  plugins: [
-    function ({ addVariant }) {
-      addVariant("rtl", '[dir="rtl"] &');
-      addVariant("ltr", '[dir="ltr"] &');
-    },
-  ],
+  plugins: [],
 };

@@ -12,11 +12,14 @@
 // Using script setup syntax
 import Header from "~/components/common/Header.vue";
 import FooterOne from "~/components/common/FooterOne.vue";
-</script>
+const { locale } = useI18n()
 
-<style scoped>
-main {
-  /* min-height: calc(100vh - 200px);
-  height: 100vh; */
-}
-</style>
+// Global head management - affects entire app
+useHead({
+  htmlAttrs: {
+    dir: computed(() => locale.value === 'ar' ? 'rtl' : 'ltr'),
+    lang: locale
+  }
+})
+
+</script>

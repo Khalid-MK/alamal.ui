@@ -1,7 +1,7 @@
 <template>
-  <nav class="relative">
+  <nav :dir="direction">
     <!--  Link -->
-    <div class="flex  space-y-4 flex-row items-center md:space-y-0 md:space-x-8">
+    <div class="flex space-y-4 flex-row items-center md:space-y-0 md:space-x-8">
       <ul>
         <li class="menu-item-has-children">
           <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
@@ -11,7 +11,8 @@
           </button>
           <ul class="sub-menu">
             <template v-for="section in courses">
-              <li v-if="section.departments" class="menu-item-has-children" :key="section.id">
+              <li v-if="section.departments" :class="isRTL ? 'menu-item-has-children rtl' : 'menu-item-has-children'"
+                :key="section.id">
                 <button class="flex justify-between items-center  text-gray-700">{{ section[locale] }}
                   <Arrow />
                 </button>
@@ -20,8 +21,8 @@
                   <template v-for="dept in section.departments">
                     <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
                       <button class="flex justify-between items-center">
-                        <!-- {{ dept[locale] }} -->
-                        <span class="flex-grow text-left">{{ dept[locale] }}</span>
+                        {{ dept[locale] }}
+                        <!-- <span class="flex-grow">{{ dept[locale] }}</span> -->
                         <Arrow />
                       </button>
                       <ul class="sub-menu w-full">
@@ -82,8 +83,10 @@ import courses from "@/constant/courses.json";
 import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
 import Arrow from "~/assets/icons/Arrow.vue";
-
-const { locale } = useI18n({ useScope: "global" }); // get the global locale
+const { locale } = useI18n()  // Same global state!
+const isRTL = computed(() => locale.value === 'ar')
+const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
+// const { locale } = useI18n({ useScope: "global" }); // get the global locale
 
 const isCoursesOpen = ref(false);
 
@@ -132,47 +135,7 @@ onMounted(() => {
 });
 </script>
 
-
 <style scoped>
-/* Mobile responsive */
-/* @media (max-width: 767px) {
-
-  .sub-menu {
-    position: static !important;
-    display: block !important;
-    margin-left: 0;
-    margin-top: 0.5rem;
-    box-shadow: none;
-    background: transparent;
-  }
-} */
-
-/* Active link styling */
-.router-link-active {
-  color: #2563eb;
-  font-weight: 600;
-}
-
-/* Focus states for accessibility */
-button:focus,
-a:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* RTL Support */
-.rtl .dropdown-menu {
-  left: auto;
-  right: 0;
-}
-
-.rtl .department-submenu {
-  left: auto;
-  right: 100%;
-  margin-left: 0;
-  margin-right: 0.5rem;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -183,80 +146,92 @@ nav {
   position: relative;
 }
 
-/* first level */
+/* Base dropdown */
 .sub-menu {
   position: absolute;
   top: 0;
-  left: 100%;
-  right: auto;
   z-index: 999;
   width: 230px;
   max-width: 350px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   display: none;
-
   padding: 10px 0;
-
 }
 
+/* Show dropdown on hover/focus */
 .menu-item-has-children:hover>.sub-menu,
 .menu-item-has-children:focus-within>.sub-menu {
   display: block;
 }
 
-/* RTL support */
-.rtl .menu-item-has-children>.sub-menu {
-  left: auto;
-  right: 100%;
+/* LTR default */
+[dir="ltr"] .sub-menu {
+  left: 100%;
+  right: auto;
+  text-align: left;
 }
 
-.rtl .sub-menu {
+/* RTL override */
+[dir="rtl"] .sub-menu {
+  right: 100%;
+  left: auto;
   text-align: right;
 }
 
+/* Sub-menu items */
 ul li .sub-menu li {
-  margin: 0px;
-  padding: 8px 25px 8px 25px;
+  margin: 0;
+  padding: 8px 25px;
 }
 
-/* second level */
+/* Nested submenu (2nd level) */
 ul li .sub-menu li .sub-menu {
-  left: 100%;
   top: 20%;
-  transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out;
   width: fit-content !important;
 }
 
-/* ul li ul li ul li{
-  width: 190px;
-} */
-/* thrid level */
-ul li .sub-menu li .sub-menu li .sub-menu {
+[dir="ltr"] ul li .sub-menu li .sub-menu {
   left: 100%;
-  top: 20%;
-  transition: all 0.3s ease-out 0s;
-  width: 210px !important;
-}
-
-/* ssssssssssssssssssssssssss */
-ul li .sub-menu li button {
-  padding: 0px;
-  width: 100%;
-  color: #212237;
-  position: relative;
-}
-
-ul li .sub-menu li button:hover {
-  color: #2467EC;
-}
-
-ul li .sub-menu li button:before {
-  width: 100%;
-  left: 0;
   right: auto;
 }
 
+[dir="rtl"] ul li .sub-menu li .sub-menu {
+  right: 100%;
+  left: auto;
+}
+
+/* Third level submenu */
+ul li .sub-menu li .sub-menu li .sub-menu {
+  top: 20%;
+  transition: all 0.3s ease-out;
+  width: 210px !important;
+}
+
+[dir="ltr"] ul li .sub-menu li .sub-menu li .sub-menu {
+  left: 100%;
+  right: auto;
+}
+
+[dir="rtl"] ul li .sub-menu li .sub-menu li .sub-menu {
+  right: 100%;
+  left: auto;
+}
+
+/* Buttons inside dropdown */
+ul li .sub-menu li button {
+  padding: 0;
+  width: 100%;
+  font-weight: 600;
+  color: #212237;
+  position: relative;
+  text-align: inherit;
+  /* will follow dir automatically */
+}
+
+/* Hover effects */
+ul li .sub-menu li button:hover,
 ul li:hover button {
   color: #2467EC;
 }
