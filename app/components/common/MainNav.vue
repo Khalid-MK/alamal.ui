@@ -1,7 +1,7 @@
 <template>
   <nav class="relative">
-     <!--  Link -->
-    <div class="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
+    <!--  Link -->
+    <div class="flex  space-y-4 flex-row items-center md:space-y-0 md:space-x-8">
       <ul>
         <li class="menu-item-has-children">
           <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
@@ -15,7 +15,7 @@
                 <button class="flex justify-between items-center  text-gray-700">{{ section[locale] }}
                   <Arrow />
                 </button>
-  
+
                 <ul class="sub-menu">
                   <template v-for="dept in section.departments">
                     <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
@@ -135,16 +135,7 @@ onMounted(() => {
 
 <style scoped>
 /* Mobile responsive */
-@media (max-width: 767px) {
-  /* .menu-item-has-children {
-    position: static;
-    opacity: 1;
-    display: block;
-    transform: none;
-    margin-top: 0.5rem;
-    box-shadow: none;
-    border: 1px solid #e5e7eb;
-  } */
+/* @media (max-width: 767px) {
 
   .sub-menu {
     position: static !important;
@@ -154,7 +145,7 @@ onMounted(() => {
     box-shadow: none;
     background: transparent;
   }
-}
+} */
 
 /* Active link styling */
 .router-link-active {
