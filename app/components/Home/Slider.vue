@@ -1,27 +1,50 @@
 <script setup lang="ts">
 const slides = [
   {
-    id: "quraan",
-    image: "/img/new_cover_quran.png",
-    title: "Quran Courses",
-    subtitle: "Understand the Holy Quran",
-    buttonText: "Know More",
+    id: 'quraan',
+    image: '/img/new_cover_quran.png',
+    title: 'QuranCourses',
+    subtitle: 'HomeSlider2Subtitle',
+    buttonText: 'Slide2Button'
   },
   {
-    id: "tjweed",
-    image: "/img/new_cover_tajweed.png",
-    title: "Tajweed Courses",
-    subtitle: "Master Tajweed rules",
-    buttonText: "Know More",
+    id: 'tjweed',
+    image: '/img/new_cover_tajweed.png',
+    title: 'TajweedCourses',
+    subtitle: 'HomeSlider3Subtitle',
+    buttonText: 'Slide3Button'
   },
   {
-    id: "arabic",
-    image: "/img/new_cover_arabic.png",
-    title: "Quran Courses",
-    subtitle: "Memorize Quran with meaning",
-    buttonText: "Know More",
-  },
+    id: 'arabic',
+    image: '/img/new_cover_arabic.png',
+    title: 'QuranCourses',
+    subtitle: 'HomeSlider4Subtitle',
+    buttonText: 'Slide4Button'
+  }
 ];
+// const slides = [
+//   {
+//     id: "quraan",
+//     image: "/img/new_cover_quran.png",
+//     title: "Quran Courses",
+//     subtitle: "Understand the Holy Quran",
+//     buttonText: "Know More",
+//   },
+//   {
+//     id: "tjweed",
+//     image: "/img/new_cover_tajweed.png",
+//     title: "Tajweed Courses",
+//     subtitle: "Master Tajweed rules",
+//     buttonText: "Know More",
+//   },
+//   {
+//     id: "arabic",
+//     image: "/img/new_cover_arabic.png",
+//     title: "Quran Courses",
+//     subtitle: "Memorize Quran with meaning",
+//     buttonText: "Know More",
+//   },
+// ];
 const containerRef = ref(null);
 // const slides = ref([1, 2, 3, 4]);
 const swiper = useSwiper(containerRef, {
@@ -65,11 +88,11 @@ onMounted(() => {
                   <img src="/img/home-slider/home-05.png" alt="" />
                 </div>
                 <ul class="text-container">
-                  <li class="title">{{ slide.title }}</li>
-                  <li class="subtitle">{{ slide.subtitle }}</li>
+                  <li class="title">{{ $t(slide.title) }}</li>
+                  <li class="subtitle">{{ $t(slide.subtitle) }}</li>
                   <!-- <li class="button"> -->
                   <button class="free-trial-btn edu-btn" style="width: fit-content">
-                    {{ slide.buttonText }}
+                    {{ $t(slide.buttonText) }}
                   </button>
                   <!-- </li> -->
                 </ul>
@@ -233,5 +256,4 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   }
 
 }
-
 </style>

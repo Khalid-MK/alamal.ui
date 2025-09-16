@@ -1,13 +1,23 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n"
+import { computed, ref } from "vue"
+
 // Props
 interface Props {
     studentSpace?: string
 }
-
 const props = withDefaults(defineProps<Props>(), {
     studentSpace: ''
 })
-const highlights = ref<string[]>([
+
+// Get locale
+const { locale } = useI18n()
+
+// Direction
+const direction = computed(() => (locale.value === "en" ? "ltr" : "rtl"))
+
+// English highlights
+const highlightsEn = [
     "We believe deeply in our mission and our responsibility to our students.",
     "We deliver high-quality content taught by the best teachers — native speakers and Quran memorizers.",
     "We provide flexible learning opportunities, anytime and anywhere in the world.",
@@ -15,15 +25,31 @@ const highlights = ref<string[]>([
     "We offer a variety of curricula and learning paths to suit all levels.",
     "We ensure simple and secure payment methods.",
     "We provide a wide range of courses at affordable prices, accessible to everyone.",
-]);
-// Computed class for section
-const sectionClass = computed(() => {
-    return props.studentSpace || 'py-20 lg:py-28'
-})
+]
+
+// Arabic highlights
+const highlightsAr = [
+    "نؤمن بعمق برسالتنا ومسؤوليتنا تجاه طلابنا.",
+    "نقدم محتوى عالي الجودة يدرسه أفضل المعلمين — من الناطقين الأصليين وحفظة القرآن.",
+    "نوفر فرص تعلم مرنة في أي وقت ومن أي مكان في العالم.",
+    "نتواصل مع الطلاب بسهولة عبر الإنترنت دون عناء السفر.",
+    "نقدم مجموعة متنوعة من المناهج والمسارات التعليمية لتناسب جميع المستويات.",
+    "نضمن طرق دفع بسيطة وآمنة.",
+    "نوفر مجموعة واسعة من الدورات بأسعار مناسبة للجميع.",
+]
+
+// Use correct array based on locale
+const highlights = computed(() =>
+    locale.value === "en" ? highlightsEn : highlightsAr
+)
+
+// Section class
+const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
 </script>
 
+
 <template>
-    <div :class="sectionClass">
+    <div :class="sectionClass" :dir="direction">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pl-14">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
@@ -82,23 +108,27 @@ const sectionClass = computed(() => {
                         <!-- Title -->
                         <div class="mb-8">
                             <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                                What is the most important thing that
+                                {{ direction === "ltr" ? "isWhat is the most important thing that" : "ما هو أهم شيء" }}
                                 <span class="down-mark-line-2">
-                                    makes us unique
+                                    {{ direction === "ltr" ? " makes us unique" : " يجعلنا مميزين" }}
                                     <!-- <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span> -->
                                 </span>
-                                and why you choose us and join?
+                                {{ direction === "ltr" ? " and why you choose us and join?" : `ولماذا تختارنا وتنضم
+                                إلينا؟` }}
                             </h2>
                         </div>
 
                         <!-- Content Description -->
                         <div class="mb-6">
                             <p class="text-sm text-gray-700 font-medium">
-                                - Learning the Qur'an, teaching it, explaining it to people, facilitating their
+                                {{ direction === "ltr" ? ` - Learning the Qur'an, teaching it, explaining it to people,
+                                facilitating their
                                 recitation, and correcting their pronunciations are among the best and most noble deeds
                                 by which a Muslim draws closer to God. Learning the Arabic language chosen by God for
                                 His Book is among the most noble and greatest of sciences, especially for non-native
-                                speakers. Therefore, we
+                                speakers. Therefore, we`:`- تعلم القرآن وتعليمه وشرحه للناس وتيسير تلاوته وتصحيح نطقه من
+                                أفضل وأشرف الأعمال التي يتقرب بها المسلم إلى الله. وتعلم اللغة العربية التي اختارها الله
+                                لكتابه من أشرف وأعظم العلوم، خاصة لغير الناطقين بها. لذلك نحن`}}
                             </p>
                         </div>
 
@@ -119,8 +149,8 @@ const sectionClass = computed(() => {
                         <div class="pt-4">
                             <NuxtLink to="/about"
                                 class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                                Know More
-                                <i class="fas fa-arrow-right ml-2"></i>
+                                {{ $t("knowMore") }}
+                                <i class="fas fa-arrow-right ms-2"></i>
                             </NuxtLink>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+const { locale } = useI18n()  // Same global state!
+const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
 // Types
 interface Feature {
     featureTitle: string
@@ -22,17 +24,17 @@ const featureBg = ref('/img/fact/fact.png')
 
 const featureList = ref<Feature[]>([
     {
-        featureTitle: "Learn with Skills",
+        featureTitle: $t("Learnwithskills"),
         featureIcon: 'flaticon-online-course',
         featureImg: '/img/fact/online-learning.png',
     },
     {
-        featureTitle: 'Earn Certificates and Degrees',
+        featureTitle: $t('EarncertificatesAnddegrees'),
         featureIcon: 'flaticon-certificate',
         featureImg: "/img/fact/online-certificate.png"
     },
     {
-        featureTitle: 'Learn from Anywhere, Anytime',
+        featureTitle: $t('LearnfromAnywhereAnytime'),
         featureIcon: 'flaticon-laptop',
         featureImg: "/img/fact/browsing.png"
     }
@@ -53,7 +55,7 @@ const backgroundStyle = computed(() => ({
 </script>
 
 <template>
-    <div :class="sectionClass" :style="{ backgroundImage: `url(${featureBg})` }" class="">
+    <div :dir="direction" :class="sectionClass" :style="{ backgroundImage: `url(${featureBg})` }" class="">
         <div class="block w-full justify-between gap-2 px-5 max-md:px-8 sm:px-16 md:flex">
             <div v-for="value in featureList" class="flex gap-2 items-center">
                 <img :src="value.featureImg" style="color:white" class=" w-20 max-lg:w-16" alt="img" />

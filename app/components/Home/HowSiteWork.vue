@@ -26,18 +26,14 @@
                             <!-- Heading -->
                             <div class="mb-5">
                                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                                    {{ "How Site Work" }}
+                                    {{ $t("HowSiteWorkHeader") }}
                                 </h2>
                             </div>
 
                             <!-- Description -->
                             <div class="pb-8">
                                 <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
-                                    {{
-                                        `We offer a range of learning courses available on our site. You can log in and
-                                    interact with teachers, or start learning by yourself.You can subscribe to the
-                                    courses you want and learn easily`
-                                    }}
+                                    {{ $t("HowSiteWorkText") }}
                                 </p>
                             </div>
                         </div>
