@@ -83,10 +83,9 @@ import courses from "@/constant/courses.json";
 import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
 import Arrow from "~/assets/icons/Arrow.vue";
-const { locale } = useI18n()  // Same global state!
+const { locale, localeProperties } = useI18n()  // Same global state!
 const isRTL = computed(() => locale.value === 'ar')
-const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
-// const { locale } = useI18n({ useScope: "global" }); // get the global locale
+const direction = computed(() => localeProperties.value.dir)
 
 const isCoursesOpen = ref(false);
 
@@ -227,7 +226,7 @@ ul li .sub-menu li button {
   color: #212237;
   position: relative;
   text-align: inherit;
-  /* will follow dir automatically */
+  gap: 5px
 }
 
 /* Hover effects */

@@ -1,5 +1,5 @@
 <template>
-  <div dir="ltr">
+  <div>
     <Header />
     <main>
       <slot></slot>
@@ -9,17 +9,15 @@
 </template>
 
 <script setup>
-// Using script setup syntax
 import Header from "~/components/common/Header.vue";
 import FooterOne from "~/components/common/FooterOne.vue";
-const { locale } = useI18n()
+const { locale, localeProperties } = useI18n()
 
-// Global head management - affects entire app
+// Global head management
 useHead({
   htmlAttrs: {
-    dir: computed(() => locale.value === 'ar' ? 'rtl' : 'ltr'),
-    lang: locale
+    dir: computed(() => localeProperties.value.dir),
+    lang: computed(() => localeProperties.value.iso)
   }
 })
-
 </script>

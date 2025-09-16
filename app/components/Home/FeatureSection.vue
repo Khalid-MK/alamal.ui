@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const { locale } = useI18n()  // Same global state!
-const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
+// Get locale
+const { localeProperties } = useI18n()
+
+// Direction
+const direction = computed(() => localeProperties.value.dir)
 // Types
 interface Feature {
     featureTitle: string

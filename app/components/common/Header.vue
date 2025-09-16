@@ -36,7 +36,19 @@
           <!-- Right -->
           <div class="flex items-center gap-6">
             <!-- Language Switch -->
-            <div   :dir="direction" class="menu-item-has-children" :class="{ open: isOpen }">
+            <div class="menu-item-has-children" :class="{ open: isOpen }">
+              <button @click="toggleDropdown">
+                <Translation />
+              </button>
+              <ul class="sub-menu" v-if="isOpen">
+                <li v-for="lang in locales" :key="lang.code">
+                  <button class="flex items-center" @click="changeLocale(lang.code)">
+                    {{ lang.name }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="menu-item-has-children" :class="{ open: isOpen }">
               <button @click="toggleDropdown">
                 <Translation />
               </button>
@@ -51,13 +63,15 @@
                   <button class="flex items-center gap-1" @click="changeLocale('ar')">AR🌐</button>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
 
             <!-- Auth -->
-            <div class="hidden md:flex gap-4">
-              <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">{{ $t("SignIn") }}</NuxtLink>
-              <NuxtLink to="/signup" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700">
+            <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
+              <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-blue-600">{{
+                $t("SignIn") }}</NuxtLink>
+              <NuxtLink to="/signup"
+                class="flex items-center justify-center bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700">
                 {{ $t("SignUp") }}
               </NuxtLink>
             </div>
@@ -74,7 +88,6 @@
     </header>
 
     <!-- Mobile Menu -->
-    <!-- Mobile Menu -->
     <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
       <div class="absolute top-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto"
         :class="direction === 'rtl' ? 'left-0' : 'right-0'" @click.stop>
@@ -87,18 +100,6 @@
         </div>
       </div>
     </div>
-    <!-- <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
-      <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto" @click.stop>
-        <button class="absolute top-4 right-4 text-gray-600 text-xl font-bold hover:text-gray-800"
-          @click="handleSidebarClose">
-          ✕
-        </button>
-        <div class="mt-8">
-          Use MobileNav instead of MainNav
-          <MobileNav />
-        </div>
-      </div> 
-  </div>-->
   </div>
 </template>
 
@@ -114,29 +115,14 @@ import Translation from "~/assets/icons/Translation.vue";
 // const authStore = useAuthStore();
 
 // reactive state
-const { locale, setLocale } = useI18n()
-console.log("locale", locale);
-const isOpen = ref(false)
-const langDir = ref(locale.value == "en" ? "ltr" : "rtl");
-
+const { locale, localeProperties, locales, setLocale } = useI18n()
+console.log("locales", locales);
+const isOpen = ref(false);
 const hideReminder = ref(false);
 const isSticky = ref(false);
 const showSidebar = ref(false);
-// Watch for locale changes and update document
-// watch(locale, (newLocale) => {
-//   if (process.client) {
-//     document.documentElement.setAttribute('dir', newLocale === "en" ? "ltr" : "rtl")
-//   }
-// }, { immediate: true })
-const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
 
-// // Use Nuxt's head management (recommended)
-// useHead({
-//   htmlAttrs: {
-//     dir: direction,
-//     lang: locale
-//   }
-// })
+const direction = computed(() => localeProperties.value.dir);
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
@@ -161,13 +147,6 @@ const handleSidebarClose = () => {
 const handleReminder = () => {
   hideReminder.value = !hideReminder.value;
 };
-
-// Language switching temporarily disabled
-
-// Temporarily disable auth store to isolate the issue
-// const getUser = async () => {
-//   await authStore.verifyUser();
-// };
 
 // lifecycle hooks
 onMounted(async () => {
@@ -198,21 +177,13 @@ watchEffect(() => {
 });
 
 
-function changeLocale(locale: "en" | "ar") {
+function changeLocale(locale: "en" | "ar" | "ru") {
   setLocale(locale)
   isOpen.value = false
 }
 </script>
 
 <style scoped>
-/* [dir="rtl"] .header-area {
-  direction: rtl;
-}
-
-[dir="ltr"] .header-area {
-  direction: ltr;
-} */
-
 /* Custom transitions for mobile menu */
 .max-h-0 {
   max-height: 0;

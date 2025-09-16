@@ -2,10 +2,15 @@
 import { ref, computed, onMounted } from "vue";
 import en from "@/constant/data(en).json";
 import ar from "@/constant/data(ar).json";
+import ru from "@/constant/data(ru).json";
 
-const { locale } = useI18n()  // Same global state!
+// Get locale
+const { locale, localeProperties } = useI18n()
+
+// Direction
+const direction = computed(() => localeProperties.value.dir)
 // const isRTL = computed(() => locale.value === 'ar')
-const direction = computed(() => locale.value === "en" ? "ltr" : "rtl")
+// const direction = computed(() => locale.value === "en" || locale.value === "ru" ? "ltr" : "rtl")
 // Types
 interface Course {
     id: string;
@@ -36,8 +41,13 @@ const fetchCourseItems = (): void => {
             ...course,
             id: String(course.id),
         }));
-    } else {
+    } else if (locale.value === "ar") {
         courses.value = ar.courses.map((course: any) => ({
+            ...course,
+            id: String(course.id),
+        }));
+    } else {
+        courses.value = ru.courses.map((course: any) => ({
             ...course,
             id: String(course.id),
         }));
@@ -175,7 +185,7 @@ onMounted(() => {
                                         class="inline-block  px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
                                         <NuxtLink to="/course">{{
                                             item.category.join(", ")
-                                        }}</NuxtLink>
+                                            }}</NuxtLink>
                                     </span>
                                 </div>
 
@@ -272,9 +282,9 @@ onMounted(() => {
     text-align: left;
 }
 
-[dir="ltr"] .course-content {
+/* [dir="ltr"] .course-content {
     text-align: left;
-}
+} */
 
 [dir="ltr"] .course-card .actions {
     flex-direction: row;

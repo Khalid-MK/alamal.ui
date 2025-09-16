@@ -15,8 +15,9 @@ export default defineNuxtConfig({
         strategy: 'prefix_except_default', // /en/home, /ar/home
         defaultLocale: 'en',
         locales: [
-          { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
-          { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية' }
+          { code: 'en', iso: 'en-US', file: 'en.json', name: 'English', dir: 'ltr' },
+          { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' },
+          { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский', dir: 'ltr' },
         ],
         lazy: true, // load translations only when needed
         langDir: 'locales/', // store files in /locales

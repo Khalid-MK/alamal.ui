@@ -11,11 +11,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // Get locale
-const { locale } = useI18n()
+const { locale, localeProperties } = useI18n()
 
 // Direction
-const direction = computed(() => (locale.value === "en" ? "ltr" : "rtl"))
-
+const direction = computed(() => localeProperties.value.dir)
 // English highlights
 const highlightsEn = [
     "We believe deeply in our mission and our responsibility to our students.",
@@ -37,10 +36,19 @@ const highlightsAr = [
     "نضمن طرق دفع بسيطة وآمنة.",
     "نوفر مجموعة واسعة من الدورات بأسعار مناسبة للجميع.",
 ]
+const highlightsRu = [
+    "Мы глубоко верим в нашу миссию и ответственность перед нашими студентами.",
+    "Мы предлагаем высококачественный контент, преподаваемый лучшими учителями — носителями языка и хафизами Корана.",
+    "Мы предоставляем гибкие возможности обучения в любое время и из любой точки мира.",
+    "Мы легко связываемся со студентами онлайн, без необходимости в поездках.",
+    "Мы предлагаем разнообразные учебные программы и направления, подходящие для всех уровней.",
+    "Мы гарантируем простые и безопасные способы оплаты.",
+    "Мы предоставляем широкий спектр курсов по доступным ценам для всех.",
+]
 
 // Use correct array based on locale
 const highlights = computed(() =>
-    locale.value === "en" ? highlightsEn : highlightsAr
+    locale.value === "en" ? highlightsEn : locale.value === "ru" ? highlightsRu : highlightsAr
 )
 
 // Section class
@@ -64,12 +72,12 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                                 class="w-12 h-12 opacity-70">
                         </div>
 
-                        <div class="absolute -bottom-4 -left-8 z-10">
+                        <div class="absolute -bottom-4  left-8 z-10">
                             <img src="/img/shape/student-shape-04.png" alt="Decorative shape"
                                 class="w-16 h-16 opacity-60">
                         </div>
 
-                        <div class="absolute top-1/4 -left-12 z-10">
+                        <div class="absolute top-1/4 left-12 z-10">
                             <img src="/img/shape/student-shape-05.png" alt="Decorative shape"
                                 class="w-10 h-10 opacity-50">
                         </div>
@@ -108,12 +116,16 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                         <!-- Title -->
                         <div class="mb-8">
                             <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                                {{ direction === "ltr" ? "isWhat is the most important thing that" : "ما هو أهم شيء" }}
+                                {{ locale === "en" ? "What is the most important thing that" : locale === "ru" ? `Что
+                                является самой важной вещью, `: `ما هو
+                                أهم شيء` }}
                                 <span class="down-mark-line-2">
-                                    {{ direction === "ltr" ? " makes us unique" : " يجعلنا مميزين" }}
+                                    {{ locale === "en" ? ` makes us unique` : locale === "ru" ? `которая делает нас
+                                    уникальными, ` : ` يجعلنا مميزين` }}
                                     <!-- <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span> -->
                                 </span>
-                                {{ direction === "ltr" ? " and why you choose us and join?" : `ولماذا تختارنا وتنضم
+                                {{ locale === "en" ? " and why you choose us and join?" : locale === "ru" ? `и почему вы
+                                выбираете нас и присоединяетесь?` : `ولماذا تختارنا وتنضم
                                 إلينا؟` }}
                             </h2>
                         </div>
@@ -121,12 +133,19 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                         <!-- Content Description -->
                         <div class="mb-6">
                             <p class="text-sm text-gray-700 font-medium">
-                                {{ direction === "ltr" ? ` - Learning the Qur'an, teaching it, explaining it to people,
+                                {{ locale === "en" ? `- Learning the Qur'an, teaching it, explaining it to people,
                                 facilitating their
                                 recitation, and correcting their pronunciations are among the best and most noble deeds
                                 by which a Muslim draws closer to God. Learning the Arabic language chosen by God for
                                 His Book is among the most noble and greatest of sciences, especially for non-native
-                                speakers. Therefore, we`:`- تعلم القرآن وتعليمه وشرحه للناس وتيسير تلاوته وتصحيح نطقه من
+                                speakers. Therefore, we`: locale === "ru" ? `- Изучение Корана, его преподавание, разъяснение
+                                людям, облегчение их чтения и исправление произношения — это одни из лучших и самых
+                                благородных дел, посредством которых мусульманин приближается к Богу. Изучение арабского
+                                языка, который Бог избрал для Своей Книги, является одной из самых благородных и великих
+                                наук, особенно для тех, для кого он не является родным. Поэтому мы стремимся
+                                предоставлять возможности обучения, которые помогут каждому приблизиться к этим
+                                знаниям.`: `- تعلم القرآن وتعليمه وشرحه للناس وتيسير تلاوته وتصحيح نطقه
+                                من
                                 أفضل وأشرف الأعمال التي يتقرب بها المسلم إلى الله. وتعلم اللغة العربية التي اختارها الله
                                 لكتابه من أشرف وأعظم العلوم، خاصة لغير الناطقين بها. لذلك نحن`}}
                             </p>
@@ -135,7 +154,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                         <!-- Feature List -->
                         <div class="mb-8">
                             <ul class="space-y-4">
-                                <li v-for="value in highlights" class="flex items-start space-x-3">
+                                <li v-for="value in highlights" class="flex items-center gap-1 space-x-3">
                                     <div class="flex-shrink-0 mt-1">
                                         <i class="fas fa-check-circle text-green-500 text-xl"></i>
                                     </div>
