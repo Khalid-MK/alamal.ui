@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
 import { computed, ref } from "vue"
-
+import data from "@/constant/highlights.json"
 // Props
 interface Props {
     studentSpace?: string
@@ -15,42 +15,12 @@ const { locale, localeProperties } = useI18n()
 
 // Direction
 const direction = computed(() => localeProperties.value.dir)
+const currentLocale = computed(() => locale.value)
 // English highlights
-const highlightsEn = [
-    "We believe deeply in our mission and our responsibility to our students.",
-    "We deliver high-quality content taught by the best teachers — native speakers and Quran memorizers.",
-    "We provide flexible learning opportunities, anytime and anywhere in the world.",
-    "We connect with students easily online, without the hassle of travel.",
-    "We offer a variety of curricula and learning paths to suit all levels.",
-    "We ensure simple and secure payment methods.",
-    "We provide a wide range of courses at affordable prices, accessible to everyone.",
-]
-
-// Arabic highlights
-const highlightsAr = [
-    "نؤمن بعمق برسالتنا ومسؤوليتنا تجاه طلابنا.",
-    "نقدم محتوى عالي الجودة يدرسه أفضل المعلمين — من الناطقين الأصليين وحفظة القرآن.",
-    "نوفر فرص تعلم مرنة في أي وقت ومن أي مكان في العالم.",
-    "نتواصل مع الطلاب بسهولة عبر الإنترنت دون عناء السفر.",
-    "نقدم مجموعة متنوعة من المناهج والمسارات التعليمية لتناسب جميع المستويات.",
-    "نضمن طرق دفع بسيطة وآمنة.",
-    "نوفر مجموعة واسعة من الدورات بأسعار مناسبة للجميع.",
-]
-const highlightsRu = [
-    "Мы глубоко верим в нашу миссию и ответственность перед нашими студентами.",
-    "Мы предлагаем высококачественный контент, преподаваемый лучшими учителями — носителями языка и хафизами Корана.",
-    "Мы предоставляем гибкие возможности обучения в любое время и из любой точки мира.",
-    "Мы легко связываемся со студентами онлайн, без необходимости в поездках.",
-    "Мы предлагаем разнообразные учебные программы и направления, подходящие для всех уровней.",
-    "Мы гарантируем простые и безопасные способы оплаты.",
-    "Мы предоставляем широкий спектр курсов по доступным ценам для всех.",
-]
 
 // Use correct array based on locale
-const highlights = computed(() =>
-    locale.value === "en" ? highlightsEn : locale.value === "ru" ? highlightsRu : highlightsAr
-)
-
+const highlights = data.highlights.map((item: any) => ({ highlight: item[currentLocale.value], id: item.id }))
+const Description = data.description[currentLocale.value]
 // Section class
 const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
 </script>
@@ -105,7 +75,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                     <div class="relative">
                         <div class="w-1 h-32 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full"></div>
                         <div
-                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full">
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full">
                         </div>
                     </div>
                 </div>
@@ -121,7 +91,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                                 أهم شيء` }}
                                 <span class="down-mark-line-2">
                                     {{ locale === "en" ? ` makes us unique` : locale === "ru" ? `которая делает нас
-                                    уникальными, ` : ` يجعلنا مميزين` }}
+                                    уникальными ` : ` يجعلنا مميزين` }}
                                     <!-- <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span> -->
                                 </span>
                                 {{ locale === "en" ? " and why you choose us and join?" : locale === "ru" ? `и почему вы
@@ -133,33 +103,20 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                         <!-- Content Description -->
                         <div class="mb-6">
                             <p class="text-sm text-gray-700 font-medium">
-                                {{ locale === "en" ? `- Learning the Qur'an, teaching it, explaining it to people,
-                                facilitating their
-                                recitation, and correcting their pronunciations are among the best and most noble deeds
-                                by which a Muslim draws closer to God. Learning the Arabic language chosen by God for
-                                His Book is among the most noble and greatest of sciences, especially for non-native
-                                speakers. Therefore, we`: locale === "ru" ? `- Изучение Корана, его преподавание, разъяснение
-                                людям, облегчение их чтения и исправление произношения — это одни из лучших и самых
-                                благородных дел, посредством которых мусульманин приближается к Богу. Изучение арабского
-                                языка, который Бог избрал для Своей Книги, является одной из самых благородных и великих
-                                наук, особенно для тех, для кого он не является родным. Поэтому мы стремимся
-                                предоставлять возможности обучения, которые помогут каждому приблизиться к этим
-                                знаниям.`: `- تعلم القرآن وتعليمه وشرحه للناس وتيسير تلاوته وتصحيح نطقه
-                                من
-                                أفضل وأشرف الأعمال التي يتقرب بها المسلم إلى الله. وتعلم اللغة العربية التي اختارها الله
-                                لكتابه من أشرف وأعظم العلوم، خاصة لغير الناطقين بها. لذلك نحن`}}
+                                {{ `- ${Description}` }}
                             </p>
                         </div>
 
                         <!-- Feature List -->
                         <div class="mb-8">
                             <ul class="space-y-4">
-                                <li v-for="value in highlights" class="flex items-center gap-1 space-x-3">
+                                <li v-for="value in highlights" :key="value.id"
+                                    class="flex items-center gap-1 space-x-3">
                                     <div class="flex-shrink-0 mt-1">
                                         <i class="fas fa-check-circle text-green-500 text-xl"></i>
                                     </div>
                                     <span class="text-gray-700 text-sm leading-relaxed">
-                                        {{ value }} </span>
+                                        {{ value.highlight }} </span>
                                 </li>
                             </ul>
                         </div>
@@ -167,7 +124,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                         <!-- Call to Action Button -->
                         <div class="pt-4">
                             <NuxtLink to="/about"
-                                class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                                class="inline-flex items-center px-8 py-4 bg-primary hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
                                 {{ $t("knowMore") }}
                                 <i class="fas fa-arrow-right ms-2"></i>
                             </NuxtLink>

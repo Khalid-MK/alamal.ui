@@ -99,7 +99,7 @@
                 <!-- Auth -->
                 <div class="flex gap-4" :class="{ 'flex-col': locale === 'ru' }">
                     <NuxtLink to="/signin" class="text-gray-700 hover:text-blue-600">{{ $t("SignIn") }}</NuxtLink>
-                    <NuxtLink to="/signup" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700">
+                    <NuxtLink to="/signup" class="bg-primary text-white px-3 py-1 rounded-md hover:bg-blue-700">
                         {{ $t("SignUp") }}
                     </NuxtLink>
                 </div>

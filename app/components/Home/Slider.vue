@@ -87,11 +87,11 @@ onMounted(() => {
                 <div class="verse-image-container">
                   <img src="/img/home-slider/home-05.png" alt="" />
                 </div>
-                <ul class="text-container">
+                <ul class="text-container text-secondary">
                   <li class="title">{{ $t(slide.title) }}</li>
                   <li class="subtitle">{{ $t(slide.subtitle) }}</li>
                   <!-- <li class="button"> -->
-                  <button class="free-trial-btn edu-btn" style="width: fit-content">
+                  <button class="free-trial-btn edu-btn hover:text-secondary-hover bg-primary hover:bg-primary-hover" style="width: fit-content">
                     {{ $t(slide.buttonText) }}
                   </button>
                   <!-- </li> -->
@@ -168,7 +168,7 @@ swiper-slide {
   width: 80%;
   gap: 1rem;
   font-size: 20px;
-  color: navy;
+  /* color: navy; */
 }
 
 .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
@@ -198,21 +198,21 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #2467EC;
+  /* color: #ffffff;
+  background-color: #2467EC; */
   padding: 0 40px;
   border-radius: 4px;
   transition: all 0.3s ease-out 0s;
   border: 1px solid transparent;
 }
-
+/* 
 .edu-btn:hover {
-  background-color: #FFB013;
+   background-color: #FFB013; 
   color: #141517;
-}
+} */
 
 .edu-btn:focus {
-  color: #ffffff;
+  /* color: #ffffff; */
   border: 1px solid transparent;
 }
 
@@ -231,7 +231,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
     font-weight: 600;
     height: 30px;
     color: #ffffff;
-    background-color: #2467EC;
+    /* background-color: #2467EC; */
     padding: 0 20px;
     border-radius: 4px;
     transition: all 0.3s ease-out 0s;

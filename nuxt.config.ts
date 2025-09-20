@@ -4,11 +4,12 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  devServer: {
-    port: 5174
-  },
+  // devServer: {
+  //   port: 5174
+  // },
   modules: [
     "@nuxtjs/tailwindcss",
+    // '@nuxt/ui',
     [
       '@nuxtjs/i18n',
       {
@@ -41,31 +42,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // ssr: false,
-  // i18n: {
-  //   /* module options */
-  //   // lazy: true,
-  //   langDir: "i18n",
-  //   strategy: "no_prefix",
-  //   locales: [
-  //     {
-  //       code: "ar",
-  //       iso: "ar",
-  //       dir: "rtl",
-  //       name: "Arabic",
-  //       file: "ar.json",
-  //     },
-  //     {
-  //       code: "en",
-  //       iso: "en",
-  //       dir: "ltr",
-  //       name: "English",
-  //       file: "en.json",
-  //     },
-  //   ],
-  //   defaultLocale: "en",
-  //   defaultDirection: "ltr",
-  // },
-
-
 });

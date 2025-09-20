@@ -118,7 +118,7 @@ onMounted(() => {
                             <button
                                 class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 :class="{
-                                    'bg-blue-600 text-white hover:bg-blue-700':
+                                    'bg-primary text-white hover:bg-primary-hover':
                                         selectedCategory === 'All',
                                     'bg-gray-200 text-gray-700': selectedCategory !== 'All',
                                 }" @click="setCategory('All')">
@@ -129,7 +129,7 @@ onMounted(() => {
                             <button
                                 class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 :class="{
-                                    'bg-blue-600 text-white hover:bg-blue-700':
+                                    'bg-primary text-white hover:bg-primary-hover':
                                         selectedCategory === 'Quraan',
                                     'bg-gray-200 text-gray-700': selectedCategory !== 'Quraan',
                                 }" @click="setCategory('Quraan')">
@@ -140,7 +140,7 @@ onMounted(() => {
                             <button
                                 class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 :class="{
-                                    'bg-blue-600 text-white hover:bg-blue-700':
+                                    'bg-primary text-white hover:bg-primary-hover':
                                         selectedCategory === 'Tajweed',
                                     'bg-gray-200 text-gray-700': selectedCategory !== 'Tajweed',
                                 }" @click="setCategory('Tajweed')">
@@ -151,7 +151,7 @@ onMounted(() => {
                             <button
                                 class="nav-link px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 :class="{
-                                    'bg-blue-600 text-white hover:bg-blue-700':
+                                    'bg-primary text-white hover:bg-primary-hover':
                                         selectedCategory === 'Arabic',
                                     'bg-gray-200 text-gray-700': selectedCategory !== 'Arabic',
                                 }" @click="setCategory('Arabic')">
@@ -182,7 +182,7 @@ onMounted(() => {
                                 <!-- Category Badge -->
                                 <div class="mb-3">
                                     <span
-                                        class="inline-block  px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
+                                        class="inline-block  px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full">
                                         <NuxtLink to="/course">{{
                                             item.category.join(", ")
                                             }}</NuxtLink>
@@ -211,7 +211,7 @@ onMounted(() => {
                                 <!-- Course Actions -->
                                 <div class="actions  flex items-center justify-between pt-4 border-t border-gray-200">
                                     <NuxtLink :to="`/course-details/${item.id}`"
-                                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
                                         {{ item.viewBtn }}
                                     </NuxtLink>
 
@@ -254,7 +254,7 @@ onMounted(() => {
                 <!-- See More / Show Less Button -->
                 <div class="flex justify-center mt-8">
                     <button v-if="filteredCourses.length >= 5" @click="toggleCourses"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         {{ showAllCourses ? $t("ShowLess") : $t("SeeMore") }}
                     </button>
                 </div>
