@@ -10,7 +10,7 @@
             <Arrow :is-open="isCoursesOpen" />
           </button>
           <ul class="sub-menu">
-            <template v-for="section in courses">
+            <template v-for="section in coursesObj.coursesArray">
               <li v-if="section.departments" :class="isRTL ? 'menu-item-has-children rtl' : 'menu-item-has-children'"
                 :key="section.id">
                 <button class="flex justify-between items-center  text-gray-700">{{ section[locale] }}
@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import courses from "@/constant/courses.json";
+import coursesObj from "@/constant/courses.json";
 import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
 import Arrow from "~/assets/icons/Arrow.vue";

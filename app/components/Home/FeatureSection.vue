@@ -10,7 +10,6 @@ const direction = computed(() => localeProperties.value.dir)
 interface Feature {
     featureTitle: string
     featureIcon: string,
-    featureImg: string
 }
 
 // Props
@@ -29,17 +28,14 @@ const featureList = ref<Feature[]>([
     {
         featureTitle: $t("Learnwithskills"),
         featureIcon: 'flaticon-online-course',
-        featureImg: '/img/fact/online-learning.png',
     },
     {
         featureTitle: $t('EarncertificatesAnddegrees'),
         featureIcon: 'flaticon-certificate',
-        featureImg: "/img/fact/online-certificate.png"
     },
     {
         featureTitle: $t('LearnfromAnywhereAnytime'),
         featureIcon: 'flaticon-laptop',
-        featureImg: "/img/fact/browsing.png"
     }
 ])
 
@@ -60,10 +56,19 @@ const backgroundStyle = computed(() => ({
 <template>
     <div :dir="direction" :class="sectionClass" :style="{ backgroundImage: `url(${featureBg})` }" class="">
         <div class="block w-full justify-between gap-2 px-5 max-md:px-8 sm:px-16 md:flex">
-            <div v-for="value in featureList" class="flex gap-2 items-center">
-                <img :src="value.featureImg" style="color:white" class=" w-20 max-lg:w-16" alt="img" />
+            <div v-for="value in featureList" class="flex gap-4 items-center">
+                <div class="features-icon">
+                    <i :class="value.featureIcon"></i>
+                </div>
+                <!-- <img :src="value.featureImg" style="color:white" class=" w-20 max-lg:w-16" alt="img" /> -->
                 <h3 class="text-lg sm:text-xl font-semibold text-white leading-tight"> {{ value.featureTitle }}</h3>
             </div>
         </div>
     </div>
 </template>
+<style lang="scss">
+.features-icon {
+    font-size: 55px;
+    color: white;
+}
+</style>
