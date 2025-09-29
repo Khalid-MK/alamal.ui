@@ -9,6 +9,16 @@ export default {
     "./app.vue",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+
+      // custom max-width media query (anything below 1025px)
+      "max-1025": { max: "1025px" },
+    },
     extend: {
       colors: {
         primary: {

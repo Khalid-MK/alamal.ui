@@ -1,31 +1,59 @@
 <script setup lang="ts">
-import { availableThemes } from "@/composables/useTheme"
-const { theme, setTheme } = useTheme();
+import { useTheme } from "vuetify";
 
-const selectedTheme = ref("default");
+const items = ["default", "green", "red", "dark"];
+const value = ref("default");
+
+const vuetifyTheme = useTheme();
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem("theme") || "default";
+  value.value = savedTheme;
+  applyTheme(savedTheme);
+});
+
+function applyTheme(themeName: string) {
+  const vuetifyMap = {
+    default: "myDefault",
+    green: "green",
+    red: "red",
+    dark: "dark",
+  };
+
+  // Tailwind
+  document.documentElement.classList.remove(
+    "theme-default",
+    "theme-green",
+    "theme-red",
+    "theme-dark"
+  );
+  document.documentElement.classList.add(`theme-${themeName}`);
+
+  // Vuetify
+  if (themeName in vuetifyMap) {
+    vuetifyTheme.global.name.value =
+      vuetifyMap[themeName as keyof typeof vuetifyMap];
+  } else {
+    vuetifyTheme.global.name.value = vuetifyMap.default;
+  }
+
+  // Save
+  localStorage.setItem("theme", themeName);
+}
+function switchTheme(newValue: string) {
+  applyTheme(newValue);
+}
 </script>
 
 <template>
-    <div class="flex">
-        <select v-model="selectedTheme" @change="setTheme(selectedTheme)" class="px-3 py-2 border rounded">
-            <option v-for="theme in availableThemes" :key="theme" :value="theme">
-                {{ theme }}
-            </option>
-        </select>
-    </div>
-
-    <!-- <div class="space-y-4">
-       
-        <button
-            class="px-4 py-2 rounded bg-primary text-secondary hover:bg-primary-700 hover:text-secondary-700 duration-300">
-            Themed Button
-        </button>
-
-     
-        <div class="p-4 bg-primary text-secondary rounded hover:text-secondary-700 duration-300">
-            Current theme: <b>{{ theme }}</b>
-        </div>
-    </div> -->
-
-
+  <div class="flex">
+    <v-select
+      v-model="value"
+      :items="items"
+      label="Choose theme"
+      variant="outlined"
+      class="w-64"
+      @update:modelValue="switchTheme"
+    />
+  </div>
 </template>

@@ -29,7 +29,7 @@
             </NuxtLink>
             <!-- Desktop Menu -->
             <div class="hidden md:block">
-              <MainNav />
+              <CommonMainNav2 />
             </div>
           </div>
 
@@ -64,7 +64,7 @@
                 </li>
               </ul>
             </div> -->
-            <ThemeSwitcher />
+            <!-- <ThemeSwitcher /> -->
 
             <!-- Auth -->
             <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
