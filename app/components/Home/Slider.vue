@@ -1,68 +1,30 @@
 <script setup lang="ts">
 const slides = [
   {
-    id: 'quraan',
-    image: '/img/new_cover_quran.png',
-    title: 'QuranCourses',
-    subtitle: 'HomeSlider2Subtitle',
-    buttonText: 'Slide2Button'
+    id: "quraan",
+    image: "/img/new_cover_quran.png",
+    title: "QuranCourses",
+    subtitle: "HomeSlider2Subtitle",
+    buttonText: "Slide2Button",
   },
   {
-    id: 'tjweed',
-    image: '/img/new_cover_tajweed.png',
-    title: 'TajweedCourses',
-    subtitle: 'HomeSlider3Subtitle',
-    buttonText: 'Slide3Button'
+    id: "tjweed",
+    image: "/img/new_cover_tajweed.png",
+    title: "TajweedCourses",
+    subtitle: "HomeSlider3Subtitle",
+    buttonText: "Slide3Button",
   },
   {
-    id: 'arabic',
-    image: '/img/new_cover_arabic.png',
-    title: 'QuranCourses',
-    subtitle: 'HomeSlider4Subtitle',
-    buttonText: 'Slide4Button'
-  }
+    id: "arabic",
+    image: "/img/new_cover_arabic.png",
+    title: "QuranCourses",
+    subtitle: "HomeSlider4Subtitle",
+    buttonText: "Slide4Button",
+  },
 ];
-// const slides = [
-//   {
-//     id: "quraan",
-//     image: "/img/new_cover_quran.png",
-//     title: "Quran Courses",
-//     subtitle: "Understand the Holy Quran",
-//     buttonText: "Know More",
-//   },
-//   {
-//     id: "tjweed",
-//     image: "/img/new_cover_tajweed.png",
-//     title: "Tajweed Courses",
-//     subtitle: "Master Tajweed rules",
-//     buttonText: "Know More",
-//   },
-//   {
-//     id: "arabic",
-//     image: "/img/new_cover_arabic.png",
-//     title: "Quran Courses",
-//     subtitle: "Memorize Quran with meaning",
-//     buttonText: "Know More",
-//   },
-// ];
 const containerRef = ref(null);
-// const slides = ref([1, 2, 3, 4]);
 const swiper = useSwiper(containerRef, {
   effect: "slide",
-  // loop: true,
-  // autoplay: {
-  //   delay: 3000,
-  // },
-  //   creativeEffect: {
-  //     prev: {
-  //       shadow: true,
-  //       translate: [0, 0, -400],
-  //     },
-  //     next: {
-  //       shadow: true,
-  //       translate: [0, 0, -400],
-  //     },
-  //   },
 });
 
 onMounted(() => {
@@ -73,11 +35,8 @@ onMounted(() => {
 <template>
   <ClientOnly>
     <div class="home-slider">
-
       <swiper-container ref="containerRef" :init="false">
-        <swiper-slide v-for="(slide, idx) in slides" :key="idx"
-          style="background-color: rgb(32, 233, 70); color: white">
-          <!-- Slide {{ idx + 1 }} -->
+        <swiper-slide v-for="(slide, idx) in slides" :key="idx">
           <div class="slider-content-wrapper">
             <div class="slider-content-container">
               <div class="background-image-container">
@@ -91,10 +50,11 @@ onMounted(() => {
                   <li class="title">{{ $t(slide.title) }}</li>
                   <li class="subtitle">{{ $t(slide.subtitle) }}</li>
                   <!-- <li class="button"> -->
-                  <button class="free-trial-btn edu-btn hover:text-secondary-hover bg-primary hover:bg-primary-hover" style="width: fit-content">
+                  <button class="edu-btn rounded-[4px] hover:text-secondary-hover bg-primary hover:bg-primary-hover"
+                    style="width: fit-content">
                     {{ $t(slide.buttonText) }}
                   </button>
-                  <!-- </li> -->
+
                 </ul>
               </div>
             </div>
@@ -117,7 +77,6 @@ swiper-slide {
   justify-content: center;
   align-items: center; */
 }
-
 
 .home-slider .slider-content-wrapper {
   height: 60%;
@@ -168,7 +127,6 @@ swiper-slide {
   width: 80%;
   gap: 1rem;
   font-size: 20px;
-  /* color: navy; */
 }
 
 .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
@@ -178,11 +136,6 @@ swiper-slide {
 
 .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .button {
   align-self: flex-end;
-}
-
-.free-trial-btn {
-  border-radius: 0 !important;
-  font-size: 20px;
 }
 
 @media (max-width: 575px),
@@ -201,10 +154,11 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   /* color: #ffffff;
   background-color: #2467EC; */
   padding: 0 40px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   transition: all 0.3s ease-out 0s;
   border: 1px solid transparent;
 }
+
 /* 
 .edu-btn:hover {
    background-color: #FFB013; 
@@ -216,7 +170,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   border: 1px solid transparent;
 }
 
-@media (max-width:576px) {
+@media (max-width: 576px) {
   .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
     font-size: 15px;
   }
@@ -233,17 +187,15 @@ only screen and (min-width: 576px) and (max-width: 767px) {
     color: #ffffff;
     /* background-color: #2467EC; */
     padding: 0 20px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     transition: all 0.3s ease-out 0s;
     border: 1px solid transparent;
   }
 }
 
-@media (max-width:373px) {
+@media (max-width: 373px) {
   .edu-btn {
-
     height: 20px;
-
   }
 
   .home-slider .slider-content-wrapper .slider-content-container .verse-text-container .text-container .title {
@@ -254,6 +206,5 @@ only screen and (min-width: 576px) and (max-width: 767px) {
     gap: 0.3rem;
     font-size: 9px;
   }
-
 }
 </style>

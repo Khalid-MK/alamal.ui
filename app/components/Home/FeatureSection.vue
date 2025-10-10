@@ -55,7 +55,7 @@ const backgroundStyle = computed(() => ({
 
 <template>
     <div :dir="direction" :class="sectionClass" :style="{ backgroundImage: `url(${featureBg})` }" class="">
-        <div class="block w-full justify-between gap-2 px-5 max-md:px-8 sm:px-16 md:flex">
+        <div class="block w-full justify-between gap-2  max-md:px-8  md:flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div v-for="value in featureList" class="flex gap-4 items-center">
                 <div class="features-icon">
                     <i :class="value.featureIcon"></i>

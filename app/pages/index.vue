@@ -1,7 +1,10 @@
 <template>
-  <HomeSlider />
-  <HomeHowSiteWork />
+  <HomeSliderNew />
+  <HomeAbout />
   <HomeCourseList />
+  <HomeSubscribeSteps />
+  <HomeHowSiteWork />
+  <HomeEvents />
   <HomeFeatureSection />
   <HomeAboutSection />
 </template>

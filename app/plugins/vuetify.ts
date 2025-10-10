@@ -2,59 +2,75 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import type { ThemeDefinition } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import '@mdi/font/css/materialdesignicons.css'
+// import 'vuetify/styles'
+
 
 const greenTheme: ThemeDefinition = {
-    dark: false,
-    colors: {
-        primary: '#22c55e',
-        secondary: '#16a34a',
-    },
+  dark: false,
+  colors: {
+    primary: '#22c55e',
+    secondary: '#16a34a',
+    'on-primary': '#ffffff',
+    'on-secondary': '#ffffff',
+  },
 }
 
 const redTheme: ThemeDefinition = {
-    dark: false,
-    colors: {
-        primary: '#ef4444',
-        secondary: '#dc2626',
-    },
+  dark: false,
+  colors: {
+    primary: '#ef4444',
+    secondary: '#dc2626',
+    'on-primary': '#ffffff',
+    'on-secondary': '#ffffff',
+  },
 }
 
 const darkTheme: ThemeDefinition = {
-    dark: true,
-    colors: {
-        primary: '#0f172a',
-        secondary: '#334155',
-    },
+  dark: true,
+  colors: {
+    primary: '#0f172a',
+    secondary: '#334155',
+    'on-primary': '#ffffff',
+    'on-secondary': '#ffffff',
+  },
 }
+//default
 const defaultTheme: ThemeDefinition = {
-    dark: false,
-    colors: {
-        primary: '#2563eb',
-        secondary: '#ffffff',
-    },
+  dark: false,
+  colors: {
+    primary: '#2563eb',
+    secondary: '#000000',
+    'on-primary': '#ffffff',
+    'on-secondary': '#ffffff',
+  },
 }
-//
-// :root {
-//   --color-primary: #2563eb; /* blue-600 */
-//   --color-primary-hover: #1d4ed8; /* blue-700 */
-//   --color-secondary: #ffffff;
-//   --color-secondary-hover: #2563eb;
-// }
 
 export default defineNuxtPlugin((nuxtApp) => {
-    const vuetify = createVuetify({
-        components,
-        directives,
-        theme: {
-            defaultTheme: 'myDefault', // fallback
-            themes: {
-                myDefault: defaultTheme, 
-                green: greenTheme,
-                red: redTheme,
-                dark: darkTheme,
-            },
-        },
-    })
+  const vuetify = createVuetify({
+    icons: {
+      defaultSet: 'mdi',
+      aliases,
+      sets: { mdi },
+    },
+    components,
+    directives,
+    theme: {
+      defaultTheme: 'myDefault',
+      themes: {
+        myDefault: defaultTheme,
+        green: greenTheme,
+        red: redTheme,
+        dark: darkTheme,
+      },
+      variations: {
+        colors: ['primary', 'secondary'],
+        lighten: 5,
+        darken: 5,
+      },
+    },
+  })
 
-    nuxtApp.vueApp.use(vuetify)
+  nuxtApp.vueApp.use(vuetify)
 })

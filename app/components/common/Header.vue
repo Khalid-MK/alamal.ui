@@ -3,10 +3,11 @@
     <header>
       <!-- Reminder bar -->
       <div v-if="!hideReminder" class="hidden md:block bg-primary text-white py-2 px-5">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex justify-between gap-2 items-center">
           <NuxtLink class="px-4 py-1 bg-white text-blue-600 rounded-md text-sm font-medium" to="/course-details">
             {{ $t("JoinFreeTrialLessons") }}
           </NuxtLink>
+          <NewsTicker :news="headlines" />
           <div class="flex gap-3">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -29,7 +30,7 @@
             </NuxtLink>
             <!-- Desktop Menu -->
             <div class="hidden md:block">
-              <CommonMainNav2 />
+              <CommonMainNav />
             </div>
           </div>
 
@@ -123,7 +124,12 @@ const isSticky = ref(false);
 const showSidebar = ref(false);
 
 const direction = computed(() => localeProperties.value.dir);
-
+const headlines = [
+  "Breaking: Ramadan starts next week 🌙",
+  "New Quran Tajweed course available online 📖",
+  "Special discount for Hifz classes 🕌",
+  "Register now for Summer Islamic Camp ☀️",
+];
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
 }

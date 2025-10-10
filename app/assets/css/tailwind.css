@@ -12,31 +12,31 @@ html[lang="en"] {
   direction: ltr;
   text-align: left;
 }
-
-:root {
-  --color-primary: #2563eb; /* blue-600 */
-  --color-primary-hover: #1d4ed8; /* blue-700 */
-  --color-secondary: #ffffff;
+/* 
+::root {
+  --color-primary: #2563eb; 
+  --color-primary-hover: #1d4ed8; 
+  --color-secondary: #000000;
   --color-secondary-hover: #2563eb;
 }
 
 .theme-green {
-  --color-primary: #22c55e; /* green-500 */
-  --color-primary-hover: #15803d; /* green-700 */
+  --color-primary: #22c55e; 
+  --color-primary-hover: #15803d; 
   --color-secondary: #16a34a;
   --color-secondary-hover: #166534;
 }
 
 .theme-red {
-  --color-primary: #ef4444; /* red-500 */
-  --color-primary-hover: #b91c1c; /* red-700 */
+  --color-primary: #ef4444;
+  --color-primary-hover: #b91c1c; 
   --color-secondary: #dc2626;
   --color-secondary-hover: #991b1b;
 }
 
 .theme-dark {
-  --color-primary: #0f172a; /* slate-900 */
-  --color-primary-hover: #1e293b; /* slate-800 */
+  --color-primary: #0f172a; 
+  --color-primary-hover: #1e293b; 
   --color-secondary: #334155;
   --color-secondary-hover: #475569;
-}
+} */

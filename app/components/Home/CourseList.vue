@@ -300,7 +300,7 @@ onMounted(() => {
     position: absolute;
     content: "";
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 100%;
     z-index: -1;
     height: 100%;
