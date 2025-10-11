@@ -1,6 +1,7 @@
 {
   "Home": "الرئيسية",
   "Contact": "تواصل معنا",
+  "AboutUs": "من نحن",
   "JoinFreeTrialLessons": "اشترك في الدروس التجريبية المجانية",
   "More": "المزيد",
   "Guide": "دليل الوصول إلينا",
@@ -8,9 +9,10 @@
   "Sections": "الأقسام",
   "SignIn": "تسجيل الدخول",
   "SignUp": "الاشتراك",
+  "ListenHolyQuran": "استمع إلى القرآن الكريم",
   "QuranCourses": "دورات القراآن الكريم",
   "HomeSlider1Text": " نقدم مجموعة من حلقات تعلم القرآن الكريم، تتنوع بين الحفظ والتصحيح، مع معلمين ومعلمات ذوي كفاءات عالية ويحملون إجازة قراءة وإقراء بسند متصل",
-  "Slide1Button": "تعرف المزيد",
+  "CheckOutMore": "تعرف المزيد",
   "Important": "أهم",
   "CurrentlyAvailable": "المتاحة حاليًا",
   "ArabicLanguague": "اللغة العربية",
@@ -97,5 +99,8 @@
   "Slide3Button": "اعرف المزيد",
   "Slide4Button": "اعرف المزيد",
   "EnrollNow": "سجل الان",
-  "ViewAllCourses": "عرض كل الدورات"
+  "ViewAllCourses": "عرض كل الدورات",
+  "WeProvideBest": "نحن نقدم أفضل  خدمات ",
+  "Education": " التعليم",
+  "ServicesForYou": " لك"
 }

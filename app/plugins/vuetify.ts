@@ -5,7 +5,7 @@ import type { ThemeDefinition } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 // import 'vuetify/styles'
-
+import { ar, en, ru } from 'vuetify/locale'
 
 const greenTheme: ThemeDefinition = {
   dark: false,
@@ -68,6 +68,33 @@ export default defineNuxtPlugin((nuxtApp) => {
         colors: ['primary', 'secondary'],
         lighten: 5,
         darken: 5,
+      },
+    },
+    locale: {
+      locale: 'en',
+      messages: { en, ar, ru },
+      rtl: { ar: true },
+    },
+    defaults: {
+      global: {
+        ripple: false,
+      },
+      VBtn: {
+        ripple: false,
+        elevation: 0,
+        variant: 'flat',
+        rounded: 0,
+        class: 'no-vuetify-style',
+      },
+      VCard: {
+        elevation: 0,
+        rounded: 0,
+        class: 'no-vuetify-style',
+      },
+      VTextField: {
+        variant: 'outlined',
+        color: undefined,
+        class: 'no-vuetify-style',
       },
     },
   })

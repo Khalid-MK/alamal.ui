@@ -12,6 +12,34 @@ html[lang="en"] {
   direction: ltr;
   text-align: left;
 }
+/* This disables the overlay tint effect across all components. */
+:root {
+  --v-theme-overlay-multiplier: 0 !important;
+}
+
+/* تعطيل الترانزيشنات الخاصة بـ Vuetify */
+/* .v-enter-active,
+.v-leave-active,
+.v-expand-transition,
+.v-slide-x-transition,
+.v-slide-y-transition {
+  transition: none !important;
+} */
+
+/* إزالة أي تظليل أو تأثير عند التحويم */
+/* .no-vuetify-style:hover,
+.no-vuetify-style:focus,
+.no-vuetify-style:active {
+  background-color: inherit !important;
+  filter: none !important;
+  box-shadow: none !important;
+} */
+
+/* إلغاء تأثيرات الـ Ripple الافتراضية */
+/* .v-ripple__container {
+  display: none !important;
+} */
+
 /* 
 ::root {
   --color-primary: #2563eb; 

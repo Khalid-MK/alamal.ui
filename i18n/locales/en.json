@@ -1,6 +1,7 @@
 {
   "Home": "Home",
   "Contact": "Contact Us",
+  "AboutUs": "About Us",
   "JoinFreeTrialLessons": "Join Free Trial Lessons",
   "More": "More",
   "Guide": "Guide",
@@ -8,9 +9,10 @@
   "Sections": "Sections",
   "SignIn": "Sign In",
   "SignUp": "Sign Up",
+  "ListenHolyQuran": "Listen Holy Quran",
   "QuranCourses": "Holy Quran Courses",
   "HomeSlider1Text": "lorem ipsum data",
-  "Slide1Button": "Know More",
+  "CheckOutMore": "Check Out More",
   "Important": "Important",
   "CurrentlyAvailable": "Currently Available",
   "ArabicLanguague": "Arabic Languague",
@@ -101,5 +103,8 @@
   "Slide2Button": "Know More",
   "Slide3Button": "Know More",
   "Slide4Button": "Know More",
-  "ViewAllCourses": "View All Courses"
+  "ViewAllCourses": "View All Courses",
+  "WeProvideBest": "We Provide Best ",
+  "Education": "Education",
+  "ServicesForYou": "Services For You"
 }

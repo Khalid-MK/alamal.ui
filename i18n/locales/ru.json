@@ -1,6 +1,7 @@
 {
     "Home": "Главная",
     "Contact": "Связаться с нами",
+    "AboutUs": "О нас",
     "JoinFreeTrialLessons": "Присоединяйтесь к бесплатным пробным урокам",
     "More": "Больше",
     "Guide": "Руководство",
@@ -8,9 +9,10 @@
     "Sections": "Разделы",
     "SignIn": "Войти",
     "SignUp": "Зарегистрироваться",
+    "ListenHolyQuran": "Слушать Священный Коран",
     "QuranCourses": "Курсы по Священному Корану",
     "HomeSlider1Text": "lorem ipsum data",
-    "Slide1Button": "Узнать больше",
+    "CheckOutMore": "Посмотреть больше",
     "Important": "Важное",
     "CurrentlyAvailable": "Доступно сейчас",
     "ArabicLanguague": "Арабский язык",
@@ -101,5 +103,8 @@
     "Slide2Button": "Узнать больше",
     "Slide3Button": "Узнать больше",
     "Slide4Button": "Узнать больше",
-    "ViewAllCourses": "Посмотреть все курсы"
+    "ViewAllCourses": "Посмотреть все курсы",
+    "WeProvideBest": "Мы предоставляем лучшее ",
+    "Education": "Образование",
+    "ServicesForYou": "Услуги для вас"
 }

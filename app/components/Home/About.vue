@@ -4,12 +4,13 @@
             <div class="content-side">
                 <div class="tabs-section">
                     <div class="header-section">
-                        <span class="subtitle">About Us</span>
-                        <h2 class="main-title">We Provide Best <span class="text-green-500">Education</span> Services
-                            For You</h2>
+                        <span class="subtitle">{{ $t("AboutUs") }}</span>
+                        <h2 class="main-title">{{ $t("WeProvideBest") }}<span class="text-[#C5E96B]">{{ $t("Education")
+                                }} </span>
+                            {{ $t("ServicesForYou") }}</h2>
                     </div>
 
-                    <v-tabs v-model="tab" color="primary" align-tabs="start" class="custom-tabs">
+                    <v-tabs v-model="tab" color="#C5E96B" align-tabs="start" class="custom-tabs">
                         <v-tab v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
                             {{ tabItem.title }}
                         </v-tab>
@@ -24,7 +25,7 @@
 
                                 <div class="features-list">
                                     <div v-for="(feature, index) in tabItem.features" :key="index" class="feature-item">
-                                        <v-icon color="success" size="24">mdi-check</v-icon>
+                                        <v-icon color="#C5E96B" size="24">mdi-check</v-icon>
                                         <span class="feature-text">{{ feature }}</span>
                                     </div>
                                 </div>
@@ -35,18 +36,44 @@
             </div>
 
             <div class="image-side">
-                <div class="image-wrapper">
-                    <img loading="lazy" src="/img/courses/tag/course-02.png" alt="About Education" />
+                <div class="images-container">
+                    <div class="primary-image">
+                        <img loading="lazy" src="/img/courses/tag/course-02.png" alt="About Education" />
+                    </div>
+                    <div class="secondary-image">
+                        <img loading="lazy" src="/img/courses/tag/course-02.png" alt="About Education" />
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="statistics-section">
+            <div class="statistic-div" v-for="statistic in statisticsData" :key="statistic.id">
+                <div :style="{ color: statistic.color }" class="value-Stat">{{ statistic.value }}</div>
+                <div class="title-Stat">{{ statistic.title }}</div>
+            </div>
+
+        </div>
     </div>
+
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 
 const tab = ref('vision');
+interface StatisticsData {
+    id: number,
+    value: string,
+    title: string,
+    color: string
+}
+const statisticsData: StatisticsData[] = [
+    { id: 1, title: "Student Enrolled", value: "29.3k", color: "#1AB69D" },
+    { id: 2, title: "Class Completed", value: "32.4k", color: "#EE4A62" },
+    { id: 3, title: "SatisfAction Rate", value: "100%", color: "#8E56FF" },
+    { id: 4, title: "Top Indstructors", value: "354+", color: "#F8941F" }
+
+]
 interface TabData {
     value: string,
     title: string,
@@ -85,6 +112,31 @@ const tabsData: TabData[] = [
 </script>
 
 <style lang="scss" scoped>
+.statistics-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+
+    .statistic-div {
+        width: 200px;
+        height: 150px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .value-Stat {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+}
+
 .about-section {
     width: 100%;
     padding: 60px 0;
@@ -134,10 +186,10 @@ const tabsData: TabData[] = [
 
 .image-side {
     flex: 0 0 auto;
-    width: 390px;
+    width: 450px;
 
     @media (max-width: 1279px) {
-        width: 350px;
+        width: 400px;
     }
 
     @media (max-width: 1023px) {
@@ -145,26 +197,74 @@ const tabsData: TabData[] = [
         max-width: 450px;
     }
 
+    @media (max-width: 767px) {
+        max-width: 350px;
+    }
+
     @media (max-width: 639px) {
         max-width: 100%;
     }
 }
 
-.image-wrapper {
+.images-container {
+    position: relative;
     width: 100%;
+    padding-bottom: 50px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 0;
+    }
+}
+
+
+
+
+img {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: auto;
+    display: block;
+    object-fit: cover;
 
     @media (max-width: 767px) {
         border-radius: 8px;
+        margin: 0 auto;
     }
 
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
+}
+
+.primary-image {
+    position: relative;
+    width: 90%;
+    z-index: 1;
+}
+
+.secondary-image {
+    position: relative;
+    width: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(100%, -40%);
+    z-index: 2;
+
+
+    @media (max-width: 1279px) {
+        transform: translate(60%, -40%);
+
+        width: 65%;
+
+    }
+
+    @media (max-width: 1025px) {
+        transform: translate(80%, -40%);
+
+        width: 60%;
+    }
+
+    @media (max-width: 767px) {
+        display: none;
     }
 }
 
@@ -265,33 +365,6 @@ const tabsData: TabData[] = [
         border-radius: 3px;
     }
 }
-
-/* .custom-tab {
-    transition: all 0.2s ease;
-    color: #eb9f25 !important;
-    background-color: transparent !important;
-    border: 2px solid transparent !important; // Default: no border
-    border-radius: 8px; // Optional: rounded corners
-
-    // Non-selected tab hover - add border
-    &:not(.v-tab--selected):hover {
-        border-color: #eb9f25 !important;
-    }
-
-    // Selected state - solid border
-    &.v-tab--selected {
-        color: #eb9f25 !important;
-        background-color: transparent !important;
-        border-color: #eb9f25 !important;
-        border-bottom: 3px solid #eb9f25 !important; // Thicker bottom border for selected
-    }
-
-    // Selected state hover
-    &.v-tab--selected:hover {
-        background-color: rgba(235, 159, 37, 0.05) !important; // Optional: subtle bg
-        border-color: #eb9f25 !important;
-    }
-} */
 
 .tabs-content {
     padding: 20px 0;

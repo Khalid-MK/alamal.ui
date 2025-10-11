@@ -1,5 +1,5 @@
 <template>
-    <div class="slider-six">
+    <div :dir="direction" class="slider-six">
         <div class="slider-six__mosque"
             style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/mosque-1.png')">
         </div>
@@ -14,15 +14,14 @@
             style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/vector-9.png')">
         </div>
         <div class="slider-six_shadow"
-            style="background-image:url(https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-1.png)">
+            style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-1.png')">
         </div>
         <div class="slider-six_shadow-two"
-            style="background-image:url(https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-2.png)">
+            style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-2.png')">
         </div>
         <div class="slider-six_shadow-three"
-            style="background-image:url(https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-3.png)">
+            style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-3.png')">
         </div>
-
         <swiper-container ref="containerRef" class="swiperContainer" :init="false">
             <swiper-slide class="slide-content" v-for="(slide, idx) in slides" :key="idx">
                 <div class="content-wrapper">
@@ -30,55 +29,46 @@
                         <h1 class="slider-six_title">
                             {{ slide.title }}
                         </h1>
+
                         <div class="slider-six_text">
                             <span class="text-icon">
                                 <img decoding="async"
                                     src="https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/slider-img.png"
-                                    alt="Alquran">
+                                    alt="Alquran" />
                             </span>
                             <p>{{ slide.desc }}</p>
                         </div>
+
                         <div class="slider-six_button">
-                            <a href="#" target="_blank" rel="nofollow" class="alquran-btn">
-                                <img decoding="async"
-                                    src="https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/slider-five_btn.png"
-                                    alt="Alquran">
-                            </a>
+                            <v-btn class="alquran-btn" color="#C5E96B">{{ $t("CheckOutMore") }}</v-btn>
                         </div>
                     </div>
 
                     <div class="slider-six_images-column">
                         <div class="slider-six_images-outer">
                             <div class="image">
-                                <img decoding="async" :src="slide.imgSrc" alt="Alquran">
+                                <img decoding="async" :src="slide.imgSrc" alt="Alquran" />
                             </div>
                         </div>
                     </div>
                 </div>
             </swiper-slide>
         </swiper-container>
+        <AudioPlayer />
     </div>
 </template>
 
 <script setup lang="ts">
-const slides = [{
-    id: 1,
-    title: "Connecting Hearts to the House of Allah",
-    desc: "Interactive, Authentic, and Flexible Islamic Learning from Qualified Scholars. Explore Quran, Hadith, Fiqh",
-    imgSrc: "https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/image-7.png"
-}, {
-    id: 2,
-    title: "Empowering the Next Generation of Believers",
-    desc: "Gain knowledge rooted in faith with accessible, engaging, and structured Islamic courses for all ages.",
-    imgSrc: "https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/image-8.png"
-},
-{
-    id: 3,
-    title: "Your Journey of Faith and Knowledge Begins Here",
-    desc: "Join our community to learn, grow, and connect with scholars dedicated to teaching authentic Islamic principles.",
-    imgSrc: "https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/image-9.png"
-}]
+import slidesData from "@/constant/AboutUs";
+import AudioPlayer from "../AudioPlayer.vue";
 
+// Get locale
+const { locale, localeProperties } = useI18n()
+
+// Direction
+const direction = computed(() => localeProperties.value.dir)
+
+const slides = computed(() => slidesData.messages[locale.value].slides);
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
     effect: "slide",
@@ -90,12 +80,28 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+[dir="rtl"] .slider-six_title,
+[dir="rtl"] .slider-six_text {
+    text-align: right;
+}
+
 .slider-six {
     position: relative;
     z-index: 11;
     min-height: 100vh;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
+    margin: 40px;
+    border-radius: 40px 40px 0 0;
+
+    @media (max-width:890px) {
+        margin: 0 0 110px 0;
+    }
+
+    @media (max-width:430px) {
+        /* margin: 0 0 110px 0; */
+        border-radius: 0;
+    }
 
     // Background layers
     &__bg {
@@ -229,6 +235,7 @@ onMounted(() => {
         justify-content: space-between;
         align-items: center;
         gap: 80px;
+        padding: 0 5px;
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
@@ -319,20 +326,13 @@ onMounted(() => {
 
             img {
                 width: 100px;
-                /* height: ; */
-
-                /* @media (max-width: 1023px) {
-                    width: 0px;
-                
-                } */
 
                 @media (max-width: 767px) {
                     width: 70px;
-                    /* height: 40px; */
                 }
-                 @media (max-width: 650px) {
+
+                @media (max-width: 650px) {
                     width: 50px;
-                    /* height: 40px; */
                 }
             }
         }
@@ -345,29 +345,12 @@ onMounted(() => {
 
     .slider-six_button {
         .alquran-btn {
-            display: inline-block;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             transition: transform 0.3s ease;
+            border-radius: 50px;
 
             &:hover {
-                transform: scale(1.05);
-            }
-
-            img {
-                height: 100px;
-                width: auto;
-                display: block;
-
-                /* @media (max-width: 1023px) {
-                    height: 55px;
-                } */
-
-                @media (max-width: 767px) {
-                    height: 70px;
-                }
-
-                @media (max-width: 639px) {
-                    height: 45px;
-                }
+                transform: scale(1.01);
             }
         }
     }
