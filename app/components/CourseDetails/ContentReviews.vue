@@ -35,11 +35,11 @@ const emit = defineEmits(["toggle-comments"]);
 						<div class="rating-point-wrapper text-center">
 							<h2>{{ props.courseItems.feedbackScore || "4.7" }}</h2>
 							<div class="rating-star">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
 							</div>
 							<span>{{ props.courseItems.feedbackCount || "5785 Rating" }}</span>
 						</div>
@@ -50,11 +50,11 @@ const emit = defineEmits(["toggle-comments"]);
 						<div class="reating-bar-wrapper">
 							<div class="rating-row mb-10">
 								<div class="rating-star">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
 								</div>
 								<div class="progress">
 									<div class="progress-bar wow fadeInLeft" role="progressbar" style="width: 98%;" aria-valuenow="25"
@@ -66,10 +66,10 @@ const emit = defineEmits(["toggle-comments"]);
 							</div>
 							<div class="rating-row mb-10">
 								<div class="rating-star">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
 									<i class="fal fa-star"></i>
 								</div>
 								<div class="progress">
@@ -82,9 +82,9 @@ const emit = defineEmits(["toggle-comments"]);
 							</div>
 							<div class="rating-row mb-10">
 								<div class="rating-star">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
 									<i class="fal fa-star"></i>
 									<i class="fal fa-star"></i>
 								</div>
@@ -98,8 +98,8 @@ const emit = defineEmits(["toggle-comments"]);
 							</div>
 							<div class="rating-row mb-10">
 								<div class="rating-star">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
 									<i class="fal fa-star"></i>
 									<i class="fal fa-star"></i>
 									<i class="fal fa-star"></i>
@@ -114,8 +114,8 @@ const emit = defineEmits(["toggle-comments"]);
 							</div>
 							<div class="rating-row mb-10">
 								<div class="rating-star">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
 									<i class="fal fa-star"></i>
 									<i class="fal fa-star"></i>
 									<i class="fal fa-star"></i>
@@ -144,11 +144,11 @@ const emit = defineEmits(["toggle-comments"]);
 				<div class="course-review-list">
 					<h5><a href="#">Sotapdi Kunda</a></h5>
 					<div class="course-start-icon">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
 						<span>55 min ago</span>
 					</div>
 					<p>Very clean and organized with easy to follow tutorials, Exercises, and solutions. This course does start
@@ -165,11 +165,11 @@ const emit = defineEmits(["toggle-comments"]);
 				<div class="course-review-list">
 					<h5><a href="#">Samantha</a></h5>
 					<div class="course-start-icon">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
 						<span>45 min ago</span>
 					</div>
 					<p>The course is good at explaining very basic intuition of the concepts. It will get you scratching the
@@ -184,11 +184,11 @@ const emit = defineEmits(["toggle-comments"]);
 				<div class="course-review-list">
 					<h5><a href="#">Michell Mariya</a></h5>
 					<div class="course-start-icon">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i>
 						<span>30 min ago</span>
 					</div>
 					<p>This course is amazing..! I started this course as a beginner and learnt a lot. Instructors are great.
@@ -207,10 +207,10 @@ const emit = defineEmits(["toggle-comments"]);
 				<div class="comment-rating mb-20">
 					<span>Overall ratings</span>
 					<ul>
-						<li><a href="#"><i class="fas fa-star"></i></a></li>
-						<li><a href="#"><i class="fas fa-star"></i></a></li>
-						<li><a href="#"><i class="fas fa-star"></i></a></li>
-						<li><a href="#"><i class="fas fa-star"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+						<li><a href="#"><i class="fa-solid fa-star"></i></a></li>
 						<li><a href="#"><i class="fal fa-star"></i></a></li>
 					</ul>
 				</div>
