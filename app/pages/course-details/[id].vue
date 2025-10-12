@@ -1,225 +1,74 @@
-<template>
-  <div
-    class="hero-area course-item-height"
-    :style="{
-      backgroundImage: `url(/img/courses/banner.png)`,
-      backgroundSize: 'cover',
-    }"
-  >
-    <div class="container">
-      <div class="content-wrapper">
-        <div class="hero-content">
-          <div class="hero-course-1-text">
-            <h2>{{ $t("CourseDetails") }}</h2>
-          </div>
-          <div class="course-title-breadcrumb">
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <NuxtLink to="/">{{ $t("Home") }}</NuxtLink>
-                </li>
-                <li class="breadcrumb-item">
-                  <span>{{ $t("Courses") }}</span>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  {{ title }}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <CourseDetailsTaps />
-</template>
+<script>
+import courseItemsMixin from "~~/mixins/courseItemsMixin";
+import CourseDetailsContent from "~/components/CourseDetails/Content.vue";
+import CourseDetailsHero from "~/components/CourseDetails/Hero.vue";
+import CourseDetailsSidebar from "~/components/CourseDetails/Sidebar.vue";
+import CourseDetailsVideoModal from "~/components/CourseDetails/VideoModal.vue";
 
-<style lang="scss" scoped>
-.hero-area.course-item-height {
-  position: relative;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+export default {
+    name: "app",
+    components: {
+        CourseDetailsContent,
+        CourseDetailsHero,
+        CourseDetailsSidebar,
+        CourseDetailsVideoModal,
+    },
+    mixins: [courseItemsMixin],
+    data() {
+        return {
+            showComments: false,
 
-  &::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: #333;
-    opacity: 0.7;
-    z-index: -1;
-    top: 0;
-    left: 0;
-  }
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.content-wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 100%;
-}
-
-.hero-course-1-text {
-  margin-bottom: 20px;
-
-  h2 {
-    font-size: 60px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
-    line-height: 1.2;
-
-    @media (max-width: 991px) {
-      font-size: 54px;
-    }
-
-    @media (max-width: 767px) {
-      font-size: 35px;
-    }
-  }
-}
-
-// Breadcrumb styles
-.course-title-breadcrumb {
-  display: flex;
-  width: 100%;
-
-  nav {
-    width: 100%;
-  }
-}
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
-
-.breadcrumb-item {
-  display: flex;
-  align-items: center;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #fff;
-      opacity: 0.8;
-    }
-  }
-
-  span {
-    color: #fff;
-  }
-
-  &.active {
-    color: #fff;
-  }
-
-  & + .breadcrumb-item::before {
-    display: inline-flex;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    content: "\f105";
-    font-family: "Font Awesome 5 Pro";
-    color: #fff;
-    align-items: center;
-  }
-}
-
-[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
-  padding-right: 0;
-  padding-left: 0.5rem;
-  content: "\f105";
-  transform: rotate(180deg);
-  font-family: "Font Awesome 5 Pro";
-  color: #fff;
-}
-
-.course-title-breadcrumb.breadcrumb-top {
-  margin-top: -90px;
-}
-
-.breadcrumb-item.white-color {
-  a {
-    color: #333;
-  }
-
-  &::before {
-    color: #333;
-  }
-}
-
-.banner-title-wrapper {
-  max-width: 650px;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-// Responsive flexbox adjustments
-@media (max-width: 767px) {
-  .content-wrapper {
-    padding: 20px 0;
-  }
-
-  .hero-content {
-    align-items: center;
-    text-align: center;
-  }
-
-  .course-title-breadcrumb {
-    justify-content: center;
-
-    .breadcrumb {
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 991px) {
-  .hero-content {
-    align-items: flex-start;
-    text-align: left;
-  }
-}
-</style>
-
-<script setup lang="ts">
-// Define props
-defineProps<{
-  title: string;
-}>();
-
-const { params } = useRoute();
-console.log("route", params.id);
+            id: this.$route.params.id,
+            courseItems: {},
+            courseInstructorsImage: '/img/course/course-instructors.png',
+            courseReviewsImageOne: '/img/course/course-reviews-1.png',
+            courseReviewsImageTwo: '/img/course/course-reviews-2.png',
+            courseReviewsImageThree: '/img/course/course-reviews-3.png',
+            courseVideoImage: '/img/course/course-video.png',
+            courseVideoUrl: 'https://www.youtube.com/embed/wNwrSz3HYqE',
+            isVideoModalOpen: false,
+        }
+    },
+    methods: {
+        handleComments() {
+            return this.showComments = !this.showComments
+        },
+        getcourseItems(courseItemsId) {
+            this.courseItems = this.courseItemss.find((item) => item.id == courseItemsId);
+        },
+        openVideoModal() {
+            this.isVideoModalOpen = true
+        },
+        closeVideoModal() {
+            this.isVideoModalOpen = false
+        }
+    },
+    created() {
+        this.getcourseItems(this.id);
+    },
+};
 </script>
+
+<template>
+    <div>
+        <CourseDetailsHero :course-title="courseItems.title" />
+        <section class="course-detalis-area pb-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-8 col-xl-8">
+                        <CourseDetailsContent :course-items="courseItems"
+                            :course-instructors-image="courseInstructorsImage"
+                            :course-reviews-image-one="courseReviewsImageOne"
+                            :course-reviews-image-two="courseReviewsImageTwo"
+                            :course-reviews-image-three="courseReviewsImageThree" :show-comments="showComments"
+                            @toggle-comments="handleComments" />
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-md-8">
+                        <CourseDetailsSidebar :course-video-image="courseVideoImage" @open-video="openVideoModal" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <CourseDetailsVideoModal :is-open="isVideoModalOpen" :video-url="courseVideoUrl" @close="closeVideoModal" />
+    </div>
+</template>

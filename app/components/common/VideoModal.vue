@@ -15,7 +15,7 @@
             <button @click="handleClose"
                 class="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-white border-none p-2 rounded cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 aria-label="Close video modal">
-                <i class="fas fa-times text-sm"></i>
+                <i class="fa-solid fa-times text-sm"></i>
             </button>
         </div>
     </div>
