@@ -1,5 +1,5 @@
 <template>
-	<aside class="lg:sticky lg:top-24">
+	<aside class="lg:sticky lg:top-24 lg:-mt-60">
 		<div class="overflow-hidden rounded-lg border border-border bg-surface shadow-darker transition">
 
 			<button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden"
