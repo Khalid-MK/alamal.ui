@@ -1,16 +1,16 @@
 <template>
-	<section class="relative border-b border-slate-200 text-white" :style="bannerStyle">
+	<section class="relative border-b border-border text-white" :style="bannerStyle">
 		<div class="absolute inset-0 bg-slate-900/70"></div>
 		<div class="relative mx-auto max-w-6xl px-4 py-14 md:py-20">
-			<nav class="flex flex-wrap items-center gap-2 text-sm text-slate-200/80">
+			<nav class="flex flex-wrap items-center gap-2 text-sm text-white/80">
 				<NuxtLink to="/" class="transition hover:text-white">
 					{{ $t("Home") }}
 				</NuxtLink>
-				<span class="text-slate-200/70">/</span>
+				<span class="text-white/70">/</span>
 				<NuxtLink to="/courses" class="transition hover:text-white">
 					{{ $t("Courses") }}
 				</NuxtLink>
-				<span class="text-slate-200/70">/</span>
+				<span class="text-white/70">/</span>
 				<span class="font-semibold text-white">{{ course?.title }}</span>
 			</nav>
 
@@ -19,24 +19,24 @@
 					<h1 class="text-3xl font-bold md:text-4xl">
 						{{ course?.title }}
 					</h1>
-					<div class="flex flex-wrap items-center gap-4 text-sm text-slate-100/90">
+					<div class="flex flex-wrap items-center gap-4 text-sm text-white/90">
 						<div v-if="course?.instructor" class="flex items-center gap-2">
 							<i class="fa-regular fa-circle-user text-primary"></i>
 							<span>
-								<span class="text-slate-200/80">{{ $t("Instructor") }}:</span>
+								<span class="text-white/80">{{ $t("Instructor") }}:</span>
 								{{ course.instructor }}
 							</span>
 						</div>
 						<div class="flex items-center gap-2">
 							<i class="fa-solid fa-globe text-primary"></i> <span>
-								<span class="text-slate-200/80">{{ $t("Language") }}:</span>
+								<span class="text-white/80">{{ $t("Language") }}:</span>
 								{{ displayLanguage }}
 							</span>
 						</div>
-						<div v-if="course?.productRating?.length" class="flex items-center gap-1 text-yellow-300">
+						<div v-if="course?.productRating?.length" class="flex items-center gap-1 text-warning">
 							<i v-for="(icon, index) in course.productRating" :key="`${icon}-${index}`"
 								:class="icon || 'fa-regular fa-star'"></i>
-							<span class="ml-2 text-slate-100">({{ ratingCount }})</span>
+							<span class="ml-2 text-white/90">({{ ratingCount }})</span>
 						</div>
 					</div>
 				</div>

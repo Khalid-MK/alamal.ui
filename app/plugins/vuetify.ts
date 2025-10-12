@@ -6,44 +6,67 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 // import 'vuetify/styles'
 import { ar, en, ru } from 'vuetify/locale'
+import { themeColors } from '@/constant/themeTokens'
+
+const baseLightColors = {
+  primary: themeColors.primary,
+  secondary: themeColors.secondary,
+  'on-primary': themeColors.white,
+  'on-secondary': themeColors.white,
+  background: themeColors.background,
+  surface: themeColors.background,
+  'surface-variant': themeColors.backgroundMuted,
+  success: themeColors.success,
+  warning: themeColors.warning,
+  error: themeColors.danger,
+  info: themeColors.info,
+} satisfies ThemeDefinition['colors']
+
+const baseDarkColors = {
+  primary: themeColors.primary,
+  secondary: themeColors.secondary,
+  'on-primary': themeColors.white,
+  'on-secondary': themeColors.white,
+  background: themeColors.backgroundDeep,
+  surface: themeColors.backgroundDark,
+  'surface-variant': themeColors.extra10,
+  success: themeColors.success,
+  warning: themeColors.warning,
+  error: themeColors.danger,
+  info: themeColors.info,
+} satisfies ThemeDefinition['colors']
+
+const defaultTheme: ThemeDefinition = {
+  dark: false,
+  colors: {
+    ...baseLightColors,
+  },
+}
 
 const greenTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    primary: '#22c55e',
-    secondary: '#16a34a',
-    'on-primary': '#ffffff',
-    'on-secondary': '#ffffff',
+    ...baseLightColors,
+    primary: themeColors.extra01,
+    secondary: themeColors.primary,
   },
 }
 
 const redTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    primary: '#ef4444',
-    secondary: '#dc2626',
-    'on-primary': '#ffffff',
-    'on-secondary': '#ffffff',
+    ...baseLightColors,
+    primary: themeColors.danger,
+    secondary: themeColors.secondary,
   },
 }
 
 const darkTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    primary: '#0f172a',
-    secondary: '#334155',
-    'on-primary': '#ffffff',
-    'on-secondary': '#ffffff',
-  },
-}
-//default
-const defaultTheme: ThemeDefinition = {
-  dark: false,
-  colors: {
-    primary: '#2563eb',
-    secondary: '#000000',
-    'on-primary': '#ffffff',
-    'on-secondary': '#ffffff',
+    ...baseDarkColors,
+    primary: themeColors.primary,
+    secondary: themeColors.secondary,
   },
 }
 
@@ -63,11 +86,6 @@ export default defineNuxtPlugin((nuxtApp) => {
         green: greenTheme,
         red: redTheme,
         dark: darkTheme,
-      },
-      variations: {
-        colors: ['primary', 'secondary'],
-        lighten: 5,
-        darken: 5,
       },
     },
     locale: {

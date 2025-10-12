@@ -1,32 +1,32 @@
 <template>
 	<div
-		class="flex flex-col gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start">
+		class="flex flex-col gap-6 rounded-xl border border-border bg-surface p-6 shadow-darker3 sm:flex-row sm:items-start">
 		<div class="flex flex-none justify-center">
 			<img v-if="course?.instructorImage" src="" :alt="course?.instructor"
-				class="h-[170px] w-[170px] rounded-xl border border-slate-200 object-cover" />
+				class="h-[170px] w-[170px] rounded-xl border border-border object-cover" />
 			<div v-else
-				class="flex h-[170px] w-[170px] items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50 text-sm font-semibold tracking-wide text-slate-400">
+				class="flex h-[170px] w-[170px] items-center justify-center rounded-xl border border-dashed border-border bg-surface-muted text-sm font-semibold tracking-wide text-body-muted">
 				170X170
 			</div>
 		</div>
 		<div class="flex-1 space-y-5">
 			<div class="space-y-1">
-				<h3 class="text-2xl font-semibold text-slate-900">
+				<h3 class="text-2xl font-semibold text-heading">
 					{{ instructorName }}
 				</h3>
-				<p class="text-base font-medium text-slate-500">
+				<p class="text-base font-medium text-body-muted">
 					<!-- {{ instructorRole }} -->
 					Instructor
 				</p>
 			</div>
-			<p class="leading-relaxed text-slate-600">
+			<p class="leading-relaxed text-body">
 				<!-- {{ instructorBio }} -->
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dolores temporibus qui veniam vitae porro
 				sunt aut nobis maxime similique, provident rem, ipsam voluptates cum eaque natus ipsa a. Voluptas!
 			</p>
 			<div v-if="socialLinks.length" class="flex items-center gap-3">
 				<a v-for="link in socialLinks" :key="link.icon" :href="link.href" target="_blank" rel="noopener"
-					class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500"
+					class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-border text-body-muted"
 					:style="{ '--brand-color': link.brandColor }">
 					<i :class="link.icon"></i>
 					<span class="sr-only">{{ link.label }}</span>
@@ -65,25 +65,25 @@ const defaultSocialLinks: SocialLink[] = [
 		icon: "fa-brands fa-facebook-f",
 		label: "Facebook",
 		href: "#",
-		brandColor: "#1877F2",
+		brandColor: "var(--color-facebook)",
 	},
 	{
 		icon: "fa-brands fa-x-twitter",
 		label: "X",
 		href: "#",
-		brandColor: "#17191C",
+		brandColor: "var(--color-twitter)",
 	},
 	{
 		icon: "fa-brands fa-linkedin-in",
 		label: "LinkedIn",
 		href: "#",
-		brandColor: "#0A66C2",
+		brandColor: "var(--color-linkedin)",
 	},
 	{
 		icon: "fa-brands fa-youtube",
 		label: "YouTube",
 		href: "#",
-		brandColor: "#FF0000",
+		brandColor: "var(--color-youtube)",
 	},
 ];
 
@@ -99,7 +99,7 @@ const socialLinks = computed(() => {
 			icon: link.icon,
 			label: link.label || "",
 			href: link.href,
-			brandColor: link.brandColor || "#2563EB",
+			brandColor: link.brandColor || "var(--color-primary)",
 		}));
 
 	return normalized.length ? normalized : defaultSocialLinks;
@@ -126,6 +126,6 @@ const socialLinks = computed(() => {
 .social-link:hover {
 	background-color: var(--brand-color);
 	border-color: var(--brand-color);
-	color: #fff;
+	color: var(--color-white);
 }
 </style>

@@ -8,14 +8,14 @@
 					<span class="toggle-icon" :class="{ 'is-open': isSectionActive(section, index) }">
 						<i :class="isSectionActive(section, index) ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i>
 					</span>
-					<span class="text-lg font-semibold text-slate-900">{{ section.title }}</span>
+					<span class="text-lg font-semibold text-heading">{{ section.title }}</span>
 				</span>
-				<span class="flex items-center gap-2 text-sm text-slate-500">
+				<span class="flex items-center gap-2 text-sm text-body-muted">
 					<span>
 						{{ getLessonCount(section) }} {{ t("Lessons") }}
 					</span>
-					<span v-if="getSectionDuration(section)" class="text-slate-300">•</span>
-					<span v-if="getSectionDuration(section)" class="text-slate-500">
+					<span v-if="getSectionDuration(section)" class="text-body-muted opacity-60">•</span>
+					<span v-if="getSectionDuration(section)" class="text-body-muted">
 						{{ getSectionDuration(section) }}
 					</span>
 				</span>
@@ -44,14 +44,14 @@
 							</div>
 						</li>
 					</ul>
-					<p v-else class="px-5 pb-5 text-sm text-slate-500">
+					<p v-else class="px-5 pb-5 text-sm text-body-muted">
 						{{ t("NotAvailable") }}
 					</p>
 				</div>
 			</Transition>
 		</div>
 	</div>
-	<p v-if="!curriculumSections.length" class="text-slate-500">
+	<p v-if="!curriculumSections.length" class="text-body-muted">
 		{{ t("NotAvailable") }}
 	</p>
 </template>
@@ -233,13 +233,13 @@ type CurriculumSection = {
 	padding: 1rem 0;
 	background: transparent;
 	border: 0;
-	border-bottom: 1px solid #e2e8f0;
+	border-bottom: 1px solid var(--color-border);
 	cursor: pointer;
 	text-align: left;
 }
 
 .curriculum-header:focus-visible {
-	outline: 2px solid #0f766e;
+	outline: 2px solid var(--color-primary);
 	outline-offset: 4px;
 }
 
@@ -248,12 +248,12 @@ type CurriculumSection = {
 	align-items: center;
 	justify-content: center;
 	font-size: 1rem;
-	color: #0f172a;
+	color: var(--color-heading);
 	transition: color 200ms ease;
 }
 
 .toggle-icon.is-open {
-	color: #0f766e;
+	color: var(--color-primary);
 }
 
 .accordion-content {
@@ -274,8 +274,8 @@ type CurriculumSection = {
 	justify-content: space-between;
 	gap: 1rem;
 	padding: 1rem 0;
-	border-bottom: 1px solid #e2e8f0;
-	color: #0f172a;
+	border-bottom: 1px solid var(--color-border);
+	color: var(--color-heading);
 }
 
 .lesson-item:last-child {
@@ -289,14 +289,14 @@ type CurriculumSection = {
 }
 
 .lesson-leading-icon {
-	color: #64748b;
+	color: var(--color-title);
 	font-size: 1rem;
 }
 
 .lesson-title {
 	font-size: 0.95rem;
 	font-weight: 600;
-	color: #0f172a;
+	color: var(--color-heading);
 }
 
 .lesson-meta {
@@ -318,17 +318,17 @@ type CurriculumSection = {
 }
 
 .lesson-chip--questions {
-	background: #ecfdf5;
-	color: #047857;
+	background: var(--color-lighten02);
+	color: var(--color-primary);
 }
 
 .lesson-chip--duration {
-	background: #fcefee;
-	color: #be123c;
+	background: var(--color-lighten04);
+	color: var(--color-secondary);
 }
 
 .lesson-lock {
-	color: #94a3b8;
+	color: var(--color-title);
 	font-size: 0.875rem;
 }
 </style>

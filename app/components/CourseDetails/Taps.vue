@@ -28,141 +28,28 @@ const tab = ref(null);
 <style scoped lang="scss">
 .custom-tab {
   transition: all 0.2s ease;
-  color: #eb9f25 !important;
+  color: var(--color-tertiary) !important;
   background-color: transparent !important;
   border: 2px solid transparent !important; // Default: no border
   border-radius: 8px; // Optional: rounded corners
 
   // Non-selected tab hover - add border
   &:not(.v-tab--selected):hover {
-    border-color: #eb9f25 !important;
+    border-color: var(--color-tertiary) !important;
   }
 
   // Selected state - solid border
   &.v-tab--selected {
-    color: #eb9f25 !important;
+    color: var(--color-tertiary) !important;
     background-color: transparent !important;
-    border-color: #eb9f25 !important;
-    border-bottom: 3px solid #eb9f25 !important; // Thicker bottom border for selected
+    border-color: var(--color-tertiary) !important;
+    border-bottom: 3px solid var(--color-tertiary) !important; // Thicker bottom border for selected
   }
 
   // Selected state hover
   &.v-tab--selected:hover {
-    background-color: rgba(235, 159, 37, 0.05) !important; // Optional: subtle bg
-    border-color: #eb9f25 !important;
+    background-color: var(--color-lighten03) !important; // Optional: subtle bg
+    border-color: var(--color-tertiary) !important;
   }
 }
-
-/* .custom-tab {
-  transition: all 0.2s ease;
-  color: #eb9f25 !important;
-  background-color: transparent !important;
-
-  // Force remove all overlays
-  &::before,
-  &::after {
-    content: none !important;
-    display: none !important;
-    opacity: 0 !important;
-    background-color: transparent !important;
-  }
-
-  // Override all hover states
-  &:hover {
-    background-color: transparent !important;
-
-    &::before,
-    &::after {
-      content: none !important;
-      display: none !important;
-      opacity: 0 !important;
-      background-color: transparent !important;
-    }
-  }
-
-  // Override selected state
-  &.v-tab--selected {
-    color: #eb9f25 !important;
-    background-color: transparent !important;
-
-    &::before,
-    &::after {
-      content: none !important;
-      display: none !important;
-      opacity: 0 !important;
-      background-color: transparent !important;
-    }
-  }
-
-  // Override selected hover state
-  &.v-tab--selected:hover {
-    background-color: transparent !important;
-
-    &::before,
-    &::after {
-      content: none !important;
-      display: none !important;
-      opacity: 0 !important;
-      background-color: transparent !important;
-    }
-  }
-
-  // Override focus state
-  &:focus,
-  &:focus-visible {
-    background-color: transparent !important;
-
-    &::before,
-    &::after {
-      content: none !important;
-      display: none !important;
-      opacity: 0 !important;
-      background-color: transparent !important;
-    }
-  }
-}
-
-// Deep selectors for nested elements
-.custom-tab :deep(*) {
-
-  &::before,
-  &::after {
-    content: none !important;
-    display: none !important;
-    opacity: 0 !important;
-    background-color: transparent !important;
-  }
-}
-
-.custom-tab :deep(.v-btn) {
-  color: inherit !important;
-  background-color: transparent !important;
-
-  &::before,
-  &::after {
-    content: none !important;
-    display: none !important;
-    opacity: 0 !important;
-    background-color: transparent !important;
-  }
-
-  &:hover {
-    background-color: transparent !important;
-  }
-}
-
-// Remove ripple effect
-.custom-tab :deep(.v-ripple__container) {
-  display: none !important;
-}
-
-// Nuclear option: override any background-color on any state
-.custom-tab,
-.custom-tab:hover,
-.custom-tab:focus,
-.custom-tab:active,
-.custom-tab.v-tab--selected,
-.custom-tab.v-tab--selected:hover {
-  background-color: transparent !important;
-} */
 </style>
