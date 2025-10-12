@@ -24,7 +24,7 @@
 						<li v-for="fact in courseFacts" :key="fact.key"
 							class="flex items-center justify-between gap-4 px-1 py-4 text-sm text-body"
 							:class="{ 'border-b border-border': fact.key !== lastFactKey }">
-							<div class="flex items-center gap-3 font-medium text-body-muted">
+							<div class="flex items-center gap-3 text-heading">
 								<i :class="fact.icon"></i>
 								<span>{{ fact.label }}</span>
 							</div>
@@ -34,8 +34,10 @@
 					</ul>
 				</div>
 
-				<NuxtLink to="/auth/sign-up"
-					class="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-center text-base font-semibold text-white transition hover:opacity-95">
+				<NuxtLink :to="{
+					path: '/payment',
+					query: { courseId: course?.id ?? '' },
+				}" class="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-center text-base font-semibold text-white transition hover:opacity-95">
 					{{ $t("StartNow") }}
 					<!-- <i class="fa-solid fa-arrow-right"></i> -->
 				</NuxtLink>
