@@ -28,14 +28,14 @@
 							</span>
 						</div>
 						<div class="flex items-center gap-2">
-							<i class="fa-regular fa-language text-primary"></i>
-							<span>
+							<i class="fa-solid fa-globe text-primary"></i> <span>
 								<span class="text-slate-200/80">{{ $t("Language") }}:</span>
 								{{ displayLanguage }}
 							</span>
 						</div>
 						<div v-if="course?.productRating?.length" class="flex items-center gap-1 text-yellow-300">
-							<i v-for="(icon, index) in course.productRating" :key="`${icon}-${index}`" :class="icon"></i>
+							<i v-for="(icon, index) in course.productRating" :key="`${icon}-${index}`"
+								:class="icon || 'fa-regular fa-star'"></i>
 							<span class="ml-2 text-slate-100">({{ ratingCount }})</span>
 						</div>
 					</div>
