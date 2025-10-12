@@ -129,21 +129,25 @@ const shareLinks = computed(() => [
         icon: "fa-brands fa-facebook-f",
         label: "Facebook",
         href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl.value}`,
+        brandColor: "#1877F2",
     },
     {
         icon: "fa-brands fa-x-twitter",
         label: "X",
         href: `https://twitter.com/intent/tweet?url=${shareUrl.value}`,
+        brandColor: "#17191C",
     },
     {
         icon: "fa-brands fa-linkedin-in",
         label: "LinkedIn",
         href: `https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl.value}`,
+        brandColor: "#0A66C2",
     },
     {
         icon: "fa-brands fa-whatsapp",
         label: "WhatsApp",
         href: `https://wa.me/?text=${shareUrl.value}`,
+        brandColor: "#25D366",
     },
 ]);
 

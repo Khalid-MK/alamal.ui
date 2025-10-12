@@ -1,50 +1,58 @@
 <template>
 	<aside class="lg:sticky lg:top-24">
-		<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl transition lg:-mt-16 xl:-mt-20">
-			<button type="button" class="group relative flex aspect-video w-full items-center justify-center overflow-hidden"
+		<div class="overflow-hidden rounded-md border border-slate-200 bg-white shadow-xl transition">
+
+			<button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden"
 				@click="emit('open-video')">
-				<img :src="videoThumbnail" :alt="course?.title" class="h-full w-full object-cover" />
+				<img :src="videoThumbnail" :alt="course?.title" class="absolute inset-0 h-full w-full object-cover" />
 				<div class="absolute inset-0 bg-slate-900/40 transition group-hover:bg-slate-900/50"></div>
-				<div
-					class="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-primary shadow-lg transition group-hover:bg-primary group-hover:text-white">
-					<i class="fa-solid fa-play text-xl"></i>
+				<div class="absolute inset-0 flex items-center justify-center">
+					<span
+						class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg transition group-hover:bg-primary-hover">
+						<i class="fa-solid fa-play text-xl"></i>
+					</span>
 				</div>
 				<span class="sr-only">{{ $t("WatchPreview") }}</span>
 			</button>
 
-			<div class="space-y-6 p-6">
-				<div class="flex items-center justify-between">
+			<div class="space-y-7 p-6">
+				<!-- <div class="flex items-center justify-between">
 					<span class="text-sm font-medium text-slate-500">{{ $t("Price") }}</span>
-					<span class="text-2xl font-bold text-primary">{{ course?.price || "—" }}</span>
-				</div>
+					<span class="text-2xl font-bold text-[#ff6f61]">{{ course?.price || "—" }}</span>
+				</div> -->
 
 				<div>
 					<h3 class="text-lg font-semibold text-slate-900">
 						{{ $t("CourseIncludes") }}
 					</h3>
-					<ul class="mt-4 space-y-3">
+					<ul class="mt-5 overflow-hidden">
 						<li v-for="fact in courseFacts" :key="fact.key"
-							class="flex items-center justify-between text-sm text-slate-600">
-							<span class="flex items-center gap-2 font-medium text-slate-500">
-								<i :class="[fact.icon, 'text-primary']"></i>
-								{{ fact.label }}
-							</span>
-							<span class="text-slate-900">{{ fact.value }}</span>
+							class="flex items-center justify-between gap-4 px-1 py-4 text-sm text-slate-600"
+							:class="{ 'border-b border-slate-200': fact.key !== lastFactKey }">
+							<div class="flex items-center gap-3 font-medium text-slate-500">
+								<i :class="fact.icon"></i>
+								<span>{{ fact.label }}</span>
+							</div>
+							<span
+								:class="fact.key === 'price' ? 'font-bold text-lg text-[#ff6f61]' : 'font-semibold text-slate-900'">{{
+									fact.value }}</span>
 						</li>
 					</ul>
 				</div>
 
 				<NuxtLink to="/auth/sign-up"
-					class="block rounded-lg bg-primary px-5 py-3 text-center text-base font-semibold text-white transition hover:bg-primary-hover">
+					class="flex justify-center items-center gap-2 rounded-lg bg-primary px-5 py-3 text-center text-base font-semibold text-white transition hover:bg-primary-hover">
 					{{ $t("StartNow") }}
+					<!-- <i class="fa-solid fa-arrow-right"></i> -->
 				</NuxtLink>
 			</div>
 
-			<div class="border-t border-slate-200 px-6 py-4">
-				<span class="text-sm font-semibold text-slate-900">{{ $t("ShareOn") }}</span>
+			<div class="border-slate-200 px-6 py-5">
+				<span class="text-lg font-semibold text-slate-900">{{ $t("ShareOn") }}</span>
 				<div class="mt-3 flex items-center gap-3">
 					<a v-for="item in shareLinks" :key="item.icon" :href="item.href" target="_blank" rel="noopener"
-						class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:bg-primary hover:text-white">
+						class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500"
+						:style="{ '--brand-color': item.brandColor }">
 						<i :class="item.icon"></i>
 						<span class="sr-only">{{ item.label }}</span>
 					</a>
@@ -60,13 +68,19 @@ import { computed } from "vue";
 const props = defineProps<{
 	course: Record<string, any> | null;
 	courseFacts: Array<{ key: string; label: string; value: string; icon: string }>;
-	shareLinks: Array<{ icon: string; label: string; href: string }>;
+	shareLinks: Array<{ icon: string; label: string; href: string; brandColor: string }>;
 }>();
 
 const emit = defineEmits<{ (event: "open-video"): void }>();
 
 const videoThumbnail = computed(() => {
 	return props.course?.videoThumbnail || props.course?.courseImage || "/img/courses/banner.png";
+});
+
+const lastFactKey = computed(() => {
+	const facts = props.courseFacts ?? [];
+	const last = facts[facts.length - 1];
+	return last?.key ?? null;
 });
 </script>
 
@@ -81,5 +95,15 @@ const videoThumbnail = computed(() => {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+}
+
+.social-link {
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link:hover {
+	background-color: var(--brand-color);
+	border-color: var(--brand-color);
+	color: #fff;
 }
 </style>
