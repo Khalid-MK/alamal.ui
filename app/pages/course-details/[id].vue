@@ -2,7 +2,7 @@
     <div class="course-details-page" :dir="direction">
         <CourseDetailsBanner :course="course" :rating-count="ratingCount" :display-language="displayLanguage" />
 
-        <section class="py-12 md:py-16">
+        <section class="py-10">
             <div class="mx-auto max-w-6xl px-4">
                 <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
                     <CourseDetailsTabs :course="course" />
