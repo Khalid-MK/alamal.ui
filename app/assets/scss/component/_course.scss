@@ -1657,27 +1657,27 @@
 	color: #c1c7d2;
 }
 
-.course-curriculam-accodion .accordion-button {
-	&:before {
-		content: "\f067";
-		font-family: "Font Awesome 5 Pro";
-		color: $body-text;
-		background: none;
-		flex-shrink: 0;
-		margin-right: 10px;
-	}
-}
+// .course-curriculam-accodion .accordion-button {
+// 	&:before {
+// 		content: "\f067";
+// 		font-family: "Font Awesome 5 Pro";
+// 		color: $body-text;
+// 		background: none;
+// 		flex-shrink: 0;
+// 		margin-right: 10px;
+// 	}
+// }
 
-.course-curriculam-accodion .accordion-button:not(.collapsed) {
-	&:before {
-		content: "\f068";
-		font-family: "Font Awesome 5 Pro";
-		color: $body-text;
-		background: none;
-		flex-shrink: 0;
-		transform: rotate(180deg);
-	}
-}
+// .course-curriculam-accodion .accordion-button:not(.collapsed) {
+// 	&:before {
+// 		content: "\f068";
+// 		font-family: "Font Awesome 5 Pro";
+// 		color: $body-text;
+// 		background: none;
+// 		flex-shrink: 0;
+// 		transform: rotate(180deg);
+// 	}
+// }
 
 .course-curriculam-accodion .accordion-button {
 	&::after {
