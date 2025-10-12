@@ -26,7 +26,7 @@ const props = defineProps({
 				<h4 class="course-learn-heading">What You'll Learn?</h4>
 				<ul class="course-learn-list">
 					<li v-for="(item, index) in props.learningItems" :key="`learn-${index}`">
-						<span class="course-learn-check"><i class="fas fa-check"></i></span>
+						<span class="course-learn-check"><i class="fa-solid fa-check"></i></span>
 						<span class="course-learn-text">{{ item }}</span>
 					</li>
 				</ul>
@@ -38,6 +38,7 @@ const props = defineProps({
 <style scoped lang="scss">
 .course-learn-wrapper {
 	margin-top: 36px;
+	padding: 28px;
 }
 
 .course-learn-heading {
@@ -64,8 +65,8 @@ const props = defineProps({
 	align-items: center;
 	justify-content: center;
 	margin-top: 2px;
-	width: 18px;
-	height: 18px;
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 	background-color: #2467ec;
 	color: #fff;
