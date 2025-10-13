@@ -1,32 +1,41 @@
 <template>
-    <div class="about-section">
+    <div :dir="direction" class="about-section">
+        <!-- Background vectors -->
+        <div class="slider-six_vector-1"
+            style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/vector-8.png')">
+        </div>
+        <div class="slider-six_vector-2" style="background-image:url('img/icon/تخطيط_اسم_محمد.png')"></div>
+
         <div class="container-wrapper">
+            <!-- Left Content -->
             <div class="content-side">
                 <div class="tabs-section">
                     <div class="header-section">
                         <span class="subtitle">{{ $t("AboutUs") }}</span>
-                        <h2 class="main-title">{{ $t("WeProvideBest") }}<span class="text-[#C5E96B]">{{ $t("Education")
-                                }} </span>
-                            {{ $t("ServicesForYou") }}</h2>
+                        <h2 class="main-title">
+                            {{ $t("WeProvideBest") }}
+                            <span class="text-[#C5E96B]">{{ $t("Education") }}</span>
+                            {{ $t("ServicesForYou") }}
+                        </h2>
                     </div>
 
+                    <!-- Tabs -->
                     <v-tabs v-model="tab" color="#C5E96B" align-tabs="start" class="custom-tabs">
                         <v-tab v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
-                            {{ tabItem.title }}
+                            {{ $t(`tabs.${tabItem.value}.title`) }}
                         </v-tab>
                     </v-tabs>
 
+                    <!-- Tab Content -->
                     <v-window v-model="tab" class="tabs-content">
                         <v-window-item v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
                             <div class="content-wrapper">
-                                <p class="description">
-                                    {{ tabItem.description }}
-                                </p>
+                                <p class="description">{{ $t(`tabs.${tabItem.value}.description`) }}</p>
 
                                 <div class="features-list">
                                     <div v-for="(feature, index) in tabItem.features" :key="index" class="feature-item">
                                         <v-icon color="#C5E96B" size="24">mdi-check</v-icon>
-                                        <span class="feature-text">{{ feature }}</span>
+                                        <span class="feature-text">{{ $t(feature) }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -35,83 +44,191 @@
                 </div>
             </div>
 
+            <!-- Right Images -->
             <div class="image-side">
                 <div class="images-container">
                     <div class="primary-image">
-                        <img loading="lazy" src="/img/courses/tag/course-02.png" alt="About Education" />
+                        <img loading="lazy" src="/img/about/about-1.webp" alt="About Education" />
                     </div>
                     <div class="secondary-image">
-                        <img loading="lazy" src="/img/courses/tag/course-02.png" alt="About Education" />
+                        <img loading="lazy" src="/img/about/about-3.png" alt="About Education" />
                     </div>
                 </div>
             </div>
         </div>
-        <div class="statistics-section">
-            <div class="statistic-div" v-for="statistic in statisticsData" :key="statistic.id">
-                <div :style="{ color: statistic.color }" class="value-Stat">{{ statistic.value }}</div>
-                <div class="title-Stat">{{ statistic.title }}</div>
-            </div>
 
+        <!-- Statistics -->
+        <div class="statistics-section">
+            <div class="statistic-div" v-for="statistic in animatedStats" :key="statistic.id">
+                <div :style="{ color: statistic.color }" class="value-Stat">
+                    {{ statistic.displayValue }}
+                </div>
+                <div class="title-Stat">{{ $t(statistic.titleKey) }}</div>
+            </div>
         </div>
     </div>
-
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
-const tab = ref('vision');
+const { locale, localeProperties } = useI18n();
+const direction = computed(() => localeProperties.value.dir);
+const tab = ref("vision");
+
+// --- Statistics Data ---
 interface StatisticsData {
-    id: number,
-    value: string,
-    title: string,
-    color: string
+    id: number;
+    value: number;
+    suffix?: string;
+    titleKey: string;
+    color: string;
 }
-const statisticsData: StatisticsData[] = [
-    { id: 1, title: "Student Enrolled", value: "29.3k", color: "#1AB69D" },
-    { id: 2, title: "Class Completed", value: "32.4k", color: "#EE4A62" },
-    { id: 3, title: "SatisfAction Rate", value: "100%", color: "#8E56FF" },
-    { id: 4, title: "Top Indstructors", value: "354+", color: "#F8941F" }
 
-]
+const statisticsData: StatisticsData[] = [
+    { id: 1, titleKey: "statistics.studentEnrolled", value: 29300, color: "#1AB69D", suffix: "k" },
+    { id: 2, titleKey: "statistics.classCompleted", value: 32400, color: "#EE4A62", suffix: "k" },
+    { id: 3, titleKey: "statistics.satisfactionRate", value: 100, color: "#8E56FF", suffix: "%" },
+    { id: 4, titleKey: "statistics.topInstructors", value: 354, color: "#F8941F", suffix: "+" }
+];
+
+// --- Animated Values ---
+const animatedStats = ref(
+    statisticsData.map((s) => ({
+        ...s,
+        displayValue: 0 as number | string
+    }))
+);
+
+onMounted(() => {
+    animatedStats.value.forEach((stat, index) => {
+        let start = 0;
+        const end = stat.value;
+        const duration = 1500; // ms
+        const stepTime = 20;
+        const increment = end / (duration / stepTime);
+
+        const interval = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+                start = end;
+                clearInterval(interval);
+            }
+            const formatted =
+                stat.suffix === "k"
+                    ? (start / 1000).toFixed(1) + "k"
+                    : Math.floor(start) + (stat.suffix || "");
+            if (animatedStats.value[index]) {
+                animatedStats.value[index].displayValue = formatted;
+            }
+        }, stepTime);
+    });
+});
+
+// --- Tabs ---
 interface TabData {
-    value: string,
-    title: string,
-    description: string,
-    features: string[]
+    value: string;
+    features: string[];
 }
 const tabsData: TabData[] = [
-    {
-        value: 'about',
-        title: 'About EduBlink',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer.',
-        features: [
-            'Online Remote Learning',
-            'Lifetime Access For Learning'
-        ]
-    },
-    {
-        value: 'mission',
-        title: 'Our Mission',
-        description: 'Our mission is to provide accessible, high-quality education to learners worldwide. We believe in empowering individuals through knowledge and fostering a community of lifelong learners.',
-        features: [
-            'Expert Instructors',
-            'Interactive Learning Experience'
-        ]
-    },
-    {
-        value: 'vision',
-        title: 'Our Vision',
-        description: 'We envision a world where education knows no boundaries. Our goal is to create an innovative platform that connects students and educators, making learning accessible and enjoyable for everyone.',
-        features: [
-            'Global Learning Community',
-            'Cutting-Edge Technology'
-        ]
-    }
+    { value: "about", features: ["tabs.about.feature1", "tabs.about.feature2"] },
+    { value: "mission", features: ["tabs.mission.feature1", "tabs.mission.feature2"] },
+    { value: "vision", features: ["tabs.vision.feature1", "tabs.vision.feature2"] }
 ];
 </script>
 
+
 <style lang="scss" scoped>
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.slider-six_vector-1 {
+    position: absolute;
+
+    width: 106px;
+    height: 106px;
+    /* z-index: 1; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: spin 30s linear infinite;
+
+    [dir="ltr"] & {
+        right: 3%;
+        bottom: -10%;
+    }
+
+    [dir="rtl"] & {
+        left: 3%;
+        bottom: -10%;
+    }
+
+    @media (max-width: 1023px) {
+        width: 90px;
+        height: 90px;
+    }
+
+    @media (max-width: 767px) {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.slider-six_vector-2 {
+    color: #1a1a1a;
+    position: absolute;
+    opacity: 0.55;
+    /* z-index: 1; */
+    /* left: 55%;
+    top: 10%; */
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: moveUpDown 4s infinite;
+
+    [dir="ltr"] & {
+        transform: translate(100%, -40%);
+        right: 2%;
+    }
+
+    [dir="rtl"] & {
+        left: 2%;
+        transform: translate(50%, 40%);
+    }
+
+    @media (max-width: 1023px) {
+        left: auto;
+        right: 80px;
+        top: 80px;
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (max-width: 767px) {
+        right: 30px;
+        top: 50px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
 .statistics-section {
     max-width: 1400px;
     margin: 0 auto;
@@ -138,6 +255,7 @@ const tabsData: TabData[] = [
 }
 
 .about-section {
+    position: relative;
     width: 100%;
     padding: 60px 0;
 
@@ -244,23 +362,46 @@ img {
 .secondary-image {
     position: relative;
     width: 50%;
-    right: 0;
     bottom: 0;
-    transform: translate(100%, -40%);
     z-index: 2;
+
+    [dir="ltr"] & {
+        right: 0;
+        transform: translate(100%, -40%);
+    }
+
+    [dir="rtl"] & {
+        left: 0;
+        transform: translate(-100%, -40%);
+    }
 
 
     @media (max-width: 1279px) {
-        transform: translate(60%, -40%);
-
         width: 65%;
+
+        [dir="ltr"] & {
+            transform: translate(60%, -40%);
+        }
+
+        [dir="rtl"] & {
+            transform: translate(-60%, -40%);
+        }
 
     }
 
     @media (max-width: 1025px) {
-        transform: translate(80%, -40%);
-
         width: 60%;
+
+        [dir="ltr"] & {
+
+            transform: translate(80%, -40%);
+        }
+
+        [dir="rtl"] & {
+
+            transform: translate(-80%, -40%);
+        }
+
     }
 
     @media (max-width: 767px) {

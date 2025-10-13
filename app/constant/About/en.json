@@ -1,0 +1,28 @@
+{
+    "statistics": {
+        "studentEnrolled": "Student Enrolled",
+        "classCompleted": "Class Completed",
+        "satisfactionRate": "Satisfaction Rate",
+        "topInstructors": "Top Instructors"
+    },
+    "tabs": {
+        "about": {
+            "title": "About EduBlink",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer.",
+            "feature1": "Online Remote Learning",
+            "feature2": "Lifetime Access For Learning"
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "Our mission is to provide accessible, high-quality education to learners worldwide. We believe in empowering individuals through knowledge and fostering a community of lifelong learners.",
+            "feature1": "Expert Instructors",
+            "feature2": "Interactive Learning Experience"
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "We envision a world where education knows no boundaries. Our goal is to create an innovative platform that connects students and educators, making learning accessible and enjoyable for everyone.",
+            "feature1": "Global Learning Community",
+            "feature2": "Cutting-Edge Technology"
+        }
+    }
+}

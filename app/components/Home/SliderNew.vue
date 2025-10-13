@@ -1,6 +1,6 @@
 <template>
     <div :dir="direction" class="slider-six">
-        <div class="slider-six__mosque"
+        <div class="slider-six__mosque "
             style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/mosque-1.png')">
         </div>
         <div class="slider-six__bg"
@@ -103,13 +103,14 @@ onMounted(() => {
         border-radius: 0;
     }
 
-    // Background layers
+    // Background layers slider-six__bg
     &__bg {
         position: absolute;
         inset: 0;
         background-size: cover;
         background-position: center;
         z-index: 1;
+        border-radius: inherit;
     }
 
     &__mosque {
@@ -128,7 +129,7 @@ onMounted(() => {
         position: absolute;
         inset: 0;
         background-size: cover;
-        background-position: center;
+        background-position:left;
         z-index: 2;
     }
 
