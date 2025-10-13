@@ -12,9 +12,119 @@ html[lang="en"] {
   direction: ltr;
   text-align: left;
 }
-/* This disables the overlay tint effect across all components. */
+/* This disables the overlay tint effect across all components and defines project design tokens. */
 :root {
   --v-theme-overlay-multiplier: 0 !important;
+
+  --color-primary: #1ab69d;
+  --color-primary-hover: #139a83;
+  --color-secondary: #ee4a62;
+  --color-secondary-hover: #d03c52;
+  --color-textSecondary: #ff5b5c;
+  --color-tertiary: #f8b81f;
+  --color-dark: #111212;
+  --color-heading: #181818;
+  --dark-color-heading: #ffffff;
+  --color-border: #e5e5e5;
+  --dark-color-border: #282f3a;
+  --color-body: #808080;
+  --gradient-primary: linear-gradient(-90deg, #31b978 0%, #1ab69d 100%);
+  --bg-color: #eaf0f2;
+  --dark-bg-color: #020b17;
+  --cta-color-bg: #f0f4f5;
+  --color-bg-body: #ffffff;
+  --dark-color-bg-body: #111822;
+  --bg-color-2: #1c242f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --footer-text: #181818;
+  --dark-footer-text: #808080;
+  --edu-btn-color: #ffffff;
+  --color-title: #bababa;
+  --color-lighten01: #f0f4f5;
+  --color-lighten02: #edf5f8;
+  --color-lighten03: #f5f1eb;
+  --color-lighten04: #f7f5f2;
+  --color-extra01: #0ecd73;
+  --color-extra02: #8e56ff;
+  --color-extra03: #f92596;
+  --color-extra04: #5866eb;
+  --color-extra05: #f8941f;
+  --color-extra06: #39c0fa;
+  --color-extra07: #da04f8;
+  --color-extra08: #4664e4;
+  --color-extra09: #525151;
+  --color-extra10: #404040;
+  --color-extra11: #22272e;
+  --color-success: #3eb75e;
+  --color-danger: #ff0003;
+  --color-warning: #ff8f3c;
+  --color-info: #1ba2db;
+  --color-placeholder: #808080;
+  --color-facebook: #1877f2;
+  --color-twitter: #1da1f2;
+  --color-youtube: #cd201f;
+  --color-linkedin: #0a66c2;
+  --color-pinterest: #e60022;
+  --color-instagram: #c231a1;
+  --color-vimeo: #00adef;
+  --color-twitch: #6441a3;
+  --color-discord: #7289da;
+  --color-whatsapp: #25d366;
+  --border-width: 2px;
+  --radius-small: 4px;
+  --radius: 10px;
+  --radius-big: 16px;
+  --p-light: 300;
+  --p-regular: 400;
+  --p-medium: 500;
+  --p-semi-bold: 600;
+  --p-bold: 700;
+  --p-extra-bold: 800;
+  --shadow-darker: 0px 10px 50px 0px rgba(26, 46, 85, 0.1);
+  --shadow-darker2: 0px 20px 50px 0px rgba(26, 46, 85, 0.1);
+  --shadow-dark: 0px 10px 30px 0px rgba(20, 36, 66, 0.15);
+  --shadow-darkest: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+  --shadow-darker3: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
+  --shadow-darker4: 0px 20px 70px 0px rgba(15, 107, 92, 0.2);
+  --transition: 0.3s;
+  --transition-2: 0.5s;
+  --transition-transform: transform 0.65s cubic-bezier(.23, 1, .32, 1);
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Spartan", sans-serif;
+  --font-icomoon: "icomoon";
+  --font-size-b1: 15px;
+  --font-size-b2: 13px;
+  --line-height-b1: 1.73;
+  --line-height-b2: 1.85;
+  --h1: 50px;
+  --h2: 36px;
+  --h3: 28px;
+  --h4: 20px;
+  --h5: 18px;
+  --h6: 16px;
+  --h1-lineHeight: 1.2;
+  --h2-lineHeight: 1.39;
+  --h3-lineHeight: 1.43;
+  --h4-lineHeight: 1.4;
+  --h5-lineHeight: 1.45;
+  --h6-lineHeight: 1.62;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-body);
+  background-color: var(--color-bg-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-family: var(--font-secondary);
 }
 
 /* تعطيل الترانزيشنات الخاصة بـ Vuetify */
@@ -40,31 +150,31 @@ html[lang="en"] {
   display: none !important;
 } */
 
-/* 
+/*
 ::root {
-  --color-primary: #2563eb; 
-  --color-primary-hover: #1d4ed8; 
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
   --color-secondary: #000000;
   --color-secondary-hover: #2563eb;
 }
 
 .theme-green {
-  --color-primary: #22c55e; 
-  --color-primary-hover: #15803d; 
+  --color-primary: #22c55e;
+  --color-primary-hover: #15803d;
   --color-secondary: #16a34a;
   --color-secondary-hover: #166534;
 }
 
 .theme-red {
   --color-primary: #ef4444;
-  --color-primary-hover: #b91c1c; 
+  --color-primary-hover: #b91c1c;
   --color-secondary: #dc2626;
   --color-secondary-hover: #991b1b;
 }
 
 .theme-dark {
-  --color-primary: #0f172a; 
-  --color-primary-hover: #1e293b; 
+  --color-primary: #0f172a;
+  --color-primary-hover: #1e293b;
   --color-secondary: #334155;
   --color-secondary-hover: #475569;
 } */

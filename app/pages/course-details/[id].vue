@@ -1,225 +1,167 @@
 <template>
-  <div
-    class="hero-area course-item-height"
-    :style="{
-      backgroundImage: `url(/img/courses/banner.png)`,
-      backgroundSize: 'cover',
-    }"
-  >
-    <div class="container">
-      <div class="content-wrapper">
-        <div class="hero-content">
-          <div class="hero-course-1-text">
-            <h2>{{ $t("CourseDetails") }}</h2>
-          </div>
-          <div class="course-title-breadcrumb">
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <NuxtLink to="/">{{ $t("Home") }}</NuxtLink>
-                </li>
-                <li class="breadcrumb-item">
-                  <span>{{ $t("Courses") }}</span>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  {{ title }}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
+    <div class="course-details-page" :dir="direction">
+        <CourseDetailsBanner :course="course" :rating-count="ratingCount" :display-language="displayLanguage" />
+
+        <section class="py-10">
+            <div class="mx-auto max-w-6xl px-4">
+                <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
+                    <CourseDetailsTabs :course="course" />
+
+                    <CourseDetailsSidebar :course="course" :course-facts="courseFacts" :share-links="shareLinks"
+                        @open-video="isVideoDialogOpen = true" />
+                </div>
+            </div>
+        </section>
+
+        <CourseDetailsVideoDialog v-model:show="isVideoDialogOpen" :video-url="videoUrl" />
     </div>
-  </div>
-  <CourseDetailsTaps />
 </template>
 
-<style lang="scss" scoped>
-.hero-area.course-item-height {
-  position: relative;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-
-  &::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: #333;
-    opacity: 0.7;
-    z-index: -1;
-    top: 0;
-    left: 0;
-  }
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.content-wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 100%;
-}
-
-.hero-course-1-text {
-  margin-bottom: 20px;
-
-  h2 {
-    font-size: 60px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
-    line-height: 1.2;
-
-    @media (max-width: 991px) {
-      font-size: 54px;
-    }
-
-    @media (max-width: 767px) {
-      font-size: 35px;
-    }
-  }
-}
-
-// Breadcrumb styles
-.course-title-breadcrumb {
-  display: flex;
-  width: 100%;
-
-  nav {
-    width: 100%;
-  }
-}
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
-
-.breadcrumb-item {
-  display: flex;
-  align-items: center;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #fff;
-      opacity: 0.8;
-    }
-  }
-
-  span {
-    color: #fff;
-  }
-
-  &.active {
-    color: #fff;
-  }
-
-  & + .breadcrumb-item::before {
-    display: inline-flex;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    content: "\f105";
-    font-family: "Font Awesome 5 Pro";
-    color: #fff;
-    align-items: center;
-  }
-}
-
-[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
-  padding-right: 0;
-  padding-left: 0.5rem;
-  content: "\f105";
-  transform: rotate(180deg);
-  font-family: "Font Awesome 5 Pro";
-  color: #fff;
-}
-
-.course-title-breadcrumb.breadcrumb-top {
-  margin-top: -90px;
-}
-
-.breadcrumb-item.white-color {
-  a {
-    color: #333;
-  }
-
-  &::before {
-    color: #333;
-  }
-}
-
-.banner-title-wrapper {
-  max-width: 650px;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-// Responsive flexbox adjustments
-@media (max-width: 767px) {
-  .content-wrapper {
-    padding: 20px 0;
-  }
-
-  .hero-content {
-    align-items: center;
-    text-align: center;
-  }
-
-  .course-title-breadcrumb {
-    justify-content: center;
-
-    .breadcrumb {
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 991px) {
-  .hero-content {
-    align-items: flex-start;
-    text-align: left;
-  }
-}
-</style>
-
 <script setup lang="ts">
-// Define props
-defineProps<{
-  title: string;
-}>();
+import { computed, ref } from "vue";
+import { createError } from "h3";
+import enData from "@/constant/data(en).json";
+import arData from "@/constant/data(ar).json";
+import ruData from "@/constant/data(ru).json";
 
-const { params } = useRoute();
-console.log("route", params.id);
+type Course = Record<string, any>;
+
+const datasets: Record<string, { courses: Course[] }> = {
+    en: enData,
+    ar: arData,
+    ru: ruData,
+};
+
+const route = useRoute();
+const { locale, localeProperties, t } = useI18n();
+const requestUrl = useRequestURL();
+
+const direction = computed(() => localeProperties.value?.dir ?? "ltr");
+const courseId = computed(() => String(route.params.id ?? ""));
+
+const coursesForLocale = computed(() => {
+    const currentLocale = (locale.value as keyof typeof datasets) || "en";
+    const defaultDataset = datasets.en;
+    const dataset = datasets[currentLocale] ?? defaultDataset;
+    return dataset!.courses;
+});
+
+const course = computed(() =>
+    coursesForLocale.value.find((item) => String(item.id) === courseId.value) ?? null
+);
+
+if (!course.value) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: t("CourseDetails"),
+    });
+}
+
+useHead(() => ({
+    title: course.value?.title ?? t("CourseDetails"),
+}));
+
+const isVideoDialogOpen = ref(false);
+
+const ratingCount = computed(() => {
+    const rawRating = course.value?.rating ?? "";
+    const numeric = rawRating.replace(/[^0-9]/g, "");
+    return numeric || "0";
+});
+
+const lessonsCount = computed(() => {
+    if (!course.value?.curriculums?.length) {
+        return 0;
+    }
+
+    return course.value.curriculums.reduce((count: number, section: any) => {
+        return count + (section.lessons?.length ?? 0);
+    }, 0);
+});
+
+const courseFacts = computed(() => {
+    const facts = [
+        {
+            key: "price",
+            label: t("Price"),
+            value: course.value?.price ?? t("NotAvailable"),
+            icon: "fa-solid fa-tag",
+        },
+        {
+            key: "instructor",
+            label: t("Instructor"),
+            value: course.value?.instructor ?? t("NotAvailable"),
+            icon: "fa-solid fa-user",
+        },
+        {
+            key: "duration",
+            label: t("Duration"),
+            value: course.value?.duration ?? t("NotAvailable"),
+            icon: "fa-solid fa-clock",
+        },
+        {
+            key: "lessons",
+            label: t("Lessons"),
+            value: lessonsCount.value ? String(lessonsCount.value) : t("NotAvailable"),
+            icon: "fa-solid fa-book-open",
+        },
+        {
+            key: "level",
+            label: t("Level"),
+            value: course.value?.beginer ?? t("NotAvailable"),
+            icon: "fa-solid fa-signal",
+        },
+        {
+            key: "certificate",
+            label: t("Certificate"),
+            value: course.value?.certificate ?? t("NotAvailable"),
+            icon: "fa-solid fa-certificate",
+        },
+    ];
+
+    return facts.filter((item) => item.label && item.value);
+});
+
+const shareUrl = computed(() => encodeURIComponent(requestUrl.href));
+
+const shareLinks = computed(() => [
+    {
+        icon: "fa-brands fa-facebook-f",
+        label: "Facebook",
+        href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl.value}`,
+        brandColor: "var(--color-facebook)",
+    },
+    {
+        icon: "fa-brands fa-x-twitter",
+        label: "X",
+        href: `https://twitter.com/intent/tweet?url=${shareUrl.value}`,
+        brandColor: "var(--color-twitter)",
+    },
+    {
+        icon: "fa-brands fa-linkedin-in",
+        label: "LinkedIn",
+        href: `https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl.value}`,
+        brandColor: "var(--color-linkedin)",
+    },
+    {
+        icon: "fa-brands fa-whatsapp",
+        label: "WhatsApp",
+        href: `https://wa.me/?text=${shareUrl.value}`,
+        brandColor: "var(--color-whatsapp)",
+    },
+]);
+
+const displayLanguage = computed(() => {
+    const map: Record<string, string> = {
+        en: "English",
+        ar: "العربية",
+        ru: "Русский",
+    };
+
+    return map[locale.value] ?? "English";
+});
+
+const videoUrl = computed(() => {
+    return course.value?.videoUrl || "https://www.youtube.com/embed/dQw4w9WgXcQ";
+});
 </script>
