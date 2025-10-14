@@ -6,7 +6,7 @@
 			<button type="button" class="group relative block aspect-[16/9] w-full overflow-hidden"
 				@click="emit('open-video')">
 				<img :src="videoThumbnail" :alt="course?.title" class="absolute inset-0 h-full w-full object-cover" />
-				<div class="absolute inset-0 bg-slate-900/40 transition group-hover:bg-slate-900/50"></div>
+				<div class="absolute inset-0 bg-slate-900/20 transition group-hover:bg-slate-900/30"></div>
 				<div class="absolute inset-0 flex items-center justify-center">
 					<span
 						class="flex h-16 w-16 items-center justify-center rounded-full bg-white text-secondary shadow-lg transition group-hover:bg-primary-hover">
@@ -38,7 +38,7 @@
 					<NuxtLink :to="{
 						path: '/payment',
 						query: { courseId: course?.id ?? '' },
-					}" class="start-course edu-btn w-full">
+					}" class="start-course edu-btn w-full my-4">
 						{{ $t("StartNow") }}
 						<i class="icon-4"></i>
 					</NuxtLink>
