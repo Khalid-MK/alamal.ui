@@ -15,7 +15,7 @@
 					{{ formattedAverage }}
 				</p>
 				<div class="mt-2 flex justify-center gap-1 text-warning">
-					<i v-for="star in 5" :key="star" class="fa-solid fa-star"></i>
+					<i v-for="star in 5" :key="star" :class="['icon', icons.starFilled]"></i>
 				</div>
 				<p class="mt-2 text-xs font-medium text-body-muted">
 					{{ t("ReviewCount", { count: totalRatings }) }}
@@ -51,7 +51,7 @@
 								<p class="text-sm text-body-muted">{{ review.date }}</p>
 							</div>
 							<div class="flex items-center gap-2 text-warning">
-								<i v-for="star in review.rating" :key="star" class="fa-solid fa-star"></i>
+								<i v-for="star in review.rating" :key="star" :class="['icon', icons.starFilled]"></i>
 							</div>
 						</div>
 						<p class="leading-relaxed text-body">{{ review.comment }}</p>
@@ -71,7 +71,7 @@
 						<button v-for="star in 5" :key="star" type="button" class="text-warning transition-colors hover:opacity-90"
 							@click="form.rating = star" :aria-pressed="form.rating === star"
 							:aria-label="t('StarRatingLabel', { rating: star })">
-							<i :class="form.rating >= star ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+							<i :class="['icon', form.rating >= star ? icons.starFilled : icons.starOutline]"></i>
 						</button>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 				<button type="submit"
 					class="inline-flex items-center justify-center gap-2 rounded-lg bg-success px-6 py-3 text-sm font-semibold text-white shadow-darker transition hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
 					{{ t("SubmitReview") }}
-					<i class="fa-solid fa-arrow-right text-xs"></i>
+					<i :class="['icon', icons.arrowRight, 'text-xs']"></i>
 				</button>
 			</form>
 		</div>
@@ -101,12 +101,19 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue";
 import { useI18n } from "vue-i18n";
+import { getIconClass } from "@/constant/iconMap";
 
 defineProps<{
 	course: Record<string, any> | null;
 }>();
 
 const { t } = useI18n();
+
+const icons = {
+	starFilled: getIconClass("starFilled"),
+	starOutline: getIconClass("starOutline"),
+	arrowRight: getIconClass("arrowRight"),
+};
 
 const ratingDistribution = [
 	{ stars: 5, count: 7 },

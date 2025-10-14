@@ -28,7 +28,7 @@
 				<a v-for="link in socialLinks" :key="link.icon" :href="link.href" target="_blank" rel="noopener"
 					class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-border text-body-muted"
 					:style="{ '--brand-color': link.brandColor }">
-					<i :class="link.icon"></i>
+					<i :class="['icon', link.icon]"></i>
 					<span class="sr-only">{{ link.label }}</span>
 				</a>
 			</div>
@@ -39,6 +39,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { getIconClass } from "@/constant/iconMap";
 
 const props = defineProps<{
 	course: Record<string, any> | null;
@@ -60,27 +61,77 @@ const instructorBio = computed(() => course.value?.instructorBio || defaultInstr
 
 type SocialLink = { icon: string; label: string; href: string; brandColor: string };
 
+const socialIcons = {
+	facebook: getIconClass("facebook"),
+	x: getIconClass("x"),
+	linkedin: getIconClass("linkedin"),
+	youtube: getIconClass("youtube"),
+};
+
+const resolveSocialIcon = (value: unknown, fallback: string) => {
+	if (typeof value !== "string") {
+		return fallback;
+	}
+	if (value.startsWith("icon-")) {
+		return value;
+	}
+	const normalized = value.toLowerCase();
+	if (normalized.includes("facebook")) {
+		return socialIcons.facebook;
+	}
+	if (normalized.includes("twitter") || normalized.includes("x-")) {
+		return socialIcons.x;
+	}
+	if (normalized.includes("linkedin")) {
+		return socialIcons.linkedin;
+	}
+	if (normalized.includes("youtube") || normalized.includes("video")) {
+		return socialIcons.youtube;
+	}
+	return fallback;
+};
+
+const inferIconByLabel = (label: unknown, fallback: string) => {
+	if (typeof label !== "string") {
+		return fallback;
+	}
+	const normalized = label.toLowerCase();
+	if (normalized.includes("facebook")) {
+		return socialIcons.facebook;
+	}
+	if (normalized.includes("twitter") || normalized.includes("x")) {
+		return socialIcons.x;
+	}
+	if (normalized.includes("linkedin")) {
+		return socialIcons.linkedin;
+	}
+	if (normalized.includes("youtube")) {
+		return socialIcons.youtube;
+	}
+	return fallback;
+};
+
 const defaultSocialLinks: SocialLink[] = [
 	{
-		icon: "fa-brands fa-facebook-f",
+		icon: socialIcons.facebook,
 		label: "Facebook",
 		href: "#",
 		brandColor: "var(--color-facebook)",
 	},
 	{
-		icon: "fa-brands fa-x-twitter",
+		icon: socialIcons.x,
 		label: "X",
 		href: "#",
 		brandColor: "var(--color-twitter)",
 	},
 	{
-		icon: "fa-brands fa-linkedin-in",
+		icon: socialIcons.linkedin,
 		label: "LinkedIn",
 		href: "#",
 		brandColor: "var(--color-linkedin)",
 	},
 	{
-		icon: "fa-brands fa-youtube",
+		icon: socialIcons.youtube,
 		label: "YouTube",
 		href: "#",
 		brandColor: "var(--color-youtube)",
@@ -95,12 +146,15 @@ const socialLinks = computed(() => {
 
 	const normalized: SocialLink[] = rawLinks
 		.filter((link: any) => link && link.icon && link.href)
-		.map((link: any) => ({
-			icon: link.icon,
-			label: link.label || "",
-			href: link.href,
-			brandColor: link.brandColor || "var(--color-primary)",
-		}));
+		.map((link: any) => {
+			const fallbackIcon = inferIconByLabel(link.label, socialIcons.facebook);
+			return {
+				icon: resolveSocialIcon(link.icon, fallbackIcon),
+				label: link.label || "",
+				href: link.href,
+				brandColor: link.brandColor || "var(--color-primary)",
+			};
+		});
 
 	return normalized.length ? normalized : defaultSocialLinks;
 });

@@ -117,6 +117,10 @@ body {
   background-color: var(--color-bg-body);
 }
 
+.spartan {
+  font-family: var(--font-secondary);
+}
+
 h1,
 h2,
 h3,
