@@ -29,9 +29,8 @@
 									<i :class="['icon', fact.icon]"></i>
 									<span>{{ fact.label }}</span>
 								</div>
-								<span
-									:class="fact.key === 'price' ? 'font-bold text-xl text-secondary' : 'font-semibold text-heading'">{{
-										fact.value }}</span>
+								<span :class="fact.key === 'price' ? 'font-bold text-xl text-secondary' : 'fact'">{{
+									fact.value }}</span>
 							</li>
 						</ul>
 					</div>
@@ -39,14 +38,14 @@
 					<NuxtLink :to="{
 						path: '/payment',
 						query: { courseId: course?.id ?? '' },
-					}" class="start-course flex items-center justify-center gap-2 rounded-sm bg-primary my-6 px-5 py-3 text-center  text-white transition hover:opacity-95">
+					}" class="start-course edu-btn w-full">
 						{{ $t("StartNow") }}
 						<i class="icon-4"></i>
 					</NuxtLink>
 				</div>
 
 				<div class="mt-1">
-					<span class="text-xl font-semibold mb-3">{{ $t("ShareOn") }}</span>
+					<span class="text-xl font-semibold mb-2">{{ $t("ShareOn") }}:</span>
 					<div class="mt-3 flex items-center gap-3">
 						<a v-for="item in shareLinks" :key="item.icon" :href="item.href" target="_blank" rel="noopener"
 							class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-border text-body-muted"
@@ -104,10 +103,11 @@ const lastFactKey = computed(() => {
 	line-height: var(--line-height-b1);
 	font-weight: 500;
 	color: var(--color-heading);
+	font-size: 15px !important;
 }
 
 .fact span {
-	font-weight: 500;
+	font-weight: 400;
 	color: var(--color-heading);
 }
 
@@ -146,5 +146,75 @@ const lastFactKey = computed(() => {
 
 .start-course i {
 	font-size: 11px;
+}
+
+.edu-btn,
+button.edu-btn {
+	text-align: center;
+	border-radius: 5px;
+	display: inline-block;
+	height: 60px;
+	line-height: 62px;
+	color: var(--edu-btn-color);
+	background: var(--color-primary);
+	padding: 0 30px;
+	font-size: 15px;
+	font-weight: 500;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	font-family: var(--font-secondary);
+	border: 0 none;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+
+	.edu-btn,
+	button.edu-btn {
+		padding: 0 20px;
+		font-size: 14px;
+		height: 50px;
+		line-height: 52px;
+	}
+}
+
+.edu-btn:after,
+button.edu-btn:after {
+	content: "";
+	height: 100%;
+	width: 0;
+	background: -webkit-linear-gradient(right, #31b978 0%, #1ab69d 100%);
+	background: linear-gradient(-90deg, #31b978 0%, #1ab69d 100%);
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.edu-btn i,
+button.edu-btn i {
+	padding-left: 6px;
+	position: relative;
+	font-size: 11px;
+}
+
+@media only screen and (max-width: 767px) {
+
+	.edu-btn i,
+	button.edu-btn i {
+		font-size: 9px;
+	}
+}
+
+.edu-btn:hover:after,
+button.edu-btn:hover:after {
+	left: 0;
+	width: 100%;
 }
 </style>
