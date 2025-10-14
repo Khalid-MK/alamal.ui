@@ -1,9 +1,8 @@
 <template>
-	<div
-		class="flex flex-col gap-6 rounded-xl border border-border bg-surface p-6 shadow-darker3 sm:flex-row sm:items-start">
+	<div class="flex flex-col gap-6 sm:flex-row sm:items-start">
 		<div class="flex flex-none justify-center">
-			<img v-if="course?.instructorImage" src="" :alt="course?.instructor"
-				class="h-[170px] w-[170px] rounded-xl border border-border object-cover" />
+			<img v-if="course?.instructorImage" :src="course?.instructorImage || ''" :alt="course?.instructor"
+				class="h-[170px] w-[170px] rounded-sm border border-border object-cover" />
 			<div v-else
 				class="flex h-[170px] w-[170px] items-center justify-center rounded-xl border border-dashed border-border bg-surface-muted text-sm font-semibold tracking-wide text-body-muted">
 				170X170
@@ -11,7 +10,7 @@
 		</div>
 		<div class="flex-1 space-y-5">
 			<div class="space-y-1">
-				<h3 class="text-2xl font-semibold text-heading">
+				<h3 class="text-2xl font-semibold text-heading spartan">
 					{{ instructorName }}
 				</h3>
 				<p class="text-base font-medium text-body-muted">
@@ -28,7 +27,7 @@
 				<a v-for="link in socialLinks" :key="link.icon" :href="link.href" target="_blank" rel="noopener"
 					class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-border text-body-muted"
 					:style="{ '--brand-color': link.brandColor }">
-					<i :class="['icon', link.icon]"></i>
+					<i :class="normalizeIconClasses(link.icon)"></i>
 					<span class="sr-only">{{ link.label }}</span>
 				</a>
 			</div>
@@ -39,7 +38,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { getIconClass } from "@/constant/iconMap";
 
 const props = defineProps<{
 	course: Record<string, any> | null;
@@ -62,24 +60,28 @@ const instructorBio = computed(() => course.value?.instructorBio || defaultInstr
 type SocialLink = { icon: string; label: string; href: string; brandColor: string };
 
 const socialIcons = {
-	facebook: getIconClass("facebook"),
-	x: getIconClass("x"),
-	linkedin: getIconClass("linkedin"),
-	youtube: getIconClass("youtube"),
+	facebook: "fa-facebook-f",
+	x: "fa-x-twitter",
+	linkedin: "fa-linkedin-in",
+	youtube: "fa-youtube",
 };
 
 const resolveSocialIcon = (value: unknown, fallback: string) => {
 	if (typeof value !== "string") {
 		return fallback;
 	}
-	if (value.startsWith("icon-")) {
-		return value;
+	const trimmed = value.trim();
+	if (!trimmed) {
+		return fallback;
 	}
-	const normalized = value.toLowerCase();
+	if (trimmed.startsWith("fa-") || trimmed.includes(" fa-")) {
+		return trimmed;
+	}
+	const normalized = trimmed.toLowerCase();
 	if (normalized.includes("facebook")) {
 		return socialIcons.facebook;
 	}
-	if (normalized.includes("twitter") || normalized.includes("x-")) {
+	if (normalized.includes("twitter") || normalized.includes("x")) {
 		return socialIcons.x;
 	}
 	if (normalized.includes("linkedin")) {
@@ -109,6 +111,23 @@ const inferIconByLabel = (label: unknown, fallback: string) => {
 		return socialIcons.youtube;
 	}
 	return fallback;
+};
+
+const normalizeIconClasses = (icon: string) => {
+	if (typeof icon !== "string" || !icon.trim()) {
+		return [];
+	}
+	const classes = icon.trim().split(/\s+/);
+	const hasFa = classes.some((cls) => cls.startsWith("fa-"));
+	const hasIcon = classes.some((cls) => cls === "icon" || cls.startsWith("icon-"));
+	if (hasFa && !classes.includes("fa-brands")) {
+		classes.unshift("fa-brands");
+	} else if (hasIcon && !classes.includes("icon")) {
+		classes.unshift("icon");
+	} else if (!hasFa && !hasIcon) {
+		classes.unshift("fa-brands");
+	}
+	return classes;
 };
 
 const defaultSocialLinks: SocialLink[] = [
@@ -174,6 +193,7 @@ const socialLinks = computed(() => {
 }
 
 .social-link {
+	color: var(--color-body);
 	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
