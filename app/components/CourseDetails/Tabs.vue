@@ -1,6 +1,6 @@
 <template>
 	<div class="space-y-10">
-		<div class="flex flex-wrap justify-center gap-3 border-b border-border">
+		<div class="mt-28 flex flex-wrap justify-center gap-3 border-b border-border">
 			<button v-for="tab in tabItems" :key="tab.key" type="button" class="tab-trigger"
 				:class="{ 'is-active': activeTab === tab.key }" @click="activeTab = tab.key"
 				:aria-pressed="activeTab === tab.key">
@@ -57,11 +57,17 @@ const { t } = useI18n();
 	position: relative;
 	padding: 0.75rem 1.25rem;
 	border-radius: 0.75rem 0.75rem 0 0;
-	font-size: 0.875rem;
-	font-weight: 600;
-	color: var(--color-title);
-	background: transparent;
 	transition: color 200ms ease;
+
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 28px;
+	background: transparent;
+	padding: 15px 25px;
+	position: relative;
+	color: var(--color-body);
+	font-family: var(--font-secondary);
 }
 
 .tab-trigger::after {
