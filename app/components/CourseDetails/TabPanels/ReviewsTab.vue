@@ -1,7 +1,7 @@
 <template>
 	<section class="space-y-10">
 		<div class="space-y-3">
-			<h2 class="text-2xl font-semibold text-heading">
+			<h2 class="text-3xl font-semibold text-heading spartan">
 				{{ t("CourseRatingHeading") }}
 			</h2>
 			<p class="text-sm text-body-muted">
@@ -10,14 +10,14 @@
 		</div>
 
 		<div class="grid gap-8 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:items-center">
-			<div class="rounded-2xl border border-border bg-surface p-6 text-center shadow-darker3">
-				<p class="mt-3 text-5xl text-secondary font-semibold text-heading">
+			<div class="rate-box text-center">
+				<p class="rating-number mb-3 text-secondary font-semibold spartan">
 					{{ formattedAverage }}
 				</p>
-				<div class="mt-2 flex justify-center gap-1 text-warning">
-					<i v-for="star in 5" :key="star" :class="['icon', icons.starFilled]"></i>
+				<div class="mb-3 flex justify-center gap-1 text-[#f8b81f]">
+					<i v-for="star in 5" :key="star" class="fa-solid fa-star"></i>
 				</div>
-				<p class="mt-2 text-xs font-medium text-body-muted">
+				<p class="text-xs font-medium text-[#808080]">
 					{{ t("ReviewCount", { count: totalRatings }) }}
 				</p>
 			</div>
@@ -25,8 +25,9 @@
 			<div class="space-y-3">
 				<div v-for="item in ratingDistribution" :key="item.stars" class="flex items-center gap-4">
 					<span class="w-5 text-sm font-semibold text-heading">{{ item.stars }}</span>
+					<i class="fa-solid fa-star text-[#f8b81f]"></i>
 					<div class="h-2 flex-1 rounded-full bg-border">
-						<div class="h-full rounded-full bg-warning" :style="{ width: getDistributionWidth(item.count) }"></div>
+						<div class="h-full rounded-full bg-[#f8b81f]" :style="{ width: getDistributionWidth(item.count) }"></div>
 					</div>
 					<span class="w-6 text-right text-sm text-body">{{ item.count }}</span>
 				</div>
@@ -50,8 +51,9 @@
 								<p class="text-lg font-semibold text-heading">{{ review.name }}</p>
 								<p class="text-sm text-body-muted">{{ review.date }}</p>
 							</div>
-							<div class="flex items-center gap-2 text-warning">
-								<i v-for="star in review.rating" :key="star" :class="['icon', icons.starFilled]"></i>
+							<div class="flex items-center gap-2 text-[#f8b81f]">
+								<i v-for="star in 5" :key="star"
+									:class="review.rating >= star ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
 							</div>
 						</div>
 						<p class="leading-relaxed text-body">{{ review.comment }}</p>
@@ -67,11 +69,11 @@
 			<form class="space-y-6" @submit.prevent="handleSubmit">
 				<div class="flex flex-wrap items-center gap-3">
 					<p class="text-sm font-medium text-heading">{{ t("RatingHere") }}</p>
-					<div class="flex gap-1 text-xl">
-						<button v-for="star in 5" :key="star" type="button" class="text-warning transition-colors hover:opacity-90"
-							@click="form.rating = star" :aria-pressed="form.rating === star"
-							:aria-label="t('StarRatingLabel', { rating: star })">
-							<i :class="['icon', form.rating >= star ? icons.starFilled : icons.starOutline]"></i>
+					<div class="flex gap-1 text-xl text-[#f8b81f]">
+						<button v-for="star in 5" :key="star" type="button"
+							class="transition-colors hover:opacity-90 text-[#f8b81f]" @click="form.rating = star"
+							:aria-pressed="form.rating === star" :aria-label="t('StarRatingLabel', { rating: star })">
+							<i :class="form.rating >= star ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
 						</button>
 					</div>
 				</div>
@@ -110,8 +112,6 @@ defineProps<{
 const { t } = useI18n();
 
 const icons = {
-	starFilled: getIconClass("starFilled"),
-	starOutline: getIconClass("starOutline"),
 	arrowRight: getIconClass("arrowRight"),
 };
 
@@ -158,7 +158,7 @@ const averageRating = computed(() => {
 	return totalWeighted / totalRatings.value;
 });
 
-const formattedAverage = computed(() => averageRating.value.toFixed(2));
+const formattedAverage = computed(() => averageRating.value.toFixed(1));
 
 const inputClasses =
 	"w-full rounded-lg border border-border bg-surface px-4 py-3 text-sm text-heading shadow-sm transition placeholder:text-placeholder focus:border-primary focus:outline-none focus:shadow-darker4";
@@ -181,3 +181,19 @@ const handleSubmit = () => {
 	// Submission handling will be wired up with backend/API integration.
 };
 </script>
+
+<style scoped>
+.rate-box {
+	width: 170px;
+	padding: 20px 10px;
+	box-shadow: 0px 0px 40px 0 rgba(0, 0, 0, 0.07);
+}
+
+.rating-number {
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1;
+	font-family: var(--font-secondary);
+	color: var(--color-secondary);
+}
+</style>

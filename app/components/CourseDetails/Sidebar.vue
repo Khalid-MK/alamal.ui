@@ -1,5 +1,5 @@
 <template>
-	<aside class="lg:sticky lg:top-24 lg:-mt-60">
+	<aside class="lg:sticky lg:top-24 lg:-mt-72">
 		<div class="sidebar-content overflow-hidden shadow-darker transition">
 
 
