@@ -1,6 +1,6 @@
 <template>
 	<div class="space-y-10">
-		<div class="mt-28 flex flex-wrap justify-center gap-3 border-b border-border">
+		<div class="mt-28 mb-20 flex flex-wrap justify-center gap-3 border-b border-border">
 			<button v-for="tab in tabItems" :key="tab.key" type="button" class="tab-trigger"
 				:class="{ 'is-active': activeTab === tab.key }" @click="activeTab = tab.key"
 				:aria-pressed="activeTab === tab.key">
@@ -35,7 +35,7 @@ const activeTab = ref<"overview" | "curriculum" | "instructor" | "reviews">("ove
 
 const tabItems = [
 	{ key: "overview", labelKey: "Overview" },
-	{ key: "curriculum", labelKey: "Curriculum" },
+	// { key: "curriculum", labelKey: "Curriculum" },
 	{ key: "instructor", labelKey: "Instructor" },
 	{ key: "reviews", labelKey: "Reviews" },
 ] as const;
