@@ -1,5 +1,18 @@
 <template>
 	<section class="banner relative border-b border-border text-white">
+
+		<ul class="shape-group">
+			<li class="shape-1">
+				<span></span>
+			</li>
+			<li class="shape-2 scene"><img data-depth="2" src="/img/shape-13.png" alt="shape"></li>
+			<!-- <li class="shape-3 scene"><img data-depth="-2" src="/img/shape-15.png" alt="shape"></li> -->
+			<li class="shape-4">
+				<span></span>
+			</li>
+			<li class="shape-5 scene"><img data-depth="2" src="/img/shape-07.png" alt="shape"></li>
+		</ul>
+
 		<!-- <div class="absolute inset-0 bg-slate-900/70"></div> -->
 		<div class="relative mx-auto max-w-6xl px-4 py-14 md:py-20">
 			<nav class="flex flex-wrap items-center gap-2 text-sm spartan">
@@ -16,7 +29,10 @@
 
 			<div class="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 				<div class="max-w-3xl space-y-4">
-					<h1 class="text-3xl font-bold md:text-4xl spartan">
+					<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+         font-bold spartan
+         leading-tight sm:leading-snug md:leading-normal
+         mt-4 sm:mt-6 md:mt-8">
 						{{ course?.title }}
 					</h1>
 					<div class="flex flex-wrap items-center gap-4 text-sm text-primary">
@@ -100,7 +116,7 @@ nav {
 	color: var(--color-heading);
 	position: absolute;
 	top: 1rem;
-	left: 0;
+	left: 1rem;
 }
 
 nav i {
@@ -108,8 +124,16 @@ nav i {
 }
 
 .banner {
+	position: relative;
 	background: #f5f9fa;
-	height: 348px;
+	min-height: 348px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.banner>.relative {
+	position: relative;
+	z-index: 1;
 }
 
 .banner h1 {
@@ -123,5 +147,89 @@ nav i {
 	padding-right: 14px;
 	font-size: 24px;
 	color: var(--color-primary);
+}
+
+.shape-group {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	pointer-events: none;
+}
+
+.shape-group li {
+	position: absolute;
+	z-index: 0;
+}
+
+.shape-group li img,
+.shape-group li span {
+	display: block;
+}
+
+.shape-group li img {
+	max-width: none;
+	height: auto;
+}
+
+.shape-group li span {
+	height: 100%;
+	width: 100%;
+}
+
+.shape-group li.shape-1 {
+	top: -160px;
+	left: -120px;
+	width: 320px;
+	height: 320px;
+}
+
+.shape-group li.shape-1 span {
+	border: 1px solid var(--color-border);
+	border-radius: 50%;
+}
+
+.shape-group li.shape-2 {
+	top: 80px;
+	left: 8%;
+}
+
+.shape-group li.shape-3 {
+	bottom: 60px;
+	right: 50%;
+}
+
+.shape-group li.shape-4 {
+	top: -100px;
+	right: -140px;
+	width: 420px;
+	height: 420px;
+}
+
+.shape-group li.shape-4 span {
+	border: 1px solid var(--color-border);
+	border-radius: 50%;
+}
+
+.shape-group li.shape-5 {
+	top: 40px;
+	right: 6%;
+}
+
+@media (max-width: 1199px) {
+	.shape-group li.shape-4 {
+		top: -140px;
+		right: -200px;
+	}
+}
+
+@media (max-width: 991px) {
+	.shape-group {
+		display: none;
+	}
 }
 </style>
