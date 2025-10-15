@@ -46,7 +46,7 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@pinia/nuxt"
   ],
-  css: ["~/assets/css/tailwind.css", "~/assets/css/flaticon.css"],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/flaticon.css", "~/assets/css/vendor/icomoon.css"],
   app: {
     head: {
       link: [

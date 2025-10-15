@@ -135,9 +135,10 @@
     "Slide3Button": "Узнать больше",
     "Slide4Button": "Узнать больше",
     "ViewAllCourses": "Посмотреть все курсы",
-    "WeProvideBest": "Мы предоставляем лучшее ",
+    "WeProvideBest": "Мы предоставляем лучшее",
     "Education": "Образование",
-    "ServicesForYou": "Услуги для вас",
+    "Service": "Услуга",
+    "ForYou": "Услуги для вас",
     "_comment About": "This section is for statistics labels",
     "statistics": {
         "studentEnrolled": "Зачисленных студентов",

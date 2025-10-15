@@ -135,9 +135,10 @@
   "Slide3Button": "Know More",
   "Slide4Button": "Know More",
   "ViewAllCourses": "View All Courses",
-  "WeProvideBest": "We Provide Best ",
-  "Education": "Education",
-  "ServicesForYou": "Services For You",
+  "WeProvideBest": "We Provide Best",
+  "Education": "Education ",
+  "Service": "Service",
+  "ForYou": " For You",
   "_comment About": "This section is for statistics labels",
   "statistics": {
     "studentEnrolled": "Student Enrolled",

@@ -4,6 +4,7 @@
   <HomeCourseList />
   <HomeSubscribeSteps />
   <HomeHowSiteWork />
+  <HomeTeacherSection />
   <HomeEvents />
   <HomeFeatureSection />
   <HomeAboutSection />

@@ -10,6 +10,7 @@ import { themeColors } from '@/constant/themeTokens'
 
 const baseLightColors = {
   primary: themeColors.primary,
+  primaryHover: themeColors.primaryHover,
   secondary: themeColors.secondary,
   'on-primary': themeColors.white,
   'on-secondary': themeColors.white,
@@ -24,6 +25,7 @@ const baseLightColors = {
 
 const baseDarkColors = {
   primary: themeColors.primary,
+  primaryHover: themeColors.primaryHover,
   secondary: themeColors.secondary,
   'on-primary': themeColors.white,
   'on-secondary': themeColors.white,

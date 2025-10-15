@@ -14,13 +14,17 @@
                         <span class="subtitle">{{ $t("AboutUs") }}</span>
                         <h2 class="main-title">
                             {{ $t("WeProvideBest") }}
-                            <span class="text-[#C5E96B]">{{ $t("Education") }}</span>
-                            {{ $t("ServicesForYou") }}
+                            <span class="edu-span">{{ $t("Education") }}</span>
+                            <span class="serv-icon">
+                                Services
+                                <span class="shape-line"><i class="icon-19"></i></span>
+                            </span>
+                            {{ $t("ForYou") }}
                         </h2>
                     </div>
 
                     <!-- Tabs -->
-                    <v-tabs v-model="tab" color="#C5E96B" align-tabs="start" class="custom-tabs">
+                    <v-tabs v-model="tab" align-tabs="start" class="custom-tabs">
                         <v-tab v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
                             {{ $t(`tabs.${tabItem.value}.title`) }}
                         </v-tab>
@@ -34,7 +38,6 @@
 
                                 <div class="features-list">
                                     <div v-for="(feature, index) in tabItem.features" :key="index" class="feature-item">
-                                        <v-icon color="#C5E96B" size="24">mdi-check</v-icon>
                                         <span class="feature-text">{{ $t(feature) }}</span>
                                     </div>
                                 </div>
@@ -266,6 +269,11 @@ const tabsData: TabData[] = [
     @media (max-width: 767px) {
         padding: 30px 0;
     }
+
+    @media (max-width: 321px) {
+        margin: 50px 0;
+
+    }
 }
 
 .container-wrapper {
@@ -443,6 +451,36 @@ img {
     line-height: 1.3;
     margin: 0;
 
+    >span.edu-span {
+        color: var(--color-primary);
+
+    }
+
+    >span.serv-icon {
+        position: relative;
+
+        .shape-line {
+            position: absolute;
+            font-size: 14px;
+            color: var(--color-primary);
+            /* display: block; */
+            right: 21px;
+            top: 44px;
+            /* margin-bottom: 14px; */
+
+            /* i {
+            font-family: 'icomoon' !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            
+        } */
+        }
+    }
+
     @media (max-width: 1279px) {
         font-size: 36px;
     }
@@ -463,6 +501,7 @@ img {
 .custom-tabs {
     margin-bottom: 30px;
     margin-top: 30px;
+    color: var(--color-primary) !important;
 
     @media (max-width: 767px) {
         margin-bottom: 20px;
@@ -505,6 +544,17 @@ img {
         height: 3px;
         border-radius: 3px;
     }
+
+    //overwrite the color
+
+    .v-slide-group__container {
+        .v-slide-group__content {
+            button.v-btn {
+
+                color: var(--color-primary) !important;
+            }
+        }
+    }
 }
 
 .tabs-content {
@@ -546,6 +596,7 @@ img {
     flex-direction: column;
     gap: 16px;
 
+
     @media (max-width: 767px) {
         gap: 12px;
     }
@@ -562,6 +613,7 @@ img {
 
     .v-icon {
         flex-shrink: 0;
+        color: var(--color-primary);
 
         @media (max-width: 767px) {
             font-size: 20px !important;
@@ -573,6 +625,10 @@ img {
     font-size: 18px;
     font-weight: 500;
     color: #333;
+    display: inline-flex;
+    /* ensures proper spacing handling */
+    align-items: center;
+    /* vertically centers icon and text */
 
     @media (max-width: 1023px) {
         font-size: 16px;
@@ -580,6 +636,15 @@ img {
 
     @media (max-width: 767px) {
         font-size: 15px;
+    }
+
+    &:before {
+        content: "\e913";
+        font-family: 'icomoon';
+        color: var(--color-primary);
+        font-size: 19px;
+        margin-right: 6px;
+        /* 👈 adds space between icon and title */
     }
 }
 </style>

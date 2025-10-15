@@ -131,9 +131,10 @@
   "Slide4Button": "اعرف المزيد",
   "EnrollNow": "سجل الان",
   "ViewAllCourses": "عرض كل الدورات",
-  "WeProvideBest": "نحن نقدم أفضل  خدمات ",
+  "WeProvideBest": "نحن نقدم أفضل ",
   "Education": " التعليم",
-  "ServicesForYou": " لك",
+  "Services":"خدمات ",
+  "ForYou": " لك",
   "_comment About": "This section is for statistics labels",
   "statistics": {
     "studentEnrolled": "الطلاب المسجلين",
