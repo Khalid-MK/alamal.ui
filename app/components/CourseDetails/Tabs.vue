@@ -10,12 +10,12 @@
 			</div>
 		</div>
 
-		<!-- <Transition name="tab-fade" mode="out-in">
+		<Transition name="tab-fade" mode="out-in">
 			<div :key="activeTab" :id="`tab-panel-${activeTab}`" class="space-y-10" role="tabpanel"
 				:aria-labelledby="`tab-${activeTab}`">
 				<component :is="currentTabComponent" :course="course" />
 			</div>
-		</Transition> -->
+		</Transition>
 	</div>
 </template>
 

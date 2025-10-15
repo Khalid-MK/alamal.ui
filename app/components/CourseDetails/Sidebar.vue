@@ -1,5 +1,5 @@
 <template>
-	<aside class="lg:sticky lg:top-24 lg:-mt-72">
+	<aside class="lg:sticky lg:top-24 lg:-mt-72 w-full">
 		<div class="sidebar-content overflow-hidden shadow-darker transition">
 
 
@@ -46,7 +46,7 @@
 
 				<div class="mt-1">
 					<span class="text-xl font-semibold mb-2">{{ $t("ShareOn") }}:</span>
-					<div class="mt-3 flex items-center gap-3">
+					<div class="mt-3 flex items-center gap-3 flex-wrap">
 						<a v-for="item in shareLinks" :key="item.icon" :href="item.href" target="_blank" rel="noopener"
 							class="social-link flex h-10 w-10 items-center justify-center rounded-full border border-border text-body-muted"
 							:style="{ '--brand-color': item.brandColor }">
@@ -86,6 +86,7 @@ const lastFactKey = computed(() => {
 </script>
 
 <style scoped>
+/* Base styles */
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -127,6 +128,8 @@ const lastFactKey = computed(() => {
 	padding: 15px;
 	background: #fff;
 	border-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .group {
@@ -167,17 +170,7 @@ button.edu-btn {
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-}
-
-@media only screen and (max-width: 767px) {
-
-	.edu-btn,
-	button.edu-btn {
-		padding: 0 20px;
-		font-size: 14px;
-		height: 50px;
-		line-height: 52px;
-	}
+	box-sizing: border-box;
 }
 
 .edu-btn:after,
@@ -204,17 +197,96 @@ button.edu-btn i {
 	font-size: 11px;
 }
 
+.edu-btn:hover:after,
+button.edu-btn:hover:after {
+	left: 0;
+	width: 100%;
+}
+
+/* Mobile Responsive Styles */
+@media only screen and (max-width: 1023px) {
+	aside {
+		position: static !important;
+		margin-top: 0 !important;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.sidebar-content {
+		padding: 12px;
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.sidebar-body {
+		padding: 20px 15px 15px;
+	}
+
+	.group {
+		height: auto;
+		min-height: 180px;
+	}
+}
+
 @media only screen and (max-width: 767px) {
+
+	.edu-btn,
+	button.edu-btn {
+		padding: 0 20px;
+		font-size: 14px;
+		height: 50px;
+		line-height: 52px;
+		width: 100%;
+	}
 
 	.edu-btn i,
 	button.edu-btn i {
 		font-size: 9px;
 	}
+
+	.fact {
+		font-size: 14px !important;
+	}
+
+	.text-xl {
+		font-size: 1.125rem;
+	}
+
+	.sidebar-content {
+		padding: 10px;
+	}
+
+	.sidebar-body {
+		padding: 15px 10px 10px;
+	}
+
+	.group {
+		min-height: 160px;
+	}
+
+	/* Make social icons wrap nicely */
+	.social-link {
+		flex-shrink: 0;
+	}
 }
 
-.edu-btn:hover:after,
-button.edu-btn:hover:after {
-	left: 0;
-	width: 100%;
+@media only screen and (max-width: 480px) {
+	.group {
+		min-height: 140px;
+	}
+
+	.fact {
+		font-size: 13px !important;
+	}
+
+	.text-xl {
+		font-size: 1rem;
+	}
+
+	ul li {
+		padding: 12px 0;
+	}
 }
 </style>
