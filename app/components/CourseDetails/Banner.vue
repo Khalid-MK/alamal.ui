@@ -27,9 +27,9 @@
 				<span class="font-bold">{{ course?.title }}</span>
 			</nav>
 
-			<div class="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+			<div class="mt-12 md:mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
 				<div class="max-w-3xl space-y-4">
-					<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+					<h1 class="text-2xl sm:text-3xl
          font-bold spartan
          leading-tight sm:leading-snug md:leading-normal
          mt-4 sm:mt-6 md:mt-8">
@@ -137,7 +137,6 @@ nav i {
 }
 
 .banner h1 {
-	font-size: 36px;
 	margin-bottom: 4px;
 	line-height: 1.4;
 	max-width: 644px;

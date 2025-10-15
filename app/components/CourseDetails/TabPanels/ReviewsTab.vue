@@ -90,8 +90,7 @@
 				<textarea v-model="form.details" rows="4" :class="[inputClasses, 'resize-none']"
 					:placeholder="t('ReviewDetailsPlaceholder')"></textarea>
 
-				<button type="submit"
-					class="inline-flex items-center justify-center gap-2 rounded-lg bg-success px-6 py-3 text-sm font-semibold text-white shadow-darker transition hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+				<button type="submit" class="send-btn edu-btn">
 					{{ t("SubmitReview") }}
 					<i :class="['icon', icons.arrowRight, 'text-xs']"></i>
 				</button>
@@ -161,7 +160,7 @@ const averageRating = computed(() => {
 const formattedAverage = computed(() => averageRating.value.toFixed(1));
 
 const inputClasses =
-	"w-full rounded-lg border border-border bg-surface px-4 py-3 text-sm text-heading shadow-sm transition placeholder:text-placeholder focus:border-primary focus:outline-none focus:shadow-darker4";
+	"form-control w-full rounded-sm px-4 py-3 text-sm text-heading transition placeholder:text-placeholder focus:border-primary focus:outline-none focus:shadow-darker";
 
 const form = reactive({
 	rating: 0,
@@ -185,7 +184,7 @@ const handleSubmit = () => {
 <style scoped>
 .rate-box {
 	width: 170px;
-	padding: 20px 10px;
+	padding: 40px 10px;
 	box-shadow: 0px 0px 40px 0 rgba(0, 0, 0, 0.07);
 }
 
@@ -195,5 +194,91 @@ const handleSubmit = () => {
 	line-height: 1;
 	font-family: var(--font-secondary);
 	color: var(--color-secondary);
+}
+
+.form-control {
+	box-shadow: var(--shadow-darker);
+}
+
+
+
+.send-btn {
+	font-size: 15px;
+	line-height: 32px;
+	font-weight: 400;
+}
+
+.send-btn i {
+	font-size: 11px;
+}
+
+.edu-btn,
+button.edu-btn {
+	text-align: center;
+	border-radius: 5px;
+	display: inline-block;
+	height: 60px;
+	line-height: 62px;
+	color: var(--edu-btn-color);
+	background: var(--color-primary);
+	padding: 0 30px;
+	font-size: 15px;
+	font-weight: 500;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	font-family: var(--font-secondary);
+	border: 0 none;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+
+	.edu-btn,
+	button.edu-btn {
+		padding: 0 20px;
+		font-size: 14px;
+		height: 50px;
+		line-height: 52px;
+	}
+}
+
+.edu-btn:after,
+button.edu-btn:after {
+	content: "";
+	height: 100%;
+	width: 0;
+	background: -webkit-linear-gradient(right, #31b978 0%, #1ab69d 100%);
+	background: linear-gradient(-90deg, #31b978 0%, #1ab69d 100%);
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.edu-btn i,
+button.edu-btn i {
+	padding-left: 6px;
+	position: relative;
+	font-size: 11px;
+}
+
+@media only screen and (max-width: 767px) {
+
+	.edu-btn i,
+	button.edu-btn i {
+		font-size: 9px;
+	}
+}
+
+.edu-btn:hover:after,
+button.edu-btn:hover:after {
+	left: 0;
+	width: 100%;
 }
 </style>
