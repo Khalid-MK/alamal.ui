@@ -5,7 +5,7 @@
         <section class="py-10">
             <div class="mx-auto max-w-6xl px-4">
                 <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
-                    <!-- <CourseDetailsTabs :course="course" /> -->
+                    <CourseDetailsTabs :course="course" />
 
                     <!-- <CourseDetailsSidebar :course="course" :course-facts="courseFacts" :share-links="shareLinks"
                         @open-video="isVideoDialogOpen = true" /> -->

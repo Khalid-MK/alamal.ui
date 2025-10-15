@@ -10,12 +10,12 @@
 			</div>
 		</div>
 
-		<Transition name="tab-fade" mode="out-in">
+		<!-- <Transition name="tab-fade" mode="out-in">
 			<div :key="activeTab" :id="`tab-panel-${activeTab}`" class="space-y-10" role="tabpanel"
 				:aria-labelledby="`tab-${activeTab}`">
 				<component :is="currentTabComponent" :course="course" />
 			</div>
-		</Transition>
+		</Transition> -->
 	</div>
 </template>
 
@@ -64,11 +64,9 @@ const { t } = useI18n();
 
 .tab-nav {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 0.75rem;
-}
-
-.tab-nav::-webkit-scrollbar {
-	display: none;
 }
 
 @media (min-width: 640px) {
@@ -109,7 +107,7 @@ const { t } = useI18n();
 	bottom: -1px;
 	height: 1px;
 	width: 0;
-	border-radius: 9999px;
+	z-index: 10000;
 	background: var(--color-primary);
 	transform: translateX(0%);
 	transition: width 220ms ease;
