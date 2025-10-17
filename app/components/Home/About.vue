@@ -472,21 +472,8 @@ img {
             position: absolute;
             font-size: 14px;
             color: var(--color-primary);
-            /* display: block; */
             right: 21px;
             top: 44px;
-            /* margin-bottom: 14px; */
-
-            /* i {
-            font-family: 'icomoon' !important;
-            speak: never;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            
-        } */
         }
     }
 

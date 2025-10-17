@@ -1,13 +1,13 @@
 <template>
   <HomeSliderNew />
-  <HomeAbout/>
+  <HomeAbout />
   <HomeCourseList />
   <HomeSubscribeSteps />
   <HomeHowSiteWork />
   <HomeTeacherSection />
   <HomeEvents />
-  <HomeFeatureSection />
-  <HomeAboutSection />
+  <HomeBlogAndPrayer />
+  <HomeZoomSection />
 </template>
 
 <script lang="ts" setup>
