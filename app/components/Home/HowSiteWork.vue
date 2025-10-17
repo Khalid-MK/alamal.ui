@@ -12,11 +12,11 @@
                                         class="w-full h-auto object-cover" />
                                     <div class="absolute inset-0 flex items-center justify-center">
                                         <button @click="handleVideoPopup"
-                                            class="group relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 hover:bg-blue-700 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                                            class="group relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary hover:bg-primary-700 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300"
                                             aria-label="Play video">
                                             <i class="fas fa-play text-white text-lg sm:text-xl ml-1"></i>
                                             <div
-                                                class="absolute inset-0 rounded-full animate-ping bg-blue-400 opacity-30">
+                                                class="absolute inset-0 rounded-full animate-ping bg-primary opacity-30">
                                             </div>
                                         </button>
                                     </div>

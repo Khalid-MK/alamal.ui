@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="slider-six_button">
-                            <v-btn class="alquran-btn" color="#C5E96B">{{ $t("CheckOutMore") }}</v-btn>
+                            <v-btn class="alquran-btn">{{ $t("CheckOutMore") }}</v-btn>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import slidesData from "@/constant/AboutUs";
+import slidesData from "~/constant/SliderData";
 import AudioPlayer from "../AudioPlayer.vue";
 
 // Get locale
@@ -72,6 +72,10 @@ const slides = computed(() => slidesData.messages[locale.value].slides);
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
     effect: "slide",
+    loop: true,
+    autoplay: {
+        delay: 5000,
+    },
 });
 
 onMounted(() => {
@@ -88,14 +92,23 @@ onMounted(() => {
 .slider-six {
     position: relative;
     z-index: 11;
-    min-height: 100vh;
+    /* min-height: 100; */
     height: 100%;
     overflow: visible;
     margin: 40px;
-    border-radius: 40px 40px 0 0;
+    border-radius: 40px;
+
+    @media (max-width:1445px) {
+        height: 100%;
+
+    }
 
     @media (max-width:890px) {
         margin: 0 0 110px 0;
+    }
+
+    @media (max-width:768px) {
+        height: 30%;
     }
 
     @media (max-width:430px) {
@@ -122,6 +135,7 @@ onMounted(() => {
         opacity: 0.3;
         z-index: 2;
         animation: move-mosque 70s linear infinite;
+        border-radius: inherit;
     }
 
     // Shadow layers
@@ -129,7 +143,7 @@ onMounted(() => {
         position: absolute;
         inset: 0;
         background-size: cover;
-        background-position:left;
+        background-position: left;
         z-index: 2;
     }
 
@@ -227,7 +241,7 @@ onMounted(() => {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        min-height: 90vh;
     }
 
     .content-wrapper {
@@ -267,11 +281,15 @@ onMounted(() => {
     }
 
     .slider-six_title {
-        font-size: 60px;
+        font-size: 100px;
         font-weight: bold;
         color: #1a1a1a;
         line-height: 1.2;
         margin: 0;
+
+        @media (max-width: 1441px) {
+            font-size: 60px;
+        }
 
         @media (max-width: 1279px) {
             font-size: 54px;
@@ -302,7 +320,7 @@ onMounted(() => {
         line-height: 30px;
         font-weight: 400;
         color: #585956;
-        font-size: 17px;
+        font-size: 25px;
 
         @media (max-width: 1023px) {
             font-size: 16px;
@@ -346,13 +364,28 @@ onMounted(() => {
 
     .slider-six_button {
         .alquran-btn {
+            background-color: var(--color-primary);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
             border-radius: 50px;
 
             &:hover {
-                transform: scale(1.01);
+                /* that not worke !
+                background-color: var(--color-primaryHover); */
+                background-color: #139a83;
+                /* transform: scale(1); */
             }
+
+            @media (min-width: 1441px) {
+                width: 250px;
+                font-size: 20px;
+                height: 90px;
+            }
+
+            @media (min-width: 1440px) and (max-width: 2560px) {
+                height: 60px;
+            }
+
         }
     }
 
@@ -373,7 +406,7 @@ onMounted(() => {
     .slider-six_images-outer {
         position: relative;
         width: 100%;
-        max-width: 420px;
+        max-width: 600px;
 
         @media (max-width: 1279px) {
             max-width: 380px;

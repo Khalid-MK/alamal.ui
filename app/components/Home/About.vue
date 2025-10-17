@@ -14,13 +14,17 @@
                         <span class="subtitle">{{ $t("AboutUs") }}</span>
                         <h2 class="main-title">
                             {{ $t("WeProvideBest") }}
-                            <span class="text-[#C5E96B]">{{ $t("Education") }}</span>
-                            {{ $t("ServicesForYou") }}
+                            <span class="edu-span">{{ $t("Education") }}</span>
+                            <span class="serv-icon">
+                                {{ $t("Services") }}
+                                <span class="shape-line"><i class="icon-19"></i></span>
+                            </span>
+                            {{ $t("ForYou") }}
                         </h2>
                     </div>
 
                     <!-- Tabs -->
-                    <v-tabs v-model="tab" color="#C5E96B" align-tabs="start" class="custom-tabs">
+                    <v-tabs v-model="tab" align-tabs="start" class="custom-tabs">
                         <v-tab v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
                             {{ $t(`tabs.${tabItem.value}.title`) }}
                         </v-tab>
@@ -34,7 +38,6 @@
 
                                 <div class="features-list">
                                     <div v-for="(feature, index) in tabItem.features" :key="index" class="feature-item">
-                                        <v-icon color="#C5E96B" size="24">mdi-check</v-icon>
                                         <span class="feature-text">{{ $t(feature) }}</span>
                                     </div>
                                 </div>
@@ -160,7 +163,7 @@ const tabsData: TabData[] = [
 
 .slider-six_vector-1 {
     position: absolute;
-
+    right: 10;
     width: 106px;
     height: 106px;
     /* z-index: 1; */
@@ -193,9 +196,9 @@ const tabsData: TabData[] = [
     color: #1a1a1a;
     position: absolute;
     opacity: 0.55;
-    /* z-index: 1; */
-    /* left: 55%;
-    top: 10%; */
+    z-index: 1;
+    left: 55%;
+    top: 10%;
     overflow: hidden;
     width: 96px;
     height: 96px;
@@ -235,17 +238,19 @@ const tabsData: TabData[] = [
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
+    gap: 100px;
+    justify-content: space-evenly;
+    align-items: center;
 
     .statistic-div {
-        width: 200px;
+        width: 250px;
         height: 150px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border-radius: 10px;
 
         .value-Stat {
             font-size: 2rem;
@@ -257,6 +262,9 @@ const tabsData: TabData[] = [
 .about-section {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 60px 0;
 
     @media (max-width: 1023px) {
@@ -266,13 +274,21 @@ const tabsData: TabData[] = [
     @media (max-width: 767px) {
         padding: 30px 0;
     }
+
+    @media (max-width: 321px) {
+        margin: 50px 0;
+
+    }
 }
 
 .container-wrapper {
+    position: relative;
     max-width: 1400px;
+    z-index: 2;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 60px;
 
@@ -296,9 +312,10 @@ const tabsData: TabData[] = [
 .content-side {
     flex: 1;
     min-width: 0;
+    max-width: 46%;
 
     @media (max-width: 1023px) {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -443,6 +460,36 @@ img {
     line-height: 1.3;
     margin: 0;
 
+    >span.edu-span {
+        color: var(--color-primary);
+
+    }
+
+    >span.serv-icon {
+        position: relative;
+
+        .shape-line {
+            position: absolute;
+            font-size: 14px;
+            color: var(--color-primary);
+            /* display: block; */
+            right: 21px;
+            top: 44px;
+            /* margin-bottom: 14px; */
+
+            /* i {
+            font-family: 'icomoon' !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            
+        } */
+        }
+    }
+
     @media (max-width: 1279px) {
         font-size: 36px;
     }
@@ -463,6 +510,7 @@ img {
 .custom-tabs {
     margin-bottom: 30px;
     margin-top: 30px;
+    color: var(--color-primary) !important;
 
     @media (max-width: 767px) {
         margin-bottom: 20px;
@@ -505,7 +553,99 @@ img {
         height: 3px;
         border-radius: 3px;
     }
+
+    //overwrite the color
+
+    .v-slide-group__container {
+        .v-slide-group__content {
+            button.v-btn {
+
+                color: var(--color-secondary) !important;
+            }
+
+            /* 
+            &.v-tab-item--selecte {
+
+            } */
+        }
+    }
 }
+
+/* 
+custom-tabs {
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+    @media (max-width: 767px) {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    :deep(.v-tab) {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+        color: #666;
+        padding: 0 24px;
+        min-width: auto;
+        min-height: 48px;
+        position: relative;
+        transition: all 0.3s ease;
+
+        @media (max-width: 1023px) {
+            font-size: 16px;
+            padding: 0 16px;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            padding: 0 10px;
+            min-height: 42px;
+        }
+
+        @media (max-width: 479px) {
+            font-size: 13px;
+            padding: 0 8px;
+        }
+
+        // Hover state for INACTIVE tabs
+        &:not(.v-tab--selected):hover {
+            color: #999;
+            background-color: black;
+            border-radius: 8px 8px 0 0;
+        }
+
+        // Active tab styling
+        &.v-tab--selected {
+            color: var(--color-primary);
+            font-weight: 600;
+
+            // Hover state for ACTIVE tab
+            &:hover {
+                color: var(--color-secondary, #555);
+                background-color: rgba(var(--color-primary-rgb, 0, 0, 0), 0.05);
+                border-radius: 8px 8px 0 0;
+            }
+        }
+    }
+
+    // Slider/Indicator styling
+    :deep(.v-tabs-slider) {
+        height: 3px;
+        border-radius: 3px;
+        background-color: var(--color-primary, #1ab69d);
+    }
+
+    // Alternative: If you want to style the indicator differently
+    :deep(.v-slide-group__content) {
+        .v-tab__slider {
+            height: 3px;
+            border-radius: 3px;
+            background-color: var(--color-primary, #1ab69d);
+        }
+    }
+} */
 
 .tabs-content {
     padding: 20px 0;
@@ -546,6 +686,7 @@ img {
     flex-direction: column;
     gap: 16px;
 
+
     @media (max-width: 767px) {
         gap: 12px;
     }
@@ -562,6 +703,7 @@ img {
 
     .v-icon {
         flex-shrink: 0;
+        color: var(--color-secondary);
 
         @media (max-width: 767px) {
             font-size: 20px !important;
@@ -573,6 +715,10 @@ img {
     font-size: 18px;
     font-weight: 500;
     color: #333;
+    display: inline-flex;
+    /* ensures proper spacing handling */
+    align-items: center;
+    /* vertically centers icon and text */
 
     @media (max-width: 1023px) {
         font-size: 16px;
@@ -580,6 +726,14 @@ img {
 
     @media (max-width: 767px) {
         font-size: 15px;
+    }
+
+    &:before {
+        content: "\e913";
+        font-family: 'icomoon';
+        color: var(--color-secondary);
+        font-size: 19px;
+        margin-right: 6px;
     }
 }
 </style>

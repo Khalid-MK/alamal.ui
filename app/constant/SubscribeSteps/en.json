@@ -1,0 +1,25 @@
+{
+    "StepsArray": [
+        {
+            "title": "Fill The Trial Form",
+            "description": "Complete the simple registration form with your basic information and preferences.",
+            "icon": "mdi-file-document-edit",
+            "color": "#FF6B6B",
+            "bgColor": "#FFE8E8"
+        },
+        {
+            "title": "Book Your Free Trial",
+            "description": "Select a convenient time slot and schedule your complimentary trial session.",
+            "icon": "mdi-calendar-check",
+            "color": "#4A90E2",
+            "bgColor": "#E8F5FF"
+        },
+        {
+            "title": "Choose Study Plan",
+            "description": "Pick the perfect study plan that aligns with your goals and learning style.",
+            "icon": "mdi-clipboard-text",
+            "color": "#F5A623",
+            "bgColor": "#FFF4E8"
+        }
+    ]
+}

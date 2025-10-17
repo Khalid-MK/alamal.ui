@@ -1,9 +1,10 @@
 <template>
   <HomeSliderNew />
-  <HomeAbout />
+  <HomeAbout/>
   <HomeCourseList />
   <HomeSubscribeSteps />
   <HomeHowSiteWork />
+  <HomeTeacherSection />
   <HomeEvents />
   <HomeFeatureSection />
   <HomeAboutSection />
