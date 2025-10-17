@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import en from "@/constant/data(en).json";
 import ar from "@/constant/data(ar).json";
 import ru from "@/constant/data(ru).json";
@@ -9,8 +9,7 @@ const { locale, localeProperties } = useI18n()
 
 // Direction
 const direction = computed(() => localeProperties.value.dir)
-// const isRTL = computed(() => locale.value === 'ar')
-// const direction = computed(() => locale.value === "en" || locale.value === "ru" ? "ltr" : "rtl")
+
 // Types
 interface Course {
     id: string;
@@ -56,7 +55,7 @@ const fetchCourseItems = (): void => {
 
 const setCategory = (category: string): void => {
     selectedCategory.value = category;
-    showAllCourses.value = false; // Reset to 5 courses when switching category
+    showAllCourses.value = false;
 };
 
 const toggleCourses = (): void => {
@@ -88,6 +87,14 @@ const getCategoryCount = (category: string): number => {
 onMounted(() => {
     fetchCourseItems();
 });
+
+// Watch for locale changes and refetch courses
+watch(locale, () => {
+    fetchCourseItems();
+    // Optionally reset category when language changes
+    selectedCategory.value = "All";
+    showAllCourses.value = false;
+});
 </script>
 
 <template>
@@ -102,7 +109,6 @@ onMounted(() => {
                             {{ $t("Important") }}
                             <span class="down-mark-line">
                                 {{ $t("Courses") }}
-                                <!-- <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500"></span> -->
                             </span>
                             <span class="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-600">
                                 {{ $t("CurrentlyAvailable") }}
@@ -185,7 +191,7 @@ onMounted(() => {
                                         class="inline-block  px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full">
                                         <NuxtLink to="/course">{{
                                             item.category.join(", ")
-                                            }}</NuxtLink>
+                                        }}</NuxtLink>
                                     </span>
                                 </div>
 
@@ -281,10 +287,6 @@ onMounted(() => {
 [dir="ltr"] .course-card {
     text-align: left;
 }
-
-/* [dir="ltr"] .course-content {
-    text-align: left;
-} */
 
 [dir="ltr"] .course-card .actions {
     flex-direction: row;

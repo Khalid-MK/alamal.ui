@@ -6,7 +6,7 @@
 				:aria-expanded="isSectionActive(section, index)">
 				<span class="flex items-center gap-3">
 					<span class="toggle-icon" :class="{ 'is-open': isSectionActive(section, index) }">
-						<i :class="isSectionActive(section, index) ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i>
+						<i :class="['icon', isSectionActive(section, index) ? icons.minus : icons.plus]"></i>
 					</span>
 					<span class="text-lg font-semibold text-heading">{{ section.title }}</span>
 				</span>
@@ -28,7 +28,7 @@
 						<li v-for="(lesson, lessonIndex) in section.lessons" :key="lessonKey(section, index, lesson, lessonIndex)"
 							class="lesson-item">
 							<div class="lesson-leading">
-								<i class="fa-regular fa-file-lines lesson-leading-icon"></i>
+								<i :class="['icon', icons.lesson, 'lesson-leading-icon']"></i>
 								<span class="lesson-title">
 									{{ getLessonTitle(lesson, lessonIndex) }}
 								</span>
@@ -40,7 +40,7 @@
 								<span v-if="getLessonDuration(lesson)" class="lesson-chip lesson-chip--duration">
 									{{ getLessonDuration(lesson) }}
 								</span>
-								<i v-if="isLessonLocked(lesson)" class="fa-solid fa-lock lesson-lock"></i>
+								<i v-if="isLessonLocked(lesson)" :class="['icon', icons.lock, 'lesson-lock']"></i>
 							</div>
 						</li>
 					</ul>
@@ -59,12 +59,20 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
+import { getIconClass } from "@/constant/iconMap";
 
 const props = defineProps<{
 	course: Record<string, any> | null;
 }>();
 
 const { t } = useI18n();
+
+const icons = {
+	plus: getIconClass("plus"),
+	minus: getIconClass("minus"),
+	lesson: getIconClass("lesson"),
+	lock: getIconClass("lock"),
+};
 
 const sectionKey = (section: CurriculumSection, index: number) => {
 	const base = section?.id ?? section?.title ?? `section-${index}`;

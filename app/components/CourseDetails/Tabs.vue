@@ -1,15 +1,18 @@
 <template>
 	<div class="space-y-10">
-		<div class="flex flex-wrap justify-center gap-3 border-b border-border">
-			<button v-for="tab in tabItems" :key="tab.key" type="button" class="tab-trigger"
-				:class="{ 'is-active': activeTab === tab.key }" @click="activeTab = tab.key"
-				:aria-pressed="activeTab === tab.key">
-				{{ t(tab.labelKey) }}
-			</button>
+		<div class="tab-header">
+			<div class="tab-nav" role="tablist" aria-label="Course details tabs">
+				<button v-for="tab in tabItems" :key="tab.key" type="button" class="tab-trigger"
+					:class="{ 'is-active': activeTab === tab.key }" role="tab" @click="activeTab = tab.key"
+					:aria-selected="activeTab === tab.key" :aria-controls="`tab-panel-${tab.key}`" :id="`tab-${tab.key}`">
+					{{ t(tab.labelKey) }}
+				</button>
+			</div>
 		</div>
 
 		<Transition name="tab-fade" mode="out-in">
-			<div :key="activeTab" class="space-y-10">
+			<div :key="activeTab" :id="`tab-panel-${activeTab}`" class="space-y-10" role="tabpanel"
+				:aria-labelledby="`tab-${activeTab}`">
 				<component :is="currentTabComponent" :course="course" />
 			</div>
 		</Transition>
@@ -35,7 +38,7 @@ const activeTab = ref<"overview" | "curriculum" | "instructor" | "reviews">("ove
 
 const tabItems = [
 	{ key: "overview", labelKey: "Overview" },
-	{ key: "curriculum", labelKey: "Curriculum" },
+	// { key: "curriculum", labelKey: "Curriculum" },
 	{ key: "instructor", labelKey: "Instructor" },
 	{ key: "reviews", labelKey: "Reviews" },
 ] as const;
@@ -53,15 +56,48 @@ const { t } = useI18n();
 </script>
 
 <style scoped>
+.tab-header {
+	margin-top: clamp(2rem, 5vw, 4.5rem);
+	margin-bottom: clamp(2rem, 5vw, 4.5rem);
+	border-bottom: 1px solid var(--color-border);
+}
+
+.tab-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+	.tab-nav {
+		margin-inline: 0;
+		padding-inline: 0;
+	}
+}
+
+@media (min-width: 1024px) {
+	.tab-nav {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
 .tab-trigger {
 	position: relative;
 	padding: 0.75rem 1.25rem;
 	border-radius: 0.75rem 0.75rem 0 0;
-	font-size: 0.875rem;
-	font-weight: 600;
-	color: var(--color-title);
-	background: transparent;
 	transition: color 200ms ease;
+
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 28px;
+	background: transparent;
+	padding: 15px 25px;
+	position: relative;
+	color: var(--color-body);
+	font-family: var(--font-secondary);
 }
 
 .tab-trigger::after {
@@ -71,11 +107,10 @@ const { t } = useI18n();
 	bottom: -1px;
 	height: 1px;
 	width: 0;
-	border-radius: 9999px;
+	z-index: 10000;
 	background: var(--color-primary);
-	transform: translateX(-50%);
+	transform: translateX(0%);
 	transition: width 220ms ease;
-	translate: 50% 0%;
 }
 
 .tab-trigger:hover,

@@ -6,7 +6,7 @@
 					<button type="button"
 						class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-700 transition hover:bg-primary hover:text-white"
 						@click="emit('update:show', false)">
-						<i class="fa-solid fa-xmark text-lg"></i>
+						<i :class="['icon', closeIcon, 'text-lg']"></i>
 						<span class="sr-only">{{ $t("Close") }}</span>
 					</button>
 					<iframe :src="computedVideoUrl" title="Course preview" class="aspect-video w-full" frameborder="0"
@@ -20,6 +20,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { getIconClass } from "@/constant/iconMap";
 
 const props = defineProps<{
 	show: boolean;
@@ -27,6 +28,8 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{ (event: "update:show", value: boolean): void }>();
+
+const closeIcon = getIconClass("close");
 
 const computedVideoUrl = computed(() => {
 	if (!props.videoUrl) {

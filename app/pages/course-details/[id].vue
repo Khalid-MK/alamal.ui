@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { createError } from "h3";
+import { getIconClass } from "@/constant/iconMap";
 import enData from "@/constant/data(en).json";
 import arData from "@/constant/data(ar).json";
 import ruData from "@/constant/data(ru).json";
@@ -35,6 +36,19 @@ const datasets: Record<string, { courses: Course[] }> = {
 const route = useRoute();
 const { locale, localeProperties, t } = useI18n();
 const requestUrl = useRequestURL();
+
+const icons = {
+    price: getIconClass("price"),
+    instructor: getIconClass("instructor"),
+    duration: getIconClass("duration"),
+    lessons: getIconClass("lessons"),
+    level: getIconClass("level"),
+    certificate: getIconClass("certificate"),
+    facebook: getIconClass("facebook"),
+    x: getIconClass("x"),
+    linkedin: getIconClass("linkedin"),
+    whatsapp: getIconClass("whatsapp"),
+};
 
 const direction = computed(() => localeProperties.value?.dir ?? "ltr");
 const courseId = computed(() => String(route.params.id ?? ""));
@@ -85,37 +99,43 @@ const courseFacts = computed(() => {
             key: "price",
             label: t("Price"),
             value: course.value?.price ?? t("NotAvailable"),
-            icon: "fa-solid fa-tag",
+            icon: "icon-60",
         },
         {
             key: "instructor",
             label: t("Instructor"),
             value: course.value?.instructor ?? t("NotAvailable"),
-            icon: "fa-solid fa-user",
+            icon: "icon-62",
         },
         {
             key: "duration",
             label: t("Duration"),
             value: course.value?.duration ?? t("NotAvailable"),
-            icon: "fa-solid fa-clock",
+            icon: "icon-61",
         },
         {
             key: "lessons",
             label: t("Lessons"),
             value: lessonsCount.value ? String(lessonsCount.value) : t("NotAvailable"),
-            icon: "fa-solid fa-book-open",
+            icon: icons.lessons,
         },
         {
             key: "level",
             label: t("Level"),
             value: course.value?.beginer ?? t("NotAvailable"),
-            icon: "fa-solid fa-signal",
+            icon: "icon-63",
+        },
+        {
+            key: "language",
+            label: t("Language"),
+            value: course.value?.language ?? t("NotAvailable"),
+            icon: "icon-59",
         },
         {
             key: "certificate",
             label: t("Certificate"),
             value: course.value?.certificate ?? t("NotAvailable"),
-            icon: "fa-solid fa-certificate",
+            icon: "icon-64",
         },
     ];
 
@@ -126,25 +146,25 @@ const shareUrl = computed(() => encodeURIComponent(requestUrl.href));
 
 const shareLinks = computed(() => [
     {
-        icon: "fa-brands fa-facebook-f",
+        icon: "fa-facebook-f",
         label: "Facebook",
         href: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl.value}`,
         brandColor: "var(--color-facebook)",
     },
     {
-        icon: "fa-brands fa-x-twitter",
-        label: "X",
+        icon: "fa-twitter",
+        label: "Twitter",
         href: `https://twitter.com/intent/tweet?url=${shareUrl.value}`,
         brandColor: "var(--color-twitter)",
     },
     {
-        icon: "fa-brands fa-linkedin-in",
+        icon: "fa-linkedin",
         label: "LinkedIn",
         href: `https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl.value}`,
         brandColor: "var(--color-linkedin)",
     },
     {
-        icon: "fa-brands fa-whatsapp",
+        icon: "fa-whatsapp",
         label: "WhatsApp",
         href: `https://wa.me/?text=${shareUrl.value}`,
         brandColor: "var(--color-whatsapp)",
