@@ -1,10 +1,12 @@
 <template>
-  <div :dir="direction" class="w-full">
+  <div :dir="direction" class="w-full fixed top-0 left-0 z-[100] bg-white shadow">
     <header>
       <!-- Reminder bar -->
-      <div v-if="!hideReminder" class="hidden md:block bg-primary text-white py-2 px-5">
+      <div v-if="!hideReminder" class="hidden md:block bg-primary text-white px-5">
         <div class="container mx-auto flex justify-between gap-2 items-center">
-          <NuxtLink class="px-4 py-1 bg-white text-blue-600 rounded-md text-sm font-medium" to="/course-details">
+          <NuxtLink
+            class="px-4 bg-white h-[50px] flex items-center justify-center text-primary hover:text-secondary text-lg font-medium"
+            to="/course-details">
             {{ $t("JoinFreeTrialLessons") }}
           </NuxtLink>
           <NewsTicker :news="headlines" />
@@ -35,7 +37,7 @@
           </div>
 
           <!-- Right -->
-          <div class="flex items-center gap-1">
+          <div class="flex items-center gap-10">
             <!-- Language Switch -->
             <div class="menu-item-has-children" :class="{ open: isOpen }">
               <button @click="toggleDropdown">
@@ -43,33 +45,16 @@
               </button>
               <ul class="sub-menu" v-if="isOpen">
                 <li v-for="lang in locales" :key="lang.code">
-                  <button class="flex items-center" @click="changeLocale(lang.code)">
+                  <button class="flex hover:text-primary items-center" @click="changeLocale(lang.code)">
                     {{ lang.name }}
                   </button>
                 </li>
               </ul>
             </div>
-            <!-- <div class="menu-item-has-children" :class="{ open: isOpen }">
-              <button @click="toggleDropdown">
-                <Translation />
-              </button>
-              <ul v-if="isOpen" class="sub-menu">
-
-                <li>
-
-                  <button class="flex items-center gap-1" @click="changeLocale('en')">EN🌐</button>
-                </li>
-                <li>
-
-                  <button class="flex items-center gap-1" @click="changeLocale('ar')">AR🌐</button>
-                </li>
-              </ul>
-            </div> -->
-            <!-- <ThemeSwitcher /> -->
 
             <!-- Auth -->
             <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
-              <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-blue-600">{{
+              <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
               <NuxtLink to="/signup"
                 class="flex items-center justify-center bg-primary text-white px-3 py-1 rounded-md hover:bg-blue-700">
@@ -238,13 +223,24 @@ function changeLocale(locale: "en" | "ar" | "ru") {
   display: none;
   position: absolute;
   top: 100%;
-  /* left: -20px; */
+  right: 10px;
   background: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   min-width: 80px;
   z-index: 50;
 }
+
+/* :deep([dir="rtl"] .sub-menu) {
+  left: 10px !important;
+  right: auto !important;
+} */
+
+[dir="rtl"] .sub-menu {
+  left: 10px !important;
+  right: auto !important;
+}
+
 
 .sub-menu li button {
   width: 100%;

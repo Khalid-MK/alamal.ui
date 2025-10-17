@@ -1,6 +1,6 @@
 <template>
   <HomeSliderNew />
-  <HomeAbout />
+  <HomeAbout/>
   <HomeCourseList />
   <HomeSubscribeSteps />
   <HomeHowSiteWork />

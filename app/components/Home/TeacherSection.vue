@@ -9,18 +9,17 @@
                 <div class="title-section">
 
                     <div class="badge">
-                        <!-- <span >🎓</span> -->
                         <img class="star-icon" src="../../assets/icons/star.svg" />
-                        <span class="badge-text">Our Scholars</span>
+                        <span class="badge-text">{{ $t("OurScholars") }}</span>
                     </div>
                     <h2 class="main-title">
-                        All Our Teachers Are Graduates<br />From College Of Arabic
+                        {{ $t("AllOurTeachersAreGraduates") }}<br />{{ $t("FromCollegeOfArabic") }}
                     </h2>
                 </div>
 
                 <!-- More Scholars Button (Top Right) -->
 
-                <button class="more-scholars-btn">More Scholars</button>
+                <button class="more-scholars-btn">{{ $t("MoreScholars") }}</button>
             </div>
 
             <!-- Teachers Grid -->
@@ -28,9 +27,10 @@
                 <div v-for="teacher in data" :key="teacher.id" class="teacher-card">
                     <div class="teacher-image-wrapper">
                         <div class="teacher-image">
-                            <div class="placeholder-avatar">
+                            <img :src="teacher.img" alt="img" />
+                            <!-- <div class="placeholder-avatar">
                                 <span class="avatar-initial">{{ teacher.name.charAt(0) }}</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -70,52 +70,24 @@
 </template>
 
 <script setup lang="ts">
-const data = [
-    {
-        id: 1,
-        name: "Abdur Rehman",
-        img: "/img/teacher-section/team-5.png",
-        specialization: ["Quran", "Arabic Teacher"],
-        links: {
-            face: "https://facebook.com/abdur.rahman",
-            inst: "https://instagram.com/abdur.rahman",
-            twiter: "https://twitter.com/abdur_rahman"
-        }
-    },
-    {
-        id: 2,
-        name: "Muneeb ur Rehman",
-        img: "/img/teacher-section/team-6.png",
-        specialization: ["Quran", "Arabic Teacher"],
-        links: {
-            face: "https://facebook.com/muneeb.rehman",
-            inst: "https://instagram.com/muneeb.rehman",
-            twiter: "https://twitter.com/muneeb_rehman"
-        }
-    },
-    {
-        id: 3,
-        name: "Foqrul Islam",
-        img: "/img/teacher-section/team-7.png",
-        specialization: ["Quran", "Arabic Teacher"],
-        links: {
-            face: "https://facebook.com/foqrul.islam",
-            inst: "https://instagram.com/foqrul.islam",
-            twiter: "https://twitter.com/foqrul_islam"
-        }
-    },
-    {
-        id: 4,
-        name: "Yousaf Ahmad",
-        img: "/img/teacher-section/team-8.png",
-        specialization: ["Quran", "Arabic Teacher"],
-        links: {
-            face: "https://facebook.com/yousaf.ahmad",
-            inst: "https://instagram.com/yousaf.ahmad",
-            twiter: "https://twitter.com/yousaf_ahmad"
-        }
+import dataAr from "@/constant/TeacherSection/ar.json";
+import dataEn from "@/constant/TeacherSection/en.json";
+import dataRu from "@/constant/TeacherSection/ru.json";
+
+const { locale, localeProperties } = useI18n()
+// Direction
+const direction = computed(() => localeProperties.value.dir)
+
+const data = computed(() => {
+    switch (locale.value) {
+        case "ar":
+            return dataAr;
+        case "ru":
+            return dataRu;
+        default:
+            return dataEn;
     }
-];
+})
 </script>
 
 <style lang="scss" scoped>
@@ -129,7 +101,7 @@ const data = [
     margin: 60px auto;
     padding: 90px 40px;
     border-radius: 40px;
-    background: linear-gradient(135deg, #1ab69d 0%, #16a085 100%);
+    background: linear-gradient(135deg, #1ab69d 0%, #16a085 10%);
     overflow: hidden;
 
     @media (max-width: 768px) {
@@ -147,29 +119,36 @@ const data = [
     width: 100%;
     height: 100%;
     background: url('/img/teacher-section/10.jpg') center/cover;
-    opacity: 0.08;
+    opacity: 0.2;
     z-index: 0;
 }
 
 .content-wrapper {
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .header-section {
     display: flex;
     gap: 30px;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 60px;
-
-    @media (max-width: 768px) {
-        margin-bottom: 40px;
-    }
+    padding: 10px;
 
     .title-section {
         display: flex;
         flex-direction: column;
     }
+
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 575px) {
+        flex-direction: column;
+    }
+
 }
 
 .badge {
@@ -231,7 +210,6 @@ const data = [
     overflow: hidden;
     cursor: pointer;
     color: #0F0E0B;
-    /* initial text color */
     z-index: 1;
     transition: color 0.4s ease;
 
@@ -239,7 +217,6 @@ const data = [
         content: "";
         position: absolute;
         top: -200%;
-        /* start above button */
         left: 50%;
         width: 200%;
         height: 200%;
@@ -263,28 +240,42 @@ const data = [
 
 
 .teachers-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    margin-top: 40px;
+
 
     @media (max-width: 1200px) {
-        grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
 
     @media (max-width: 768px) {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
 }
 
 .teacher-card {
     position: relative;
-    background: white;
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 1 calc(25% - 23px); */
+    min-width: 250px;
+    /* max-width: calc(25% - 23px); */
     border-radius: 24px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* @media (max-width: 1200px) {
+        flex: 1 1 calc(50% - 13px);
+        max-width: calc(50% - 13px);
+    }
+
+    @media (max-width: 768px) {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: 100%;
+    } */
 
     &:hover {
         transform: translateY(-8px);
@@ -297,6 +288,7 @@ const data = [
     width: 100%;
     padding-top: 100%;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .teacher-image {
@@ -307,6 +299,12 @@ const data = [
     height: 100%;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .placeholder-avatar {
@@ -329,9 +327,13 @@ const data = [
 }
 
 .teacher-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px 20px;
     text-align: center;
     background: white;
+    flex-grow: 1;
 
     @media (max-width: 768px) {
         padding: 24px 16px;

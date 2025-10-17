@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "عبد الرحمن",
+        "img": "/img/teacher-section/team-5.png",
+        "specialization": [
+            "القرآن الكريم",
+            "معلم اللغة العربية"
+        ],
+        "links": {
+            "face": "https://facebook.com/abdur.rahman",
+            "inst": "https://instagram.com/abdur.rahman",
+            "twiter": "https://twitter.com/abdur_rahman"
+        }
+    },
+    {
+        "id": 2,
+        "name": "منيب الرحمن",
+        "img": "/img/teacher-section/team-6.png",
+        "specialization": [
+            "القرآن الكريم",
+            "معلم اللغة العربية"
+        ],
+        "links": {
+            "face": "https://facebook.com/muneeb.rehman",
+            "inst": "https://instagram.com/muneeb.rehman",
+            "twiter": "https://twitter.com/muneeb_rehman"
+        }
+    },
+    {
+        "id": 3,
+        "name": "فقر الإسلام",
+        "img": "/img/teacher-section/team-7.png",
+        "specialization": [
+            "القرآن الكريم",
+            "معلم اللغة العربية"
+        ],
+        "links": {
+            "face": "https://facebook.com/foqrul.islam",
+            "inst": "https://instagram.com/foqrul.islam",
+            "twiter": "https://twitter.com/foqrul_islam"
+        }
+    },
+    {
+        "id": 4,
+        "name": "يوسف أحمد",
+        "img": "/img/teacher-section/team-7.png",
+        "specialization": [
+            "القرآن الكريم",
+            "معلم اللغة العربية"
+        ],
+        "links": {
+            "face": "https://facebook.com/yousaf.ahmad",
+            "inst": "https://instagram.com/yousaf.ahmad",
+            "twiter": "https://twitter.com/yousaf_ahmad"
+        }
+    }
+]

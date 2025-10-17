@@ -1,0 +1,25 @@
+{
+    "StepsArray": [
+        {
+            "title": "املأ نموذج التجربة",
+            "description": "أكمل نموذج التسجيل البسيط بمعلوماتك الأساسية وتفضيلاتك.",
+            "icon": "mdi-file-document-edit",
+            "color": "#FF6B6B",
+            "bgColor": "#FFE8E8"
+        },
+        {
+            "title": "احجز درسك التجريبي المجاني",
+            "description": "اختر الوقت المناسب وحدد موعد جلستك التجريبية المجانية.",
+            "icon": "mdi-calendar-check",
+            "color": "#4A90E2",
+            "bgColor": "#E8F5FF"
+        },
+        {
+            "title": "اختر خطة الدراسة",
+            "description": "اختر خطة الدراسة المثالية التي تتناسب مع أهدافك وأسلوبك في التعلم.",
+            "icon": "mdi-clipboard-text",
+            "color": "#F5A623",
+            "bgColor": "#FFF4E8"
+        }
+    ]
+}

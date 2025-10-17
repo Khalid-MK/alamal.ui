@@ -5,7 +5,7 @@
       <ul>
         <li class="menu-item-has-children">
           <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
-            class="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1 focus:outline-none">
+            class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 focus:outline-none">
             {{ $t("Courses") }}
             <Arrow :is-open="isCoursesOpen" />
           </button>
@@ -13,21 +13,22 @@
             <template v-for="section in coursesArr">
               <li v-if="section.departments" :class="isRTL ? 'menu-item-has-children rtl' : 'menu-item-has-children'"
                 :key="section.id">
-                <button class="flex justify-between items-center  text-gray-700">{{ section[locale] }}
+                <button class="flex justify-between hover:text-primary items-center  text-gray-700">{{ section[locale]
+                }}
                   <Arrow />
                 </button>
 
                 <ul class="sub-menu">
                   <template v-for="dept in section.departments">
                     <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
-                      <button class="flex justify-between items-center">
+                      <button class="flex hover:text-primary justify-between items-center">
                         {{ dept[locale] }}
                         <!-- <span class="flex-grow">{{ dept[locale] }}</span> -->
                         <Arrow />
                       </button>
                       <ul class="sub-menu w-full">
                         <li v-for="course in dept.courses" :key="course.id">
-                          <button @click="goToCourse" class="text-left">{{ course[locale] }}</button>
+                          <button @click="goToCourse" class="text-left hover:text-primary">{{ course[locale] }}</button>
                         </li>
                       </ul>
                     </li>
@@ -35,13 +36,13 @@
                 </ul>
               </li>
               <li v-if="section.courses" class="menu-item-has-children" :key="'section-courses-' + section.id">
-                <button class="flex justify-between items-center">
+                <button class="flex justify-between items-center hover:text-primary">
                   {{ section[locale] }}
                   <Arrow />
                 </button>
                 <ul class="sub-menu">
                   <li v-for="course in section.courses" class="w-[200px]" :key="course.id">
-                    <button @click="goToCourse" class="text-left">
+                    <button @click="goToCourse" class="text-left hover:text-primary">
                       {{ course[locale] }}
                     </button>
                   </li>
@@ -53,25 +54,25 @@
       </ul>
       <!-- About Link -->
       <NuxtLink to="/about"
-        class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
         {{ $t("About") }}
       </NuxtLink>
 
       <!-- FAQs Link -->
       <NuxtLink to="/faq-page"
-        class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
         {{ $t("FAQs") }}
       </NuxtLink>
 
       <!-- Events Link -->
       <NuxtLink to="/events"
-        class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
         {{ $t("Events") }}
       </NuxtLink>
 
       <!-- Contact Link -->
       <NuxtLink to="/contact"
-        class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
         {{ $t("Contact") }}
       </NuxtLink>
     </div>
@@ -223,16 +224,14 @@ ul li .sub-menu li button {
   padding: 0;
   width: 100%;
   font-weight: 600;
-  color: #212237;
+  /* color: #212237; */
   position: relative;
   text-align: inherit;
   gap: 5px
 }
 
-/* Hover effects */
-ul li .sub-menu li button:hover,
-ul li:hover button {
-  color: #2467EC;
+button {
+  color: #212237;
 }
 
 ul li:hover.menu-item-has-children::after {

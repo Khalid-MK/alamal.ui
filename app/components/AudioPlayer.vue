@@ -91,7 +91,7 @@
 
             <!-- Hidden Audio Element -->
             <audio ref="audioPlayer" @timeupdate="updateTime" @loadedmetadata="updateDuration" @ended="handleEnded">
-                <source src="/audio/videoplayback.m4a" type="audio/mpeg" />
+                <source src="/audio/videoplayback.m4a" type="audio/mp4" />
             </audio>
         </div>
     </div>
@@ -99,6 +99,7 @@
 
 <script setup lang="ts">
 // Audio Player State
+
 const audioPlayer = ref<HTMLAudioElement | null>(null);
 const progressBar = ref<HTMLDivElement | null>(null);
 const isPlaying = ref(false);
@@ -199,6 +200,11 @@ const formatTime = (time: number) => {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 };
+
+// watchEffect(() => {
+//     console.log('Progress:', progressPercent.value, 'Current:', currentTime.value, 'Duration:', duration.value)
+// })
+
 </script>
 
 <style lang="scss" scoped>
@@ -207,17 +213,21 @@ const formatTime = (time: number) => {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: -96px;
+    position: absolute;
+    top: 90%;
+    /* margin-top: -157px; */
     z-index: 1000;
     /* margin-bottom: 100px; */
-    position: relative;
+    /* position: relative; */
+    left: 0%;
+    width: 100%;
 
     @media (max-width: 768px) {
-        margin-top: -70px;
+        top: 91%;
     }
 
-    @media (max-width: 480px) {
-        margin-top: -60px;
+    @media (max-width: 348px) {
+        top: 89%;
     }
 
     .player-title {
@@ -316,6 +326,7 @@ const formatTime = (time: number) => {
     }
 
     .progress-bar {
+        direction: ltr !important;
         position: relative;
         height: 6px;
         flex: 1;
@@ -335,7 +346,7 @@ const formatTime = (time: number) => {
     .progress-fill {
         position: absolute;
         height: 100%;
-        background: linear-gradient(90deg, #C5E96B, #a8d155);
+        background: var(--color-primary);
         border-radius: 10px;
         transition: width 0.1s;
     }
@@ -423,7 +434,7 @@ const formatTime = (time: number) => {
         border-radius: 50%;
 
         &:hover {
-            color: #C5E96B;
+            color: var(--color-primary);
             background-color: rgba(197, 233, 107, 0.1);
         }
 
@@ -451,6 +462,7 @@ const formatTime = (time: number) => {
     }
 
     .volume-slider {
+        direction: ltr !important;
         width: 80px;
         height: 4px;
         background: rgba(255, 255, 255, 0.2);
@@ -458,6 +470,48 @@ const formatTime = (time: number) => {
         outline: none;
         cursor: pointer;
         appearance: none;
+        position: relative;
+
+
+        /* ✅ Chrome / Edge / Safari */
+        &::-webkit-slider-runnable-track {
+            height: 4px;
+            background: linear-gradient(to right,
+                    var(--color-primary) 0%,
+                    var(--color-primary) calc(var(--val, 50%) * 1%),
+                    rgba(255, 255, 255, 0.2) calc(var(--val, 50%) * 1%),
+                    rgba(255, 255, 255, 0.2) 100%);
+            border-radius: 10px;
+        }
+
+        /* ✅ Firefox */
+        &::-moz-range-track {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        &::-moz-range-progress {
+            height: 4px;
+            background: var(--color-primary);
+            border-radius: 10px;
+        }
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            z-index: 2;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
 
         @media (max-width: 1024px) {
             width: 70px;
@@ -583,8 +637,8 @@ const formatTime = (time: number) => {
         min-width: 50px;
 
         &:hover {
-            border-color: #C5E96B;
-            color: #C5E96B;
+            border-color: var(--color-primary);
+            color: var(--color-primary);
             background: rgba(197, 233, 107, 0.1);
         }
 
@@ -621,11 +675,11 @@ const formatTime = (time: number) => {
 
             &:hover {
                 background-color: rgba(255, 255, 255, 0.1);
-                color: #C5E96B;
+                color: var(--color-primary);
             }
 
             &.active {
-                color: #C5E96B;
+                color: var(--color-primary);
                 background-color: rgba(197, 233, 107, 0.1);
             }
         }

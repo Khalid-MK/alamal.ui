@@ -72,6 +72,10 @@ const slides = computed(() => slidesData.messages[locale.value].slides);
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
     effect: "slide",
+    loop: true,
+    autoplay: {
+        delay: 5000,
+    },
 });
 
 onMounted(() => {
@@ -88,14 +92,23 @@ onMounted(() => {
 .slider-six {
     position: relative;
     z-index: 11;
-    min-height: 100vh;
-    height: 80%;
+    /* min-height: 100; */
+    height: 100%;
     overflow: visible;
     margin: 40px;
     border-radius: 40px;
 
+    @media (max-width:1445px) {
+        height: 100%;
+
+    }
+
     @media (max-width:890px) {
         margin: 0 0 110px 0;
+    }
+
+    @media (max-width:768px) {
+        height: 30%;
     }
 
     @media (max-width:430px) {
@@ -228,7 +241,7 @@ onMounted(() => {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        min-height: 90vh;
     }
 
     .content-wrapper {

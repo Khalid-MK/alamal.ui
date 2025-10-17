@@ -89,7 +89,7 @@ html[lang="en"] {
   --shadow-darker4: 0px 20px 70px 0px rgba(15, 107, 92, 0.2);
   --transition: 0.3s;
   --transition-2: 0.5s;
-  --transition-transform: transform 0.65s cubic-bezier(.23, 1, .32, 1);
+  --transition-transform: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Spartan", sans-serif;
   --font-icomoon: "icomoon";
@@ -110,6 +110,30 @@ html[lang="en"] {
   --h5-lineHeight: 1.45;
   --h6-lineHeight: 1.62;
 }
+
+// Layouts Variation
+$custom-lg-device-seven: "only screen and (min-width: 1200px)";
+$custom-lg-device-three: "only screen and (min-width: 1750px)";
+$custom-lg-device-four: "only screen and (min-width: 1800px)";
+$custom-lg-device-five: "only screen and (min-width: 1900px)";
+
+$custom-lg-device-two: "only screen and (min-width: 1401px) and (max-width: 1750px)";
+$custom-lg-device-six: "only screen and (min-width: 1401px) and (max-width: 1650px)";
+$custom-lg-device-eight: "only screen and (min-width: 1200px) and (max-width: 1450px)";
+
+$laptop-device: "only screen and (min-width: 1200px) and (max-width: 1599px)";
+$custom-laptop-device: "only screen and (min-width: 1200px) and (max-width: 1400px)";
+
+$extra-device: "only screen and (min-width: 1600px) and (max-width: 1919px)";
+$lg-layout: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md-layout: "only screen and (min-width: 768px) and (max-width: 991px)";
+
+$lg-layout-1: "only screen and (max-width: 1650px)";
+$smlg-device: "only screen and (max-width: 1199px)";
+$md-layout-1: "only screen and (max-width: 991px)";
+$sm-layout: "only screen and (max-width: 767px)";
+$large-mobile: "only screen and (max-width: 575px)";
+$small-mobile: "only screen and (max-width: 479px)";
 
 body {
   font-family: var(--font-primary);

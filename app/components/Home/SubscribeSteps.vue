@@ -21,7 +21,7 @@
             <div class="image-section">
                 <div class="decorative-dots dots-left"></div>
                 <img src="/img/courses/tag/course-02.png" alt="Students" class="campus-image" />
-                <button class="cta-button">Book Trial Session</button>
+                <button class="cta-button">{{ $t("BookTrialSession") }}</button>
                 <div class="decorative-dots dots-right"></div>
             </div>
 
@@ -29,9 +29,10 @@
             <div class="content-section">
                 <div class="decorative-dots dots-top"></div>
 
-                <p class="section-label">STEPS</p>
+                <p class="section-label">{{ $t("Steps") }}</p>
                 <h2 class="section-title">
-                    <span class="highlighted">3 Simple</span> Steps To Start
+                    <!-- <span class="highlighted">3 Simple</span> Steps To Start -->
+                    {{ $t("3SimpleStepsToStart") }}
                 </h2>
 
                 <!-- Steps Cards -->
@@ -54,29 +55,33 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const StepsArray = [
-    {
-        title: "Fill The Trial Form",
-        description: "Complete the simple registration form with your basic information and preferences.",
-        icon: "mdi-file-document-edit",
-        color: "#FF6B6B",
-        bgColor: "#FFE8E8"
-    },
-    {
-        title: "Book Your Free Trial",
-        description: "Select a convenient time slot and schedule your complimentary trial session.",
-        icon: "mdi-calendar-check",
-        color: "#4A90E2",
-        bgColor: "#E8F5FF"
-    },
-    {
-        title: "Choose Study Plan",
-        description: "Pick the perfect study plan that aligns with your goals and learning style.",
-        icon: "mdi-clipboard-text",
-        color: "#F5A623",
-        bgColor: "#FFF4E8"
+import en from "@/constant/SubscribeSteps/en.json";
+import ar from "@/constant/SubscribeSteps/ar.json";
+import ru from "@/constant/SubscribeSteps/ru.json";
+
+// Get locale
+const { locale, localeProperties } = useI18n()
+
+// Direction
+const direction = computed(() => localeProperties.value.dir)
+
+interface Step {
+    title: string;
+    description: string;
+    icon: string;
+    color: string;
+    bgColor: string;
+}
+const StepsArray = computed<Step[]>(() => {
+    switch (locale.value) {
+        case "ar":
+            return ar.StepsArray as Step[];
+        case "ru":
+            return ru.StepsArray as Step[];
+        default:
+            return en.StepsArray as Step[];
     }
-];
+});
 
 // Parallax effect state
 const mouseX = ref(0);
@@ -103,7 +108,7 @@ const getParallaxStyle = (depth: number) => {
 <style lang="scss" scoped>
 .campus-wrapper {
     position: relative;
-   
+
 }
 
 .shape-group-bg {
@@ -193,6 +198,11 @@ const getParallaxStyle = (depth: number) => {
 
         @media (max-width:1025px) {
             width: 130%;
+        }
+
+        @media (max-width:768px) {
+            width: 100%;
+
         }
     }
 
@@ -335,7 +345,7 @@ const getParallaxStyle = (depth: number) => {
         bottom: 10%;
         right: -30px;
 
-        @media (max-width:560px) {
+        @media (max-width:768px) {
             display: none;
         }
     }

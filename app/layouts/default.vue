@@ -30,3 +30,13 @@ watch(currentLocale, (newLocale) => {
   console.log('localeProperties.value.iso:', localeProperties.value.iso)
 })
 </script>
+
+<style lang="scss" scoped>
+main {
+  margin-top: 110px;
+
+  @media (max-width:420px) {
+     margin-top: 40px;
+  }
+}
+</style>

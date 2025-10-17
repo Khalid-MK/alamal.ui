@@ -15,7 +15,7 @@ import { ref } from "vue";
 
 defineProps({
     news: { type: Array, required: true },
-    duration: { type: Number, default: 20 }, // نعدل من بره
+    duration: { type: Number, default: 20 }
 });
 
 const ticker = ref(null);
@@ -42,6 +42,7 @@ const ticker = ref(null);
 a {
     cursor: pointer;
     transition: 200ms;
+
     &:hover {
 
         color: cadetblue;
