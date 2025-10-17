@@ -3,7 +3,7 @@
     <header class="edu-header">
       <!-- Reminder bar -->
       <div v-if="!hideReminder" class="header-top-bar hidden md:block bg-primary text-white px-5">
-        <div class="container mx-auto flex justify-between gap-2 items-center">
+        <div class="max-w-7xl mx-auto flex justify-between gap-2 items-center">
           <NuxtLink
             class="px-4 bg-white h-[50px] flex items-center justify-center text-primary hover:text-secondary text-lg font-medium"
             to="/course-details">
@@ -24,7 +24,7 @@
 
       <!-- Navbar -->
       <div ref="navbarRef" class="header-mainmenu bg-white shadow py-4">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
           <!-- Left (Logo + Nav) -->
           <div class="flex items-center gap-6">
             <NuxtLink to="/">

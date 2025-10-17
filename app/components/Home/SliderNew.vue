@@ -114,9 +114,9 @@ const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
 	effect: "slide",
 	loop: true,
-	// autoplay: {
-	// 	delay: 5000,
-	// },
+	autoplay: {
+		delay: 10000,
+	},
 });
 
 onMounted(() => {
