@@ -16,7 +16,7 @@
             </li>
         </ul>
 
-        <div class="campus-container" @mousemove="handleMouseMove">
+        <Container :no-padding="true" class="campus-container" @mousemove="handleMouseMove">
             <!-- Image Section -->
             <div class="image-section">
                 <div class="decorative-dots dots-left"></div>
@@ -48,12 +48,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import en from "@/constant/SubscribeSteps/en.json";
 import ar from "@/constant/SubscribeSteps/ar.json";
@@ -169,8 +169,6 @@ const getParallaxStyle = (depth: number) => {
     display: flex;
     gap: 4rem;
     padding: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
     align-items: center;
     position: relative;
     z-index: 1;

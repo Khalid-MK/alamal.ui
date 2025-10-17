@@ -198,7 +198,6 @@ const router = useRouter();
 
 let hoverTimeout = null;
 
-console.log("isCoursesOpen2", isCoursesOpen);
 function slugify(text) {
   return text
     .toString()
@@ -228,20 +227,6 @@ const goToCourse = (course, depart, ageGroup, mainCategory, level = null) => {
 
   // Navigate with query parameters
   router.push(`/shop?${queryParams}`);
-
-  console.log("Navigating to course:", {
-    course: course[locale.value],
-    ageGroup: ageGroup[locale.value],
-    category: mainCategory[locale.value],
-    department: depart[locale.value],
-    level: level,
-    ids: {
-      courseId: course.id,
-      ageGroupId: ageGroup.id,
-      categoryId: mainCategory.id,
-      departmentId: depart.id,
-    },
-  });
 };
 
 function toggleCoursesMenu() {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <section style="padding-top:3rem ;">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container>
                 <div class="flex flex-wrap">
                     <div class="w-full">
                         <div class="mb-8">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
 
         <!-- Video Modal -->

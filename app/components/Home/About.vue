@@ -6,7 +6,7 @@
         </div>
         <div class="slider-six_vector-2" style="background-image:url('img/icon/تخطيط_اسم_محمد.png')"></div>
 
-        <div class="container-wrapper">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 container-wrapper">
             <!-- Left Content -->
             <div class="content-side">
                 <div class="tabs-section">
@@ -61,7 +61,7 @@
         </div>
 
         <!-- Statistics -->
-        <div class="statistics-section">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 statistics-section">
             <div class="statistic-div" v-for="statistic in animatedStats" :key="statistic.id">
                 <div :style="{ color: statistic.color }" class="value-Stat">
                     {{ statistic.displayValue }}
@@ -233,8 +233,6 @@ const tabsData: TabData[] = [
 }
 
 .statistics-section {
-    max-width: 1400px;
-    margin: 0 auto;
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -283,10 +281,7 @@ const tabsData: TabData[] = [
 
 .container-wrapper {
     position: relative;
-    max-width: 1400px;
     z-index: 2;
-    margin: 0 auto;
-    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -294,17 +289,14 @@ const tabsData: TabData[] = [
 
     @media (max-width: 1279px) {
         gap: 40px;
-        padding: 0 30px;
     }
 
     @media (max-width: 1023px) {
         flex-direction: column;
         gap: 40px;
-        padding: 0 20px;
     }
 
     @media (max-width: 767px) {
-        padding: 0 15px;
         gap: 30px;
     }
 }

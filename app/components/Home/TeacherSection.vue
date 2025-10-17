@@ -1,5 +1,5 @@
 <template>
-    <div class="teachers-container">
+    <Container variant="wide" :no-padding="true" class="teachers-container">
         <div class="background-overlay"></div>
 
         <div class="content-wrapper">
@@ -66,7 +66,7 @@
         <!-- Decorative Elements -->
         <div class="decorative-circle circle-1"></div>
         <div class="decorative-circle circle-2"></div>
-    </div>
+    </Container>
 </template>
 
 <script setup lang="ts">
@@ -96,9 +96,8 @@ const data = computed(() => {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 1800px;
     height: 100%;
-    margin: 60px auto;
+    margin: 60px 0;
     padding: 90px 40px;
     border-radius: 40px;
     background: linear-gradient(135deg, #1ab69d 0%, #16a085 10%);

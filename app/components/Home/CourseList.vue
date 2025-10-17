@@ -92,7 +92,7 @@ onMounted(() => {
 
 <template>
     <section :dir="direction" class="relative py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
             <!-- Header Section -->
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 mb-12 lg:mb-16">
                 <!-- Title -->
@@ -259,7 +259,7 @@ onMounted(() => {
                     </button>
                 </div>
             </div>
-        </div>
+        </Container>
     </section>
 </template>
 

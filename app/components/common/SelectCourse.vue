@@ -3,12 +3,12 @@
         <li class="menu-item-has-children">
             <a href="javascript:void(0)">{{ "Test Courses" }}</a>
             <ul class="sub-menu">
-                <template v-for="section in courses">
-                    <li v-if="section.departments" class="menu-item-has-children" :key="section.id">
+                <template v-for="section in courses" :key="section.id">
+                    <li v-if="section.departments" class="menu-item-has-children">
                         <a href="javascript:void(0)">{{ section[locale] }}</a>
                         <ul class="sub-menu">
-                            <template v-for="dept in section.departments">
-                                <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
+                            <template v-for="dept in section.departments" :key="dept.id">
+                                <li v-if="dept.courses" class="menu-item-has-children">
                                     <a href="javascript:void(0)">{{ dept[locale] }}</a>
                                     <ul class="sub-menu">
                                         <li v-for="course in dept.courses" :key="course.id">
@@ -21,23 +21,30 @@
                             </template>
                         </ul>
                     </li>
-                    <li v-if="section.courses" class="menu-item-has-children" :key="'section-courses-' + section.id">
-                        <a href="javascript:void(0)">{{ section[locale] }}</a>
-                        <ul class="sub-menu">
-                            <li v-for="course in section.courses" :key="course.id">
-                                <NuxtLink :to="'/shop?course=' + slugify(course[locale])">{{ course[locale] }}
-                                </NuxtLink>
-                            </li>
-                        </ul>
-                    </li>
                 </template>
             </ul>
         </li>
     </ul>
 </template>
-<script lang="tsx">
+<script setup lang="ts">
+import { computed } from "vue";
 import courses from "@/constant/courses.json";
-const { locale } = useI18n({ useScope: "global" }); 
+
+const { locale } = useI18n();
+const router = useRouter();
+
+function slugify(text: string) {
+  return text
+    .toString()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .toLowerCase();
+}
 </script>
 <style lang="css" scoped>
 ul li:hover.menu-item-has-children::after {

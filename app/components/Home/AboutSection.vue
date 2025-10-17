@@ -28,7 +28,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
 
 <template>
     <div :class="sectionClass" :dir="direction">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pl-14">
+        <Container class="sm:pl-14">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
                 <!-- Left Side - Image Section -->
@@ -133,7 +133,7 @@ const sectionClass = computed(() => props.studentSpace || "py-20 lg:py-28")
                 </div>
 
             </div>
-        </div>
+        </Container>
     </div>
 </template>
 

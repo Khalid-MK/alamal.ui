@@ -55,7 +55,7 @@ const backgroundStyle = computed(() => ({
 
 <template>
     <div :dir="direction" :class="sectionClass" :style="{ backgroundImage: `url(${featureBg})` }" class="">
-        <div class="block w-full justify-between gap-2  max-md:px-8  md:flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container class="block w-full justify-between gap-2 max-md:px-8 md:flex">
             <div v-for="value in featureList" class="flex gap-4 items-center">
                 <div class="features-icon">
                     <i :class="value.featureIcon"></i>
@@ -63,7 +63,7 @@ const backgroundStyle = computed(() => ({
                 <!-- <img :src="value.featureImg" style="color:white" class=" w-20 max-lg:w-16" alt="img" /> -->
                 <h3 class="text-lg sm:text-xl font-semibold text-white leading-tight"> {{ value.featureTitle }}</h3>
             </div>
-        </div>
+        </Container>
     </div>
 </template>
 <style lang="scss">

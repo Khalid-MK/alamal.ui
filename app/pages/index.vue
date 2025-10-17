@@ -1,13 +1,15 @@
 <template>
-  <HomeSliderNew />
-  <HomeAbout/>
-  <HomeCourseList />
-  <HomeSubscribeSteps />
-  <HomeHowSiteWork />
-  <HomeTeacherSection />
-  <HomeEvents />
-  <HomeFeatureSection />
-  <HomeAboutSection />
+  <main>
+    <HomeSliderNew />
+    <HomeAbout/>
+    <!-- <HomeCourseList />
+    <HomeSubscribeSteps />
+    <HomeHowSiteWork />
+    <HomeTeacherSection />
+    <HomeEvents />
+    <HomeFeatureSection />
+    <HomeAboutSection /> -->
+  </main>
 </template>
 
 <script lang="ts" setup>

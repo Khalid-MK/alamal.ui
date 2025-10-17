@@ -31,11 +31,11 @@ export default defineNuxtConfig({
         strategy: 'no_prefix', // Changed from 'prefix_except_default'
         defaultLocale: 'en',
         lazy: true,
-        langDir: 'locales/',
+        langDir: 'locales',
         locales: [
-          { code: 'en', iso: 'en-US', file: 'en.json', name: 'English', dir: 'ltr' },
-          { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' },
-          { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский', dir: 'ltr' },
+          { code: 'en', iso: 'en', file: 'en.json', name: 'English', dir: 'ltr' },
+          { code: 'ar', iso: 'ar', file: 'ar.json', name: 'العربية', dir: 'rtl' },
+          { code: 'ru', iso: 'ru', file: 'ru.json', name: 'Русский', dir: 'ltr' },
         ],
         detectBrowserLanguage: {
           useCookie: true,
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Spartan:wght@400;500;600;700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Spartan:wght@400;500;600;700&family=Amiri:wght@300;400;700;800&display=swap",
         },
         {
           rel: "stylesheet",
