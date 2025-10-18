@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <PageLoader />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -8,6 +9,7 @@
 
 <script setup>
 // NuxtLayout and NuxtPage are auto-imported by Nuxt
+import PageLoader from '~/components/common/PageLoader.vue'
 </script>
 <style lang="scss">
 .custom-tab .v-btn__overlay {

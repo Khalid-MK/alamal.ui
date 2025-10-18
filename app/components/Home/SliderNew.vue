@@ -67,9 +67,24 @@
 							<p>{{ slide.desc }}</p>
 						</div>
 
-						<div class="slider-six_button">
-							<v-btn class="alquran-btn">{{ $t("CheckOutMore") }}</v-btn>
+					<div class="slider-six_button">
+						<div class="curved-button-wrapper">
+							<svg class="curved-text" viewBox="0 0 200 200">
+								<defs>
+									<path
+										id="circlePath"
+										d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+									/>
+								</defs>
+								<text class="curved-text-path">
+									<textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+										{{ $t("CheckOutMore") }}
+									</textPath>
+								</text>
+							</svg>
+							<IconButton variant="round" icon="icon-4" :aria-label="$t('CheckOutMore')" />
 						</div>
+					</div>
 					</div>
 
 					<div class="slider-six_images-column">
@@ -102,6 +117,7 @@
 <script setup lang="ts">
 import slidesData from "~/constant/SliderData";
 import AudioPlayer from "../AudioPlayer.vue";
+import IconButton from "~/components/common/IconButton.vue";
 
 // Get locale
 const { locale, localeProperties } = useI18n();
@@ -393,28 +409,94 @@ onMounted(() => {
 	}
 
 	.slider-six_button {
-		.alquran-btn {
-			background-color: var(--color-primary);
-			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-			transition: transform 0.5s ease;
-			border-radius: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-			&:hover {
-				/* that not worke !
-                background-color: var(--color-primaryHover); */
-				background-color: #139a83;
-				/* transform: scale(1); */
-			}
+		.curved-button-wrapper {
+			position: relative;
+			width: 160px;
+			height: 160px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
 			@media (min-width: 1441px) {
-				width: 250px;
-				font-size: 20px;
-				height: 90px;
+				width: 200px;
+				height: 200px;
 			}
 
-			@media (min-width: 1440px) and (max-width: 2560px) {
-				height: 60px;
+			@media (max-width: 767px) {
+				width: 140px;
+				height: 140px;
 			}
+
+			.curved-text {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				animation: rotate 20s linear infinite;
+
+				.curved-text-path {
+					fill: #1a1a1a;
+					font-size: 14px;
+					font-weight: 600;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+
+					@media (min-width: 1441px) {
+						font-size: 16px;
+						letter-spacing: 3px;
+					}
+
+					@media (max-width: 767px) {
+						font-size: 12px;
+						letter-spacing: 1.5px;
+					}
+				}
+			}
+
+			:deep(.btn-icon-round) {
+				box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+				height: 70px;
+				width: 70px;
+				position: relative;
+				z-index: 2;
+
+				@media (min-width: 1441px) {
+					height: 90px;
+					width: 90px;
+				}
+
+				@media (max-width: 767px) {
+					height: 60px;
+					width: 60px;
+				}
+
+				i {
+					font-size: 18px;
+
+					@media (min-width: 1441px) {
+						font-size: 22px;
+					}
+
+					@media (max-width: 767px) {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
 		}
 	}
 

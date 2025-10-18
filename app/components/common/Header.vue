@@ -2,15 +2,18 @@
   <div :dir="direction">
     <header class="edu-header">
       <!-- Reminder bar -->
-      <div v-if="!hideReminder" class="header-top-bar hidden md:block bg-primary text-white px-5">
+      <div v-if="!hideReminder" class="header-top-bar hidden md:block px-5">
         <div class="max-w-7xl mx-auto flex justify-between gap-2 items-center">
-          <NuxtLink
-            class="px-4 bg-white h-[50px] flex items-center justify-center text-primary hover:text-secondary text-lg font-medium"
+          <EduButton
+            rectangular
+            variant="secondary"
+            size="medium"
+            icon="icon-4"
             to="/course-details">
             {{ $t("JoinFreeTrialLessons") }}
-          </NuxtLink>
+          </EduButton>
           <NewsTicker :news="headlines" />
-          <div class="flex gap-3">
+          <div class="flex gap-3 header-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -56,10 +59,12 @@
             <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
               <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
-              <NuxtLink to="/signup"
-                class="flex items-center justify-center bg-primary text-white px-3 py-1 rounded-md hover:bg-blue-700">
+              <EduButton
+                variant="primary"
+                size="small"
+                to="/signup">
                 {{ $t("SignUp") }}
-              </NuxtLink>
+              </EduButton>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -96,6 +101,7 @@ import { ref, reactive, onMounted, onBeforeUnmount, watch } from "vue";
 import MainNav from "./MainNav.vue";
 import MobileNav from "./MobileNav.vue";
 import Translation from "~/assets/icons/Translation.vue";
+import EduButton from "~/components/common/EduButton.vue";
 
 // store - temporarily disabled
 // const authStore = useAuthStore();
@@ -189,6 +195,28 @@ function changeLocale(locale: "en" | "ar" | "ru") {
 </script>
 
 <style scoped>
+/* Header Top Bar - EduBlink University Style */
+.header-top-bar {
+  background-color: #f7f5f2;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header-top-bar :deep(.news-ticker) {
+  color: var(--color-heading, #181818);
+  font-weight: 500;
+}
+
+.header-social a {
+  color: var(--color-secondary, #ee4a62);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.header-social a:hover {
+  color: var(--color-primary, #1ab69d);
+}
+
 /* Edublink-style Sticky Header */
 .header-mainmenu {
   position: relative;

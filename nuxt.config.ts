@@ -7,6 +7,15 @@ export default defineNuxtConfig({
   devServer: {
     port: 5174
   },
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: true,
+        global: true
+      }
+    ]
+  },
   build: {
     transpile: ['vuetify'],
   },
