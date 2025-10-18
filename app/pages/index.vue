@@ -1,14 +1,14 @@
 <template>
   <main>
     <HomeSliderNew />
-    <HomeAbout/>
-    <!-- <HomeCourseList />
-    <HomeSubscribeSteps />
-    <HomeHowSiteWork />
-    <HomeTeacherSection />
-    <HomeEvents />
-    <HomeFeatureSection />
-    <HomeAboutSection /> -->
+    <HomeAbout />
+    <HomeCourseList />
+    <!-- <HomeSubscribeSteps /> -->
+    <!-- <HomeHowSiteWork /> -->
+    <!-- <HomeTeacherSection /> -->
+    <!-- <HomeEvents /> -->
+    <!-- <HomeFeatureSection /> -->
+    <!-- <HomeAboutSection /> -->
   </main>
 </template>
 

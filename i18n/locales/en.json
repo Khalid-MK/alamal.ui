@@ -143,7 +143,7 @@
   "Steps": "STEPS",
   "3SimpleStepsToStart": "3 Simple Steps To Start",
   "AllOurTeachersAreGraduates": "All Our Teachers Are Graduates ",
-  "FromCollegeOfArabic":"From College Of Arabic",
+  "FromCollegeOfArabic": "From College Of Arabic",
   "OurScholars": "Our Scholars",
   "MoreScholars": "More Scholars",
   "_comment About": "This section is for statistics labels",
@@ -215,5 +215,6 @@
   "SupportTitle": "Need assistance?",
   "SupportDescription": "Our team is ready to guide you through enrollment and payment steps.",
   "SupportTelegram": "Telegram: alamal_support",
-  "SupportEmail": "Email: supportalamal.academy"
+  "SupportEmail": "Email: supportalamal.academy",
+  "ourCourses": "Our Courses"
 }
