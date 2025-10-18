@@ -13,18 +13,35 @@
 			"
 		></div>
 
+		<!-- Islamic Floating Shapes -->
+		<!-- Islamic Lamp (Top Left) -->
 		<div
-			class="slider-six_vector-1"
-			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/vector-8.png');
-			"
+			class="slider-six_islamic-lamp"
+			style="background-image: url('/img/islamic-shapes/banner/lamp-shape.png');"
 		></div>
 
+		<!-- Crescent Moon (Spinning) -->
 		<div
-			class="slider-six_vector-2"
-			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/vector-9.png');
-			"
+			class="slider-six_moon"
+			style="background-image: url('/img/islamic-shapes/banner/moon-shape.png');"
+		></div>
+
+		<!-- Quran Calligraphy (Floating) -->
+		<div
+			class="slider-six_quran"
+			style="background-image: url('/img/islamic-shapes/decorative/vector-9.png');"
+		></div>
+
+		<!-- Islamic Art Pattern -->
+		<div
+			class="slider-six_art"
+			style="background-image: url('/img/islamic-shapes/banner/art-shape-1.png');"
+		></div>
+
+		<!-- Quran Learning Symbol -->
+		<div
+			class="slider-six_learning"
+			style="background-image: url('/img/islamic-shapes/decorative/vector-8.png');"
 		></div>
 		<div
 			class="slider-six_shadow"
@@ -208,50 +225,103 @@ onMounted(() => {
 		background-repeat: no-repeat;
 	}
 
-	// Decorative vectors - Desktop first
-	.slider-six_vector-1 {
+	// Islamic Floating Shapes - Desktop first
+	// Islamic Lamp (Top Left)
+	.slider-six_islamic-lamp {
 		position: absolute;
-		left: 70px;
-		top: 70px;
-		width: 106px;
-		height: 106px;
+		left: -60px;
+		top: -40px;
+		width: 140px;
+		height: 140px;
+		z-index: 1;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: pulse 3s ease-in-out infinite;
+
+		@media (max-width: 1023px) {
+			left: 20px;
+			top: 20px;
+			width: 100px;
+			height: 100px;
+		}
+
+		@media (max-width: 767px) {
+			left: 10px;
+			top: 30px;
+			width: 70px;
+			height: 70px;
+		}
+	}
+
+	// Crescent Moon (Spinning)
+	.slider-six_moon {
+		position: absolute;
+		left: 50px;
+		top: 60px;
+		width: 90px;
+		height: 90px;
 		z-index: 1;
 		background-repeat: no-repeat;
 		background-size: contain;
 		animation: spin 30s linear infinite;
 
+		[dir="rtl"] & {
+			left: auto;
+			right: 50px;
+		}
+
 		@media (max-width: 1023px) {
-			left: 50px;
-			top: 80px;
-			width: 90px;
-			height: 90px;
+			left: 40px;
+			top: 70px;
+			width: 70px;
+			height: 70px;
+
+			[dir="rtl"] & {
+				left: auto;
+				right: 40px;
+			}
 		}
 
 		@media (max-width: 767px) {
 			left: 20px;
-			top: 70px;
-			width: 60px;
-			height: 60px;
+			top: 60px;
+			width: 50px;
+			height: 50px;
+
+			[dir="rtl"] & {
+				left: auto;
+				right: 20px;
+			}
 		}
 	}
 
-	.slider-six_vector-2 {
+	// Quran Calligraphy (Floating)
+	.slider-six_quran {
 		position: absolute;
 		z-index: 1;
-		left: 55%;
-		top: 10%;
-		width: 96px;
-		height: 96px;
+		right: 8%;
+		top: 15%;
+		width: 110px;
+		height: 110px;
 		background-repeat: no-repeat;
 		background-size: contain;
 		animation: moveUpDown 4s infinite;
 
+		[dir="rtl"] & {
+			right: auto;
+			left: 8%;
+		}
+
 		@media (max-width: 1023px) {
-			left: auto;
-			right: 80px;
-			top: 80px;
-			width: 80px;
-			height: 80px;
+			right: 60px;
+			top: 70px;
+			width: 85px;
+			height: 85px;
+
+			[dir="rtl"] & {
+				right: auto;
+				left: 60px;
+			}
 		}
 
 		@media (max-width: 767px) {
@@ -259,6 +329,79 @@ onMounted(() => {
 			top: 50px;
 			width: 60px;
 			height: 60px;
+
+			[dir="rtl"] & {
+				right: auto;
+				left: 30px;
+			}
+		}
+	}
+
+	// Islamic Art Pattern
+	.slider-six_art {
+		position: absolute;
+		z-index: 1;
+		right: 15%;
+		bottom: 20%;
+		width: 100px;
+		height: 100px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: floatRotate 6s ease-in-out infinite;
+
+		[dir="rtl"] & {
+			right: auto;
+			left: 15%;
+		}
+
+		@media (max-width: 1023px) {
+			right: 10%;
+			bottom: 25%;
+			width: 75px;
+			height: 75px;
+
+			[dir="rtl"] & {
+				right: auto;
+				left: 10%;
+			}
+		}
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	// Quran Learning Symbol
+	.slider-six_learning {
+		position: absolute;
+		z-index: 1;
+		left: 10%;
+		bottom: 15%;
+		width: 95px;
+		height: 95px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: bounce 3s ease-in-out infinite;
+
+		[dir="rtl"] & {
+			left: auto;
+			right: 10%;
+		}
+
+		@media (max-width: 1023px) {
+			left: 5%;
+			bottom: 20%;
+			width: 70px;
+			height: 70px;
+
+			[dir="rtl"] & {
+				left: auto;
+				right: 5%;
+			}
+		}
+
+		@media (max-width: 767px) {
+			display: none;
 		}
 	}
 
@@ -639,6 +782,39 @@ onMounted(() => {
 
 	100% {
 		background-position: -2000px bottom;
+	}
+}
+
+// Islamic Shapes Animations
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+		opacity: 0.9;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 1;
+	}
+}
+
+@keyframes floatRotate {
+	0%, 100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	33% {
+		transform: translateY(-10px) rotate(5deg);
+	}
+	66% {
+		transform: translateY(5px) rotate(-5deg);
+	}
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-15px);
 	}
 }
 </style>

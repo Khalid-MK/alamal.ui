@@ -25,111 +25,107 @@
 					</button>
 				</div>
 
-				<!-- Course Grid -->
-				<TransitionGroup
-					name="course-fade"
-					tag="div"
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 isotope-list"
-				>
-					<div
-						v-for="course in filteredCourses"
-						:key="course.id"
-						class="isotope-item"
-					>
-						<div class="edu-course course-style-3 group">
-							<div class="course-inner">
-								<!-- Bottom Shadow Effect -->
-								<div class="course-shadow"></div>
+				<!-- Course Slider -->
+				<div class="courses-slider-wrapper">
+					<swiper-container ref="containerRef" :init="false" class="courses-swiper">
+						<swiper-slide
+							v-for="course in filteredCourses"
+							:key="course.id"
+							class="course-slide"
+						>
+							<div class="edu-course course-style-3 group">
+								<div class="course-inner">
+									<!-- Bottom Shadow Effect -->
+									<div class="course-shadow"></div>
 
-								<!-- Thumbnail -->
-								<div class="thumbnail">
-									<NuxtLink :to="`/course-details/${course.id}`">
-										<img
-											:src="course.image"
-											:alt="$t(course.titleKey)"
-											loading="lazy"
-											class="course-image"
-										/>
-										<div class="image-overlay"></div>
-									</NuxtLink>
-									<div class="time-top">
-										<span class="duration">
-											<i class="icon-61"></i>
-											{{ $t(course.modeKey) }}
-										</span>
-									</div>
-								</div>
-
-								<!-- Content -->
-								<div class="content">
-									<span class="course-level">{{ $t(course.categoryKey) }}</span>
-									<h5 class="course-title">
+									<!-- Thumbnail -->
+									<div class="thumbnail">
 										<NuxtLink :to="`/course-details/${course.id}`">
-											{{ $t(course.titleKey) }}
+											<img
+												:src="course.image"
+												:alt="$t(course.titleKey)"
+												loading="lazy"
+												class="course-image"
+											/>
+											<div class="image-overlay"></div>
 										</NuxtLink>
-									</h5>
-									<p class="course-description">
-										{{ $t(course.descriptionKey) }}
-									</p>
-
-									<!-- Rating -->
-									<div class="course-rating">
-										<div class="rating">
-											<i
-												v-for="star in 5"
-												:key="star"
-												class="icon-23"
-											></i>
+										<div class="time-top">
+											<span class="duration">
+												<i class="icon-61"></i>
+												{{ $t(course.modeKey) }}
+											</span>
 										</div>
-										<span class="rating-count">{{ course.rating }}</span>
 									</div>
 
-									<!-- Learn More Button (Hidden by default, shown on hover) -->
-									<div class="read-more-btn">
-										<NuxtLink
-											:to="`/course-details/${course.id}`"
-											class="edu-btn btn-small btn-secondary"
-										>
-											{{ $t("courseArea.learnMore") }}
-											<i class="icon-4"></i>
-										</NuxtLink>
+									<!-- Content -->
+									<div class="content">
+										<span class="course-level">{{ $t(course.categoryKey) }}</span>
+										<h5 class="course-title">
+											<NuxtLink :to="`/course-details/${course.id}`">
+												{{ $t(course.titleKey) }}
+											</NuxtLink>
+										</h5>
+										<p class="course-description">
+											{{ $t(course.descriptionKey) }}
+										</p>
+
+										<!-- Rating -->
+										<div class="course-rating">
+											<div class="rating">
+												<i
+													v-for="star in 5"
+													:key="star"
+													class="icon-23"
+												></i>
+											</div>
+											<span class="rating-count">{{ course.rating }}</span>
+										</div>
+
+										<!-- Learn More Button (Hidden by default, shown on hover) -->
+										<div class="read-more-btn">
+											<NuxtLink
+												:to="`/course-details/${course.id}`"
+												class="edu-btn btn-small btn-secondary"
+											>
+												{{ $t("courseArea.learnMore") }}
+												<i class="icon-4"></i>
+											</NuxtLink>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</swiper-slide>
+					</swiper-container>
+
+					<!-- Navigation Controls - Only show when there are more than 3 courses -->
+					<div v-if="showSliderNavigation" class="slider-navigation">
+						<button class="nav-btn nav-prev" @click="slidePrev" aria-label="Previous slide">
+							<i class="icon-4"></i>
+						</button>
+						<div class="slider-pagination"></div>
+						<button class="nav-btn nav-next" @click="slideNext" aria-label="Next slide">
+							<i class="icon-4"></i>
+						</button>
 					</div>
-				</TransitionGroup>
+				</div>
 			</div>
 		</div>
 
-		<!-- Animated Shapes -->
+		<!-- Islamic Animated Shapes -->
 		<ul class="shape-group hidden lg:block">
 			<li class="shape-1 scene" ref="scene1">
 				<img
-					data-depth="2"
-					src="/img/about/map-shape-3.png"
-					alt="Shape"
-					class="block dark:hidden"
-				/>
-				<img
-					data-depth="2"
-					src="/img/about/map-shape-3.png"
-					alt="Shape"
-					class="hidden dark:block"
+					data-depth="1"
+					src="/img/islamic-shapes/banner/bismillah-2.png"
+					alt="Islamic Decoration"
 				/>
 			</li>
-			<li class="shape-2 scene" ref="scene2">
+
+			<li class="shape-4 scene" ref="scene4">
 				<img
-					data-depth="2"
-					src="/img/about/map-shape-3.png"
-					alt="Shape"
-					class="block dark:hidden"
-				/>
-				<img
-					data-depth="2"
-					src="/img/about/map-shape-3.png"
-					alt="Shape"
-					class="hidden dark:block"
+					data-depth="-1.5"
+					src="/img/islamic-shapes/decorative/shape-74.png"
+					alt="Islamic Design"
 				/>
 			</li>
 		</ul>
@@ -137,7 +133,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import Parallax from "parallax-js";
 
@@ -145,14 +141,19 @@ const { locale, localeProperties } = useI18n();
 const direction = computed(() => localeProperties.value.dir);
 
 // Filter state
-const activeFilter = ref("all");
+const activeFilter = ref("quran");
 
 // Refs for parallax scenes
 const scene1 = ref<HTMLElement | null>(null);
 const scene2 = ref<HTMLElement | null>(null);
+const scene3 = ref<HTMLElement | null>(null);
+const scene4 = ref<HTMLElement | null>(null);
 
 // Store parallax instances for cleanup
 let parallaxInstances: Parallax[] = [];
+
+// Swiper ref
+const containerRef = ref(null);
 
 // Filter data
 interface FilterData {
@@ -160,10 +161,10 @@ interface FilterData {
 }
 
 const filters: FilterData[] = [
-	{ id: "all" },
 	{ id: "quran" },
 	{ id: "tajweed" },
 	{ id: "arabic" },
+	{ id: "islamic" },
 ];
 
 // Course data
@@ -187,7 +188,7 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course1.mode",
 		rating: "(5.0 / 12 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "quran"],
+		categories: ["quran"],
 	},
 	{
 		id: 2,
@@ -197,7 +198,7 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course2.mode",
 		rating: "(4.9 / 18 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "tajweed"],
+		categories: ["tajweed"],
 	},
 	{
 		id: 3,
@@ -207,7 +208,7 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course3.mode",
 		rating: "(4.8 / 15 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "arabic"],
+		categories: ["arabic"],
 	},
 	{
 		id: 4,
@@ -217,7 +218,7 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course4.mode",
 		rating: "(5.0 / 20 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "quran"],
+		categories: ["quran"],
 	},
 	{
 		id: 5,
@@ -227,7 +228,7 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course5.mode",
 		rating: "(4.7 / 14 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "tajweed"],
+		categories: ["tajweed"],
 	},
 	{
 		id: 6,
@@ -237,18 +238,129 @@ const coursesData: CourseData[] = [
 		modeKey: "courseArea.courses.course6.mode",
 		rating: "(4.9 / 16 Rating)",
 		image: "/img/courses/programs/course-01.jpg",
-		categories: ["all", "arabic"],
+		categories: ["arabic"],
+	},
+	{
+		id: 7,
+		titleKey: "courseArea.courses.course7.title",
+		descriptionKey: "courseArea.courses.course7.description",
+		categoryKey: "courseArea.courses.course7.category",
+		modeKey: "courseArea.courses.course7.mode",
+		rating: "(5.0 / 25 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["islamic"],
+	},
+	{
+		id: 8,
+		titleKey: "courseArea.courses.course8.title",
+		descriptionKey: "courseArea.courses.course8.description",
+		categoryKey: "courseArea.courses.course8.category",
+		modeKey: "courseArea.courses.course8.mode",
+		rating: "(4.8 / 22 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["islamic"],
+	},
+	{
+		id: 9,
+		titleKey: "courseArea.courses.course9.title",
+		descriptionKey: "courseArea.courses.course9.description",
+		categoryKey: "courseArea.courses.course9.category",
+		modeKey: "courseArea.courses.course9.mode",
+		rating: "(5.0 / 30 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["quran"],
+	},
+	{
+		id: 10,
+		titleKey: "courseArea.courses.course10.title",
+		descriptionKey: "courseArea.courses.course10.description",
+		categoryKey: "courseArea.courses.course10.category",
+		modeKey: "courseArea.courses.course10.mode",
+		rating: "(4.9 / 28 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["quran"],
+	},
+	{
+		id: 11,
+		titleKey: "courseArea.courses.course11.title",
+		descriptionKey: "courseArea.courses.course11.description",
+		categoryKey: "courseArea.courses.course11.category",
+		modeKey: "courseArea.courses.course11.mode",
+		rating: "(4.7 / 24 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["quran"],
+	},
+	{
+		id: 12,
+		titleKey: "courseArea.courses.course12.title",
+		descriptionKey: "courseArea.courses.course12.description",
+		categoryKey: "courseArea.courses.course12.category",
+		modeKey: "courseArea.courses.course12.mode",
+		rating: "(5.0 / 35 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["quran"],
+	},
+	{
+		id: 13,
+		titleKey: "courseArea.courses.course13.title",
+		descriptionKey: "courseArea.courses.course13.description",
+		categoryKey: "courseArea.courses.course13.category",
+		modeKey: "courseArea.courses.course13.mode",
+		rating: "(4.8 / 26 Rating)",
+		image: "/img/courses/programs/course-01.jpg",
+		categories: ["quran"],
 	},
 ];
 
 // Filtered courses based on active filter
 const filteredCourses = computed(() => {
-	if (activeFilter.value === "all") {
-		return coursesData;
-	}
 	return coursesData.filter((course) =>
 		course.categories.includes(activeFilter.value)
 	);
+});
+
+// Check if slider navigation should be shown
+const showSliderNavigation = computed(() => filteredCourses.value.length > 3);
+
+// Swiper instance
+const { instance, next, prev, to } = useSwiper(containerRef, {
+	slidesPerView: 1,
+	spaceBetween: 32,
+	loop: true,
+	pagination: {
+		el: '.slider-pagination',
+		clickable: true,
+		type: 'bullets',
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 32,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 32,
+		},
+	},
+});
+
+// Navigation methods
+const slidePrev = () => {
+	prev();
+};
+
+const slideNext = () => {
+	next();
+};
+
+// Watch for filter changes and update slider
+watch(filteredCourses, () => {
+	nextTick(() => {
+		if (instance.value) {
+			instance.value.update();
+			to(0);
+		}
+	});
 });
 
 onMounted(() => {
@@ -266,6 +378,8 @@ onMounted(() => {
 	// Initialize parallax for each scene
 	initParallax(scene1.value);
 	initParallax(scene2.value);
+	initParallax(scene3.value);
+	initParallax(scene4.value);
 });
 
 onBeforeUnmount(() => {
@@ -406,11 +520,99 @@ onBeforeUnmount(() => {
 	}
 }
 
-// Isotope Item - Equal Heights
-.isotope-item {
+// Courses Slider
+.courses-slider-wrapper {
+	position: relative;
+	margin-bottom: 60px;
+}
+
+.courses-swiper {
+	padding-bottom: 20px;
+}
+
+.course-slide {
+	height: auto;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
+}
+
+// Slider Navigation
+.slider-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 40px;
+
+	.nav-btn {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: var(--color-secondary);
+		color: var(--color-white);
+		border: none;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: #d43d52;
+			transform: scale(1.05);
+		}
+
+		i {
+			font-size: 16px;
+		}
+
+		&.nav-prev {
+			i {
+				transform: rotate(180deg);
+			}
+
+			[dir="rtl"] & i {
+				transform: rotate(0deg);
+			}
+		}
+
+		&.nav-next {
+			[dir="rtl"] & i {
+				transform: rotate(180deg);
+			}
+		}
+
+		@media (max-width: 767px) {
+			width: 40px;
+			height: 40px;
+
+			i {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.slider-pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+
+		:deep(.swiper-pagination-bullet) {
+			width: 10px;
+			height: 10px;
+			background-color: #d9d9d9;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			opacity: 1;
+
+			&.swiper-pagination-bullet-active {
+				background-color: var(--color-secondary);
+				width: 30px;
+				border-radius: 5px;
+			}
+		}
+	}
 }
 
 // Course Card - Style 3
@@ -661,29 +863,27 @@ onBeforeUnmount(() => {
 				right: -155px;
 			}
 		}
+
+		&.shape-3 {
+			top: 50%;
+			right: -100px;
+			transform: translateY(-50%);
+
+			[dir="rtl"] & {
+				right: auto;
+				left: -100px;
+			}
+		}
+
+		&.shape-4 {
+			bottom: 10%;
+			left: -80px;
+
+			[dir="rtl"] & {
+				left: auto;
+				right: -80px;
+			}
+		}
 	}
-}
-
-// Transition animations for course cards
-.course-fade-enter-active,
-.course-fade-leave-active {
-	transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.course-fade-enter-from,
-.course-fade-leave-to {
-	opacity: 0;
-	transform: scale(0.95);
-}
-
-.course-fade-enter-to,
-.course-fade-leave-from {
-	opacity: 1;
-	transform: scale(1);
-}
-
-// Move animation for TransitionGroup
-.course-fade-move {
-	transition: transform 0.3s ease;
 }
 </style>

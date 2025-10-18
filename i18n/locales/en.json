@@ -200,6 +200,7 @@
   "campusSection": {
     "preTitle": "Campus",
     "title": "Campus Life",
+    "bookTrialSession": "Book Trial Session",
     "features": {
       "studentLife": {
         "title": "Student Life",
@@ -221,10 +222,10 @@
     "title": "Our Islamic Programs",
     "learnMore": "Learn More",
     "filters": {
-      "all": "All Programs",
       "quran": "Quran Courses",
       "tajweed": "Tajweed Courses",
-      "arabic": "Arabic Language"
+      "arabic": "Arabic Language",
+      "islamic": "Islamic Studies"
     },
     "courses": {
       "course1": {
@@ -262,6 +263,48 @@
         "description": "Develop practical Arabic speaking skills for everyday communication and better understanding of Islamic lectures and texts.",
         "category": "Arabic Language",
         "mode": "Online Only"
+      },
+      "course7": {
+        "title": "Islamic History & Seerah",
+        "description": "Explore the rich history of Islam and the life of Prophet Muhammad (PBUH) with detailed lessons on major events and lessons.",
+        "category": "Islamic Studies",
+        "mode": "Online + Onsite"
+      },
+      "course8": {
+        "title": "Islamic Jurisprudence (Fiqh)",
+        "description": "Learn the fundamentals of Islamic law, covering worship, transactions, and contemporary issues with classical scholarly perspectives.",
+        "category": "Islamic Studies",
+        "mode": "Online Only"
+      },
+      "course9": {
+        "title": "Quran for Beginners",
+        "description": "Start your journey with the Quran through this comprehensive beginner course covering Arabic alphabet, basic reading, and essential verses.",
+        "category": "Quran Studies",
+        "mode": "Online + Onsite"
+      },
+      "course10": {
+        "title": "Tafsir Al-Quran (Quranic Exegesis)",
+        "description": "Deepen your understanding of the Quran through scholarly interpretation, historical context, and linguistic analysis of verses.",
+        "category": "Quran Studies",
+        "mode": "Online Only"
+      },
+      "course11": {
+        "title": "Quran Translation & Meaning",
+        "description": "Study the meanings and translations of Quranic verses to better understand the message and wisdom of the Holy Quran.",
+        "category": "Quran Studies",
+        "mode": "Online + Onsite"
+      },
+      "course12": {
+        "title": "Quranic Arabic Language",
+        "description": "Master the Arabic language of the Quran to understand verses directly without translation and appreciate its linguistic beauty.",
+        "category": "Quran Studies",
+        "mode": "Online Only"
+      },
+      "course13": {
+        "title": "Quran & Daily Life Application",
+        "description": "Learn how to apply Quranic teachings and principles in your daily life for spiritual growth and practical guidance.",
+        "category": "Quran Studies",
+        "mode": "Online + Onsite"
       }
     }
   },
@@ -271,5 +314,10 @@
     "titleHighlight": "Certificate",
     "titlePart2": "Through Al-Amal",
     "buttonText": "Get started now"
+  },
+  "_comment VideoArea": "This section is for the video showcase area",
+  "videoArea": {
+    "title": "Take a Video Tour to Learn About Our Programs",
+    "playButtonAriaLabel": "Play welcome video"
   }
 }

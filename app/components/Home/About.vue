@@ -119,37 +119,37 @@
 							loading="lazy"
 						/>
 
-						<!-- Decorative Shapes -->
+						<!-- Islamic Decorative Shapes -->
 						<ul class="shape-group">
-							<!-- Shape 1: Parallax -->
+							<!-- Shape 1: Islamic Decorative (shape-51) -->
 							<li
 								class="shape-1 scene"
 								ref="scene1"
 							>
-								<img data-depth="2" src="/img/about/shape-13.png" alt="Shape" />
+								<img data-depth="1" src="/img/islamic-shapes/decorative/shape-17.png" alt="Islamic Decoration" />
 							</li>
 
-							<!-- Shape 2: Parallax -->
+							<!-- Shape 2: Islamic Ornamental (shape-52) -->
 							<li
 								class="shape-2 scene"
 								ref="scene2"
 							>
 								<img
-									data-depth="-2"
-									src="/img/about/shape-39.png"
-									alt="Shape"
+									data-depth="-1"
+									src="/img/islamic-shapes/decorative/shape-51.png"
+									alt="Islamic Ornament"
 								/>
 							</li>
 
-							<!-- Shape 3: Parallax -->
+							<!-- Shape 3: Islamic Pattern (shape-17) -->
 							<li
 								class="shape-3 scene"
 								ref="scene3"
 							>
-								<img data-depth="2" src="/img/about/shape-07.png" alt="Shape" />
+								<img data-depth="1.5" src="/img/islamic-shapes/decorative/shape-52.png" alt="Islamic Pattern" />
 							</li>
 
-							<!-- Shape 4: Circle -->
+							<!-- Shape 4: Circle (Keep as decorative element) -->
 							<li
 								class="shape-4"
 							>
@@ -161,17 +161,23 @@
 			</div>
 		</div>
 
-		<!-- Outer Decorative Shapes -->
+		<!-- Outer Islamic Decorative Shapes -->
 		<ul class="shape-group outer-shapes">
 			<li class="shape-5">
 				<img
 					class="rotateit"
-					src="/img/about/shape-13.png"
-					alt="Decorative Shape"
+					src="/img/islamic-shapes/decorative/shape-18.png"
+					alt="Islamic Decoration"
 				/>
 			</li>
 			<li class="shape-6">
 				<span></span>
+			</li>
+            <li class="shape-7">
+				<img
+					src="/img/islamic-shapes/banner/lamp-shape.png"
+					alt="Islamic Decoration"
+				/>
 			</li>
 		</ul>
 
@@ -759,6 +765,30 @@ onBeforeUnmount(() => {
 				top: 0;
 			}
 		}
+        
+        &.shape-7 {
+            top: 24px;
+
+            [dir="ltr"] & {
+                right: 120px;
+            }
+
+            [dir="rtl"] & {
+                left: 120px;
+            }
+
+            @media (max-width: 1199px) {
+                [dir="ltr"] & {
+                    right: 0;
+                }
+
+                [dir="rtl"] & {
+                    left: 0;
+                }
+
+                top: 0;
+            }
+        }
 
 		&.shape-6 {
 			top: -350px;

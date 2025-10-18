@@ -20,30 +20,37 @@
 					loading="lazy"
 								/>
 							</div>
+
+							<!-- Book Trial Session Button -->
+							<div class="campus-button-wrapper">
+								<button class="btn-trial-session">
+									{{ $t("campusSection.bookTrialSession") }}
+								</button>
+							</div>
 						</div>
 
-						<!-- Parallax Shapes Group (Image Side - 3 shapes) -->
+						<!-- Islamic Parallax Shapes Group (Image Side - 3 shapes) -->
 						<ul class="shape-group">
-							<!-- Shape 1: Large Circle (CSS) -->
+							<!-- Shape 1: Large Circle (CSS - Keep for visual balance) -->
 							<li class="shape-1 scene" ref="scene1">
 								<span data-depth=".8"></span>
 							</li>
 
-							<!-- Shape 2: PNG Image (shape-21.png) -->
+							<!-- Shape 2: Islamic Decorative (shape-51) -->
 							<li class="shape-2 scene" ref="scene2">
 								<img
 									data-depth="1.5"
-									src="/img/about/shape-21.png"
-									alt="Shape"
+									src="/img/islamic-shapes/decorative/shape-51.png"
+									alt="Islamic Decoration"
 								/>
 							</li>
 
-							<!-- Shape 3: PNG Image (shape-13.png) -->
+							<!-- Shape 3: Islamic Ornamental (shape-52) -->
 							<li class="shape-3 scene" ref="scene3">
 								<img
 									data-depth="-1.5"
-									src="/img/about/shape-13.png"
-									alt="Shape"
+									src="/img/islamic-shapes/decorative/shape-52.png"
+									alt="Islamic Ornament"
 								/>
 							</li>
 						</ul>
@@ -121,21 +128,21 @@
 							</div>
 						</div>
 
-						<!-- Parallax Shapes Group (Content Side - 3 shapes) -->
+						<!-- Islamic Parallax Shapes Group (Content Side - 3 shapes) -->
 						<ul class="shape-group">
-							<!-- Shape 4: Circle (CSS - 320×320px border) -->
+							<!-- Shape 4: Circle (CSS - Keep for visual balance) -->
 							<li class="shape-4 scene" ref="scene4">
 								<span data-depth=".8"></span>
 							</li>
 
-							<!-- Shape 5: Filled Circle (CSS - 150×150px) -->
+							<!-- Shape 5: Filled Circle (CSS - Keep for visual balance) -->
 							<li class="shape-5 scene" ref="scene5">
 								<span data-depth="2"></span>
 							</li>
 
-							<!-- Shape 6: PNG Image (shape-25.png) -->
+							<!-- Shape 6: Islamic Pattern (shape-18) -->
 							<li class="shape-6 scene" ref="scene6">
-								<img data-depth="-2" src="/img/about/shape-25.png" alt="Shape" />
+								<img data-depth="-2" src="/img/islamic-shapes/decorative/shape-18.png" alt="Islamic Pattern" />
 							</li>
 						</ul>
 					</div>
@@ -635,6 +642,58 @@ onBeforeUnmount(() => {
 					color: var(--color-white);
 				}
 			}
+		}
+	}
+}
+
+// Campus Button Wrapper
+.campus-button-wrapper {
+	margin-top: 24px;
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: 767px) {
+		margin-top: 20px;
+	}
+
+	.btn-trial-session {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px 32px;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--color-white);
+		background-color: var(--color-primary);
+		border: 2px solid var(--color-primary);
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-transform: capitalize;
+		letter-spacing: 0.5px;
+		box-shadow: 0 4px 12px rgba(26, 182, 157, 0.2);
+
+		&:hover {
+			background-color: transparent;
+			color: var(--color-primary);
+			transform: translateY(-2px);
+			box-shadow: 0 6px 16px rgba(26, 182, 157, 0.3);
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 8px rgba(26, 182, 157, 0.2);
+		}
+
+		@media (max-width: 767px) {
+			padding: 14px 28px;
+			font-size: 15px;
+		}
+
+		@media (max-width: 479px) {
+			padding: 12px 24px;
+			font-size: 14px;
+			width: 100%;
 		}
 	}
 }

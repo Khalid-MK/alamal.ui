@@ -3,6 +3,7 @@
     <HomeSliderNew />
     <HomeAbout/>
     <HomeCourseArea />
+    <HomeVideoArea />
     <HomeCampus />
     <HomeUniversityCTA />
     <!-- <HomeCourseList />
