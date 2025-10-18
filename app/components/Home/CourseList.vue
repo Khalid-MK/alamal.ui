@@ -154,12 +154,12 @@ const buildCourses = (course: Course) => {
                 <span
                     class="mx-auto rounded-full w-fit bg-[#F0F0F0] px-6 py-2 text-sm font-semibold text-black flex align-middle gap-1">
                     <img src="/img/star.png" width="20px" height="20px" alt="Group 1000004170" />
-                    <p>{{ $t("Courses") }}</p>
+                    <p>{{ $t("ourCourses") }}</p>
                 </span>
 
 
                 <h2 class="mt-7 text-3xl font-extrabold leading-tight text-[#1f2937] md:text-[2.5rem]">
-                    {{ $t("ourCourses") }}
+                    <h2 class="title">{{ $t("courseArea.title") }}</h2>
                 </h2>
             </div>
 
