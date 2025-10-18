@@ -7,12 +7,11 @@
     <HomeCampus />
     <HomeUniversityCTA />
     <HomeCourseList />
-    <!-- <HomeSubscribeSteps />
     <HomeHowSiteWork />
     <HomeTeacherSection />
     <HomeEvents />
-    <HomeFeatureSection />
-    <HomeAboutSection /> -->
+    <HomeBlogAndPrayer />
+    <HomeZoomSection/>
   </main>
 </template>
 

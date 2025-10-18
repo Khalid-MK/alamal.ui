@@ -1,0 +1,59 @@
+{
+    "en": {
+        "events": [
+            {
+                "location": "Zeoyan Stadium, London",
+                "date": "Thu Jan 29 2023 12:30:00",
+                "title": "Education Autumn Tour"
+            },
+            {
+                "location": "Zeoyan Stadium, London",
+                "date": "Fri May 20 2023 10:30:00",
+                "title": "Education Summer Tour"
+            },
+            {
+                "location": "Zeoyan Stadium, London",
+                "date": "Sat Jul 25 2023 09:30:00",
+                "title": "Education Spring Tour"
+            }
+        ]
+    },
+    "ar": {
+        "events": [
+            {
+                "location": "ملعب زويان، لندن",
+                "date": "الخميس 29 يناير 2023 12:30:00",
+                "title": "جولة التعليم في الخريف"
+            },
+            {
+                "location": "ملعب زويان، لندن",
+                "date": "الجمعة 20 مايو 2023 10:30:00",
+                "title": "جولة التعليم في الصيف"
+            },
+            {
+                "location": "ملعب زويان، لندن",
+                "date": "السبت 25 يوليو 2023 09:30:00",
+                "title": "جولة التعليم في الربيع"
+            }
+        ]
+    },
+    "ru": {
+        "events": [
+            {
+                "location": "Стадион Зеоян, Лондон",
+                "date": "Чт 29 Янв 2023 12:30:00",
+                "title": "Осенний образовательный тур"
+            },
+            {
+                "location": "Стадион Зеоян, Лондон",
+                "date": "Пт 20 Май 2023 10:30:00",
+                "title": "Летний образовательный тур"
+            },
+            {
+                "location": "Стадион Зеоян, Лондон",
+                "date": "Сб 25 Июл 2023 09:30:00",
+                "title": "Весенний образовательный тур"
+            }
+        ]
+    }
+}

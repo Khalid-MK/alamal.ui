@@ -1,0 +1,86 @@
+{
+    "en": {
+        "testimonialItem": [
+            {
+                "id": "1",
+                "testimonialImage": "/img/testimonial/Image.png",
+                "feedbackAuthor": "David Johnson",
+                "feedbackType": "Student",
+                "feedbackQuote": "Great Course!",
+                "feedback": "Thanks to our marketplace model, our content keeps pace with market changes. You’ll find courses on the latest technologies and business practice and more!"
+            },
+            {
+                "id": "2",
+                "testimonialImage": "/img/testimonial/testimonial-02.png",
+                "feedbackAuthor": "Brandon Tylor",
+                "feedbackType": "Student",
+                "feedbackQuote": "Best Experience!",
+                "feedback": "In every software-as-a-service solution, user billing and payments are key aspects in the sale of services rendered. Let’s learn about Stripe the metal mates."
+            },
+            {
+                "id": "3",
+                "testimonialImage": "/img/testimonial/testimonial.png",
+                "feedbackAuthor": "Richard Joseph",
+                "feedbackType": "Student",
+                "feedbackQuote": "Helpful Instructors!",
+                "feedback": "There are so many websites out there that have not considered the overall usability of their visually impaired users. When it comes to designing better links."
+            }
+        ]
+    },
+    "ar": {
+        "testimonialItem": [
+            {
+                "id": "1",
+                "testimonialImage": "/img/testimonial/Image.png",
+                "feedbackAuthor": "ديفيد جونسون",
+                "feedbackType": "طالب",
+                "feedbackQuote": "دورة رائعة!",
+                "feedback": "بفضل نموذج السوق الخاص بنا، يواكب المحتوى لدينا تغيّرات السوق. ستجد دورات حول أحدث التقنيات والممارسات التجارية والمزيد!"
+            },
+            {
+                "id": "2",
+                "testimonialImage": "/img/testimonial/testimonial-02.png",
+                "feedbackAuthor": "براندون تايلور",
+                "feedbackType": "طالب",
+                "feedbackQuote": "أفضل تجربة!",
+                "feedback": "في كل حل من حلول البرمجيات كخدمة، تُعد الفواتير والدفع من الجوانب الأساسية في بيع الخدمات المقدمة. لنتعلم عن Stripe وأهم مزاياه."
+            },
+            {
+                "id": "3",
+                "testimonialImage": "/img/testimonial/testimonial.png",
+                "feedbackAuthor": "ريتشارد جوزيف",
+                "feedbackType": "طالب",
+                "feedbackQuote": "مدربون متعاونون!",
+                "feedback": "هناك العديد من المواقع التي لم تراعِ سهولة الاستخدام للمكفوفين. عندما يتعلق الأمر بتصميم روابط أفضل، هذا الموقع مميز."
+            }
+        ]
+    },
+    "ru": {
+        "testimonialItem": [
+            {
+                "id": "1",
+                "testimonialImage": "/img/testimonial/Image.png",
+                "feedbackAuthor": "Дэвид Джонсон",
+                "feedbackType": "Студент",
+                "feedbackQuote": "Отличный курс!",
+                "feedback": "Благодаря нашей рыночной модели, контент развивается в ногу с изменениями на рынке. Вы найдете курсы по последним технологиям и бизнес-практикам!"
+            },
+            {
+                "id": "2",
+                "testimonialImage": "/img/testimonial/testimonial-02.png",
+                "feedbackAuthor": "Брэндон Тэйлор",
+                "feedbackType": "Студент",
+                "feedbackQuote": "Лучший опыт!",
+                "feedback": "В каждом решении SaaS выставление счетов и платежи — это ключевые аспекты продажи услуг. Давайте узнаем больше о Stripe и его возможностях."
+            },
+            {
+                "id": "3",
+                "testimonialImage": "/img/testimonial/testimonial.png",
+                "feedbackAuthor": "Ричард Джозеф",
+                "feedbackType": "Студент",
+                "feedbackQuote": "Полезные преподаватели!",
+                "feedback": "Существует так много сайтов, которые не учитывают удобство для слабовидящих пользователей. Когда речь идет о создании лучших ссылок, это отличный пример."
+            }
+        ]
+    }
+}
