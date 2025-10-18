@@ -1,0 +1,28 @@
+{
+  "aboutSection": {
+    "preTitle": "About Us",
+    "titlePart1": "We Provide Best",
+    "titleHighlight": "Education",
+    "titlePart2": "Services For You",
+    "tabs": {
+      "about": {
+        "title": "About Al-Amal",
+        "description": "Al-Amal Academy is dedicated to providing authentic Islamic education in Quran, Arabic, and Tajweed. We connect students worldwide with qualified scholars who graduated from prestigious Islamic universities.",
+        "feature1": "Certified Quran Teachers",
+        "feature2": "Flexible Online Learning"
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "Our mission is to make Islamic education accessible to Muslims worldwide. We strive to preserve the authentic teachings of Quran and Arabic language through qualified instructors and modern technology.",
+        "feature1": "Expert Islamic Scholars",
+        "feature2": "Personalized Learning Experience"
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "We envision a global community of Quran learners who understand and practice the teachings of Islam. Our goal is to create a platform that makes learning Quran and Arabic accessible to everyone, anywhere.",
+        "feature1": "Worldwide Islamic Learning",
+        "feature2": "Quality Islamic Education"
+      }
+    }
+  }
+}

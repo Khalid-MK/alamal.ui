@@ -42,9 +42,9 @@ export default defineNuxtConfig({
         lazy: true,
         langDir: 'locales',
         locales: [
-          { code: 'en', iso: 'en', file: 'en.json', name: 'English', dir: 'ltr' },
-          { code: 'ar', iso: 'ar', file: 'ar.json', name: 'العربية', dir: 'rtl' },
-          { code: 'ru', iso: 'ru', file: 'ru.json', name: 'Русский', dir: 'ltr' },
+          { code: 'en', iso: 'en', files: ['en.json', 'about/en.json'], name: 'English', dir: 'ltr' },
+          { code: 'ar', iso: 'ar', files: ['ar.json', 'about/ar.json'], name: 'العربية', dir: 'rtl' },
+          { code: 'ru', iso: 'ru', files: ['ru.json', 'about/ru.json'], name: 'Русский', dir: 'ltr' },
         ],
         detectBrowserLanguage: {
           useCookie: true,
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@pinia/nuxt"
   ],
-  css: ["~/assets/css/tailwind.scss", "~/assets/css/flaticon.css", "~/assets/css/vendor/icomoon.css"],
+  css: ["~/assets/css/tailwind.scss", "~/assets/css/vendor/icomoon.css", "~/assets/css/flaticon.css"],
   app: {
     head: {
       link: [

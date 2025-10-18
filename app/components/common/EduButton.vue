@@ -561,6 +561,12 @@ const handleClick = (event: MouseEvent) => {
 	}
 }
 
+.edu-btn-content {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* ===========================
    RTL Support
    =========================== */
