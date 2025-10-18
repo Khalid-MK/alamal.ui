@@ -191,5 +191,24 @@
   "SupportTitle": "هل تحتاج مساعدة؟",
   "SupportDescription": "فريقنا جاهز لمساعدتك في خطوات التسجيل والدفع.",
   "SupportTelegram": "تيليجرام: alamal_support",
-  "SupportEmail": "البريد: supportalamal.academy"
+  "SupportEmail": "البريد: supportalamal.academy",
+  "_comment Campus": "هذا القسم لمعلومات الحياة الجامعية",
+  "campusSection": {
+    "preTitle": "الحرم الجامعي",
+    "title": "الحياة الجامعية",
+    "features": {
+      "studentLife": {
+        "title": "حياة الطالب",
+        "description": "انضم إلى مجتمعنا الإسلامي النابض بالحياة مع حلقات دراسة القرآن وبرامج الإرشاد وفرص التعلم التعاوني."
+      },
+      "artsClubs": {
+        "title": "الفنون والأنشطة الإسلامية",
+        "description": "استكشف فن الخط الإسلامي وإلقاء الشعر العربي والأناشيد التقليدية مع تعميق فهمك للتراث الإسلامي."
+      },
+      "sportsFitness": {
+        "title": "الرياضة والعافية",
+        "description": "حافظ على نمط حياة صحي من خلال الأنشطة الرياضية وبرامج العافية، موازنة التطور الروحي والبدني."
+      }
+    }
+  }
 }

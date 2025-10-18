@@ -2,6 +2,7 @@
   <main>
     <HomeSliderNew />
     <HomeAbout/>
+    <HomeCampus />
     <!-- <HomeCourseList />
     <HomeSubscribeSteps />
     <HomeHowSiteWork />

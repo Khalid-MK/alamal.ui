@@ -195,5 +195,24 @@
   "SupportTitle": "Need assistance?",
   "SupportDescription": "Our team is ready to guide you through enrollment and payment steps.",
   "SupportTelegram": "Telegram: alamal_support",
-  "SupportEmail": "Email: supportalamal.academy"
+  "SupportEmail": "Email: supportalamal.academy",
+  "_comment Campus": "This section is for campus life information",
+  "campusSection": {
+    "preTitle": "Campus",
+    "title": "Campus Life",
+    "features": {
+      "studentLife": {
+        "title": "Student Life",
+        "description": "Join our vibrant Islamic learning community with Quran study circles, mentorship programs, and collaborative learning opportunities."
+      },
+      "artsClubs": {
+        "title": "Islamic Arts & Activities",
+        "description": "Explore Islamic calligraphy, Arabic poetry recitation, and traditional nasheeds while deepening your understanding of Islamic heritage."
+      },
+      "sportsFitness": {
+        "title": "Sports & Wellness",
+        "description": "Maintain a healthy lifestyle through sports activities and wellness programs, balancing spiritual and physical development."
+      }
+    }
+  }
 }
