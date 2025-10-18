@@ -214,5 +214,62 @@
         "description": "Maintain a healthy lifestyle through sports activities and wellness programs, balancing spiritual and physical development."
       }
     }
+  },
+  "_comment CourseArea": "This section is for the course area/programs section",
+  "courseArea": {
+    "preTitle": "Popular Courses",
+    "title": "Our Islamic Programs",
+    "learnMore": "Learn More",
+    "filters": {
+      "all": "All Programs",
+      "quran": "Quran Courses",
+      "tajweed": "Tajweed Courses",
+      "arabic": "Arabic Language"
+    },
+    "courses": {
+      "course1": {
+        "title": "Quran Memorization Program",
+        "description": "Master the art of Quran memorization with our structured program, featuring personalized guidance and proven memorization techniques.",
+        "category": "Quran Studies",
+        "mode": "Online + Onsite"
+      },
+      "course2": {
+        "title": "Advanced Tajweed Rules",
+        "description": "Perfect your Quranic recitation by learning advanced Tajweed rules, proper pronunciation, and beautiful recitation styles.",
+        "category": "Tajweed",
+        "mode": "Online Only"
+      },
+      "course3": {
+        "title": "Arabic Grammar Fundamentals",
+        "description": "Build a strong foundation in Arabic grammar to understand the Quran and classical Islamic texts with greater depth.",
+        "category": "Arabic Language",
+        "mode": "Online + Onsite"
+      },
+      "course4": {
+        "title": "Quran Recitation & Tarteel",
+        "description": "Learn the art of beautiful Quranic recitation with proper Tajweed application and the melodious Tarteel style.",
+        "category": "Quran Studies",
+        "mode": "Online Only"
+      },
+      "course5": {
+        "title": "Basic Tajweed for Beginners",
+        "description": "Start your journey in Tajweed with this comprehensive beginner course covering essential rules and practical application.",
+        "category": "Tajweed",
+        "mode": "Online + Onsite"
+      },
+      "course6": {
+        "title": "Conversational Arabic",
+        "description": "Develop practical Arabic speaking skills for everyday communication and better understanding of Islamic lectures and texts.",
+        "category": "Arabic Language",
+        "mode": "Online Only"
+      }
+    }
+  },
+  "_comment CtaBanner": "This section is for the CTA banner at the end of home page",
+  "ctaBanner": {
+    "titlePart1": "Get Your Quality Skills",
+    "titleHighlight": "Certificate",
+    "titlePart2": "Through Al-Amal",
+    "buttonText": "Get started now"
   }
 }

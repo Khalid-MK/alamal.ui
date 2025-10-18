@@ -2,7 +2,9 @@
   <main>
     <HomeSliderNew />
     <HomeAbout/>
+    <HomeCourseArea />
     <HomeCampus />
+    <HomeUniversityCTA />
     <!-- <HomeCourseList />
     <HomeSubscribeSteps />
     <HomeHowSiteWork />

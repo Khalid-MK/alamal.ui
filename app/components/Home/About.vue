@@ -8,7 +8,7 @@
 				<!-- Left Column: Content Area -->
 				<div
 					class="content-column"
-					data-sal="slide-up"
+					data-sal="slide-right"
 					data-sal-delay="50"
 					data-sal-duration="800"
 				>
@@ -100,7 +100,7 @@
 						<!-- Main Image 1 -->
 						<img
 							class="main-img-1"
-							data-sal="slide-up"
+							data-sal="slide-right"
 							data-sal-delay="100"
 							data-sal-duration="800"
 							src="/img/about/about-04.webp"
@@ -125,9 +125,6 @@
 							<li
 								class="shape-1 scene"
 								ref="scene1"
-								data-sal="fade"
-								data-sal-delay="500"
-								data-sal-duration="200"
 							>
 								<img data-depth="2" src="/img/about/shape-13.png" alt="Shape" />
 							</li>
@@ -136,9 +133,6 @@
 							<li
 								class="shape-2 scene"
 								ref="scene2"
-								data-sal="fade"
-								data-sal-delay="500"
-								data-sal-duration="200"
 							>
 								<img
 									data-depth="-2"
@@ -151,9 +145,6 @@
 							<li
 								class="shape-3 scene"
 								ref="scene3"
-								data-sal="fade"
-								data-sal-delay="500"
-								data-sal-duration="200"
 							>
 								<img data-depth="2" src="/img/about/shape-07.png" alt="Shape" />
 							</li>
@@ -161,9 +152,6 @@
 							<!-- Shape 4: Circle -->
 							<li
 								class="shape-4"
-								data-sal="fade"
-								data-sal-delay="500"
-								data-sal-duration="200"
 							>
 								<span></span>
 							</li>
@@ -206,7 +194,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
-import sal from "sal.js";
 import Parallax from "parallax-js";
 import "sal.js/dist/sal.css";
 
@@ -302,12 +289,6 @@ const animatedStats = ref(
 );
 
 onMounted(() => {
-	// Initialize Sal.js for scroll animations
-	sal({
-		threshold: 0.1, // 10% visibility threshold as per user preference
-		once: true, // Animation happens only once
-	});
-
 	// Initialize Parallax.js for mouse movement effects
 	// Expand to full page by using document.body as the container
 	const initParallax = (element: HTMLElement | null) => {
