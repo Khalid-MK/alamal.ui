@@ -1,0 +1,56 @@
+{
+    "en": {
+        "Blogs": [
+            {
+                "title": "Quran, Hadith Daily Life",
+                "date": "Dec 27, 2025",
+                "time": "9:30 am to 1:15 pm",
+                "summary": "Learn how the Quran and Hadith guide our daily actions, behavior, and lifestyle.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            },
+            {
+                "title": "Modern Islam Lifestyle",
+                "date": "Dec 27, 2025",
+                "time": "10:30 am to 2:15 pm",
+                "summary": "Explore how modern Muslims balance faith, work, and daily life in today’s world.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            }
+        ]
+    },
+    "ru": {
+        "Blogs": [
+            {
+                "title": "Коран и хадис в повседневной жизни",
+                "date": "27 Дек 2025",
+                "time": "9:30 до 13:15",
+                "summary": "Узнайте, как Коран и хадисы направляют наши ежедневные поступки и образ жизни.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            },
+            {
+                "title": "Современный исламский образ жизни",
+                "date": "27 Дек 2025",
+                "time": "10:30 до 14:15",
+                "summary": "Изучите, как современные мусульмане совмещают веру, работу и повседневную жизнь в современном мире.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            }
+        ]
+    },
+    "ar": {
+        "Blogs": [
+            {
+                "title": "القرآن والحديث في الحياة اليومية",
+                "date": "27 ديسمبر 2025",
+                "time": "9:30 صباحًا إلى 1:15 مساءً",
+                "summary": "تعرف على كيفية توجيه القرآن والحديث لأفعالنا وسلوكنا في حياتنا اليومية.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            },
+            {
+                "title": "أسلوب الحياة الإسلامي الحديث",
+                "date": "27 ديسمبر 2025",
+                "time": "10:30 صباحًا إلى 2:15 مساءً",
+                "summary": "استكشف كيف يوازن المسلمون المعاصرون بين الإيمان والعمل والحياة اليومية في عالم اليوم.",
+                "imageUrl": "/img/Blogs/islamic-meeting-event.webp"
+            }
+        ]
+    }
+}
