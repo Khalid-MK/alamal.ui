@@ -315,5 +315,6 @@
   "videoArea": {
     "title": "شاهد جولة فيديو للتعرف على برامجنا",
     "playButtonAriaLabel": "تشغيل فيديو الترحيب"
-  }
+  },
+  "ourCourses": "دوراتنا"
 }

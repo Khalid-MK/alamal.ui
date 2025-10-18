@@ -143,7 +143,7 @@
   "Steps": "STEPS",
   "3SimpleStepsToStart": "3 Simple Steps To Start",
   "AllOurTeachersAreGraduates": "All Our Teachers Are Graduates ",
-  "FromCollegeOfArabic":"From College Of Arabic",
+  "FromCollegeOfArabic": "From College Of Arabic",
   "OurScholars": "Our Scholars",
   "MoreScholars": "More Scholars",
   "_comment About": "This section is for statistics labels",
@@ -319,5 +319,6 @@
   "videoArea": {
     "title": "Take a Video Tour to Learn About Our Programs",
     "playButtonAriaLabel": "Play welcome video"
-  }
+  },
+  "ourCourses": "Our Courses"
 }

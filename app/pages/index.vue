@@ -1,13 +1,13 @@
 <template>
   <main>
     <HomeSliderNew />
-    <HomeAbout/>
+    <HomeAbout />
     <HomeCourseArea />
     <HomeVideoArea />
     <HomeCampus />
     <HomeUniversityCTA />
-    <!-- <HomeCourseList />
-    <HomeSubscribeSteps />
+    <HomeCourseList />
+    <!-- <HomeSubscribeSteps />
     <HomeHowSiteWork />
     <HomeTeacherSection />
     <HomeEvents />
