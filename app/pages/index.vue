@@ -1,12 +1,12 @@
 <template>
   <main>
     <HomeSliderNew />
-    <HomeAbout/>
+    <HomeAbout />
     <HomeCourseArea />
     <HomeCampus />
     <HomeUniversityCTA />
-    <!-- <HomeCourseList />
-    <HomeSubscribeSteps />
+    <HomeCourseList />
+    <!-- <HomeSubscribeSteps />
     <HomeHowSiteWork />
     <HomeTeacherSection />
     <HomeEvents />

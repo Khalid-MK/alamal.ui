@@ -143,7 +143,7 @@
   "Steps": "STEPS",
   "3SimpleStepsToStart": "3 Simple Steps To Start",
   "AllOurTeachersAreGraduates": "All Our Teachers Are Graduates ",
-  "FromCollegeOfArabic":"From College Of Arabic",
+  "FromCollegeOfArabic": "From College Of Arabic",
   "OurScholars": "Our Scholars",
   "MoreScholars": "More Scholars",
   "_comment About": "This section is for statistics labels",
@@ -272,4 +272,5 @@
     "titlePart2": "Through Al-Amal",
     "buttonText": "Get started now"
   }
+  "ourCourses": "Our Courses"
 }
