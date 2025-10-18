@@ -1,11 +1,9 @@
 <template>
-  <div>
+  <main>
     <Header />
-    <main>
-      <slot></slot>
-    </main>
+    <slot></slot>
     <FooterOne />
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -23,20 +21,11 @@ useHead({
 
 
 watch(currentLocale, (newLocale) => {
-  console.log('Locale changed to:', newLocale)
-  console.log('Current HTML dir:', document.documentElement.getAttribute('dir'))
-  console.log('Current HTML lang:', document.documentElement.getAttribute('lang'))
-  console.log('localeProperties.value.dir:', localeProperties.value.dir)
-  console.log('localeProperties.value.iso:', localeProperties.value.iso)
+  // Locale change handling - debug logs removed for production
 })
 </script>
 
 <style lang="scss" scoped>
 main {
-  margin-top: 110px;
-
-  @media (max-width:420px) {
-     margin-top: 40px;
-  }
 }
 </style>

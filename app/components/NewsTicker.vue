@@ -1,9 +1,10 @@
 <template>
-    <div class="shadow overflow-hidden whitespace-nowrap w-[70%]">
+    <div class="overflow-hidden whitespace-nowrap w-[70%]">
         <div ref="ticker" class="inline-block animate-marquee py-2" :style="{ animationDuration: duration + 's' }">
             <span v-for="n in 2" :key="n">
-                <a v-for="(item, index) in news" :key="index + '-' + n" class="mx-8">
-                    🔴 {{ item }}
+                <a v-for="(item, index) in news" :key="index + '-' + n" class="mx-8 gap-2">
+                    <span class="news-dot"></span>
+                    {{ item }}
                 </a>
             </span>
         </div>
@@ -42,11 +43,22 @@ const ticker = ref(null);
 a {
     cursor: pointer;
     transition: 200ms;
+    color: var(--color-body, #808080);
+    font-weight: 500;
 
     &:hover {
-
-        color: cadetblue;
+        color: var(--color-primary, #1ab69d);
     }
+}
+
+.news-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary, #1ab69d);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-inline-end: 4px;
 }
 
 .animate-marquee {

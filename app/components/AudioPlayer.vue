@@ -208,13 +208,16 @@ const formatTime = (time: number) => {
 </script>
 
 <style lang="scss" scoped>
+.player-container input[type="range"]::-webkit-slider-thumb {
+    margin-top: -4px;
+}
 .player-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 90%;
+    bottom: -32px;
     /* margin-top: -157px; */
     z-index: 1000;
     /* margin-bottom: 100px; */

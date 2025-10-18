@@ -6,12 +6,21 @@ html[lang="ar"] {
   direction: rtl;
   flex-direction: row-reverse;
   text-align: right;
+  --font-primary: 'Amiri', sans-serif;
+  --font-secondary: 'Amiri', sans-serif;
 }
 
 html[lang="en"] {
   direction: ltr;
   text-align: left;
 }
+/* 
+  Global Font Configuration:
+  - Primary Font: Poppins (English/Russian) | Amiri (Arabic)
+  - Secondary Font: Spartan (English/Russian) | Amiri (Arabic)
+  - Icon Font: icomoon
+*/
+
 /* This disables the overlay tint effect across all components and defines project design tokens. */
 :root {
   --v-theme-overlay-multiplier: 0 !important;
@@ -152,6 +161,24 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
+  font-family: var(--font-secondary);
+}
+
+/* Arabic font application */
+html[lang="ar"] body {
+  font-family: var(--font-primary);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-secondary);
+}
+
+html[lang="ar"] .spartan {
   font-family: var(--font-secondary);
 }
 

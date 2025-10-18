@@ -1,16 +1,19 @@
 <template>
-  <div :dir="direction" class="w-full fixed top-0 left-0 z-[100] bg-white shadow">
-    <header>
+  <div :dir="direction">
+    <header class="edu-header">
       <!-- Reminder bar -->
-      <div v-if="!hideReminder" class="hidden md:block bg-primary text-white px-5">
-        <div class="container mx-auto flex justify-between gap-2 items-center">
-          <NuxtLink
-            class="px-4 bg-white h-[50px] flex items-center justify-center text-primary hover:text-secondary text-lg font-medium"
+      <div v-if="!hideReminder" class="header-top-bar hidden md:block px-5">
+        <div class="max-w-7xl mx-auto flex justify-between gap-2 items-center">
+          <EduButton
+            rectangular
+            variant="secondary"
+            size="medium"
+            icon="icon-4"
             to="/course-details">
             {{ $t("JoinFreeTrialLessons") }}
-          </NuxtLink>
+          </EduButton>
           <NewsTicker :news="headlines" />
-          <div class="flex gap-3">
+          <div class="flex gap-3 header-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -19,12 +22,12 @@
         </div>
       </div>
 
+      <!-- Sticky Placeholder (prevents layout shift) -->
+      <div id="sticky-placeholder" ref="placeholderRef"></div>
+
       <!-- Navbar -->
-      <div :class="[
-        'sticky top-0 bg-white shadow z-50 transition-all',
-        isSticky ? 'py-2' : 'py-4',
-      ]">
-        <div class="container mx-auto flex justify-between items-center px-4">
+      <div ref="navbarRef" class="header-mainmenu bg-white shadow py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
           <!-- Left (Logo + Nav) -->
           <div class="flex items-center gap-6">
             <NuxtLink to="/">
@@ -56,10 +59,12 @@
             <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
               <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
-              <NuxtLink to="/signup"
-                class="flex items-center justify-center bg-primary text-white px-3 py-1 rounded-md hover:bg-blue-700">
+              <EduButton
+                variant="primary"
+                size="small"
+                to="/signup">
                 {{ $t("SignUp") }}
-              </NuxtLink>
+              </EduButton>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -96,17 +101,18 @@ import { ref, reactive, onMounted, onBeforeUnmount, watch } from "vue";
 import MainNav from "./MainNav.vue";
 import MobileNav from "./MobileNav.vue";
 import Translation from "~/assets/icons/Translation.vue";
+import EduButton from "~/components/common/EduButton.vue";
 
 // store - temporarily disabled
 // const authStore = useAuthStore();
 
 // reactive state
 const { locale, localeProperties, locales, setLocale } = useI18n()
-console.log("locales", locales);
 const isOpen = ref(false);
 const hideReminder = ref(false);
-const isSticky = ref(false);
 const showSidebar = ref(false);
+const navbarRef = ref<HTMLElement | null>(null);
+const placeholderRef = ref<HTMLElement | null>(null);
 
 const direction = computed(() => localeProperties.value.dir);
 const headlines = [
@@ -118,20 +124,43 @@ const headlines = [
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
 }
-// methods
+// Edublink-style sticky header logic
 const handleSticky = () => {
-  if (typeof window !== "undefined") {
-    isSticky.value = window.scrollY > 50;
+  if (typeof window === "undefined" || !navbarRef.value || !placeholderRef.value) return;
+
+  const navbar = navbarRef.value;
+  const placeholder = placeholderRef.value;
+  const scrollY = window.scrollY;
+
+  // Get navbar height
+  const navbarHeight = navbar.offsetHeight;
+
+  // Get top header height (reminder bar if exists)
+  const topHeader = document.querySelector('.header-top-bar');
+  const topHeaderHeight = topHeader ? topHeader.clientHeight : 0;
+
+  // Calculate scroll threshold (topHeader + 200px like Edublink)
+  const scrollThreshold = topHeaderHeight + 200;
+
+  // Apply sticky behavior
+  if (scrollY > scrollThreshold) {
+    // Add sticky class
+    navbar.classList.add('header-sticky');
+    // Set placeholder height to prevent layout jump
+    placeholder.style.height = `${navbarHeight}px`;
+  } else {
+    // Remove sticky class
+    navbar.classList.remove('header-sticky');
+    // Reset placeholder height
+    placeholder.style.height = '0px';
   }
 };
 
 function handleSidebar() {
-  console.log("Sidebar toggle clicked!");
   showSidebar.value = true;
 }
 
 const handleSidebarClose = () => {
-  console.log("Sidebar close clicked!");
   showSidebar.value = false;
 };
 
@@ -141,10 +170,11 @@ const handleReminder = () => {
 
 // lifecycle hooks
 onMounted(async () => {
-  console.log("Header component mounted!");
-
   if (typeof window !== "undefined") {
+    // Add scroll listener for sticky header
     window.addEventListener("scroll", handleSticky);
+    // Call once on mount in case page is already scrolled
+    handleSticky();
   }
   // await getUser();
 });
@@ -155,17 +185,7 @@ onBeforeUnmount(() => {
   }
 });
 
-// watchers (if you want to debug langDir)
-watch(
-  () => locale.value,
-  (newVal, oldVal) => {
-    console.log("Language changed from", oldVal, "to", newVal);
-  }
-);
-
-watchEffect(() => {
-  console.log("Language changed:", locale.value);
-});
+// Locale change watchers removed for production
 
 
 function changeLocale(locale: "en" | "ar" | "ru") {
@@ -175,6 +195,61 @@ function changeLocale(locale: "en" | "ar" | "ru") {
 </script>
 
 <style scoped>
+/* Header Top Bar - EduBlink University Style */
+.header-top-bar {
+  background-color: #f7f5f2;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header-top-bar :deep(.news-ticker) {
+  color: var(--color-heading, #181818);
+  font-weight: 500;
+}
+
+.header-social a {
+  color: var(--color-secondary, #ee4a62);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.header-social a:hover {
+  color: var(--color-primary, #1ab69d);
+}
+
+/* Edublink-style Sticky Header */
+.header-mainmenu {
+  position: relative;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.header-mainmenu.header-sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background-color: white;
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.05);
+  animation: headerSlideDown 0.95s ease forwards;
+}
+
+/* Sticky placeholder to prevent layout jump */
+#sticky-placeholder {
+  transition: height 0.3s ease;
+}
+
+/* Slide-down animation (Edublink-style) */
+@keyframes headerSlideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* Custom transitions for mobile menu */
 .max-h-0 {
   max-height: 0;

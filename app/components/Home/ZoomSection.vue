@@ -17,7 +17,7 @@
           />
           <img
             class="teacher-shape-02"
-            src="/img/teacher/teacher-shape-02.png"
+            src="/img/teacher/teacher.png"
             alt="image not found"
           />
           <img
@@ -74,7 +74,7 @@
           <div class="zoom-class-wrapper mb-20">
             <div class="section-title">
               <h2>
-              {{$t("ZoomSection.LiveClassZoom")}}
+                {{ $t("ZoomSection.LiveClassZoom") }}
                 <span class="text-primary">Zoom</span>
                 <span class="shape-line"><i class="icon-19"></i></span>
               </h2>
@@ -84,9 +84,9 @@
                 {{ $t("ZoomSection.HelpingEmployees") }}
               </p>
             </div>
-            <NuxtLink to="/zoom-class" class="edu-btn btn-transparent mt-25"
-              >{{ $t("ZoomSection.TryFreeNow") }}</NuxtLink
-            >
+            <NuxtLink to="/zoom-class" class="edu-btn btn-transparent mt-25">{{
+              $t("ZoomSection.TryFreeNow")
+            }}</NuxtLink>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ $xs: "(max-width: 575px)";
         font-size: 14px;
         color: var(--color-primary);
         left: 75px;
-        bottom: -13px;
+        bottom: -15px;
       }
 
       /* a {
@@ -194,6 +194,7 @@ $xs: "(max-width: 575px)";
 }
 
 .teacher-shape-02 {
+  width: 200px;
   position: absolute;
   left: 0;
   bottom: -45px;
@@ -279,8 +280,13 @@ $xs: "(max-width: 575px)";
         position: absolute;
         font-size: 14px;
         color: var(--color-primary);
-        right: 51px;
         bottom: -16px;
+        left: 0px;
+
+        [dir="rtl"] & {
+          right: 0px;
+          left: unset;
+        }
       }
     }
   }

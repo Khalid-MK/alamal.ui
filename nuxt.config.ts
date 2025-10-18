@@ -7,6 +7,15 @@ export default defineNuxtConfig({
   devServer: {
     port: 5174
   },
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: true,
+        global: true
+      }
+    ]
+  },
   build: {
     transpile: ['vuetify'],
   },
@@ -31,11 +40,11 @@ export default defineNuxtConfig({
         strategy: 'no_prefix', // Changed from 'prefix_except_default'
         defaultLocale: 'en',
         lazy: true,
-        langDir: 'locales/',
+        langDir: 'locales',
         locales: [
-          { code: 'en', iso: 'en-US', file: 'en.json', name: 'English', dir: 'ltr' },
-          { code: 'ar', iso: 'ar-EG', file: 'ar.json', name: 'العربية', dir: 'rtl' },
-          { code: 'ru', iso: 'ru-RU', file: 'ru.json', name: 'Русский', dir: 'ltr' },
+          { code: 'en', iso: 'en', files: ['en.json', 'about/en.json'], name: 'English', dir: 'ltr' },
+          { code: 'ar', iso: 'ar', files: ['ar.json', 'about/ar.json'], name: 'العربية', dir: 'rtl' },
+          { code: 'ru', iso: 'ru', files: ['ru.json', 'about/ru.json'], name: 'Русский', dir: 'ltr' },
         ],
         detectBrowserLanguage: {
           useCookie: true,
@@ -51,7 +60,7 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@pinia/nuxt"
   ],
-  css: ["~/assets/css/tailwind.scss", "~/assets/css/flaticon.css", "~/assets/css/vendor/icomoon.css"],
+  css: ["~/assets/css/tailwind.scss", "~/assets/css/vendor/icomoon.css", "~/assets/css/flaticon.css"],
   app: {
     head: {
       link: [
@@ -66,7 +75,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Spartan:wght@400;500;600;700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Spartan:wght@400;500;600;700&family=Amiri:wght@300;400;700;800&display=swap",
         },
         {
           rel: "stylesheet",

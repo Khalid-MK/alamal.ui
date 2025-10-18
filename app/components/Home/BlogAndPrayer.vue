@@ -30,10 +30,9 @@ const handleImageError = (event: Event) => {
         class="flex flex-col lg:flex-row lg:space-x-12 space-y-12 lg:space-y-0"
       >
         <div class="flex-1">
-          <h2
-            class="text-3xl font-extrabold mb-8 text-center sm:text-left text-primary"
-          >
+          <h2 class="BlogTitle text-3xl font-extrabold mb-8 text-primary">
             {{ $t("Blogs") }}
+            <span class="shape-line"><i class="icon-19"></i></span>
           </h2>
           <!-- <div class="w-24 h-1 bg-secondary mx-auto sm:mx-0 -mt-6 mb-8"></div> -->
           <div
@@ -111,10 +110,13 @@ const handleImageError = (event: Event) => {
 
         <!-- SECTION 2: PRAYER TIMES -->
         <div class="lg:w-96">
-          <h2
-            class="text-3xl font-extrabold mb-8 text-center lg:text-left text-primary"
-          >
-            <span class="text-secondary">{{ $t("PrayerTimes") }}</span>
+          <h2 class="PrayerTitle text-3xl font-extrabold mb-8 text-primary">
+            {{ $t("Times") }}
+            <span class="text-secondary">{{ $t("Prayer") }}</span>
+            <span
+              class="shape-line"
+              ><i class="icon-19"></i
+            ></span>
           </h2>
           <!-- <div class="w-24 h-1 bg-primary mx-auto lg:mx-0 -mt-6 mb-8"></div> -->
 
@@ -137,17 +139,14 @@ const handleImageError = (event: Event) => {
                   class="text-gray-800 border-b border-gray-100 last:border-b-0"
                 >
                   <td
-                    :class="[
-                      'py-3 px-2 font-medium',
-                      prayer.isAccent ? 'text-secondary' : 'text-primary',
-                    ]"
+                    class="py-3 px-2 font-medium text-primary"
                   >
                     {{ prayer.salat }}
                   </td>
-                  <td class="py-3 px-2 text-primary font-medium">
+                  <td class="py-3 px-2 text-body-1 font-medium">
                     {{ prayer.start }}
                   </td>
-                  <td class="py-3 px-2 text-primary font-medium">
+                  <td class="py-3 px-2 text-body-1 font-medium">
                     {{ prayer.iqamah }}
                   </td>
                 </tr>
@@ -158,7 +157,7 @@ const handleImageError = (event: Event) => {
           <!-- Location and Date Footer -->
           <div class="mt-8 p-4 text-center border-t shadow-md border-gray-200">
             <p class="text-sm text-primary font-semibold mb-1">
-              {{ $t("Location") }}: {{$t("Makka")}}
+              {{ $t("Location") }}: {{ $t("Makka") }}
             </p>
             <p class="text-sm text-gray-600">
               {{ $t("Saturday, 20th September, 2025") }}
@@ -177,5 +176,26 @@ const handleImageError = (event: Event) => {
 /* Custom styling for the table columns to ensure fixed width layout */
 .table-fixed {
   table-layout: fixed;
+}
+
+.BlogTitle {
+  position: relative;
+  width: fit-content;
+  .shape-line {
+    font-size: 10px;
+    position: absolute;
+    left: 10px;
+    top: 26px;
+  }
+}
+.PrayerTitle {
+  position: relative;
+  width: fit-content;
+  .shape-line {
+    font-size: 20px;
+    position: absolute;
+    left: 0px;
+    top: 28px;
+  }
 }
 </style>

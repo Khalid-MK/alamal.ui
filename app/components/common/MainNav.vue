@@ -28,7 +28,7 @@
                       </button>
                       <ul class="sub-menu w-full">
                         <li v-for="course in dept.courses" :key="course.id">
-                          <button @click="goToCourse" class="text-left hover:text-primary">{{ course[locale] }}</button>
+                          <button @click="goToCourse(course)" class="text-left hover:text-primary">{{ course[locale] }}</button>
                         </li>
                       </ul>
                     </li>
@@ -42,7 +42,7 @@
                 </button>
                 <ul class="sub-menu">
                   <li v-for="course in section.courses" class="w-[200px]" :key="course.id">
-                    <button @click="goToCourse" class="text-left hover:text-primary">
+                    <button @click="goToCourse(course)" class="text-left hover:text-primary">
                       {{ course[locale] }}
                     </button>
                   </li>
@@ -108,8 +108,9 @@ function slugify(text) {
 
 const router = useRouter() // ✅ works in Nuxt 4
 
-const goToCourse = () => {
-  router.push(`/shop?course=${slugify(props.course[props.locale])}`)
+const goToCourse = (course) => {
+  const courseSlug = slugify(course[locale.value])
+  router.push(`/shop?course=${courseSlug}`)
 }
 function toggleCoursesMenu() {
   isCoursesOpen.value = !isCoursesOpen.value;

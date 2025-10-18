@@ -1,726 +1,869 @@
 <template>
-    <div :dir="direction" class="about-section">
-        <!-- Background vectors -->
-        <div class="slider-six_vector-1"
-            style="background-image:url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/vector-8.png')">
-        </div>
-        <div class="slider-six_vector-2" style="background-image:url('img/icon/تخطيط_اسم_محمد.png')"></div>
+	<div :dir="direction" class="about-section edu-about-area about-style-3">
+		<!-- Main Content Container -->
+		<div class="max-w-7xl mx-auto">
+			<div
+				class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+			>
+				<!-- Left Column: Content Area -->
+				<div
+					class="content-column"
+					data-sal="slide-up"
+					data-sal-delay="50"
+					data-sal-duration="800"
+				>
+					<div class="about-content">
+						<!-- Section Title -->
+						<div class="section-title section-left mb-9">
+							<span class="pre-title">{{ $t("aboutSection.preTitle") }}</span>
+							<h2 class="title">
+								{{ $t("aboutSection.titlePart1") }}
+								<span class="color-primary">{{
+									$t("aboutSection.titleHighlight")
+								}}</span>
+								{{ $t("aboutSection.titlePart2") }}
+							</h2>
+							<span class="shape-line">
+								<i class="icon-19"></i>
+							</span>
+						</div>
 
-        <div class="container-wrapper">
-            <!-- Left Content -->
-            <div class="content-side">
-                <div class="tabs-section">
-                    <div class="header-section">
-                        <span class="subtitle">{{ $t("AboutUs") }}</span>
-                        <h2 class="main-title">
-                            {{ $t("WeProvideBest") }}
-                            <span class="edu-span">{{ $t("Education") }}</span>
-                            <span class="serv-icon">
-                                {{ $t("Services") }}
-                                <span class="shape-line"><i class="icon-19"></i></span>
-                            </span>
-                            {{ $t("ForYou") }}
-                        </h2>
-                    </div>
+						<!-- Custom Tab Navigation -->
+						<div class="custom-tabs-wrapper">
+							<div class="nav-tabs" role="tablist">
+								<button
+									v-for="(tabItem, index) in tabsData"
+									:key="tabItem.value"
+									:class="['nav-link', { active: activeTab === tabItem.value }]"
+									:aria-selected="activeTab === tabItem.value"
+									role="tab"
+									@click="activeTab = tabItem.value"
+								>
+									{{ $t(`aboutSection.tabs.${tabItem.value}.title`) }}
+								</button>
+							</div>
 
-                    <!-- Tabs -->
-                    <v-tabs v-model="tab" align-tabs="start" class="custom-tabs">
-                        <v-tab v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
-                            {{ $t(`tabs.${tabItem.value}.title`) }}
-                        </v-tab>
-                    </v-tabs>
+							<!-- Tab Content -->
+							<div class="tab-content">
+								<Transition name="tab-fade" mode="out-in">
+									<div
+										v-if="activeTab === 'about'"
+										key="about"
+										class="tab-pane"
+										role="tabpanel"
+									>
+										<p class="description">
+											{{ $t("aboutSection.tabs.about.description") }}
+										</p>
+										<ul class="features-list">
+											<li>{{ $t("aboutSection.tabs.about.feature1") }}</li>
+											<li>{{ $t("aboutSection.tabs.about.feature2") }}</li>
+										</ul>
+									</div>
+									<div
+										v-else-if="activeTab === 'mission'"
+										key="mission"
+										class="tab-pane"
+										role="tabpanel"
+									>
+										<p class="description">
+											{{ $t("aboutSection.tabs.mission.description") }}
+										</p>
+										<ul class="features-list">
+											<li>{{ $t("aboutSection.tabs.mission.feature1") }}</li>
+											<li>{{ $t("aboutSection.tabs.mission.feature2") }}</li>
+										</ul>
+									</div>
+									<div
+										v-else-if="activeTab === 'vision'"
+										key="vision"
+										class="tab-pane"
+										role="tabpanel"
+									>
+										<p class="description">
+											{{ $t("aboutSection.tabs.vision.description") }}
+										</p>
+										<ul class="features-list">
+											<li>{{ $t("aboutSection.tabs.vision.feature1") }}</li>
+											<li>{{ $t("aboutSection.tabs.vision.feature2") }}</li>
+										</ul>
+									</div>
+								</Transition>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                    <!-- Tab Content -->
-                    <v-window v-model="tab" class="tabs-content">
-                        <v-window-item v-for="tabItem in tabsData" :key="tabItem.value" :value="tabItem.value">
-                            <div class="content-wrapper">
-                                <p class="description">{{ $t(`tabs.${tabItem.value}.description`) }}</p>
+				<!-- Right Column: Image Gallery -->
+				<div class="image-column">
+					<div class="about-image-gallery">
+						<!-- Main Image 1 -->
+						<img
+							class="main-img-1"
+							data-sal="slide-up"
+							data-sal-delay="100"
+							data-sal-duration="800"
+							src="/img/about/about-04.webp"
+							alt="About Al-Amal Education"
+							loading="lazy"
+						/>
 
-                                <div class="features-list">
-                                    <div v-for="(feature, index) in tabItem.features" :key="index" class="feature-item">
-                                        <span class="feature-text">{{ $t(feature) }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </v-window-item>
-                    </v-window>
-                </div>
-            </div>
+						<!-- Main Image 2 (Overlapping) -->
+						<img
+							class="main-img-2"
+							data-sal="slide-left"
+							data-sal-delay="100"
+							data-sal-duration="800"
+							src="/img/about/about-05.webp"
+							alt="Islamic Education"
+							loading="lazy"
+						/>
 
-            <!-- Right Images -->
-            <div class="image-side">
-                <div class="images-container">
-                    <div class="primary-image">
-                        <img loading="lazy" src="/img/about/about-1.webp" alt="About Education" />
-                    </div>
-                    <div class="secondary-image">
-                        <img loading="lazy" src="/img/about/about-3.png" alt="About Education" />
-                    </div>
-                </div>
-            </div>
-        </div>
+						<!-- Decorative Shapes -->
+						<ul class="shape-group">
+							<!-- Shape 1: Parallax -->
+							<li
+								class="shape-1 scene"
+								ref="scene1"
+								data-sal="fade"
+								data-sal-delay="500"
+								data-sal-duration="200"
+							>
+								<img data-depth="2" src="/img/about/shape-13.png" alt="Shape" />
+							</li>
 
-        <!-- Statistics -->
-        <div class="statistics-section">
-            <div class="statistic-div" v-for="statistic in animatedStats" :key="statistic.id">
-                <div :style="{ color: statistic.color }" class="value-Stat">
-                    {{ statistic.displayValue }}
-                </div>
-                <div class="title-Stat">{{ $t(statistic.titleKey) }}</div>
-            </div>
-        </div>
-    </div>
+							<!-- Shape 2: Parallax -->
+							<li
+								class="shape-2 scene"
+								ref="scene2"
+								data-sal="fade"
+								data-sal-delay="500"
+								data-sal-duration="200"
+							>
+								<img
+									data-depth="-2"
+									src="/img/about/shape-39.png"
+									alt="Shape"
+								/>
+							</li>
+
+							<!-- Shape 3: Parallax -->
+							<li
+								class="shape-3 scene"
+								ref="scene3"
+								data-sal="fade"
+								data-sal-delay="500"
+								data-sal-duration="200"
+							>
+								<img data-depth="2" src="/img/about/shape-07.png" alt="Shape" />
+							</li>
+
+							<!-- Shape 4: Circle -->
+							<li
+								class="shape-4"
+								data-sal="fade"
+								data-sal-delay="500"
+								data-sal-duration="200"
+							>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Outer Decorative Shapes -->
+		<ul class="shape-group outer-shapes">
+			<li class="shape-5">
+				<img
+					class="rotateit"
+					src="/img/about/shape-13.png"
+					alt="Decorative Shape"
+				/>
+			</li>
+			<li class="shape-6">
+				<span></span>
+			</li>
+		</ul>
+
+		<!-- Statistics Section -->
+		<div class="max-w-7xl mx-auto statistics-section">
+			<div
+				class="statistic-div"
+				v-for="statistic in animatedStats"
+				:key="statistic.id"
+			>
+				<div :style="{ color: statistic.color }" class="value-Stat">
+					{{ statistic.displayValue }}
+				</div>
+				<div class="title-Stat">{{ $t(statistic.titleKey) }}</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
+import sal from "sal.js";
+import Parallax from "parallax-js";
+import "sal.js/dist/sal.css";
 
 const { locale, localeProperties } = useI18n();
 const direction = computed(() => localeProperties.value.dir);
-const tab = ref("vision");
 
-// --- Statistics Data ---
+// Active tab state
+const activeTab = ref("about");
+
+// Refs for parallax scenes
+const scene1 = ref<HTMLElement | null>(null);
+const scene2 = ref<HTMLElement | null>(null);
+const scene3 = ref<HTMLElement | null>(null);
+
+// Store parallax instances for cleanup
+let parallaxInstances: Parallax[] = [];
+
+// Tab data
+interface TabData {
+	value: string;
+	features: string[];
+}
+
+const tabsData: TabData[] = [
+	{
+		value: "about",
+		features: [
+			"aboutSection.tabs.about.feature1",
+			"aboutSection.tabs.about.feature2",
+		],
+	},
+	{
+		value: "mission",
+		features: [
+			"aboutSection.tabs.mission.feature1",
+			"aboutSection.tabs.mission.feature2",
+		],
+	},
+	{
+		value: "vision",
+		features: [
+			"aboutSection.tabs.vision.feature1",
+			"aboutSection.tabs.vision.feature2",
+		],
+	},
+];
+
+// Statistics Data
 interface StatisticsData {
-    id: number;
-    value: number;
-    suffix?: string;
-    titleKey: string;
-    color: string;
+	id: number;
+	value: number;
+	suffix?: string;
+	titleKey: string;
+	color: string;
 }
 
 const statisticsData: StatisticsData[] = [
-    { id: 1, titleKey: "statistics.studentEnrolled", value: 29300, color: "#1AB69D", suffix: "k" },
-    { id: 2, titleKey: "statistics.classCompleted", value: 32400, color: "#EE4A62", suffix: "k" },
-    { id: 3, titleKey: "statistics.satisfactionRate", value: 100, color: "#8E56FF", suffix: "%" },
-    { id: 4, titleKey: "statistics.topInstructors", value: 354, color: "#F8941F", suffix: "+" }
+	{
+		id: 1,
+		titleKey: "statistics.studentEnrolled",
+		value: 29300,
+		color: "#1AB69D",
+		suffix: "k",
+	},
+	{
+		id: 2,
+		titleKey: "statistics.classCompleted",
+		value: 32400,
+		color: "#EE4A62",
+		suffix: "k",
+	},
+	{
+		id: 3,
+		titleKey: "statistics.satisfactionRate",
+		value: 100,
+		color: "#8E56FF",
+		suffix: "%",
+	},
+	{
+		id: 4,
+		titleKey: "statistics.topInstructors",
+		value: 354,
+		color: "#F8941F",
+		suffix: "+",
+	},
 ];
 
-// --- Animated Values ---
 const animatedStats = ref(
-    statisticsData.map((s) => ({
-        ...s,
-        displayValue: 0 as number | string
-    }))
+	statisticsData.map((s) => ({
+		...s,
+		displayValue: 0 as number | string,
+	}))
 );
 
 onMounted(() => {
-    animatedStats.value.forEach((stat, index) => {
-        let start = 0;
-        const end = stat.value;
-        const duration = 1500; // ms
-        const stepTime = 20;
-        const increment = end / (duration / stepTime);
+	// Initialize Sal.js for scroll animations
+	sal({
+		threshold: 0.1, // 10% visibility threshold as per user preference
+		once: true, // Animation happens only once
+	});
 
-        const interval = setInterval(() => {
-            start += increment;
-            if (start >= end) {
-                start = end;
-                clearInterval(interval);
-            }
-            const formatted =
-                stat.suffix === "k"
-                    ? (start / 1000).toFixed(1) + "k"
-                    : Math.floor(start) + (stat.suffix || "");
-            if (animatedStats.value[index]) {
-                animatedStats.value[index].displayValue = formatted;
-            }
-        }, stepTime);
-    });
+	// Initialize Parallax.js for mouse movement effects
+	// Expand to full page by using document.body as the container
+	const initParallax = (element: HTMLElement | null) => {
+		if (element) {
+			// Initialize with relativeInput: true for full-page parallax
+			const instance = new Parallax(element, {
+				relativeInput: false, // Parallax relative to entire page
+				hoverOnly: false, // Always active, not just on hover
+			});
+			parallaxInstances.push(instance);
+		}
+	};
+
+	// Initialize parallax for each scene
+	initParallax(scene1.value);
+	initParallax(scene2.value);
+	initParallax(scene3.value);
+
+	// Animate statistics
+	animatedStats.value.forEach((stat, index) => {
+		let start = 0;
+		const end = stat.value;
+		const duration = 1500;
+		const stepTime = 20;
+		const increment = end / (duration / stepTime);
+
+		const interval = setInterval(() => {
+			start += increment;
+			if (start >= end) {
+				start = end;
+				clearInterval(interval);
+			}
+			const formatted =
+				stat.suffix === "k"
+					? (start / 1000).toFixed(1) + "k"
+					: Math.floor(start) + (stat.suffix || "");
+			if (animatedStats.value[index]) {
+				animatedStats.value[index].displayValue = formatted;
+			}
+		}, stepTime);
+	});
 });
 
-// --- Tabs ---
-interface TabData {
-    value: string;
-    features: string[];
-}
-const tabsData: TabData[] = [
-    { value: "about", features: ["tabs.about.feature1", "tabs.about.feature2"] },
-    { value: "mission", features: ["tabs.mission.feature1", "tabs.mission.feature2"] },
-    { value: "vision", features: ["tabs.vision.feature1", "tabs.vision.feature2"] }
-];
+onBeforeUnmount(() => {
+	// Cleanup parallax instances
+	parallaxInstances.forEach((instance) => {
+		if (instance && typeof instance.destroy === "function") {
+			instance.destroy();
+		}
+	});
+	parallaxInstances = [];
+});
 </script>
 
-
 <style lang="scss" scoped>
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
+// Keep only the rotate animation (Sal.js handles the rest)
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
-@keyframes moveUpDown {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
+.rotateit {
+	animation: rotate 10s linear infinite;
 }
 
-.slider-six_vector-1 {
-    position: absolute;
-    right: 10;
-    width: 106px;
-    height: 106px;
-    /* z-index: 1; */
-    background-repeat: no-repeat;
-    background-size: contain;
-    animation: spin 30s linear infinite;
-
-    [dir="ltr"] & {
-        right: 3%;
-        bottom: -10%;
-    }
-
-    [dir="rtl"] & {
-        left: 3%;
-        bottom: -10%;
-    }
-
-    @media (max-width: 1023px) {
-        width: 90px;
-        height: 90px;
-    }
-
-    @media (max-width: 767px) {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-.slider-six_vector-2 {
-    color: #1a1a1a;
-    position: absolute;
-    opacity: 0.55;
-    z-index: 1;
-    left: 55%;
-    top: 10%;
-    overflow: hidden;
-    width: 96px;
-    height: 96px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    animation: moveUpDown 4s infinite;
-
-    [dir="ltr"] & {
-        transform: translate(100%, -40%);
-        right: 2%;
-    }
-
-    [dir="rtl"] & {
-        left: 2%;
-        transform: translate(50%, 40%);
-    }
-
-    @media (max-width: 1023px) {
-        left: auto;
-        right: 80px;
-        top: 80px;
-        width: 80px;
-        height: 80px;
-    }
-
-    @media (max-width: 767px) {
-        right: 30px;
-        top: 50px;
-        width: 60px;
-        height: 60px;
-    }
-}
-
-.statistics-section {
-    max-width: 1400px;
-    margin: 0 auto;
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 100px;
-    justify-content: space-evenly;
-    align-items: center;
-
-    .statistic-div {
-        width: 250px;
-        height: 150px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-
-        .value-Stat {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-    }
-}
-
+// Main section
 .about-section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 60px 0;
+	position: relative;
+	padding: 90px 0 120px;
+	overflow: hidden;
+	isolation: isolate; // Create stacking context
 
-    @media (max-width: 1023px) {
-        padding: 40px 0;
-    }
+	@media (max-width: 991px) {
+		padding: 90px 0 100px;
+	}
 
-    @media (max-width: 767px) {
-        padding: 30px 0;
-    }
-
-    @media (max-width: 321px) {
-        margin: 50px 0;
-
-    }
+	@media (max-width: 767px) {
+		padding: 80px 0;
+	}
 }
 
-.container-wrapper {
-    position: relative;
-    max-width: 1400px;
-    z-index: 2;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-
-    @media (max-width: 1279px) {
-        gap: 40px;
-        padding: 0 30px;
-    }
-
-    @media (max-width: 1023px) {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    @media (max-width: 767px) {
-        padding: 0 15px;
-        gap: 30px;
-    }
+// Content column - removed custom opacity/transform, Sal.js handles it
+.content-column {
+	margin-top: 30px;
 }
 
-.content-side {
-    flex: 1;
-    min-width: 0;
-    max-width: 46%;
+// Section Title
+.section-title {
+	margin-bottom: 34px;
 
-    @media (max-width: 1023px) {
-        max-width: 100%;
-    }
+	.pre-title {
+		display: inline-block;
+		font-weight: 700;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: var(--color-body);
+		letter-spacing: 1px;
+		margin-bottom: 12px;
+	}
+
+	.title {
+		font-size: 36px;
+		font-weight: 700;
+		color: var(--color-heading);
+		line-height: 1.3;
+		margin: 0;
+
+		@media (max-width: 1279px) {
+			font-size: 36px;
+		}
+
+		@media (max-width: 1023px) {
+			font-size: 32px;
+		}
+
+		@media (max-width: 767px) {
+			font-size: 28px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 24px;
+		}
+
+		.color-primary {
+			color: var(--color-primary);
+		}
+	}
+
+	.shape-line {
+		display: inline-block;
+		margin-top: 8px;
+		color: var(--color-primary);
+		font-size: 14px;
+	}
 }
 
-.image-side {
-    flex: 0 0 auto;
-    width: 450px;
+// Custom Tabs
+.custom-tabs-wrapper {
+	.nav-tabs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem 2rem;
+		border-bottom: none;
+		margin-bottom: 30px;
 
-    @media (max-width: 1279px) {
-        width: 400px;
-    }
+		@media (max-width: 767px) {
+			margin-bottom: 20px;
+			gap: 0.75rem 1.5rem;
+		}
 
-    @media (max-width: 1023px) {
-        width: 100%;
-        max-width: 450px;
-    }
+		.nav-link {
+			position: relative;
+			font-size: 17px;
+			font-weight: 600;
+			color: var(--color-heading);
+			background: transparent;
+			border: none;
+			padding: 0 0 8px 0;
+			cursor: pointer;
+			transition: color 0.3s ease;
 
-    @media (max-width: 767px) {
-        max-width: 350px;
-    }
+			@media (max-width: 767px) {
+				font-size: 15px;
+			}
 
-    @media (max-width: 639px) {
-        max-width: 100%;
-    }
+			// Separator between tabs
+			&:not(:last-child)::after {
+				content: "";
+				position: absolute;
+				top: 2px;
+				height: 14px;
+				width: 2px;
+				background-color: #e5e5e5;
+
+				[dir="ltr"] & {
+					right: -18px;
+				}
+
+				[dir="rtl"] & {
+					left: -18px;
+				}
+			}
+
+			// Animated underline
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 0;
+				background-color: var(--color-secondary);
+				opacity: 0;
+				transition: width 0.3s ease, opacity 0.3s ease;
+			}
+
+			&:hover,
+			&.active {
+				color: var(--color-secondary);
+
+				&::before {
+					width: 100%;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 20px 0;
+		position: relative;
+		min-height: 300px; // Prevent layout shift during transitions
+
+		.tab-pane {
+			// All tab panes are in the DOM for v-show to work
+		}
+	}
+
+	// Vue Transition classes for fade effect
+	.tab-fade-enter-active,
+	.tab-fade-leave-active {
+		transition: opacity 300ms ease-in-out;
+	}
+
+	.tab-fade-enter-from,
+	.tab-fade-leave-to {
+		opacity: 0;
+	}
+
+	.tab-fade-enter-to,
+	.tab-fade-leave-from {
+		opacity: 1;
+	}
+
+	.description {
+		font-size: 16px;
+		line-height: 1.8;
+		color: #666;
+		margin-bottom: 20px;
+
+		@media (max-width: 767px) {
+			font-size: 14px;
+			line-height: 1.7;
+		}
+	}
+
+	.features-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			font-weight: 500;
+			color: var(--color-heading);
+			position: relative;
+			margin-bottom: 16px;
+			font-size: 16px;
+
+			[dir="ltr"] & {
+				padding-left: 35px;
+			}
+
+			[dir="rtl"] & {
+				padding-right: 35px;
+			}
+
+			@media (max-width: 767px) {
+				font-size: 15px;
+				margin-bottom: 12px;
+			}
+
+			// Check icon
+			&::before {
+				content: "\e913";
+				font-family: "icomoon";
+				color: var(--color-secondary);
+				font-size: 19px;
+				position: absolute;
+				top: -3px;
+
+				[dir="ltr"] & {
+					left: 0;
+				}
+
+				[dir="rtl"] & {
+					right: 0;
+				}
+			}
+		}
+	}
 }
 
-.images-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 50px;
+// Image Gallery
+.about-image-gallery {
+	position: relative;
+	padding: 80px 0 65px;
 
-    @media (max-width: 767px) {
-        padding-bottom: 0;
-    }
+	[dir="ltr"] & {
+		padding-left: 30px;
+	}
+
+	[dir="rtl"] & {
+		padding-right: 30px;
+	}
+
+	@media (max-width: 991px) {
+		padding: 20px 0 65px;
+	}
+
+	@media (max-width: 575px) {
+		padding: 0;
+	}
+
+	img {
+		border-radius: 10px;
+	}
+
+	.main-img-1 {
+		width: 390px;
+		height: auto;
+		display: block;
+		// Sal.js will handle opacity
+	}
+
+	.main-img-2 {
+		position: absolute;
+		bottom: 0;
+		width: 230px;
+		// Sal.js will handle opacity
+
+		[dir="ltr"] & {
+			right: 0;
+		}
+
+		[dir="rtl"] & {
+			left: 0;
+		}
+
+		@media (max-width: 991px) {
+			[dir="ltr"] & {
+				right: 115px;
+			}
+
+			[dir="rtl"] & {
+				left: 115px;
+			}
+		}
+
+		@media (max-width: 575px) {
+			display: none;
+		}
+	}
+
+	// Inner decorative shapes
+	.shape-group {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			position: absolute;
+			z-index: -1; // Changed from -1 to positive to be visible
+
+			img {
+				position: initial;
+				transition: transform 0.1s ease-out;
+			}
+
+			&.shape-1 {
+				top: -15px;
+
+				[dir="ltr"] & {
+					right: 95px;
+				}
+
+				[dir="rtl"] & {
+					left: 95px;
+				}
+			}
+
+			&.shape-2 {
+				top: 13px;
+				z-index: -2; // Even lower z-index but still positive
+
+				[dir="ltr"] & {
+					right: 39px;
+				}
+
+				[dir="rtl"] & {
+					left: 39px;
+				}
+			}
+
+			&.shape-3 {
+				bottom: 33px;
+
+				[dir="ltr"] & {
+					left: -2px;
+				}
+
+				[dir="rtl"] & {
+					right: -2px;
+				}
+			}
+
+			&.shape-4 {
+				bottom: -25px;
+				z-index: -1;
+
+				[dir="ltr"] & {
+					right: 40px;
+				}
+
+				[dir="rtl"] & {
+					left: 40px;
+				}
+
+				span {
+					display: block;
+					height: 320px;
+					width: 320px;
+					border: 1px solid var(--color-border);
+					border-radius: 50%;
+				}
+			}
+		}
+	}
 }
 
+// Outer decorative shapes
+.outer-shapes {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 
+	@media (max-width: 767px) {
+		display: none;
+	}
 
+	li {
+		position: absolute;
+		z-index: 1; // Changed from -1 to positive
 
-img {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    border-radius: 12px;
-    overflow: hidden;
-    height: auto;
-    display: block;
-    object-fit: cover;
+		&.shape-5 {
+			top: 20px;
 
-    @media (max-width: 767px) {
-        border-radius: 8px;
-        margin: 0 auto;
-    }
+			[dir="ltr"] & {
+				left: 110px;
+			}
 
+			[dir="rtl"] & {
+				right: 110px;
+			}
+
+			@media (max-width: 1199px) {
+				[dir="ltr"] & {
+					left: 0;
+				}
+
+				[dir="rtl"] & {
+					right: 0;
+				}
+
+				top: 0;
+			}
+		}
+
+		&.shape-6 {
+			top: -350px;
+
+			[dir="ltr"] & {
+				left: 80px;
+			}
+
+			[dir="rtl"] & {
+				right: 80px;
+			}
+
+			span {
+				display: block;
+				height: 470px;
+				width: 470px;
+				border: 1px solid var(--color-border);
+				border-radius: 50%;
+			}
+		}
+	}
 }
 
-.primary-image {
-    position: relative;
-    width: 90%;
-    z-index: 1;
-}
-
-.secondary-image {
-    position: relative;
-    width: 50%;
-    bottom: 0;
-    z-index: 2;
-
-    [dir="ltr"] & {
-        right: 0;
-        transform: translate(100%, -40%);
-    }
-
-    [dir="rtl"] & {
-        left: 0;
-        transform: translate(-100%, -40%);
-    }
-
-
-    @media (max-width: 1279px) {
-        width: 65%;
-
-        [dir="ltr"] & {
-            transform: translate(60%, -40%);
-        }
-
-        [dir="rtl"] & {
-            transform: translate(-60%, -40%);
-        }
-
-    }
-
-    @media (max-width: 1025px) {
-        width: 60%;
-
-        [dir="ltr"] & {
-
-            transform: translate(80%, -40%);
-        }
-
-        [dir="rtl"] & {
-
-            transform: translate(-80%, -40%);
-        }
-
-    }
-
-    @media (max-width: 767px) {
-        display: none;
-    }
-}
-
-.tabs-section {
-    width: 100%;
-}
-
-.header-section {
-    margin-bottom: 30px;
-
-    @media (max-width: 767px) {
-        margin-bottom: 20px;
-    }
-}
-
-.subtitle {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #9ca3af;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-
-    @media (max-width: 767px) {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-}
-
-.main-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.3;
-    margin: 0;
-
-    >span.edu-span {
-        color: var(--color-primary);
-
-    }
-
-    >span.serv-icon {
-        position: relative;
-
-        .shape-line {
-            position: absolute;
-            font-size: 14px;
-            color: var(--color-primary);
-            right: 21px;
-            top: 44px;
-        }
-    }
-
-    @media (max-width: 1279px) {
-        font-size: 36px;
-    }
-
-    @media (max-width: 1023px) {
-        font-size: 32px;
-    }
-
-    @media (max-width: 767px) {
-        font-size: 28px;
-    }
-
-    @media (max-width: 479px) {
-        font-size: 24px;
-    }
-}
-
-.custom-tabs {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    color: var(--color-primary) !important;
-
-    @media (max-width: 767px) {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-
-    :deep(.v-tab) {
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: none;
-        letter-spacing: 0;
-        color: #666;
-        padding: 0 24px;
-        min-width: auto;
-        min-height: 48px;
-
-        @media (max-width: 1023px) {
-            font-size: 16px;
-            padding: 0 16px;
-        }
-
-        @media (max-width: 767px) {
-            font-size: 14px;
-            padding: 0 10px;
-            min-height: 42px;
-        }
-
-        @media (max-width: 479px) {
-            font-size: 13px;
-            padding: 0 8px;
-        }
-
-        &.v-tab--selected {
-            color: #333;
-            font-weight: 600;
-        }
-    }
-
-    :deep(.v-tabs-slider) {
-        height: 3px;
-        border-radius: 3px;
-    }
-
-    //overwrite the color
-
-    .v-slide-group__container {
-        .v-slide-group__content {
-            button.v-btn {
-
-                color: var(--color-secondary) !important;
-            }
-
-            /* 
-            &.v-tab-item--selecte {
-
-            } */
-        }
-    }
-}
-
-/* 
-custom-tabs {
-    margin-bottom: 30px;
-    margin-top: 30px;
-
-    @media (max-width: 767px) {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-
-    :deep(.v-tab) {
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: none;
-        letter-spacing: 0;
-        color: #666;
-        padding: 0 24px;
-        min-width: auto;
-        min-height: 48px;
-        position: relative;
-        transition: all 0.3s ease;
-
-        @media (max-width: 1023px) {
-            font-size: 16px;
-            padding: 0 16px;
-        }
-
-        @media (max-width: 767px) {
-            font-size: 14px;
-            padding: 0 10px;
-            min-height: 42px;
-        }
-
-        @media (max-width: 479px) {
-            font-size: 13px;
-            padding: 0 8px;
-        }
-
-        // Hover state for INACTIVE tabs
-        &:not(.v-tab--selected):hover {
-            color: #999;
-            background-color: black;
-            border-radius: 8px 8px 0 0;
-        }
-
-        // Active tab styling
-        &.v-tab--selected {
-            color: var(--color-primary);
-            font-weight: 600;
-
-            // Hover state for ACTIVE tab
-            &:hover {
-                color: var(--color-secondary, #555);
-                background-color: rgba(var(--color-primary-rgb, 0, 0, 0), 0.05);
-                border-radius: 8px 8px 0 0;
-            }
-        }
-    }
-
-    // Slider/Indicator styling
-    :deep(.v-tabs-slider) {
-        height: 3px;
-        border-radius: 3px;
-        background-color: var(--color-primary, #1ab69d);
-    }
-
-    // Alternative: If you want to style the indicator differently
-    :deep(.v-slide-group__content) {
-        .v-tab__slider {
-            height: 3px;
-            border-radius: 3px;
-            background-color: var(--color-primary, #1ab69d);
-        }
-    }
-} */
-
-.tabs-content {
-    padding: 20px 0;
-
-    @media (max-width: 767px) {
-        padding: 15px 0;
-    }
-}
-
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    @media (max-width: 767px) {
-        gap: 20px;
-    }
-}
-
-.description {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-    margin: 0;
-
-    @media (max-width: 1023px) {
-        font-size: 15px;
-    }
-
-    @media (max-width: 767px) {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-}
-
-.features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-
-    @media (max-width: 767px) {
-        gap: 12px;
-    }
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    @media (max-width: 767px) {
-        gap: 10px;
-    }
-
-    .v-icon {
-        flex-shrink: 0;
-        color: var(--color-secondary);
-
-        @media (max-width: 767px) {
-            font-size: 20px !important;
-        }
-    }
-}
-
-.feature-text {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    display: inline-flex;
-    /* ensures proper spacing handling */
-    align-items: center;
-    /* vertically centers icon and text */
-
-    @media (max-width: 1023px) {
-        font-size: 16px;
-    }
-
-    @media (max-width: 767px) {
-        font-size: 15px;
-    }
-
-    &:before {
-        content: "\e913";
-        font-family: 'icomoon';
-        color: var(--color-secondary);
-        font-size: 19px;
-        margin-right: 6px;
-    }
+// Statistics Section
+.statistics-section {
+	margin-top: 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: center;
+
+	@media (max-width: 767px) {
+		margin-top: 3rem;
+		gap: 1.5rem;
+	}
+
+	.statistic-div {
+		width: 250px;
+		height: 150px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+		@media (max-width: 767px) {
+			width: 200px;
+			height: 120px;
+		}
+
+		@media (max-width: 479px) {
+			width: 150px;
+			height: 100px;
+		}
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 16px;
+		}
+
+		.value-Stat {
+			font-size: 2rem;
+			font-weight: 700;
+
+			@media (max-width: 767px) {
+				font-size: 1.5rem;
+			}
+
+			@media (max-width: 479px) {
+				font-size: 1.25rem;
+			}
+		}
+
+		.title-Stat {
+			font-size: 0.9rem;
+			color: #666;
+			text-align: center;
+			margin-top: 0.5rem;
+
+			@media (max-width: 479px) {
+				font-size: 0.8rem;
+			}
+		}
+	}
 }
 </style>

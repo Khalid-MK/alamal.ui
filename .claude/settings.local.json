@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__navigate_page",
+      "Bash(dir:*)",
+      "Bash(cat:*)",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__evaluate_script",
+      "Read(//c/Users/Khalid/Downloads/themeforest-JMxnbnCV-edublink-online-education-course-html-template/edublink-the-next-gen-education-html-template/edublink/**)",
+      "Read(//c/Users/Khalid/Downloads/themeforest-JMxnbnCV-edublink-online-education-course-html-template/edublink-the-next-gen-education-html-template/.claude/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
