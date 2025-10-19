@@ -6,11 +6,6 @@
   "outputDirectory": ".output/public",
   "devCommand": "npm run dev",
   "regions": ["iad1"],
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 10
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
