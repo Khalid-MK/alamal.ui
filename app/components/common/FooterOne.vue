@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#0b0d17] text-gray-300">
+  <footer class="bg-[#111212] text-gray-300">
     <!-- Main footer -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div
@@ -21,25 +21,25 @@
           <div class="flex space-x-3">
             <a
               href="#"
-              class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white"
             >
               <i class="fab fa-facebook-f"></i>
             </a>
             <a
               href="#"
-              class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center text-gray-400 hover:bg-sky-400 hover:text-white"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-sky-400 hover:text-white"
             >
               <i class="fab fa-twitter"></i>
             </a>
             <a
               href="#"
-              class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center text-gray-400 hover:bg-pink-500 hover:text-white"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-pink-500 hover:text-white"
             >
               <i class="fab fa-instagram"></i>
             </a>
             <a
               href="#"
-              class="w-10 h-10 rounded-full bg-[#111827] flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white"
             >
               <i class="fab fa-linkedin-in"></i>
             </a>
@@ -145,7 +145,7 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="bg-[#0f111c] border-t border-gray-800">
+    <div v-if="false" class="bg-[#111212] border-t border-gray-800">
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0"
       >
@@ -154,14 +154,14 @@
           © Copyrighted & Designed by
           <a
             href="https://themeforest.net/user/bdevs"
-            class="text-blue-500 hover:underline"
+            class="text-[var(--color-primary)] hover:underline"
             >BDevs</a
           >
         </div>
 
         <!-- Center -->
         <div class="flex items-center space-x-3">
-          <div class="text-blue-500">
+          <div class="text-[var(--color-primary)]">
             <i class="fas fa-headset text-2xl"></i>
           </div>
           <div>
@@ -176,7 +176,7 @@
         <div class="w-full md:w-auto">
           <form
             action="#"
-            class="flex items-center bg-[#111827] rounded-md overflow-hidden"
+            class="flex items-center bg-[#111212] rounded-md overflow-hidden"
           >
             <div class="flex items-center px-3 text-gray-400">
               <i class="fas fa-envelope"></i>
@@ -188,7 +188,7 @@
             />
             <button
               type="submit"
-              class="bg-blue-600 text-white px-4 py-2 text-sm hover:bg-blue-700 flex items-center space-x-2"
+              class="bg-[var(--color-primary)] text-white px-4 py-2 text-sm hover:bg-[var(--color-primary-hover)] flex items-center space-x-2"
             >
               <span>Subscribe</span>
               <i class="fas fa-paper-plane"></i>
