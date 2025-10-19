@@ -108,47 +108,49 @@ const teamMembers: TeamMember[] = [
 ];
 
 // Intersection Observer for scroll animations
-onMounted(() => {
-	if (typeof window === "undefined") return;
+if (process.client) {
+	let observer: IntersectionObserver | null = null;
 
-	const observerOptions = {
-		threshold: 0.01,
-		rootMargin: "0px 0px -50px 0px",
-	};
+	onMounted(() => {
+		const observerOptions = {
+			threshold: 0.01,
+			rootMargin: "0px 0px -50px 0px",
+		};
 
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				if (entry.target === sectionTitleRef.value) {
-					isTitleVisible.value = true;
-				} else {
-					const index = teamCardsRef.value.indexOf(entry.target as HTMLElement);
-					if (index !== -1) {
-						areCardsVisible.value[index] = true;
+		observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					if (entry.target === sectionTitleRef.value) {
+						isTitleVisible.value = true;
+					} else {
+						const index = teamCardsRef.value.indexOf(entry.target as HTMLElement);
+						if (index !== -1) {
+							areCardsVisible.value[index] = true;
+						}
 					}
+					observer?.unobserve(entry.target);
 				}
-				observer.unobserve(entry.target);
+			});
+		}, observerOptions);
+
+		// Observe section title
+		if (sectionTitleRef.value) {
+			observer.observe(sectionTitleRef.value);
+		}
+
+		// Observe team cards
+		teamCardsRef.value.forEach((card) => {
+			if (card) {
+				observer?.observe(card);
 			}
 		});
-	}, observerOptions);
-
-	// Observe section title
-	if (sectionTitleRef.value) {
-		observer.observe(sectionTitleRef.value);
-	}
-
-	// Observe team cards
-	teamCardsRef.value.forEach((card) => {
-		if (card) {
-			observer.observe(card);
-		}
 	});
 
 	// Cleanup on unmount
 	onBeforeUnmount(() => {
-		observer.disconnect();
+		observer?.disconnect();
 	});
-});
+}
 </script>
 
 <style scoped>
