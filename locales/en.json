@@ -215,5 +215,66 @@
   "SupportTitle": "Need assistance?",
   "SupportDescription": "Our team is ready to guide you through enrollment and payment steps.",
   "SupportTelegram": "Telegram: alamal_support",
-  "SupportEmail": "Email: supportalamal.academy"
+  "SupportEmail": "Email: supportalamal.academy",
+  "teamArea": {
+    "preTitle": "Instructors",
+    "title": "Course Instructors",
+    "viewProfile": "View {name} profile",
+    "members": {
+      "member1": {
+        "name": "Aashiq-Muhammad",
+        "designation": "Teacher"
+      },
+      "member2": {
+        "name": "Ma-As-Sama",
+        "designation": "Teacher"
+      },
+      "member3": {
+        "name": "Badi-Al-Zaman",
+        "designation": "Teacher"
+      }
+    }
+  },
+  "footer": {
+    "companyInfo": {
+      "logoAlt": "Al-Amal Platform Logo",
+      "description": "Empowering students worldwide to learn the Holy Quran, Arabic language, and Tajweed with expert teachers and comprehensive courses.",
+      "addressLabel": "Add:",
+      "address": "123 Islamic Street, Education City",
+      "phoneLabel": "Call:",
+      "phone": "+1 234 567 8900",
+      "phoneLink": "+12345678900",
+      "emailLabel": "Email:",
+      "email": "info@alamal.academy"
+    },
+    "onlinePlatform": {
+      "title": "Online Platform",
+      "links": {
+        "about": "About",
+        "courses": "Courses",
+        "instructors": "Instructors",
+        "events": "Events",
+        "instructorProfile": "Instructor Profile",
+        "purchaseGuide": "Purchase Guide"
+      }
+    },
+    "quickLinks": {
+      "title": "Links",
+      "links": {
+        "contact": "Contact Us",
+        "gallery": "Gallery",
+        "news": "News & Articles",
+        "faq": "FAQ's",
+        "signIn": "Sign In/Registration",
+        "comingSoon": "Coming Soon"
+      }
+    },
+    "newsletter": {
+      "title": "Contacts",
+      "description": "Enter your email address to register to our newsletter subscription",
+      "placeholder": "Your email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "Copyright 2024 <a href=\"/\" class=\"text-[var(--color-primary)] transition-all duration-200 hover:bg-gradient-to-r hover:from-[var(--color-primary)] hover:to-[var(--color-secondary)] hover:bg-clip-text hover:text-transparent\">Al-Amal Platform</a>. All Rights Reserved"
+  }
 }

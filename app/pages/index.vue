@@ -5,13 +5,14 @@
     <HomeCourseArea />
     <HomeVideoArea />
     <HomeCampus />
+    <!-- <HomeCourseList /> -->
+    <!-- <HomeHowSiteWork /> -->
+    <!-- <HomeTeacherSection /> -->
+    <!-- <HomeEvents /> -->
+    <!-- <HomeBlogAndPrayer /> -->
+    <!-- <HomeZoomSection/> -->
+    <HomeTeamArea />
     <HomeUniversityCTA />
-    <HomeCourseList />
-    <HomeHowSiteWork />
-    <HomeTeacherSection />
-    <HomeEvents />
-    <HomeBlogAndPrayer />
-    <HomeZoomSection/>
   </main>
 </template>
 

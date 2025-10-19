@@ -211,5 +211,66 @@
   "SupportTitle": "هل تحتاج مساعدة؟",
   "SupportDescription": "فريقنا جاهز لمساعدتك في خطوات التسجيل والدفع.",
   "SupportTelegram": "تيليجرام: alamal_support",
-  "SupportEmail": "البريد: supportalamal.academy"
+  "SupportEmail": "البريد: supportalamal.academy",
+  "teamArea": {
+    "preTitle": "المعلمون",
+    "title": "معلمو الدورات",
+    "viewProfile": "عرض ملف {name}",
+    "members": {
+      "member1": {
+        "name": "عاشق-محمد",
+        "designation": "معلم"
+      },
+      "member2": {
+        "name": "ما-اس-ساما",
+        "designation": "معلم"
+      },
+      "member3": {
+        "name": "بديع-الزمان",
+        "designation": "معلم"
+      }
+    }
+  },
+  "footer": {
+    "companyInfo": {
+      "logoAlt": "شعار منصة الأمل",
+      "description": "تمكين الطلاب في جميع أنحاء العالم لتعلم القرآن الكريم واللغة العربية والتجويد مع معلمين خبراء ودورات شاملة.",
+      "addressLabel": "العنوان:",
+      "address": "شارع الإسلام 123، مدينة التعليم",
+      "phoneLabel": "اتصل:",
+      "phone": "+1 234 567 8900",
+      "phoneLink": "+12345678900",
+      "emailLabel": "البريد الإلكتروني:",
+      "email": "info@alamal.academy"
+    },
+    "onlinePlatform": {
+      "title": "المنصة الإلكترونية",
+      "links": {
+        "about": "حول",
+        "courses": "الدورات",
+        "instructors": "المعلمون",
+        "events": "الفعاليات",
+        "instructorProfile": "ملف المعلم",
+        "purchaseGuide": "دليل الشراء"
+      }
+    },
+    "quickLinks": {
+      "title": "روابط",
+      "links": {
+        "contact": "اتصل بنا",
+        "gallery": "معرض الصور",
+        "news": "الأخبار والمقالات",
+        "faq": "الأسئلة الشائعة",
+        "signIn": "تسجيل الدخول/التسجيل",
+        "comingSoon": "قريباً"
+      }
+    },
+    "newsletter": {
+      "title": "التواصل",
+      "description": "أدخل عنوان بريدك الإلكتروني للتسجيل في اشتراك النشرة الإخبارية",
+      "placeholder": "بريدك الإلكتروني",
+      "subscribe": "اشترك"
+    },
+    "copyright": "حقوق النشر 2024 <a href=\"/\" class=\"text-[var(--color-primary)] transition-all duration-200 hover:bg-gradient-to-r hover:from-[var(--color-primary)] hover:to-[var(--color-secondary)] hover:bg-clip-text hover:text-transparent\">منصة الأمل</a>. جميع الحقوق محفوظة"
+  }
 }

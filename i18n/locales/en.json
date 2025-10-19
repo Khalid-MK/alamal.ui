@@ -240,6 +240,7 @@
     "preTitle": "Popular Courses",
     "title": "Our Islamic Programs",
     "learnMore": "Learn More",
+    "enrollNow": "Enroll Now",
     "filters": {
       "quran": "Quran Courses",
       "tajweed": "Tajweed Courses",
@@ -338,6 +339,26 @@
   "videoArea": {
     "title": "Take a Video Tour to Learn About Our Programs",
     "playButtonAriaLabel": "Play welcome video"
+  },
+  "_comment TeamArea": "This section is for the team/instructors showcase",
+  "teamArea": {
+    "preTitle": "Instructors",
+    "title": "Course Instructors",
+    "viewProfile": "View {name} profile",
+    "members": {
+      "member1": {
+        "name": "Aashiq-Muhammad",
+        "designation": "Teacher"
+      },
+      "member2": {
+        "name": "Ma-As-Sama",
+        "designation": "Teacher"
+      },
+      "member3": {
+        "name": "Badi-Al-Zaman",
+        "designation": "Teacher"
+      }
+    }
   },
   "ourCourses": "Our Courses"
 }

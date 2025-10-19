@@ -236,6 +236,7 @@
     "preTitle": "الدورات الشائعة",
     "title": "برامجنا الإسلامية",
     "learnMore": "تعرف على المزيد",
+    "enrollNow": "سجل الآن",
     "filters": {
       "quran": "دورات القرآن",
       "tajweed": "دورات التجويد",
@@ -334,6 +335,26 @@
   "videoArea": {
     "title": "شاهد جولة فيديو للتعرف على برامجنا",
     "playButtonAriaLabel": "تشغيل فيديو الترحيب"
+  },
+  "_comment TeamArea": "هذا القسم لعرض المعلمين",
+  "teamArea": {
+    "preTitle": "المعلمون",
+    "title": "معلمو الدورات",
+    "viewProfile": "عرض ملف {name}",
+    "members": {
+      "member1": {
+        "name": "عاشق-محمد",
+        "designation": "معلم"
+      },
+      "member2": {
+        "name": "ما-اس-ساما",
+        "designation": "معلم"
+      },
+      "member3": {
+        "name": "بديع-الزمان",
+        "designation": "معلم"
+      }
+    }
   },
   "ourCourses": "دوراتنا"
 }

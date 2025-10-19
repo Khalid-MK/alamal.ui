@@ -3,13 +3,13 @@
 		<div
 			class="slider-six__mosque"
 			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/mosque-1.png');
+				background-image: url('/img/bg/mosque-1.png');
 			"
 		></div>
 		<div
 			class="slider-six__bg"
 			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/9.jpg');
+				background-image: url('/img/bg/9.jpg');
 			"
 		></div>
 
