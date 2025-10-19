@@ -1,5 +1,5 @@
 <template>
-  <!-- Auto-deploy test: October 20, 2025 -->
+  <!-- Auto-deploy test: October 21, 2025 -->
   <div :dir="direction">
     <header class="edu-header">
       <!-- Reminder bar -->
