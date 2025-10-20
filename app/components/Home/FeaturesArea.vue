@@ -1,0 +1,272 @@
+<template>
+  <section :dir="direction" class="features-area-3">
+    <div class="container">
+      <div class="features-grid-wrap">
+        <div
+          v-for="item in features"
+          :key="item.id"
+          :class="[
+            'features-box',
+            'features-style-3',
+            item.colorClass,
+            'edublink-svg-animate',
+          ]"
+          ref="cards"
+        >
+          <div class="icon">
+            <img
+              class="svgInject"
+              :src="item.icon"
+              :alt="item.title + ' icon'"
+              loading="lazy"
+            />
+          </div>
+          <div class="content">
+            <h4 class="title">{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script lang="ts" setup>
+import featuresData from"@/constant/FeatureArea.json"
+
+const {locale ,localeProperties} =useI18n()
+const direction =computed(()=>localeProperties.value.dir)
+const features =computed(()=>featuresData[locale.value])
+
+</script>
+<style lang="scss" scoped>
+@import "@/assets/css/tailwind.scss";
+@import "@/assets/css/helpers";
+/*-------------------
+  Features Styles
+---------------------*/
+.features-area-1 {
+  .features-box {
+    svg {
+      max-width: 37px;
+    }
+
+    &:hover {
+      .icon {
+        svg {
+          path {
+            stroke: var(--color-white);
+          }
+        }
+      }
+    }
+  }
+}
+
+.features-box {
+  padding: 50px 30px;
+  /* text-align: center; */
+  border-radius: 4px;
+  box-shadow: var(--shadow-darker);
+  background-color: var(--color-white);
+  transition: var(--transition);
+  .icon {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 28px;
+    transition: var(--transition);
+  }
+  .content {
+    /* line-height: var(--h4-lineHeight); */
+    /* [dir="rtl"] & {
+
+      text-align: right;
+
+    } */
+    font-family: var(--font-secondary);
+    .title {
+      margin-bottom: 15px;
+      transition: var(--transition);
+      font-size: var(--h4);
+      font-weight: var(--p-semi-bold);
+      span {
+        display: block;
+      }
+    }
+    p {
+      color: var(--color-heading);
+      margin-bottom: 0;
+      transition: var(--transition);
+    }
+  }
+
+  &.color-primary-style {
+    .icon {
+      background-color: rgba(26, 182, 157, 0.1);
+      color: var(--color-primary);
+      &:after {
+        background-color: var(--color-primary);
+      }
+    }
+    &:hover {
+      .icon {
+        background-color: rgba(26, 182, 157, 1);
+        color: var(--color-white);
+      }
+    }
+  }
+  &.color-secondary-style {
+    .icon {
+      background-color: rgba(238, 74, 98, 0.1);
+      color: var(--color-secondary);
+      &:after {
+        background-color: var(--color-secondary);
+      }
+    }
+    &:hover {
+      .icon {
+        background-color: rgba(238, 74, 98, 1);
+        color: var(--color-white);
+      }
+    }
+  }
+  &.color-extra02-style {
+    .icon {
+      background-color: rgba(142, 86, 255, 0.1);
+      color: var(--color-extra02);
+      &:after {
+        background-color: var(--color-extra02);
+      }
+    }
+    &:hover {
+      .icon {
+        background-color: rgba(142, 86, 255, 1);
+        color: var(--color-white);
+      }
+    }
+  }
+  &.features-style-3 {
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    align-items: flex-start;
+    padding: 50px 25px 42px;
+    /* text-align: left; */
+    gap:20px;
+    @media #{$md-layout} {
+      padding: 40px 50px;
+    }
+    @media #{$sm-layout} {
+      padding: 30px 25px;
+    }
+    .edublink-svg-animate {
+            svg {
+                path {
+                    stroke: #ffffff !important;
+                    max-width: 38px;
+                }
+            }
+        }
+    &:first-child {
+      padding-left: 50px;
+      @media #{$sm-layout} {
+        padding-left: 25px;
+      }
+    }
+    .icon {
+      margin-top: 2px;
+      height: auto;
+      width: auto;
+      min-width: 50px;
+      background-color: transparent;
+      font-size: 40px;
+      /* margin-right: 20px; */
+      margin-bottom: 0;
+    }
+    .content {
+      flex: 1;
+      p {
+        color: var(--color-body);
+      }
+    }
+    &:hover {
+      .icon {
+        background-color: transparent;
+        color: inherit;
+      }
+      &.color-primary-style {
+        background-color: rgba(26, 182, 157, 0.07);
+        &:hover {
+          .icon {
+            color: var(--color-primary);
+          }
+        }
+      }
+      &.color-secondary-style {
+        &:hover {
+          background-color: rgba(238, 74, 98, 0.07);
+          .icon {
+            color: var(--color-secondary);
+          }
+        }
+      }
+      &.color-extra02-style {
+        &:hover {
+          background-color: rgba(142, 86, 255, 0.07);
+          .icon {
+            color: var(--color-extra02);
+          }
+        }
+      }
+    }
+  }
+}
+
+.features-grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @media #{$md-layout} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$sm-layout} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$large-mobile} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.features-area-3 {
+  .features-grid-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--color-white);
+    box-shadow: 0px 20px 40px 0px rgba(42, 11, 88, 0.1);
+    border-radius: 5px;
+    margin-top: -120px;
+    z-index: 2;
+    bottom: 0px;
+    position: relative;
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+/*  */
+.container {
+  margin: 0 auto;
+  @media only screen and (max-width: 767px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: 1185px;
+  }
+}
+</style>

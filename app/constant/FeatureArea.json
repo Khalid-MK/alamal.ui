@@ -1,0 +1,71 @@
+{
+    "en": [
+        {
+            "id": "scholarship",
+            "title": "Scholarship Facility",
+            "description": "Lorem ipsum dolor sit amet cont adipiscing elit.",
+            "icon": "/icons/FeaturesArea/scholarship-facility.svg",
+            "colorClass": "color-primary-style"
+        },
+        {
+            "id": "lecturers",
+            "title": "Skilled Lecturers",
+            "description": "Lorem ipsum dolor sit amet cont adipiscing elit.",
+            "icon": "/icons/FeaturesArea/skilled-lecturers.svg",
+            "colorClass": "color-secondary-style"
+        },
+        {
+            "id": "library",
+            "title": "Book Library & Store",
+            "description": "Lorem ipsum dolor sit amet cont adipiscing elit.",
+            "icon": "/icons/FeaturesArea/book-library.svg",
+            "colorClass": "color-extra02-style"
+        }
+    ],
+    "ar": [
+        {
+            "id": "scholarship",
+            "title": "منحة دراسية",
+            "description": "لوريم إيبسوم دولار سيت أميت كونت أدبيسيسينغ إليت.",
+            "icon": "/icons/FeaturesArea/scholarship-facility.svg",
+            "colorClass": "color-primary-style"
+        },
+        {
+            "id": "lecturers",
+            "title": "محاضرون ماهرون",
+            "description": "لوريم إيبسوم دولار سيت أميت كونت أدبيسيسينغ إليت.",
+            "icon": "/icons/FeaturesArea/skilled-lecturers.svg",
+            "colorClass": "color-secondary-style"
+        },
+        {
+            "id": "library",
+            "title": "مكتبة الكتب والمتجر",
+            "description": "لوريم إيبسوم دولار سيت أميت كونت أدبيسيسينغ إليت.",
+            "icon": "/icons/FeaturesArea/book-library.svg",
+            "colorClass": "color-extra02-style"
+        }
+    ],
+    "ru": [
+        {
+            "id": "scholarship",
+            "title": "Стипендиальная программа",
+            "description": "Лорем ипсум долор сит амет конт адиписцинг элит.",
+            "icon": "/icons/FeaturesArea/scholarship-facility.svg",
+            "colorClass": "color-primary-style"
+        },
+        {
+            "id": "lecturers",
+            "title": "Опытные преподаватели",
+            "description": "Лорем ипсум долор сит амет конт адиписцинг элит.",
+            "icon": "/icons/FeaturesArea/skilled-lecturers.svg",
+            "colorClass": "color-secondary-style"
+        },
+        {
+            "id": "library",
+            "title": "Библиотека и магазин книг",
+            "description": "Лорем ипсум долор сит амет конт адиписцинг элит.",
+            "icon": "/icons/FeaturesArea/book-library.svg",
+            "colorClass": "color-extra02-style"
+        }
+    ]
+}

@@ -4,6 +4,7 @@
     <HomeAbout />
     <HomeCourseArea />
     <HomeVideoArea />
+    <HomeFeaturesArea />
     <HomeCampus />
     <!-- <HomeCourseList /> -->
     <!-- <HomeHowSiteWork /> -->
