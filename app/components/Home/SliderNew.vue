@@ -1,72 +1,40 @@
 <template>
 	<div :dir="direction" class="slider-six">
-		<div
-			class="slider-six__mosque"
-			style="
+		<div class="slider-six__mosque" style="
 				background-image: url('/img/bg/mosque-1.png');
-			"
-		></div>
-		<div
-			class="slider-six__bg"
-			style="
+			"></div>
+		<div class="slider-six__bg" style="
 				background-image: url('/img/bg/9.jpg');
-			"
-		></div>
+			"></div>
 
 		<!-- Islamic Floating Shapes -->
 		<!-- Islamic Lamp (Top Left) -->
-		<div
-			class="slider-six_islamic-lamp"
-			style="background-image: url('/img/islamic-shapes/banner/lamp-shape.png');"
-		></div>
+		<div class="slider-six_islamic-lamp" style="background-image: url('/img/islamic-shapes/banner/lamp-shape.png');">
+		</div>
 
 		<!-- Crescent Moon (Spinning) -->
-		<div
-			class="slider-six_moon"
-			style="background-image: url('/img/islamic-shapes/banner/moon-shape.png');"
-		></div>
+		<div class="slider-six_moon" style="background-image: url('/img/islamic-shapes/banner/moon-shape.png');"></div>
 
 		<!-- Quran Calligraphy (Floating) -->
-		<div
-			class="slider-six_quran"
-			style="background-image: url('/img/islamic-shapes/decorative/vector-9.png');"
-		></div>
+		<div class="slider-six_quran" style="background-image: url('/img/islamic-shapes/decorative/vector-9.png');"></div>
 
 		<!-- Islamic Art Pattern -->
-		<div
-			class="slider-six_art"
-			style="background-image: url('/img/islamic-shapes/banner/art-shape-1.png');"
-		></div>
+		<div class="slider-six_art" style="background-image: url('/img/islamic-shapes/banner/art-shape-1.png');"></div>
 
 		<!-- Quran Learning Symbol -->
-		<div
-			class="slider-six_learning"
-			style="background-image: url('/img/islamic-shapes/decorative/vector-8.png');"
-		></div>
-		<div
-			class="slider-six_shadow"
-			style="
+		<div class="slider-six_learning" style="background-image: url('/img/islamic-shapes/decorative/vector-8.png');">
+		</div>
+		<div class="slider-six_shadow" style="
 				background-image: url('/img/bg/banner-shadow-1.png');
-			"
-		></div>
-		<div
-			class="slider-six_shadow-two"
-			style="
+			"></div>
+		<div class="slider-six_shadow-two" style="
 				background-image: url('/img/bg/banner-shadow-2.png');
-			"
-		></div>
-		<div
-			class="slider-six_shadow-three"
-			style="
+			"></div>
+		<div class="slider-six_shadow-three" style="
 				background-image: url('/img/bg/banner-shadow-3.png');
-			"
-		></div>
+			"></div>
 		<swiper-container ref="containerRef" class="swiperContainer" :init="false">
-			<swiper-slide
-				class="slide-content"
-				v-for="(slide, idx) in slides"
-				:key="idx"
-			>
+			<swiper-slide class="slide-content" v-for="(slide, idx) in slides" :key="idx">
 				<div class="max-w-7xl mx-auto content-wrapper">
 					<div class="text-content">
 						<h1 class="slider-six_title">
@@ -75,33 +43,26 @@
 
 						<div class="slider-six_text">
 							<span class="text-icon">
-								<img
-									decoding="async"
-									src="/img/bg/slider-img.png"
-									alt="Alquran"
-								/>
+								<img decoding="async" src="/img/bg/slider-img.png" alt="Alquran" />
 							</span>
 							<p>{{ slide.desc }}</p>
 						</div>
 
-					<div class="slider-six_button">
-						<div class="curved-button-wrapper">
-							<svg class="curved-text" viewBox="0 0 200 200">
-								<defs>
-									<path
-										id="circlePath"
-										d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
-									/>
-								</defs>
-								<text class="curved-text-path">
-									<textPath href="#circlePath" startOffset="50%" text-anchor="middle">
-										{{ $t("CheckOutMore") }}
-									</textPath>
-								</text>
-							</svg>
-							<IconButton variant="round" icon="icon-4" :aria-label="$t('CheckOutMore')" />
+						<div class="slider-six_button">
+							<div class="curved-button-wrapper">
+								<svg class="curved-text" viewBox="0 0 200 200">
+									<defs>
+										<path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+									</defs>
+									<text class="curved-text-path">
+										<textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+											{{ $t("CheckOutMore") }}
+										</textPath>
+									</text>
+								</svg>
+								<IconButton variant="round" icon="icon-4" :aria-label="$t('CheckOutMore')" />
+							</div>
 						</div>
-					</div>
 					</div>
 
 					<div class="slider-six_images-column">
@@ -113,11 +74,7 @@
 						<div class="slider-six_courses">
 							<div class="slider-six_courses-inner">
 								<span>
-									<img
-										decoding="async"
-										src="/icons/book.svg"
-										alt="Alquran"
-									/>
+									<img decoding="async" src="/icons/book.svg" alt="Alquran" />
 								</span>
 								<div class="alquran-counter">10k+</div>
 								<i class="alquran-desc">Online Courses</i>
@@ -452,6 +409,10 @@ onMounted(() => {
 			flex-direction: column;
 			gap: 40px;
 		}
+
+		@media (max-width: 767px) {
+			gap: 20px;
+		}
 	}
 
 	.text-content {
@@ -466,6 +427,11 @@ onMounted(() => {
 			align-items: center;
 			text-align: center;
 			gap: 25px;
+		}
+
+		@media (max-width: 767px) {
+			align-items: flex-start;
+			text-align: left;
 		}
 	}
 
@@ -638,6 +604,7 @@ onMounted(() => {
 		from {
 			transform: rotate(0deg);
 		}
+
 		to {
 			transform: rotate(360deg);
 		}
@@ -690,75 +657,87 @@ onMounted(() => {
 		}
 	}
 
-    .slider-six_courses {
-        position: absolute;
-        right: 350px;
-        top: 100px;
-        border-radius: 100px;
-        padding: 18px 28px 18px 18px;
-        background-color: white;
-        -webkit-animation: icon-bounce 0.8s ease-out infinite;
-        animation: icon-bounce 0.8s ease-out infinite;
+	.slider-six_courses {
+		position: absolute;
+		right: 350px;
+		top: 100px;
+		border-radius: 100px;
+		padding: 18px 28px 18px 18px;
+		background-color: white;
+		-webkit-animation: icon-bounce 0.8s ease-out infinite;
+		animation: icon-bounce 0.8s ease-out infinite;
 
-        .slider-six_courses-inner {
-            position: relative;
-            font-size: 28px;
-            min-height: 80px;
-            padding-left: 95px;
-            font-weight: 500;
-            color: black;
+		@media (max-width: 425px) {
+			display: none;
+		}
 
-            span {
-                position: absolute;
-                left: 0px;
-                top: 0px;
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
-                text-align: center;
-                border-radius: 80px;
-                background-color: #c5e96b;
-                display: flex;
-                padding: 16px;
-            }
+		.slider-six_courses-inner {
+			position: relative;
+			font-size: 28px;
+			min-height: 80px;
+			padding-left: 95px;
+			font-weight: 500;
+			color: black;
 
-            img {
-                border: none;
-                border-radius: 0;
-                box-shadow: none;
-                height: auto;
-                max-width: 100%;
-            }
+			span {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				width: 80px;
+				height: 80px;
+				line-height: 80px;
+				text-align: center;
+				border-radius: 80px;
+				background-color: #c5e96b;
+				display: flex;
+				padding: 16px;
+			}
 
-            i {
-                position: relative;
-                display: block;
-                color: #999999;
-                font-size: 22px;
-                font-weight: 400;
-                font-style: normal;
-            }
-        }
-    }
+			img {
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+				height: auto;
+				max-width: 100%;
+			}
+
+			i {
+				position: relative;
+				display: block;
+				color: #999999;
+				font-size: 22px;
+				font-weight: 400;
+				font-style: normal;
+			}
+		}
+	}
 }
 
 @keyframes icon-bounce {
-    0%, 100%, 20%, 50%, 80% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
-    60% {
-        -webkit-transform: translateY(-5px);
-        transform: translateY(-5px);
-    }
+
+	0%,
+	100%,
+	20%,
+	50%,
+	80% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+
+	60% {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
 }
 
 // Animations
 @keyframes moveUpDown {
+
 	0%,
 	100% {
 		transform: translateY(0);
@@ -787,10 +766,13 @@ onMounted(() => {
 
 // Islamic Shapes Animations
 @keyframes pulse {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: scale(1);
 		opacity: 0.9;
 	}
+
 	50% {
 		transform: scale(1.05);
 		opacity: 1;
@@ -798,21 +780,28 @@ onMounted(() => {
 }
 
 @keyframes floatRotate {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0) rotate(0deg);
 	}
+
 	33% {
 		transform: translateY(-10px) rotate(5deg);
 	}
+
 	66% {
 		transform: translateY(5px) rotate(-5deg);
 	}
 }
 
 @keyframes bounce {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0);
 	}
+
 	50% {
 		transform: translateY(-15px);
 	}
