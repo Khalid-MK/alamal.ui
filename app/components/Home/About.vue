@@ -311,6 +311,10 @@ onBeforeUnmount(() => {
 	@media (min-width: 992px) {
 		padding: 90px 0 120px;
 	}
+
+	@media (max-width: 430px) {
+		padding: 120px 0 150px;
+	}
 }
 
 // Content column
