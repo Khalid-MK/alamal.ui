@@ -5,11 +5,8 @@
     <HomeCourseArea />
     <HomeVideoArea />
     <HomeCampus />
-    <!-- <HomeCourseList /> -->
-    <!-- <HomeHowSiteWork /> -->
-    <!-- <HomeTeacherSection /> -->
-    <!-- <HomeEvents /> -->
-    <!-- <HomeBlogAndPrayer /> -->
+    <HomeEvents />
+    <HomeBlogAndPrayer />
     <!-- <HomeZoomSection/> -->
     <HomeTeamArea />
     <HomeUniversityCTA />

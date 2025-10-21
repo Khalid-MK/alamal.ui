@@ -14,12 +14,6 @@
 		></div>
 
 		<!-- Islamic Floating Shapes -->
-		<!-- Islamic Lamp (Top Left) -->
-		<div
-			class="slider-six_islamic-lamp"
-			style="background-image: url('/img/islamic-shapes/banner/lamp-shape.png');"
-		></div>
-
 		<!-- Crescent Moon (Spinning) -->
 		<div
 			class="slider-six_moon"
