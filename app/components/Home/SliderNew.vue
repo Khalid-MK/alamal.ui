@@ -40,19 +40,19 @@
 		<div
 			class="slider-six_shadow"
 			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-1.png');
+				background-image: url('/img/bg/banner-shadow-1.png');
 			"
 		></div>
 		<div
 			class="slider-six_shadow-two"
 			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-2.png');
+				background-image: url('/img/bg/banner-shadow-2.png');
 			"
 		></div>
 		<div
 			class="slider-six_shadow-three"
 			style="
-				background-image: url('https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/banner-shadow-3.png');
+				background-image: url('/img/bg/banner-shadow-3.png');
 			"
 		></div>
 		<swiper-container ref="containerRef" class="swiperContainer" :init="false">
@@ -71,7 +71,7 @@
 							<span class="text-icon">
 								<img
 									decoding="async"
-									src="https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/slider-img.png"
+									src="/img/bg/slider-img.png"
 									alt="Alquran"
 								/>
 							</span>
@@ -109,7 +109,7 @@
 								<span>
 									<img
 										decoding="async"
-										src="https://themazine.com/newwp/alquran/wp-content/uploads/2025/07/book.svg"
+										src="/icons/book.svg"
 										alt="Alquran"
 									/>
 								</span>

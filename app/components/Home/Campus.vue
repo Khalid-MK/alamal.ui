@@ -536,7 +536,8 @@ onBeforeUnmount(() => {
 		padding: 0;
 		display: flex;
 		align-items: flex-start;
-		text-align: left;
+		/* comment this for convert from ltr to rtl auto  */
+		/* text-align: left; */
 		margin-bottom: 24px;
 
 		&:last-child {
