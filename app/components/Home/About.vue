@@ -1,20 +1,13 @@
 <template>
 	<div :dir="direction" class="about-section edu-about-area about-style-3">
 		<!-- Main Content Container -->
-		<div class="max-w-7xl mx-auto">
-			<div
-				class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-			>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 				<!-- Left Column: Content Area -->
-				<div
-					class="content-column"
-					data-sal="slide-right"
-					data-sal-delay="50"
-					data-sal-duration="800"
-				>
+				<div class="content-column" data-sal="slide-right" data-sal-delay="50" data-sal-duration="800">
 					<div class="about-content">
 						<!-- Section Title -->
-						<div class="section-title section-left mb-9">
+						<div class="section-title section-left mb-6 md:mb-9">
 							<span class="pre-title">{{ $t("aboutSection.preTitle") }}</span>
 							<h2 class="title">
 								{{ $t("aboutSection.titlePart1") }}
@@ -31,14 +24,9 @@
 						<!-- Custom Tab Navigation -->
 						<div class="custom-tabs-wrapper">
 							<div class="nav-tabs" role="tablist">
-								<button
-									v-for="(tabItem, index) in tabsData"
-									:key="tabItem.value"
+								<button v-for="(tabItem, index) in tabsData" :key="tabItem.value"
 									:class="['nav-link', { active: activeTab === tabItem.value }]"
-									:aria-selected="activeTab === tabItem.value"
-									role="tab"
-									@click="activeTab = tabItem.value"
-								>
+									:aria-selected="activeTab === tabItem.value" role="tab" @click="activeTab = tabItem.value">
 									{{ $t(`aboutSection.tabs.${tabItem.value}.title`) }}
 								</button>
 							</div>
@@ -46,12 +34,7 @@
 							<!-- Tab Content -->
 							<div class="tab-content">
 								<Transition name="tab-fade" mode="out-in">
-									<div
-										v-if="activeTab === 'about'"
-										key="about"
-										class="tab-pane"
-										role="tabpanel"
-									>
+									<div v-if="activeTab === 'about'" key="about" class="tab-pane" role="tabpanel">
 										<p class="description">
 											{{ $t("aboutSection.tabs.about.description") }}
 										</p>
@@ -60,12 +43,7 @@
 											<li>{{ $t("aboutSection.tabs.about.feature2") }}</li>
 										</ul>
 									</div>
-									<div
-										v-else-if="activeTab === 'mission'"
-										key="mission"
-										class="tab-pane"
-										role="tabpanel"
-									>
+									<div v-else-if="activeTab === 'mission'" key="mission" class="tab-pane" role="tabpanel">
 										<p class="description">
 											{{ $t("aboutSection.tabs.mission.description") }}
 										</p>
@@ -74,12 +52,7 @@
 											<li>{{ $t("aboutSection.tabs.mission.feature2") }}</li>
 										</ul>
 									</div>
-									<div
-										v-else-if="activeTab === 'vision'"
-										key="vision"
-										class="tab-pane"
-										role="tabpanel"
-									>
+									<div v-else-if="activeTab === 'vision'" key="vision" class="tab-pane" role="tabpanel">
 										<p class="description">
 											{{ $t("aboutSection.tabs.vision.description") }}
 										</p>
@@ -98,61 +71,32 @@
 				<div class="image-column">
 					<div class="about-image-gallery">
 						<!-- Main Image 1 -->
-						<img
-							class="main-img-1"
-							data-sal="slide-right"
-							data-sal-delay="100"
-							data-sal-duration="800"
-							src="/img/about/about-04.webp"
-							alt="About Al-Amal Education"
-							loading="lazy"
-						/>
+						<img class="main-img-1" data-sal="slide-right" data-sal-delay="100" data-sal-duration="800"
+							src="/img/about/about-04.webp" alt="About Al-Amal Education" loading="lazy" />
 
 						<!-- Main Image 2 (Overlapping) -->
-						<img
-							class="main-img-2"
-							data-sal="slide-left"
-							data-sal-delay="100"
-							data-sal-duration="800"
-							src="/img/about/about-05.webp"
-							alt="Islamic Education"
-							loading="lazy"
-						/>
+						<img class="main-img-2" data-sal="slide-left" data-sal-delay="100" data-sal-duration="800"
+							src="/img/about/about-05.webp" alt="Islamic Education" loading="lazy" />
 
 						<!-- Islamic Decorative Shapes -->
 						<ul class="shape-group">
 							<!-- Shape 1: Islamic Decorative (shape-51) -->
-							<li
-								class="shape-1 scene"
-								ref="scene1"
-							>
+							<li class="shape-1 scene" ref="scene1">
 								<img data-depth="1" src="/img/islamic-shapes/decorative/shape-17.png" alt="Islamic Decoration" />
 							</li>
 
 							<!-- Shape 2: Islamic Ornamental (shape-52) -->
-							<li
-								class="shape-2 scene"
-								ref="scene2"
-							>
-								<img
-									data-depth="-1"
-									src="/img/islamic-shapes/decorative/shape-51.png"
-									alt="Islamic Ornament"
-								/>
+							<li class="shape-2 scene" ref="scene2">
+								<img data-depth="-1" src="/img/islamic-shapes/decorative/shape-51.png" alt="Islamic Ornament" />
 							</li>
 
 							<!-- Shape 3: Islamic Pattern (shape-17) -->
-							<li
-								class="shape-3 scene"
-								ref="scene3"
-							>
+							<li class="shape-3 scene" ref="scene3">
 								<img data-depth="1.5" src="/img/islamic-shapes/decorative/shape-52.png" alt="Islamic Pattern" />
 							</li>
 
 							<!-- Shape 4: Circle (Keep as decorative element) -->
-							<li
-								class="shape-4"
-							>
+							<li class="shape-4">
 								<span></span>
 							</li>
 						</ul>
@@ -164,34 +108,25 @@
 		<!-- Outer Islamic Decorative Shapes -->
 		<ul class="shape-group outer-shapes">
 			<li class="shape-5">
-				<img
-					class="rotateit"
-					src="/img/islamic-shapes/decorative/shape-18.png"
-					alt="Islamic Decoration"
-				/>
+				<img class="rotateit" src="/img/islamic-shapes/decorative/shape-18.png" alt="Islamic Decoration" />
 			</li>
 			<li class="shape-6">
 				<span></span>
 			</li>
-            <li class="shape-7">
-				<img
-					src="/img/islamic-shapes/banner/lamp-shape.png"
-					alt="Islamic Decoration"
-				/>
+			<li class="shape-7">
+				<img src="/img/islamic-shapes/banner/lamp-shape.png" alt="Islamic Decoration" />
 			</li>
 		</ul>
 
 		<!-- Statistics Section -->
-		<div class="max-w-7xl mx-auto statistics-section">
-			<div
-				class="statistic-div"
-				v-for="statistic in animatedStats"
-				:key="statistic.id"
-			>
-				<div :style="{ color: statistic.color }" class="value-Stat">
-					{{ statistic.displayValue }}
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 statistics-section">
+			<div class="statistics-grid">
+				<div class="statistic-div" v-for="statistic in animatedStats" :key="statistic.id">
+					<div :style="{ color: statistic.color }" class="value-Stat">
+						{{ statistic.displayValue }}
+					</div>
+					<div class="title-Stat">{{ $t(statistic.titleKey) }}</div>
 				</div>
-				<div class="title-Stat">{{ $t(statistic.titleKey) }}</div>
 			</div>
 		</div>
 	</div>
@@ -296,13 +231,11 @@ const animatedStats = ref(
 
 onMounted(() => {
 	// Initialize Parallax.js for mouse movement effects
-	// Expand to full page by using document.body as the container
 	const initParallax = (element: HTMLElement | null) => {
 		if (element) {
-			// Initialize with relativeInput: true for full-page parallax
 			const instance = new Parallax(element, {
-				relativeInput: false, // Parallax relative to entire page
-				hoverOnly: false, // Always active, not just on hover
+				relativeInput: false,
+				hoverOnly: false,
 			});
 			parallaxInstances.push(instance);
 		}
@@ -350,11 +283,11 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-// Keep only the rotate animation (Sal.js handles the rest)
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
@@ -367,59 +300,68 @@ onBeforeUnmount(() => {
 // Main section
 .about-section {
 	position: relative;
-	padding: 90px 0 120px;
+	padding: 60px 0 80px;
 	overflow: hidden;
-	isolation: isolate; // Create stacking context
+	isolation: isolate;
 
-	@media (max-width: 991px) {
-		padding: 90px 0 100px;
+	@media (min-width: 768px) {
+		padding: 80px 0;
 	}
 
-	@media (max-width: 767px) {
-		padding: 80px 0;
+	@media (min-width: 992px) {
+		padding: 90px 0 120px;
 	}
 }
 
-// Content column - removed custom opacity/transform, Sal.js handles it
+// Content column
 .content-column {
-	margin-top: 30px;
+	margin-top: 0;
+
+	@media (min-width: 1024px) {
+		margin-top: 30px;
+	}
 }
 
 // Section Title
 .section-title {
-	margin-bottom: 34px;
+	margin-bottom: 24px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 34px;
+	}
 
 	.pre-title {
 		display: inline-block;
 		font-weight: 700;
-		font-size: 14px;
+		font-size: 12px;
 		text-transform: uppercase;
 		color: var(--color-body);
 		letter-spacing: 1px;
-		margin-bottom: 12px;
+		margin-bottom: 8px;
+
+		@media (min-width: 768px) {
+			font-size: 14px;
+			margin-bottom: 12px;
+		}
 	}
 
 	.title {
-		font-size: 36px;
+		font-size: 24px;
 		font-weight: 700;
 		color: var(--color-heading);
 		line-height: 1.3;
 		margin: 0;
 
-		@media (max-width: 1279px) {
-			font-size: 36px;
-		}
-
-		@media (max-width: 1023px) {
-			font-size: 32px;
-		}
-
-		@media (max-width: 767px) {
+		@media (min-width: 480px) {
 			font-size: 28px;
 		}
 
-		@media (max-width: 479px) {
-			font-size: 24px;
+		@media (min-width: 768px) {
+			font-size: 32px;
+		}
+
+		@media (min-width: 1024px) {
+			font-size: 36px;
 		}
 
 		.color-primary {
@@ -440,28 +382,33 @@ onBeforeUnmount(() => {
 	.nav-tabs {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem 2rem;
+		gap: 0.75rem 1.25rem;
 		border-bottom: none;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 
-		@media (max-width: 767px) {
-			margin-bottom: 20px;
-			gap: 0.75rem 1.5rem;
+		@media (min-width: 768px) {
+			margin-bottom: 30px;
+			gap: 1rem 2rem;
 		}
 
 		.nav-link {
 			position: relative;
-			font-size: 17px;
+			font-size: 14px;
 			font-weight: 600;
 			color: var(--color-heading);
 			background: transparent;
 			border: none;
-			padding: 0 0 8px 0;
+			padding: 0 0 6px 0;
 			cursor: pointer;
 			transition: color 0.3s ease;
 
-			@media (max-width: 767px) {
+			@media (min-width: 480px) {
 				font-size: 15px;
+			}
+
+			@media (min-width: 768px) {
+				font-size: 17px;
+				padding: 0 0 8px 0;
 			}
 
 			// Separator between tabs
@@ -469,16 +416,28 @@ onBeforeUnmount(() => {
 				content: "";
 				position: absolute;
 				top: 2px;
-				height: 14px;
+				height: 12px;
 				width: 2px;
 				background-color: #e5e5e5;
 
+				@media (min-width: 768px) {
+					height: 14px;
+				}
+
 				[dir="ltr"] & {
-					right: -18px;
+					right: -12px;
+
+					@media (min-width: 768px) {
+						right: -18px;
+					}
 				}
 
 				[dir="rtl"] & {
-					left: -18px;
+					left: -12px;
+
+					@media (min-width: 768px) {
+						left: -18px;
+					}
 				}
 			}
 
@@ -508,12 +467,13 @@ onBeforeUnmount(() => {
 	}
 
 	.tab-content {
-		padding: 20px 0;
+		padding: 15px 0;
 		position: relative;
-		min-height: 300px; // Prevent layout shift during transitions
+		min-height: 200px;
 
-		.tab-pane {
-			// All tab panes are in the DOM for v-show to work
+		@media (min-width: 768px) {
+			padding: 20px 0;
+			min-height: 300px;
 		}
 	}
 
@@ -534,14 +494,15 @@ onBeforeUnmount(() => {
 	}
 
 	.description {
-		font-size: 16px;
-		line-height: 1.8;
+		font-size: 14px;
+		line-height: 1.7;
 		color: #666;
-		margin-bottom: 20px;
+		margin-bottom: 16px;
 
-		@media (max-width: 767px) {
-			font-size: 14px;
-			line-height: 1.7;
+		@media (min-width: 768px) {
+			font-size: 16px;
+			line-height: 1.8;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -554,20 +515,28 @@ onBeforeUnmount(() => {
 			font-weight: 500;
 			color: var(--color-heading);
 			position: relative;
-			margin-bottom: 16px;
-			font-size: 16px;
+			margin-bottom: 10px;
+			font-size: 14px;
+
+			@media (min-width: 768px) {
+				font-size: 16px;
+				margin-bottom: 16px;
+			}
 
 			[dir="ltr"] & {
-				padding-left: 35px;
+				padding-left: 30px;
+
+				@media (min-width: 768px) {
+					padding-left: 35px;
+				}
 			}
 
 			[dir="rtl"] & {
-				padding-right: 35px;
-			}
+				padding-right: 30px;
 
-			@media (max-width: 767px) {
-				font-size: 15px;
-				margin-bottom: 12px;
+				@media (min-width: 768px) {
+					padding-right: 35px;
+				}
 			}
 
 			// Check icon
@@ -575,9 +544,14 @@ onBeforeUnmount(() => {
 				content: "\e913";
 				font-family: "icomoon";
 				color: var(--color-secondary);
-				font-size: 19px;
+				font-size: 17px;
 				position: absolute;
-				top: -3px;
+				top: -2px;
+
+				@media (min-width: 768px) {
+					font-size: 19px;
+					top: -3px;
+				}
 
 				[dir="ltr"] & {
 					left: 0;
@@ -594,22 +568,30 @@ onBeforeUnmount(() => {
 // Image Gallery
 .about-image-gallery {
 	position: relative;
-	padding: 80px 0 65px;
+	padding: 20px 0 40px;
+
+	@media (min-width: 576px) {
+		padding: 40px 0 50px;
+	}
+
+	@media (min-width: 992px) {
+		padding: 80px 0 65px;
+	}
 
 	[dir="ltr"] & {
-		padding-left: 30px;
+		padding-left: 0;
+
+		@media (min-width: 992px) {
+			padding-left: 30px;
+		}
 	}
 
 	[dir="rtl"] & {
-		padding-right: 30px;
-	}
+		padding-right: 0;
 
-	@media (max-width: 991px) {
-		padding: 20px 0 65px;
-	}
-
-	@media (max-width: 575px) {
-		padding: 0;
+		@media (min-width: 992px) {
+			padding-right: 30px;
+		}
 	}
 
 	img {
@@ -617,38 +599,37 @@ onBeforeUnmount(() => {
 	}
 
 	.main-img-1 {
-		width: 390px;
+		width: 100%;
+		max-width: 390px;
 		height: auto;
 		display: block;
-		// Sal.js will handle opacity
 	}
 
 	.main-img-2 {
 		position: absolute;
 		bottom: 0;
-		width: 230px;
-		// Sal.js will handle opacity
+		width: 45%;
+		max-width: 230px;
+		display: none;
+
+		@media (min-width: 576px) {
+			display: block;
+		}
 
 		[dir="ltr"] & {
 			right: 0;
+
+			@media (min-width: 768px) and (max-width: 991px) {
+				right: 20%;
+			}
 		}
 
 		[dir="rtl"] & {
 			left: 0;
-		}
 
-		@media (max-width: 991px) {
-			[dir="ltr"] & {
-				right: 115px;
+			@media (min-width: 768px) and (max-width: 991px) {
+				left: 20%;
 			}
-
-			[dir="rtl"] & {
-				left: 115px;
-			}
-		}
-
-		@media (max-width: 575px) {
-			display: none;
 		}
 	}
 
@@ -660,40 +641,93 @@ onBeforeUnmount(() => {
 
 		li {
 			position: absolute;
-			z-index: -1; // Changed from -1 to positive to be visible
+			z-index: -1;
 
 			img {
 				position: initial;
 				transition: transform 0.1s ease-out;
+				max-width: 50px;
+
+				@media (min-width: 768px) {
+					max-width: 70px;
+				}
+
+				@media (min-width: 1024px) {
+					max-width: none;
+				}
 			}
 
 			&.shape-1 {
-				top: -15px;
+				top: -10px;
+
+				@media (min-width: 768px) {
+					top: -15px;
+				}
 
 				[dir="ltr"] & {
-					right: 95px;
+					right: 60px;
+
+					@media (min-width: 768px) {
+						right: 80px;
+					}
+
+					@media (min-width: 1024px) {
+						right: 95px;
+					}
 				}
 
 				[dir="rtl"] & {
-					left: 95px;
+					left: 60px;
+
+					@media (min-width: 768px) {
+						left: 80px;
+					}
+
+					@media (min-width: 1024px) {
+						left: 95px;
+					}
 				}
 			}
 
 			&.shape-2 {
-				top: 13px;
-				z-index: -2; // Even lower z-index but still positive
+				top: 10px;
+				z-index: -2;
+
+				@media (min-width: 768px) {
+					top: 13px;
+				}
 
 				[dir="ltr"] & {
-					right: 39px;
+					right: 30px;
+
+					@media (min-width: 768px) {
+						right: 35px;
+					}
+
+					@media (min-width: 1024px) {
+						right: 39px;
+					}
 				}
 
 				[dir="rtl"] & {
-					left: 39px;
+					left: 30px;
+
+					@media (min-width: 768px) {
+						left: 35px;
+					}
+
+					@media (min-width: 1024px) {
+						left: 39px;
+					}
 				}
 			}
 
 			&.shape-3 {
-				bottom: 33px;
+				bottom: 25px;
+
+				@media (min-width: 768px) {
+					bottom: 33px;
+				}
 
 				[dir="ltr"] & {
 					left: -2px;
@@ -705,23 +739,47 @@ onBeforeUnmount(() => {
 			}
 
 			&.shape-4 {
-				bottom: -25px;
+				bottom: -20px;
 				z-index: -1;
+				display: none;
+
+				@media (min-width: 768px) {
+					display: block;
+					bottom: -25px;
+				}
 
 				[dir="ltr"] & {
-					right: 40px;
+					right: 30px;
+
+					@media (min-width: 1024px) {
+						right: 40px;
+					}
 				}
 
 				[dir="rtl"] & {
-					left: 40px;
+					left: 30px;
+
+					@media (min-width: 1024px) {
+						left: 40px;
+					}
 				}
 
 				span {
 					display: block;
-					height: 320px;
-					width: 320px;
+					height: 200px;
+					width: 200px;
 					border: 1px solid var(--color-border);
 					border-radius: 50%;
+
+					@media (min-width: 768px) {
+						height: 250px;
+						width: 250px;
+					}
+
+					@media (min-width: 1024px) {
+						height: 320px;
+						width: 320px;
+					}
 				}
 			}
 		}
@@ -733,80 +791,139 @@ onBeforeUnmount(() => {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	display: none;
 
-	@media (max-width: 767px) {
-		display: none;
+	@media (min-width: 768px) {
+		display: block;
 	}
 
 	li {
 		position: absolute;
-		z-index: 1; // Changed from -1 to positive
+		z-index: 1;
 
-		&.shape-5 {
-			top: 20px;
+		img {
+			max-width: 50px;
 
-			[dir="ltr"] & {
-				left: 110px;
+			@media (min-width: 1024px) {
+				max-width: 70px;
 			}
 
-			[dir="rtl"] & {
-				right: 110px;
-			}
-
-			@media (max-width: 1199px) {
-				[dir="ltr"] & {
-					left: 0;
-				}
-
-				[dir="rtl"] & {
-					right: 0;
-				}
-
-				top: 0;
+			@media (min-width: 1200px) {
+				max-width: none;
 			}
 		}
-        
-        &.shape-7 {
-            top: 24px;
 
-            [dir="ltr"] & {
-                right: 120px;
-            }
+		&.shape-5 {
+			top: 10px;
 
-            [dir="rtl"] & {
-                left: 120px;
-            }
+			@media (min-width: 1024px) {
+				top: 15px;
+			}
 
-            @media (max-width: 1199px) {
-                [dir="ltr"] & {
-                    right: 0;
-                }
-
-                [dir="rtl"] & {
-                    left: 0;
-                }
-
-                top: 0;
-            }
-        }
-
-		&.shape-6 {
-			top: -350px;
+			@media (min-width: 1200px) {
+				top: 20px;
+			}
 
 			[dir="ltr"] & {
-				left: 80px;
+				left: 20px;
+
+				@media (min-width: 1024px) {
+					left: 50px;
+				}
+
+				@media (min-width: 1200px) {
+					left: 110px;
+				}
 			}
 
 			[dir="rtl"] & {
-				right: 80px;
+				right: 20px;
+
+				@media (min-width: 1024px) {
+					right: 50px;
+				}
+
+				@media (min-width: 1200px) {
+					right: 110px;
+				}
+			}
+		}
+
+		&.shape-7 {
+			top: 14px;
+
+			@media (min-width: 1024px) {
+				top: 19px;
+			}
+
+			@media (min-width: 1200px) {
+				top: 24px;
+			}
+
+			[dir="ltr"] & {
+				right: 20px;
+
+				@media (min-width: 1024px) {
+					right: 60px;
+				}
+
+				@media (min-width: 1200px) {
+					right: 120px;
+				}
+			}
+
+			[dir="rtl"] & {
+				left: 20px;
+
+				@media (min-width: 1024px) {
+					left: 60px;
+				}
+
+				@media (min-width: 1200px) {
+					left: 120px;
+				}
+			}
+		}
+
+		&.shape-6 {
+			top: -250px;
+
+			@media (min-width: 1200px) {
+				top: -350px;
+			}
+
+			[dir="ltr"] & {
+				left: 40px;
+
+				@media (min-width: 1200px) {
+					left: 80px;
+				}
+			}
+
+			[dir="rtl"] & {
+				right: 40px;
+
+				@media (min-width: 1200px) {
+					right: 80px;
+				}
 			}
 
 			span {
 				display: block;
-				height: 470px;
-				width: 470px;
+				height: 300px;
+				width: 300px;
 				border: 1px solid var(--color-border);
 				border-radius: 50%;
+
+				@media (min-width: 1024px) {
+					height: 400px;
+					width: 400px;
+				}
+
+				@media (min-width: 1200px) {
+					height: 470px;
+					width: 470px;
+				}
 			}
 		}
 	}
@@ -814,21 +931,36 @@ onBeforeUnmount(() => {
 
 // Statistics Section
 .statistics-section {
-	margin-top: 4rem;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: space-between;
-	align-items: center;
+	margin-top: 3rem;
 
-	@media (max-width: 767px) {
-		margin-top: 3rem;
-		gap: 1.5rem;
+	@media (min-width: 768px) {
+		margin-top: 4rem;
+	}
+
+	.statistics-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+		justify-items: center;
+
+		@media (min-width: 480px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1.5rem;
+		}
+
+		@media (min-width: 1280px) {
+			gap: 2rem;
+		}
 	}
 
 	.statistic-div {
-		width: 250px;
-		height: 150px;
+		width: 100%;
+		max-width: 280px;
+		height: 110px;
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 		display: flex;
 		flex-direction: column;
@@ -837,14 +969,17 @@ onBeforeUnmount(() => {
 		border-radius: 10px;
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-		@media (max-width: 767px) {
-			width: 200px;
-			height: 120px;
+		@media (min-width: 640px) {
+			height: 130px;
 		}
 
-		@media (max-width: 479px) {
-			width: 150px;
-			height: 100px;
+		@media (min-width: 768px) {
+			height: 140px;
+		}
+
+		@media (min-width: 1024px) {
+			max-width: none;
+			height: 150px;
 		}
 
 		&:hover {
@@ -853,26 +988,31 @@ onBeforeUnmount(() => {
 		}
 
 		.value-Stat {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-weight: 700;
 
-			@media (max-width: 767px) {
-				font-size: 1.5rem;
+			@media (min-width: 640px) {
+				font-size: 1.75rem;
 			}
 
-			@media (max-width: 479px) {
-				font-size: 1.25rem;
+			@media (min-width: 768px) {
+				font-size: 2rem;
 			}
 		}
 
 		.title-Stat {
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 			color: #666;
 			text-align: center;
 			margin-top: 0.5rem;
+			padding: 0 0.5rem;
 
-			@media (max-width: 479px) {
-				font-size: 0.8rem;
+			@media (min-width: 640px) {
+				font-size: 0.85rem;
+			}
+
+			@media (min-width: 768px) {
+				font-size: 0.9rem;
 			}
 		}
 	}
