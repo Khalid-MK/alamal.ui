@@ -2,23 +2,15 @@
 	<div :dir="direction" class="campus-section edu-campus-area">
 		<!-- Main Content Container -->
 		<div class="max-w-7xl mx-auto">
-			<div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+			<div class="campus-container grid grid-cols-1 xl:grid-cols-12 gap-12">
+
 				<!-- Left Column: Campus Image Gallery (7/12 = 58.33%) -->
-				<div
-					class="xl:col-span-7"
-					data-sal="slide-right"
-					data-sal-delay="50"
-					data-sal-duration="800"
-				>
+				<div class=" xl:col-span-7" data-sal="slide-right" data-sal-delay="50" data-sal-duration="800">
 					<div class="campus-image-gallery">
 						<!-- Main Campus Image -->
 						<div class="campus-thumbnail">
 							<div class="thumbnail">
-								<img
-									src="/img/about/campus-01.webp"
-									alt="Campus"
-					loading="lazy"
-								/>
+								<img src="/img/about/campus-01.webp" alt="Campus" loading="lazy" />
 							</div>
 
 							<!-- Book Trial Session Button -->
@@ -30,7 +22,7 @@
 						</div>
 
 						<!-- Islamic Parallax Shapes Group (Image Side - 3 shapes) -->
-						<ul class="shape-group">
+						<ul class="shape-group hidden lg:block">
 							<!-- Shape 1: Large Circle (CSS - Keep for visual balance) -->
 							<li class="shape-1 scene" ref="scene1">
 								<span data-depth=".8"></span>
@@ -38,32 +30,19 @@
 
 							<!-- Shape 2: Islamic Decorative (shape-51) -->
 							<li class="shape-2 scene" ref="scene2">
-								<img
-									data-depth="1.5"
-									src="/img/islamic-shapes/decorative/shape-51.png"
-									alt="Islamic Decoration"
-								/>
+								<img data-depth="1.5" src="/img/islamic-shapes/decorative/shape-51.png" alt="Islamic Decoration" />
 							</li>
 
 							<!-- Shape 3: Islamic Ornamental (shape-52) -->
 							<li class="shape-3 scene" ref="scene3">
-								<img
-									data-depth="-1.5"
-									src="/img/islamic-shapes/decorative/shape-52.png"
-									alt="Islamic Ornament"
-								/>
+								<img data-depth="-1.5" src="/img/islamic-shapes/decorative/shape-52.png" alt="Islamic Ornament" />
 							</li>
 						</ul>
 					</div>
 				</div>
 
 				<!-- Right Column: Campus Content (5/12 = 41.67%) -->
-				<div
-					class="xl:col-span-5"
-					data-sal="slide-left"
-					data-sal-delay="50"
-					data-sal-duration="800"
-				>
+				<div class="xl:col-span-5" data-sal="slide-left" data-sal-delay="50" data-sal-duration="800">
 					<div class="campus-content">
 						<div class="inner">
 							<!-- Section Title -->
@@ -129,7 +108,7 @@
 						</div>
 
 						<!-- Islamic Parallax Shapes Group (Content Side - 3 shapes) -->
-						<ul class="shape-group">
+						<ul class="shape-group hidden xl:block">
 							<!-- Shape 4: Circle (CSS - Keep for visual balance) -->
 							<li class="shape-4 scene" ref="scene4">
 								<span data-depth=".8"></span>
@@ -269,6 +248,12 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
+.campus-container {
+	@media (max-width: 991px) {
+		padding: 0 20px;
+	}
+}
+
 // Main section
 .campus-section {
 	position: relative;
@@ -397,14 +382,24 @@ onBeforeUnmount(() => {
 	}
 
 	@media (max-width: 1279px) {
-		margin-top: 20px;
+		margin-top: 0;
+		height: fit-content !important;
 		padding: 50px 40px;
 	}
 
 	@media (max-width: 575px) {
-		box-shadow: none;
+		/* box-shadow: none; */
 		padding: 0;
-		margin-top: 20px;
+		margin-top: 0;
+		padding: 30px 20px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 20px 15px;
+	}
+
+	@media (max-width: 375px) {
+		padding: 15px 10px;
 	}
 
 	// Content Side Shapes (3 shapes)
@@ -539,6 +534,13 @@ onBeforeUnmount(() => {
 		/* comment this for convert from ltr to rtl auto  */
 		/* text-align: left; */
 		margin-bottom: 24px;
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+			text-align: center;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
