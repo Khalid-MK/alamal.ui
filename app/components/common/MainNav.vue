@@ -5,7 +5,7 @@
       <ul>
         <li class="menu-item-has-children">
           <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
-            class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 focus:outline-none">
+            class="flex items-center text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 focus:outline-none text-sm lg:text-base">
             {{ $t("Courses") }}
             <Arrow :is-open="isCoursesOpen" />
           </button>
@@ -28,7 +28,8 @@
                       </button>
                       <ul class="sub-menu w-full">
                         <li v-for="course in dept.courses" :key="course.id">
-                          <button @click="goToCourse(course)" class="text-left hover:text-primary">{{ course[locale] }}</button>
+                          <button @click="goToCourse(course)" class="text-left hover:text-primary">{{ course[locale]
+                            }}</button>
                         </li>
                       </ul>
                     </li>
@@ -54,25 +55,25 @@
       </ul>
       <!-- About Link -->
       <NuxtLink to="/about"
-        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
         {{ $t("About") }}
       </NuxtLink>
 
       <!-- FAQs Link -->
       <NuxtLink to="/faq-page"
-        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
         {{ $t("FAQs") }}
       </NuxtLink>
 
       <!-- Events Link -->
       <NuxtLink to="/events"
-        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
         {{ $t("Events") }}
       </NuxtLink>
 
       <!-- Contact Link -->
       <NuxtLink to="/contact"
-        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1">
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
         {{ $t("Contact") }}
       </NuxtLink>
     </div>

@@ -1,0 +1,540 @@
+/* ===========================
+   Responsive Typography Utilities
+   =========================== */
+
+/* Global Responsive Text Classes */
+.text-responsive-xs {
+  font-size: 12px;
+
+  @media (max-width: 767px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 10px;
+  }
+}
+
+.text-responsive-sm {
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 12px;
+  }
+}
+
+.text-responsive-base {
+  font-size: 16px;
+
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 14px;
+  }
+}
+
+.text-responsive-lg {
+  font-size: 18px;
+
+  @media (max-width: 1023px) {
+    font-size: 17px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 15px;
+  }
+}
+
+.text-responsive-xl {
+  font-size: 20px;
+
+  @media (max-width: 1023px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 15px;
+  }
+}
+
+.text-responsive-2xl {
+  font-size: 24px;
+
+  @media (max-width: 1023px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 18px;
+  }
+}
+
+.text-responsive-3xl {
+  font-size: 30px;
+
+  @media (max-width: 1023px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 22px;
+  }
+}
+
+.text-responsive-4xl {
+  font-size: 36px;
+
+  @media (max-width: 1023px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 24px;
+  }
+}
+
+.text-responsive-5xl {
+  font-size: 48px;
+
+  @media (max-width: 1199px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 28px;
+  }
+}
+
+.text-responsive-6xl {
+  font-size: 56px;
+
+  @media (max-width: 1199px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 639px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 28px;
+  }
+}
+
+/* ===========================
+   Responsive Button Utilities
+   =========================== */
+
+.btn-responsive-sm {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 479px) {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+}
+
+.btn-responsive-md {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 25px;
+  font-size: 15px;
+
+  @media (max-width: 767px) {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 22px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 479px) {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+}
+
+.btn-responsive-lg {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 30px;
+  font-size: 16px;
+
+  @media (max-width: 1023px) {
+    height: 55px;
+    line-height: 55px;
+    padding: 0 28px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 767px) {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 25px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 479px) {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 22px;
+    font-size: 13px;
+  }
+}
+
+.btn-responsive-xl {
+  height: 70px;
+  line-height: 70px;
+  padding: 0 35px;
+  font-size: 18px;
+
+  @media (max-width: 1023px) {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 30px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    height: 55px;
+    line-height: 55px;
+    padding: 0 25px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 479px) {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+}
+
+/* ===========================
+   Responsive Icon Utilities
+   =========================== */
+
+.icon-responsive-sm {
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 12px;
+  }
+}
+
+.icon-responsive-md {
+  font-size: 16px;
+
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 14px;
+  }
+}
+
+.icon-responsive-lg {
+  font-size: 18px;
+
+  @media (max-width: 767px) {
+    font-size: 17px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 16px;
+  }
+}
+
+.icon-responsive-xl {
+  font-size: 24px;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 20px;
+  }
+}
+
+/* ===========================
+   Responsive Line Height Utilities
+   =========================== */
+
+.leading-responsive-tight {
+  line-height: 1.3;
+
+  @media (max-width: 767px) {
+    line-height: 1.25;
+  }
+
+  @media (max-width: 479px) {
+    line-height: 1.2;
+  }
+}
+
+.leading-responsive-normal {
+  line-height: 1.5;
+
+  @media (max-width: 767px) {
+    line-height: 1.4;
+  }
+
+  @media (max-width: 479px) {
+    line-height: 1.35;
+  }
+}
+
+.leading-responsive-relaxed {
+  line-height: 1.8;
+
+  @media (max-width: 767px) {
+    line-height: 1.7;
+  }
+
+  @media (max-width: 479px) {
+    line-height: 1.6;
+  }
+}
+
+/* ===========================
+   Responsive Spacing Utilities
+   =========================== */
+
+.mb-responsive-sm {
+  margin-bottom: 16px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 479px) {
+    margin-bottom: 8px;
+  }
+}
+
+.mb-responsive-md {
+  margin-bottom: 24px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 479px) {
+    margin-bottom: 16px;
+  }
+}
+
+.mb-responsive-lg {
+  margin-bottom: 32px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 479px) {
+    margin-bottom: 24px;
+  }
+}
+
+.mb-responsive-xl {
+  margin-bottom: 48px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 479px) {
+    margin-bottom: 32px;
+  }
+}
+
+/* ===========================
+   Component-Specific Utilities
+   =========================== */
+
+/* Section Titles */
+.section-title-responsive {
+  .pre-title {
+    @extend .text-responsive-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .title {
+    @extend .text-responsive-5xl;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 28px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 479px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .shape-line {
+    @extend .icon-responsive-md;
+    margin-top: 8px;
+  }
+}
+
+/* Card Content */
+.card-content-responsive {
+  .card-title {
+    @extend .text-responsive-xl;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 14px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 479px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .card-description {
+    @extend .text-responsive-base;
+    @extend .leading-responsive-relaxed;
+    color: #666;
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 479px) {
+      margin-bottom: 14px;
+    }
+  }
+}
+
+/* Navigation Items */
+.nav-item-responsive {
+  @extend .text-responsive-base;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Footer Text */
+.footer-text-responsive {
+  @extend .text-responsive-base;
+  @extend .leading-responsive-relaxed;
+}
+
+.footer-heading-responsive {
+  @extend .text-responsive-xl;
+  font-weight: 600;
+  margin-bottom: 16px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 12px;
+  }
+}
+
+/* ===========================
+   Fluid Typography (Optional)
+   =========================== */
+
+.text-fluid-sm {
+  font-size: clamp(12px, 2vw, 14px);
+}
+
+.text-fluid-base {
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.text-fluid-lg {
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+.text-fluid-xl {
+  font-size: clamp(18px, 3.5vw, 24px);
+}
+
+.text-fluid-2xl {
+  font-size: clamp(20px, 4vw, 30px);
+}
+
+.text-fluid-3xl {
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.text-fluid-4xl {
+  font-size: clamp(28px, 6vw, 48px);
+}
+
+.text-fluid-5xl {
+  font-size: clamp(32px, 7vw, 56px);
+}
