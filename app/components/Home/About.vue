@@ -68,7 +68,7 @@
 				</div>
 
 				<!-- Right Column: Image Gallery -->
-				<div class="image-column">
+				<div class="image-column hidden lg:block">
 					<div class="about-image-gallery">
 						<!-- Main Image 1 -->
 						<img class="main-img-1" data-sal="slide-right" data-sal-delay="100" data-sal-duration="800"

@@ -254,7 +254,6 @@ onBeforeUnmount(() => {
 
 // Title
 .title {
-	font-family: var(--font-primary); // Spartan
 	font-weight: 700;
 	font-size: 48px;
 	line-height: 1.25;
