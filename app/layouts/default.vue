@@ -3,6 +3,8 @@
     <Header />
     <slot></slot>
     <FooterOne />
+    <!-- Floating Prayer Times Widget -->
+    <PrayerTimesFloatingWidget />
   </main>
 </template>
 

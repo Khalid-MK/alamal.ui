@@ -5,15 +5,6 @@ import blogsData from "@/constant/Blogs.json";
 const { locale, localeProperties } = useI18n();
 const blogs = computed(() => blogsData[locale.value].Blogs);
 
-const prayerTimes = [
-  { salat: "Fajr", start: "3:48 AM", iqamah: "4:03 AM", isAccent: true },
-  { salat: "Zuhr", start: "11:53 AM", iqamah: "12:08 PM", isAccent: false },
-  { salat: "Asr", start: "3:13 PM", iqamah: "3:28 PM", isAccent: false },
-  { salat: "Magrib", start: "Magrib", iqamah: "6:17 PM", isAccent: true },
-  { salat: "Isha", start: "7:56 PM", iqamah: "8:11 PM", isAccent: true },
-  { salat: "Jummah", start: "1:30 PM", iqamah: "2:00 PM", isAccent: false },
-];
-
 // Helper function to handle image loading errors
 const handleImageError = (event: Event) => {
   const imgElement = event.target as HTMLImageElement;
@@ -24,12 +15,9 @@ const handleImageError = (event: Event) => {
 </script>
 
 <template>
-  <div class="p-4 sm:p-8 min-h-screen">
+  <div class="p-4 sm:p-8 max-w-7xl mx-auto">
     <div class="max-w-7xl mx-auto bg-white p-6 sm:p-10">
-      <div
-        class="flex flex-col lg:flex-row lg:space-x-12 space-y-12 lg:space-y-0"
-      >
-        <div class="flex-1">
+      <div class="w-full">
           <h2 class="BlogTitle text-3xl font-extrabold mb-8 text-primary">
             {{ $t("Blogs") }}
             <span class="shape-line"><i class="icon-19"></i></span>
@@ -107,77 +95,11 @@ const handleImageError = (event: Event) => {
             </div>
           </div>
         </div>
-
-        <!-- SECTION 2: PRAYER TIMES -->
-        <div class="lg:w-96">
-          <h2 class="PrayerTitle text-3xl font-extrabold mb-8 text-primary">
-            {{ $t("Times") }}
-            <span class="text-secondary">{{ $t("Prayer") }}</span>
-            <span
-              class="shape-line"
-              ><i class="icon-19"></i
-            ></span>
-          </h2>
-          <!-- <div class="w-24 h-1 bg-primary mx-auto lg:mx-0 -mt-6 mb-8"></div> -->
-
-          <!-- Prayer Times Table -->
-          <div class="overflow-x-auto">
-            <table class="w-full text-left table-fixed border-collapse">
-              <thead>
-                <tr
-                  class="text-primary font-semibold text-base border-b-2 border-primary/20"
-                >
-                  <th class="w-1/3 py-3 px-2">{{ $t("Salat") }}</th>
-                  <th class="w-1/3 py-3 px-2">{{ $t("Start") }}</th>
-                  <th class="w-1/3 py-3 px-2">{{ $t("Iqamah") }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="prayer in prayerTimes"
-                  :key="prayer.salat"
-                  class="text-gray-800 border-b border-gray-100 last:border-b-0"
-                >
-                  <td
-                    class="py-3 px-2 font-medium text-primary"
-                  >
-                    {{ prayer.salat }}
-                  </td>
-                  <td class="py-3 px-2 text-body-1 font-medium">
-                    {{ prayer.start }}
-                  </td>
-                  <td class="py-3 px-2 text-body-1 font-medium">
-                    {{ prayer.iqamah }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Location and Date Footer -->
-          <div class="mt-8 p-4 text-center border-t shadow-md border-gray-200">
-            <p class="text-sm text-primary font-semibold mb-1">
-              {{ $t("Location") }}: {{ $t("Makka") }}
-            </p>
-            <p class="text-sm text-gray-600">
-              {{ $t("Saturday, 20th September, 2025") }}
-            </p>
-            <p class="text-xs text-gray-500">
-              ({{ $t("26th Rabi'-Al-Awwal, 1447") }})
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-/* Custom styling for the table columns to ensure fixed width layout */
-.table-fixed {
-  table-layout: fixed;
-}
-
 .BlogTitle {
   position: relative;
   width: fit-content;
@@ -186,16 +108,6 @@ const handleImageError = (event: Event) => {
     position: absolute;
     left: 10px;
     top: 26px;
-  }
-}
-.PrayerTitle {
-  position: relative;
-  width: fit-content;
-  .shape-line {
-    font-size: 20px;
-    position: absolute;
-    left: 0px;
-    top: 28px;
   }
 }
 </style>

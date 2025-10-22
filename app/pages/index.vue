@@ -6,10 +6,10 @@
     <HomeVideoArea />
     <HomeFeaturesArea />
     <HomeCampus />
-    <HomeEvents />
-    <HomeBlogAndPrayer />
     <!-- <HomeZoomSection/> -->
     <HomeTeamArea />
+    <HomeEvents />
+    <HomeBlogAndPrayer />
     <HomeUniversityCTA />
   </main>
 </template>
