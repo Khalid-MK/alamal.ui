@@ -14,12 +14,8 @@
 			<div class="isotope-wrapper">
 				<!-- Filter Buttons -->
 				<div class="isotop-filter flex flex-wrap items-center justify-center gap-2 mb-12">
-					<button
-						v-for="filter in filters"
-						:key="filter.id"
-						:class="['filter-btn', { 'is-checked': activeFilter === filter.id }]"
-						@click="activeFilter = filter.id"
-					>
+					<button v-for="filter in filters" :key="filter.id"
+						:class="['filter-btn', { 'is-checked': activeFilter === filter.id }]" @click="activeFilter = filter.id">
 						<span class="filter-text">{{ $t(`courseArea.filters.${filter.id}`) }}</span>
 						<span class="filter-arrow"></span>
 					</button>
@@ -28,11 +24,7 @@
 				<!-- Course Slider -->
 				<div class="courses-slider-wrapper">
 					<swiper-container ref="containerRef" :init="false" class="courses-swiper">
-						<swiper-slide
-							v-for="course in filteredCourses"
-							:key="course.id"
-							class="course-slide"
-						>
+						<swiper-slide v-for="course in filteredCourses" :key="course.id" class="course-slide">
 							<QuranCourseCard :course="course" />
 						</swiper-slide>
 					</swiper-container>
@@ -54,19 +46,11 @@
 		<!-- Islamic Animated Shapes -->
 		<ul class="shape-group hidden lg:block">
 			<li class="shape-1 scene" ref="scene1">
-				<img
-					data-depth="1"
-					src="/img/islamic-shapes/banner/bismillah-2.png"
-					alt="Islamic Decoration"
-				/>
+				<img data-depth="1" src="/img/islamic-shapes/banner/bismillah-2.png" alt="Islamic Decoration" />
 			</li>
 
 			<li class="shape-4 scene" ref="scene4">
-				<img
-					data-depth="-1.5"
-					src="/img/islamic-shapes/decorative/shape-74.png"
-					alt="Islamic Design"
-				/>
+				<img data-depth="-1.5" src="/img/islamic-shapes/decorative/shape-74.png" alt="Islamic Design" />
 			</li>
 		</ul>
 	</div>
@@ -287,9 +271,13 @@ const { instance, next, prev, to } = useSwiper(containerRef, {
 		type: 'bullets',
 	},
 	breakpoints: {
+		640: {
+			slidesPerView: 1.5,
+			spaceBetween: 16,
+		},
 		768: {
 			slidesPerView: 2,
-			spaceBetween: 32,
+			spaceBetween: 24,
 		},
 		1024: {
 			slidesPerView: 3,
@@ -360,6 +348,19 @@ onBeforeUnmount(() => {
 	overflow: hidden;
 	isolation: isolate;
 	background: url(/img/bg/bg-image-53.webp) center center;
+	background-size: cover;
+}
+
+.max-w-7xl {
+	width: 100%;
+	max-width: 1280px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	@media (max-width: 640px) {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
 }
 
 .section-gap-large {
@@ -392,21 +393,43 @@ onBeforeUnmount(() => {
 		color: var(--color-secondary);
 		letter-spacing: 1px;
 		margin-bottom: 12px;
+
+		@media (max-width: 767px) {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 11px;
+			margin-bottom: 8px;
+		}
 	}
 
 	.title {
-		font-size: 40px;
+		font-size: 48px;
 		font-weight: 700;
 		color: var(--color-heading);
 		line-height: 1.3;
 		margin: 0;
 
+		@media (max-width: 1199px) {
+			font-size: 42px;
+		}
+
 		@media (max-width: 1023px) {
-			font-size: 32px;
+			font-size: 36px;
 		}
 
 		@media (max-width: 767px) {
+			font-size: 32px;
+		}
+
+		@media (max-width: 639px) {
 			font-size: 28px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 24px;
 		}
 	}
 
@@ -415,6 +438,11 @@ onBeforeUnmount(() => {
 		margin-top: 8px;
 		color: var(--color-secondary);
 		font-size: 14px;
+
+		@media (max-width: 767px) {
+			font-size: 12px;
+			margin-top: 6px;
+		}
 	}
 }
 
@@ -441,6 +469,13 @@ onBeforeUnmount(() => {
 			padding: 0 25px;
 			height: 50px;
 			font-size: 12px;
+		}
+
+		@media (max-width: 640px) {
+			min-width: 80px;
+			font-size: 11px;
+			height: 45px;
+			padding: 0 15px;
 		}
 
 		// Arrow indicator
@@ -488,6 +523,10 @@ onBeforeUnmount(() => {
 
 .courses-swiper {
 	padding-bottom: 20px;
+
+	@media (max-width: 640px) {
+		padding-bottom: 12px;
+	}
 }
 
 .course-slide {
@@ -515,6 +554,11 @@ onBeforeUnmount(() => {
 		align-items: center;
 		justify-content: center;
 		transition: all 0.3s ease;
+
+		@media (max-width: 640px) {
+			width: 36px;
+			height: 36px;
+		}
 
 		&:hover {
 			background-color: #d43d52;
@@ -566,6 +610,11 @@ onBeforeUnmount(() => {
 			transition: all 0.3s ease;
 			opacity: 1;
 
+			@media (max-width: 767px) {
+				width: 8px;
+				height: 8px;
+			}
+
 			&.swiper-pagination-bullet-active {
 				background-color: var(--color-secondary);
 				width: 30px;
@@ -594,7 +643,7 @@ onBeforeUnmount(() => {
 
 		&.shape-1 {
 			top: 120px;
-    		right: 80px;
+			right: 80px;
 
 			[dir="rtl"] & {
 				right: auto;

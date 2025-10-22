@@ -4,12 +4,7 @@
 			<!-- Thumbnail Section -->
 			<div class="thumbnail">
 				<NuxtLink :to="`/course-details/${course.id}`" class="thumbnail-link">
-					<img
-						:src="course.image"
-						:alt="$t(course.titleKey)"
-						loading="lazy"
-						class="course-image"
-					/>
+					<img :src="course.image" :alt="$t(course.titleKey)" loading="lazy" class="course-image" />
 					<div class="image-overlay"></div>
 				</NuxtLink>
 			</div>
@@ -46,10 +41,7 @@
 
 					<!-- Action Button -->
 					<div class="read-more-btn">
-						<NuxtLink
-							:to="`/course-details/${course.id}`"
-							class="edu-btn btn-medium"
-						>
+						<NuxtLink :to="`/course-details/${course.id}`" class="edu-btn btn-medium">
 							{{ $t("courseArea.enrollNow") }}
 							<i class="icon-4"></i>
 						</NuxtLink>
@@ -206,12 +198,27 @@ const { t: $t } = useI18n();
 			margin-bottom: 16px;
 			color: var(--color-heading);
 
+			@media (max-width: 1023px) {
+				font-size: 17px;
+				margin-bottom: 14px;
+			}
+
+			@media (max-width: 767px) {
+				font-size: 16px;
+				margin-bottom: 12px;
+			}
+
+			@media (max-width: 479px) {
+				font-size: 15px;
+				margin-bottom: 10px;
+			}
+
 			a {
 				color: var(--color-heading);
 				text-decoration: none;
 				transition: color 0.3s ease;
 				overflow: hidden;
-    			text-overflow: ellipsis;
+				text-overflow: ellipsis;
 
 				&:hover {
 					color: var(--color-primary);
@@ -366,24 +373,24 @@ const { t: $t } = useI18n();
 }
 
 .thumbnail::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(39.07deg, rgba(26, 182, 157, 0.7) 14.65%, rgba(49, 185, 120, 0.7) 85.16%);
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  pointer-events: none;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(39.07deg, rgba(26, 182, 157, 0.7) 14.65%, rgba(49, 185, 120, 0.7) 85.16%);
+	border-radius: 5px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	pointer-events: none;
 }
 
 .edu-course:hover .thumbnail::after {
-  opacity: 0.2;
-  visibility: visible;
+	opacity: 0.2;
+	visibility: visible;
 }
 </style>

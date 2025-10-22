@@ -2,24 +2,14 @@
   <section :dir="direction" class="features-area-3">
     <div class="container">
       <div class="features-grid-wrap">
-        <div
-          v-for="item in features"
-          :key="item.id"
-          :class="[
-            'features-box',
-            'features-style-3',
-            item.colorClass,
-            'edublink-svg-animate',
-          ]"
-          ref="cards"
-        >
+        <div v-for="item in features" :key="item.id" :class="[
+          'features-box',
+          'features-style-3',
+          item.colorClass,
+          'edublink-svg-animate',
+        ]" ref="cards">
           <div class="icon">
-            <img
-              class="svgInject"
-              :src="item.icon"
-              :alt="item.title + ' icon'"
-              loading="lazy"
-            />
+            <img class="svgInject" :src="item.icon" :alt="item.title + ' icon'" loading="lazy" />
           </div>
           <div class="content">
             <h4 class="title">{{ item.title }}</h4>
@@ -32,16 +22,17 @@
 </template>
 
 <script lang="ts" setup>
-import featuresData from"@/constant/FeatureArea.json"
+import featuresData from "@/constant/FeatureArea.json"
 
-const {locale ,localeProperties} =useI18n()
-const direction =computed(()=>localeProperties.value.dir)
-const features =computed(()=>featuresData[locale.value])
+const { locale, localeProperties } = useI18n()
+const direction = computed(() => localeProperties.value.dir)
+const features = computed(() => featuresData[locale.value])
 
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/tailwind.scss";
 @import "@/assets/css/helpers";
+
 /*-------------------
   Features Styles
 ---------------------*/
@@ -65,11 +56,11 @@ const features =computed(()=>featuresData[locale.value])
 
 .features-box {
   padding: 50px 30px;
-  /* text-align: center; */
   border-radius: 4px;
   box-shadow: var(--shadow-darker);
   background-color: var(--color-white);
   transition: var(--transition);
+
   .icon {
     height: 80px;
     width: 80px;
@@ -81,23 +72,21 @@ const features =computed(()=>featuresData[locale.value])
     margin: 0 auto 28px;
     transition: var(--transition);
   }
+
   .content {
-    /* line-height: var(--h4-lineHeight); */
-    /* [dir="rtl"] & {
-
-      text-align: right;
-
-    } */
     font-family: var(--font-secondary);
+
     .title {
       margin-bottom: 15px;
       transition: var(--transition);
       font-size: var(--h4);
       font-weight: var(--p-semi-bold);
+
       span {
         display: block;
       }
     }
+
     p {
       color: var(--color-heading);
       margin-bottom: 0;
@@ -109,10 +98,12 @@ const features =computed(()=>featuresData[locale.value])
     .icon {
       background-color: rgba(26, 182, 157, 0.1);
       color: var(--color-primary);
+
       &:after {
         background-color: var(--color-primary);
       }
     }
+
     &:hover {
       .icon {
         background-color: rgba(26, 182, 157, 1);
@@ -120,14 +111,17 @@ const features =computed(()=>featuresData[locale.value])
       }
     }
   }
+
   &.color-secondary-style {
     .icon {
       background-color: rgba(238, 74, 98, 0.1);
       color: var(--color-secondary);
+
       &:after {
         background-color: var(--color-secondary);
       }
     }
+
     &:hover {
       .icon {
         background-color: rgba(238, 74, 98, 1);
@@ -135,14 +129,17 @@ const features =computed(()=>featuresData[locale.value])
       }
     }
   }
+
   &.color-extra02-style {
     .icon {
       background-color: rgba(142, 86, 255, 0.1);
       color: var(--color-extra02);
+
       &:after {
         background-color: var(--color-extra02);
       }
     }
+
     &:hover {
       .icon {
         background-color: rgba(142, 86, 255, 1);
@@ -150,34 +147,61 @@ const features =computed(()=>featuresData[locale.value])
       }
     }
   }
+
   &.features-style-3 {
     background-color: transparent;
     box-shadow: none;
     display: flex;
     align-items: flex-start;
     padding: 50px 25px 42px;
-    /* text-align: left; */
-    gap:20px;
+    gap: 20px;
+
+    // Tablet
     @media #{$md-layout} {
-      padding: 40px 50px;
+      padding: 40px 30px;
+      gap: 15px;
     }
+
+    // Mobile
     @media #{$sm-layout} {
-      padding: 30px 25px;
+      padding: 30px 20px;
+      gap: 15px;
     }
+
+    // Extra small mobile
+    @media #{$large-mobile} {
+      padding: 25px 15px;
+      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     .edublink-svg-animate {
-            svg {
-                path {
-                    stroke: #ffffff !important;
-                    max-width: 38px;
-                }
-            }
+      svg {
+        path {
+          stroke: #ffffff !important;
+          max-width: 38px;
         }
-    &:first-child {
-      padding-left: 50px;
-      @media #{$sm-layout} {
-        padding-left: 25px;
       }
     }
+
+    &:first-child {
+      padding-left: 50px;
+
+      @media #{$md-layout} {
+        padding-left: 30px;
+      }
+
+      @media #{$sm-layout} {
+        padding-left: 20px;
+      }
+
+      @media #{$large-mobile} {
+        padding-left: 15px;
+      }
+    }
+
     .icon {
       margin-top: 2px;
       height: auto;
@@ -185,39 +209,97 @@ const features =computed(()=>featuresData[locale.value])
       min-width: 50px;
       background-color: transparent;
       font-size: 40px;
-      /* margin-right: 20px; */
       margin-bottom: 0;
-    }
-    .content {
-      flex: 1;
-      p {
-        color: var(--color-body);
+      flex-shrink: 0;
+
+      @media #{$large-mobile} {
+        margin-top: 0;
+        font-size: 36px;
+        min-width: 45px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
+
+    .content {
+      flex: 1;
+
+      .title {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+
+        @media (max-width: 1023px) {
+          font-size: 18px;
+          margin-bottom: 12px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        @media (max-width: 479px) {
+          font-size: 15px;
+          margin-bottom: 8px;
+        }
+      }
+
+      p {
+        color: var(--color-body);
+        font-size: 16px;
+        line-height: 1.6;
+
+        @media (max-width: 1023px) {
+          font-size: 15px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 479px) {
+          font-size: 13px;
+          line-height: 1.4;
+        }
+      }
+    }
+
     &:hover {
       .icon {
         background-color: transparent;
         color: inherit;
       }
+
       &.color-primary-style {
         background-color: rgba(26, 182, 157, 0.07);
+
         &:hover {
           .icon {
             color: var(--color-primary);
           }
         }
       }
+
       &.color-secondary-style {
         &:hover {
           background-color: rgba(238, 74, 98, 0.07);
+
           .icon {
             color: var(--color-secondary);
           }
         }
       }
+
       &.color-extra02-style {
         &:hover {
           background-color: rgba(142, 86, 255, 0.07);
+
           .icon {
             color: var(--color-extra02);
           }
@@ -230,18 +312,27 @@ const features =computed(()=>featuresData[locale.value])
 .features-grid-wrap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   @media #{$md-layout} {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media #{$sm-layout} {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media #{$large-mobile} {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .features-area-3 {
+  padding: 0 15px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 30px;
+  }
+
   .features-grid-wrap {
     grid-template-columns: repeat(3, 1fr);
     background-color: var(--color-white);
@@ -251,18 +342,45 @@ const features =computed(()=>featuresData[locale.value])
     z-index: 2;
     bottom: 0px;
     position: relative;
+
+    // Tablet breakpoint
     @media only screen and (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: -80px;
+    }
+
+    // Mobile breakpoint
+    @media only screen and (max-width: 767px) {
       grid-template-columns: repeat(1, 1fr);
+      margin-top: -60px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    // Extra small mobile
+    @media only screen and (max-width: 480px) {
+      margin-top: -40px;
+      border-radius: 4px;
     }
   }
 }
 
-/*  */
 .container {
   margin: 0 auto;
-  @media only screen and (max-width: 767px) {
-    padding-right: 15px;
-    padding-left: 15px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media only screen and (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    max-width: 960px;
   }
 
   @media only screen and (min-width: 1200px) {

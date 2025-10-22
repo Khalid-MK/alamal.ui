@@ -2,45 +2,31 @@
   <footer class="bg-[#111212] text-gray-300">
     <!-- Main footer -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div
-        class="flex flex-col lg:flex-row lg:justify-between lg:space-x-10 space-y-10 lg:space-y-0"
-      >
+      <div class="flex flex-col lg:flex-row lg:justify-between lg:space-x-10 space-y-10 lg:space-y-0">
         <!-- Logo & About -->
         <div class="flex-1 max-w-sm">
           <NuxtLink to="/" class="inline-block mb-4">
-            <img
-              src="/img/logo/coliouredlogo&text.svg"
-              alt="footer-logo"
-              class="h-12"
-            />
+            <img src="/img/logo/coliouredlogo&text.svg" alt="footer-logo" class="h-12" />
           </NuxtLink>
-          <p class="text-gray-400 text-sm mb-6">
+          <p class="text-gray-400 text-sm lg:text-base mb-6 leading-relaxed">
             Great lesson ideas and lesson plans for ESL teachers! Educators can
             customize lessons as best plans to knowledge.
           </p>
           <div class="flex space-x-3">
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white"
-            >
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-sky-400 hover:text-white"
-            >
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-sky-400 hover:text-white">
               <i class="fab fa-twitter"></i>
             </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-pink-500 hover:text-white"
-            >
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-pink-500 hover:text-white">
               <i class="fab fa-instagram"></i>
             </a>
-            <a
-              href="#"
-              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white"
-            >
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-[#111212] flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white">
               <i class="fab fa-linkedin-in"></i>
             </a>
           </div>
@@ -48,96 +34,71 @@
 
         <!-- Online Platform -->
         <div class="flex-1">
-          <h3 class="text-lg font-semibold text-white mb-4">Online Platform</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-lg lg:text-xl font-semibold text-white mb-4">Online Platform</h3>
+          <ul class="space-y-2 text-sm lg:text-base">
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Proper Guidelines</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Proper Guidelines
+              </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Digital Library</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Digital Library</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Compare Us</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Compare Us</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/become-instructor" class="hover:text-white"
-                >Become Instructor</NuxtLink
-              >
+              <NuxtLink to="/become-instructor" class="hover:text-white transition-colors duration-300">Become
+                Instructor</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Build Career</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Build Career</NuxtLink>
             </li>
           </ul>
         </div>
 
         <!-- Browse Courses -->
         <div class="flex-1">
-          <h3 class="text-lg font-semibold text-white mb-4">Browse Courses</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-lg lg:text-xl font-semibold text-white mb-4">Browse Courses</h3>
+          <ul class="space-y-2 text-sm lg:text-base">
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Development</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Development</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Business</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Business</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Health & Fitness</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Health & Fitness</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Life Styles</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Life Styles</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Photography</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Photography</NuxtLink>
             </li>
           </ul>
         </div>
 
         <!-- Insight Community -->
         <div class="flex-1">
-          <h3 class="text-lg font-semibold text-white mb-4">
+          <h3 class="text-lg lg:text-xl font-semibold text-white mb-4">
             Insight Community
           </h3>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2 text-sm lg:text-base">
             <li>
-              <NuxtLink to="/contact" class="hover:text-white"
-                >Global Partners</NuxtLink
-              >
+              <NuxtLink to="/contact" class="hover:text-white transition-colors duration-300">Global Partners</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/faq-page" class="hover:text-white">Forum</NuxtLink>
+              <NuxtLink to="/faq-page" class="hover:text-white transition-colors duration-300">Forum</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/contact" class="hover:text-white"
-                >Help & Support</NuxtLink
-              >
+              <NuxtLink to="/contact" class="hover:text-white transition-colors duration-300">Help & Support</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/course" class="hover:text-white"
-                >Community</NuxtLink
-              >
+              <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Community</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/faq-details" class="hover:text-white"
-                >Documentation</NuxtLink
-              >
+              <NuxtLink to="/faq-details" class="hover:text-white transition-colors duration-300">Documentation
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -147,16 +108,11 @@
     <!-- Bottom bar -->
     <div v-if="false" class="bg-[#111212] border-t border-gray-800">
       <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0"
-      >
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
         <!-- Left -->
         <div class="text-sm text-gray-400">
           © Copyrighted & Designed by
-          <a
-            href="https://themeforest.net/user/bdevs"
-            class="text-[var(--color-primary)] hover:underline"
-            >BDevs</a
-          >
+          <a href="https://themeforest.net/user/bdevs" class="text-[var(--color-primary)] hover:underline">BDevs</a>
         </div>
 
         <!-- Center -->
@@ -174,22 +130,14 @@
 
         <!-- Right -->
         <div class="w-full md:w-auto">
-          <form
-            action="#"
-            class="flex items-center bg-[#111212] rounded-md overflow-hidden"
-          >
+          <form action="#" class="flex items-center bg-[#111212] rounded-md overflow-hidden">
             <div class="flex items-center px-3 text-gray-400">
               <i class="fas fa-envelope"></i>
             </div>
-            <input
-              type="email"
-              placeholder="Enter Email"
-              class="flex-1 px-3 py-2 text-sm bg-transparent outline-none text-white placeholder-gray-400"
-            />
-            <button
-              type="submit"
-              class="bg-[var(--color-primary)] text-white px-4 py-2 text-sm hover:bg-[var(--color-primary-hover)] flex items-center space-x-2"
-            >
+            <input type="email" placeholder="Enter Email"
+              class="flex-1 px-3 py-2 text-sm bg-transparent outline-none text-white placeholder-gray-400" />
+            <button type="submit"
+              class="bg-[var(--color-primary)] text-white px-4 py-2 text-sm hover:bg-[var(--color-primary-hover)] flex items-center space-x-2">
               <span>Subscribe</span>
               <i class="fas fa-paper-plane"></i>
             </button>

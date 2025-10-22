@@ -9,12 +9,8 @@
 					<div class="video-banner-content">
 						<!-- Video Button -->
 						<div class="video-btn">
-							<button
-								@click="openVideoModal"
-								class="video-play-btn"
-								:aria-label="$t('videoArea.playButtonAriaLabel')"
-								type="button"
-							>
+							<button @click="openVideoModal" class="video-play-btn" :aria-label="$t('videoArea.playButtonAriaLabel')"
+								type="button">
 								<i class="icon-18"></i>
 							</button>
 						</div>
@@ -29,32 +25,17 @@
 		<!-- Video Modal (using Teleport to body) -->
 		<Teleport to="body">
 			<Transition name="modal-fade">
-				<div
-					v-if="isModalOpen"
-					class="video-modal-overlay"
-					@click="closeVideoModal"
-				>
+				<div v-if="isModalOpen" class="video-modal-overlay" @click="closeVideoModal">
 					<div class="video-modal-container" @click.stop>
 						<!-- Close Button -->
-						<button
-							@click="closeVideoModal"
-							class="video-modal-close"
-							aria-label="Close video"
-							type="button"
-						>
+						<button @click="closeVideoModal" class="video-modal-close" aria-label="Close video" type="button">
 							×
 						</button>
 
 						<!-- Video Content -->
 						<div class="video-modal-content">
 							<!-- Local Video (MP4) -->
-							<video
-								v-if="isModalOpen"
-								ref="videoPlayer"
-								controls
-								autoplay
-								class="video-player"
-							>
+							<video v-if="isModalOpen" ref="videoPlayer" controls autoplay class="video-player">
 								<source src="/videos/welcome.mp4" type="video/mp4" />
 								Your browser does not support the video tag.
 							</video>
@@ -122,17 +103,17 @@ onBeforeUnmount(() => {
 // Video Area Section
 .video-area-section {
 	position: relative;
-    padding: 210px 0;
-    background-image: url(/img/bg/bg-image-14.webp);
-    mask-image: url(/img/bg/mask-01.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    isolation: isolate;
-    z-index: 1;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-position: bottom;
+	padding: 210px 0;
+	background-image: url(/img/bg/bg-image-14.webp);
+	mask-image: url(/img/bg/mask-01.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	isolation: isolate;
+	z-index: 1;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: cover;
+	-webkit-mask-position: bottom;
 
 	// Responsive padding
 	@media (max-width: 991px) {
@@ -250,10 +231,12 @@ onBeforeUnmount(() => {
 		transform: scale(1);
 		opacity: 1;
 	}
+
 	75% {
 		transform: scale(1.75);
 		opacity: 1;
 	}
+
 	100% {
 		transform: scale(2);
 		opacity: 0;
@@ -262,6 +245,7 @@ onBeforeUnmount(() => {
 
 // Reduced motion support
 @media (prefers-reduced-motion: reduce) {
+
 	.video-play-btn::before,
 	.video-play-btn::after {
 		animation: none !important;
@@ -270,19 +254,26 @@ onBeforeUnmount(() => {
 
 // Title
 .title {
-	font-family: var(--font-primary); // Spartan
 	font-weight: 700;
-	font-size: 36px;
+	font-size: 48px;
 	line-height: 1.25;
 	color: var(--color-white);
 	margin-bottom: 0;
 
-	@media (max-width: 991px) {
-		font-size: 40px;
+	@media (max-width: 1023px) {
+		font-size: 42px;
 	}
 
 	@media (max-width: 767px) {
-		font-size: 32px;
+		font-size: 36px;
+	}
+
+	@media (max-width: 639px) {
+		font-size: 30px;
+	}
+
+	@media (max-width: 479px) {
+		font-size: 28px;
 	}
 }
 

@@ -5,12 +5,7 @@
       <!-- Reminder bar -->
       <div v-if="!hideReminder" class="header-top-bar hidden md:block px-5">
         <div class="max-w-7xl mx-auto flex justify-between gap-2 items-center">
-          <EduButton
-            rectangular
-            variant="secondary"
-            size="medium"
-            icon="icon-4"
-            to="/course-details">
+          <EduButton rectangular variant="secondary" size="medium" icon="icon-4" to="/course-details">
             {{ $t("JoinFreeTrialLessons") }}
           </EduButton>
           <NewsTicker :news="headlines" />
@@ -27,7 +22,7 @@
       <div id="sticky-placeholder" ref="placeholderRef"></div>
 
       <!-- Navbar -->
-      <div ref="navbarRef" class="header-mainmenu bg-white shadow py-4">
+      <div ref="navbarRef" class="header-mainmenu bg-white shadow p-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
           <!-- Left (Logo + Nav) -->
           <div class="flex items-center gap-6">
@@ -60,10 +55,7 @@
             <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
               <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
-              <EduButton
-                variant="primary"
-                size="small"
-                to="/signup">
+              <EduButton variant="primary" size="small" to="/signup">
                 {{ $t("SignUp") }}
               </EduButton>
             </div>
@@ -246,6 +238,7 @@ function changeLocale(locale: "en" | "ar" | "ru") {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
