@@ -7,12 +7,7 @@
 			<!-- Thumbnail -->
 			<div class="thumbnail">
 				<NuxtLink :to="`/course-details/${course.id}`">
-					<img
-						:src="course.image"
-						:alt="$t(course.titleKey)"
-						loading="lazy"
-						class="course-image"
-					/>
+					<img :src="course.image" :alt="$t(course.titleKey)" loading="lazy" class="course-image" />
 					<div class="image-overlay"></div>
 				</NuxtLink>
 				<div class="time-top">
@@ -38,21 +33,14 @@
 				<!-- Rating -->
 				<div class="course-rating">
 					<div class="rating">
-						<i
-							v-for="star in 5"
-							:key="star"
-							class="icon-23"
-						></i>
+						<i v-for="star in 5" :key="star" class="icon-23"></i>
 					</div>
 					<span class="rating-count">{{ course.rating }}</span>
 				</div>
 
 				<!-- Learn More Button (Hidden by default, shown on hover) -->
 				<div class="read-more-btn">
-					<NuxtLink
-						:to="`/course-details/${course.id}`"
-						class="edu-btn btn-small btn-secondary"
-					>
+					<NuxtLink :to="`/course-details/${course.id}`" class="edu-btn btn-small btn-secondary">
 						{{ $t("courseArea.learnMore") }}
 						<i class="icon-4"></i>
 					</NuxtLink>
@@ -194,6 +182,12 @@ const { t: $t } = useI18n();
 			border-radius: 3px;
 			margin-bottom: 17px;
 			width: fit-content;
+
+			@media (max-width: 767px) {
+				font-size: 11px;
+				padding: 3px 10px;
+				margin-bottom: 14px;
+			}
 		}
 
 		.course-title {
@@ -201,6 +195,21 @@ const { t: $t } = useI18n();
 			font-weight: 700;
 			margin-bottom: 14px;
 			line-height: 1.4;
+
+			@media (max-width: 1023px) {
+				font-size: 18px;
+				margin-bottom: 12px;
+			}
+
+			@media (max-width: 767px) {
+				font-size: 16px;
+				margin-bottom: 10px;
+			}
+
+			@media (max-width: 479px) {
+				font-size: 15px;
+				margin-bottom: 8px;
+			}
 
 			a {
 				color: var(--color-heading);
@@ -219,6 +228,18 @@ const { t: $t } = useI18n();
 			color: #666;
 			margin-bottom: 20px;
 			flex-grow: 1;
+
+			@media (max-width: 767px) {
+				font-size: 13px;
+				line-height: 1.7;
+				margin-bottom: 16px;
+			}
+
+			@media (max-width: 479px) {
+				font-size: 12px;
+				line-height: 1.6;
+				margin-bottom: 14px;
+			}
 		}
 
 		.course-rating {
@@ -227,12 +248,24 @@ const { t: $t } = useI18n();
 			gap: 12px;
 			margin-bottom: 0;
 
+			@media (max-width: 479px) {
+				gap: 8px;
+			}
+
 			.rating {
 				display: flex;
 				color: #f8b81f;
 
 				i {
 					font-size: 14px;
+
+					@media (max-width: 767px) {
+						font-size: 13px;
+					}
+
+					@media (max-width: 479px) {
+						font-size: 12px;
+					}
 				}
 			}
 
@@ -240,6 +273,14 @@ const { t: $t } = useI18n();
 				font-size: 14px;
 				font-weight: 500;
 				color: var(--color-heading);
+
+				@media (max-width: 767px) {
+					font-size: 13px;
+				}
+
+				@media (max-width: 479px) {
+					font-size: 12px;
+				}
 			}
 		}
 

@@ -1,47 +1,32 @@
 <template>
 	<div class="team-area relative py-20 md:py-16 sm:py-12 overflow-hidden">
 		<!-- Quran Calligraphy (Floating) -->
-		<div
-			class="team-area_quran"
-			style="
+		<div class="team-area_quran" style="
 				background-image: url('/img/islamic-shapes/decorative/vector-9.png');
 				filter: drop-shadow(2px 4px 6px black);
-			"
-		></div>
+			"></div>
 
 		<!-- Container -->
 		<div class="container mx-auto py-16 px-4 max-w-[1185px] relative z-10">
 			<!-- Section Title -->
-			<div
-				ref="sectionTitleRef"
-				class="text-center mb-16 opacity-0 transition-all duration-800"
-				:class="{ 'animate-fade-up': isTitleVisible }"
-			>
-				<span
-					class="inline-block text-[var(--color-secondary)] font-medium mb-3 text-base"
-				>
+			<div ref="sectionTitleRef" class="text-center mb-16 opacity-0 transition-all duration-800"
+				:class="{ 'animate-fade-up': isTitleVisible }">
+				<span class="inline-block text-[var(--color-secondary)] font-medium mb-3 text-sm md:text-base">
 					{{ $t("teamArea.preTitle") }}
 				</span>
-				<h2
-					class="font-bold text-4xl md:text-3xl sm:text-2xl text-[var(--color-heading)] mb-4"
-				>
+				<h2 class="font-bold text-3xl md:text-4xl lg:text-5xl text-[var(--color-heading)] mb-4">
 					{{ $t("teamArea.title") }}
 				</h2>
-				<span class="inline-block text-2xl text-[var(--color-primary)]">
+				<span class="inline-block text-lg md:text-xl lg:text-2xl text-[var(--color-primary)]">
 					<i class="icon-19"></i>
 				</span>
 			</div>
 
 			<!-- Team Grid -->
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-				<div
-					v-for="(member, index) in teamMembers"
-					:key="member.id"
-					ref="teamCardsRef"
-					class="opacity-0 transition-all duration-800"
-					:class="{ 'animate-fade-up': areCardsVisible[index] }"
-					:style="{ transitionDelay: `${index * 100}ms` }"
-				>
+				<div v-for="(member, index) in teamMembers" :key="member.id" ref="teamCardsRef"
+					class="opacity-0 transition-all duration-800" :class="{ 'animate-fade-up': areCardsVisible[index] }"
+					:style="{ transitionDelay: `${index * 100}ms` }">
 					<TeamCard :member="member" />
 				</div>
 			</div>
@@ -108,7 +93,7 @@ const teamMembers: TeamMember[] = [
 ];
 
 // Intersection Observer for scroll animations
-if (process.client) {
+if (typeof window !== 'undefined') {
 	let observer: IntersectionObserver | null = null;
 
 	onMounted(() => {
@@ -159,15 +144,16 @@ if (process.client) {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-  /* mask-image: url(/img/bg/mask-061.png); */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  isolation: isolate;
-  z-index: 1;
+	/* mask-image: url(/img/bg/mask-061.png); */
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	isolation: isolate;
+	z-index: 1;
 }
 
 @keyframes moveUpDown {
+
 	0%,
 	100% {
 		transform: translateY(0);
@@ -226,6 +212,7 @@ if (process.client) {
 		opacity: 0;
 		transform: translateY(30px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateY(0);

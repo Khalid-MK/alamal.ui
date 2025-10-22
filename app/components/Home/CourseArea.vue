@@ -393,21 +393,43 @@ onBeforeUnmount(() => {
 		color: var(--color-secondary);
 		letter-spacing: 1px;
 		margin-bottom: 12px;
+
+		@media (max-width: 767px) {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 11px;
+			margin-bottom: 8px;
+		}
 	}
 
 	.title {
-		font-size: 40px;
+		font-size: 48px;
 		font-weight: 700;
 		color: var(--color-heading);
 		line-height: 1.3;
 		margin: 0;
 
+		@media (max-width: 1199px) {
+			font-size: 42px;
+		}
+
 		@media (max-width: 1023px) {
-			font-size: 32px;
+			font-size: 36px;
 		}
 
 		@media (max-width: 767px) {
+			font-size: 32px;
+		}
+
+		@media (max-width: 639px) {
 			font-size: 28px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 24px;
 		}
 	}
 
@@ -416,6 +438,11 @@ onBeforeUnmount(() => {
 		margin-top: 8px;
 		color: var(--color-secondary);
 		font-size: 14px;
+
+		@media (max-width: 767px) {
+			font-size: 12px;
+			margin-top: 6px;
+		}
 	}
 }
 

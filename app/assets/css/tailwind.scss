@@ -2,6 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import responsive typography utilities */
+@import './_responsive-typography.scss';
 html[lang="ar"] {
   direction: rtl;
   flex-direction: row-reverse;
@@ -14,7 +17,7 @@ html[lang="en"] {
   direction: ltr;
   text-align: left;
 }
-/* 
+/*
   Global Font Configuration:
   - Primary Font: Poppins (English/Russian) | Amiri (Arabic)
   - Secondary Font: Spartan (English/Russian) | Amiri (Arabic)

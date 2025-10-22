@@ -42,7 +42,7 @@
 						</h1>
 
 						<div class="slider-six_text">
-							<span class="text-icon">
+							<span class="text-icon hidden lg:block">
 								<img decoding="async" src="/img/bg/slider-img.png" alt="Alquran" />
 							</span>
 							<p>{{ slide.desc }}</p>
@@ -71,7 +71,7 @@
 								<img decoding="async" :src="slide.imgSrc" alt="Alquran" />
 							</div>
 						</div>
-						<div class="slider-six_courses">
+						<div class="slider-six_courses hidden lg:block">
 							<div class="slider-six_courses-inner">
 								<span>
 									<img decoding="async" src="/icons/book.svg" alt="Alquran" />
@@ -128,8 +128,9 @@ onMounted(() => {
 	border-radius: 40px;
 
 	@media (max-width: 890px) {
-		margin: 20px;
+		margin: 0px;
 		margin-bottom: 60px;
+		border-radius: 0;
 	}
 
 	@media (max-width: 430px) {
@@ -424,14 +425,18 @@ onMounted(() => {
 		flex: 1;
 
 		@media (max-width: 1023px) {
-			align-items: center;
-			text-align: center;
+			/* align-items: center;
+			text-align: center; */
 			gap: 25px;
 		}
 
 		@media (max-width: 767px) {
 			align-items: flex-start;
 			text-align: left;
+
+			img {
+				display: none;
+			}
 		}
 	}
 
@@ -537,7 +542,7 @@ onMounted(() => {
 
 			@media (max-width: 767px) {
 				width: 140px;
-				height: 140px;
+				height: 120px;
 			}
 
 			.curved-text {

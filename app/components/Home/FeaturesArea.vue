@@ -228,18 +228,45 @@ const features = computed(() => featuresData[locale.value])
       flex: 1;
 
       .title {
-        font-size: clamp(1.125rem, 2vw, var(--h4));
+        font-size: 20px;
         line-height: 1.3;
+        margin-bottom: 15px;
 
-        @media #{$large-mobile} {
+        @media (max-width: 1023px) {
+          font-size: 18px;
+          margin-bottom: 12px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
           margin-bottom: 10px;
+        }
+
+        @media (max-width: 479px) {
+          font-size: 15px;
+          margin-bottom: 8px;
         }
       }
 
       p {
         color: var(--color-body);
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        font-size: 16px;
         line-height: 1.6;
+
+        @media (max-width: 1023px) {
+          font-size: 15px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 479px) {
+          font-size: 13px;
+          line-height: 1.4;
+        }
       }
     }
 

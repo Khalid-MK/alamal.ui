@@ -30,42 +30,22 @@
 				<ul class="shape-group">
 					<!-- Shape 1: Top-left (shape-10.png) -->
 					<li class="shape-01 scene" ref="scene1">
-						<img
-							data-depth="2.5"
-							src="/img/cta/shape-10.png"
-							alt="Decorative Shape"
-							loading="lazy"
-						/>
+						<img data-depth="2.5" src="/img/cta/shape-10.png" alt="Decorative Shape" loading="lazy" />
 					</li>
 
 					<!-- Shape 2: Bottom-left (shape-09.png) -->
 					<li class="shape-02 scene" ref="scene2">
-						<img
-							data-depth="-2.5"
-							src="/img/cta/shape-09.png"
-							alt="Decorative Shape"
-							loading="lazy"
-						/>
+						<img data-depth="-2.5" src="/img/cta/shape-09.png" alt="Decorative Shape" loading="lazy" />
 					</li>
 
 					<!-- Shape 3: Top-right (shape-08.png) -->
 					<li class="shape-03 scene" ref="scene3">
-						<img
-							data-depth="-2"
-							src="/img/cta/shape-08.png"
-							alt="Decorative Shape"
-							loading="lazy"
-						/>
+						<img data-depth="-2" src="/img/cta/shape-08.png" alt="Decorative Shape" loading="lazy" />
 					</li>
 
 					<!-- Shape 4: Top-right outer (shape-13.png) -->
 					<li class="shape-04 scene" ref="scene4">
-						<img
-							data-depth="2"
-							src="/img/about/shape-13.png"
-							alt="Decorative Shape"
-							loading="lazy"
-						/>
+						<img data-depth="2" src="/img/about/shape-13.png" alt="Decorative Shape" loading="lazy" />
 					</li>
 				</ul>
 			</div>
@@ -151,8 +131,7 @@ onBeforeUnmount(() => {
 		background-position: center bottom;
 		background-repeat: no-repeat;
 		background-size: cover;
-		filter: brightness(0) saturate(100%) invert(90%) sepia(23%) saturate(5531%)
-			hue-rotate(343deg) brightness(101%) contrast(94%);
+		filter: brightness(0) saturate(100%) invert(90%) sepia(23%) saturate(5531%) hue-rotate(343deg) brightness(101%) contrast(94%);
 		z-index: 0;
 	}
 }
@@ -172,17 +151,29 @@ onBeforeUnmount(() => {
 	.title {
 		font-family: var(--font-primary); // Spartan
 		font-weight: 700;
-		font-size: 48px;
+		font-size: 56px;
 		line-height: 1.25;
 		color: var(--color-heading);
 		margin-bottom: 28px;
 
+		@media (max-width: 1199px) {
+			font-size: 48px;
+		}
+
 		@media (max-width: 991px) {
-			font-size: 40px;
+			font-size: 42px;
 		}
 
 		@media (max-width: 767px) {
+			font-size: 36px;
+		}
+
+		@media (max-width: 639px) {
 			font-size: 32px;
+		}
+
+		@media (max-width: 479px) {
+			font-size: 28px;
 		}
 
 		.color-primary {
@@ -196,16 +187,37 @@ onBeforeUnmount(() => {
 	display: inline-block;
 	font-family: var(--font-secondary); // Poppins
 	font-weight: 600;
-	font-size: 16px;
-	padding: 0 30px;
-	height: 60px;
-	line-height: 60px;
+	font-size: 18px;
+	padding: 0 35px;
+	height: 70px;
+	line-height: 70px;
 	border-radius: 5px;
 	transition: all 0.3s ease-in-out;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
 	text-decoration: none;
+
+	@media (max-width: 1023px) {
+		font-size: 16px;
+		padding: 0 30px;
+		height: 60px;
+		line-height: 60px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 15px;
+		padding: 0 25px;
+		height: 55px;
+		line-height: 55px;
+	}
+
+	@media (max-width: 479px) {
+		font-size: 14px;
+		padding: 0 20px;
+		height: 50px;
+		line-height: 50px;
+	}
 
 	&.btn-secondary {
 		background-color: var(--color-secondary); // Coral/pink
