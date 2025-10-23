@@ -76,7 +76,7 @@
       </li>
 
       <li>
-        <NuxtLink to="/faq-page"
+        <NuxtLink to="/faqs"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("FAQs") }}
         </NuxtLink>

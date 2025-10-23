@@ -409,5 +409,92 @@
   "CookiesTracking": "Cookies & Tracking Technologies",
   "YourRights": "Your Privacy Rights",
   "PolicyUpdates": "Updates to This Policy",
-  "ContactUs": "Contact Us"
+  "ContactUs": "Contact Us",
+  "_comment FAQ": "This section is for FAQ page translations",
+  "faq": {
+    "pageTitle": "Frequently Asked Questions",
+    "categoryTitle": "Questions By Category",
+    "categoryDescription": "Browse through our comprehensive FAQ to find answers about Islamic education, courses, enrollment, and more.",
+    "tabs": {
+      "general": "General Questions",
+      "courses": "Course Information",
+      "enrollment": "Enrollment & Registration",
+      "support": "Student Support & Policies",
+      "payment": "Payment & Pricing",
+      "terms": "Terms & Conditions"
+    },
+    "general": {
+      "q1": "How do I enroll in Quran courses at Al-Amal?",
+      "a1": "Enrolling is simple! Browse our course catalog, select your desired Quran, Arabic, or Tajweed course, and click 'Enroll Now'. You'll need to create a student account (or log in if you already have one), complete the registration form with your details and preferred schedule, and choose your payment method. Once payment is confirmed, you'll receive a welcome email with your class schedule and instructor information.",
+      "q2": "What age groups do you teach?",
+      "a2": "Al-Amal Islamic Education Platform welcomes students of all ages! We offer specialized programs for children (ages 6-12), teenagers (ages 13-17), adults, and seniors. Each age group has tailored teaching methods and materials to ensure effective learning. For children under 18, we require parental consent during registration and provide parent access to monitor progress.",
+      "q3": "Do you offer free trial lessons?",
+      "a3": "Yes! We offer a complimentary 30-minute trial lesson for first-time students. This allows you to experience our teaching methodology, meet your potential instructor, assess the platform's technology, and determine if our approach suits your learning style. No payment information is required to book a trial lesson. Simply visit our 'Book Trial Session' page and select your preferred time.",
+      "q4": "What are the class timings and schedule flexibility?",
+      "a4": "We understand that students have varying schedules, so we offer flexible class timings across multiple time zones. Classes are available 7 days a week from 6:00 AM to 11:00 PM (your local time). You can choose between one-on-one sessions or group classes, with the option to select morning, afternoon, or evening slots. Our scheduling system allows you to book classes at your convenience and reschedule with 24-hour advance notice.",
+      "q5": "Do you provide certificates upon course completion?",
+      "a5": "Absolutely! Upon successful completion of any course, you will receive an official Al-Amal Islamic Education certificate. Our certificates are recognized and valued in Islamic educational communities worldwide. They include your name, course title, completion date, instructor signature, and a unique verification code. Advanced courses also include performance grades and detailed skill assessments.",
+      "q6": "Can I learn at my own pace or are classes scheduled?",
+      "a6": "We offer both options! Our Live Scheduled Classes provide real-time interaction with instructors at fixed times each week, perfect for students who thrive with structure and peer interaction. Our Self-Paced Learning option allows you to access pre-recorded lessons, study materials, and practice exercises anytime, ideal for busy schedules. You can also combine both approaches with our Hybrid Learning model.",
+      "q7": "What technology or equipment do I need for online classes?",
+      "a7": "To join our online classes, you'll need: a stable internet connection (minimum 5 Mbps recommended), a computer, tablet, or smartphone, a webcam and microphone (built-in or external), and the Zoom application (free to download). For Quran reading classes, we recommend having a physical Quran or access to a digital Quran app. Headphones are recommended for better audio quality during classes."
+    },
+    "courses": {
+      "q1": "What Quran courses do you offer?",
+      "a1": "We offer comprehensive Quran courses for all levels: Quran Reading for Beginners (Qaida & basic Arabic letters), Quran Recitation with Tajweed (proper pronunciation and rules), Quran Memorization Programs (Hifz with proven techniques), Quran Translation & Tafsir (understanding meanings and interpretation), and Advanced Qira'at Studies (different recitation styles). Each course is designed by qualified scholars and tailored to student abilities.",
+      "q2": "How are Arabic language levels structured?",
+      "a2": "Our Arabic language program follows a structured progression: Level 1 - Beginner (Arabic alphabet, basic vocabulary, simple sentences), Level 2 - Elementary (grammar foundations, everyday conversations, reading short texts), Level 3 - Intermediate (advanced grammar, writing skills, classical text comprehension), Level 4 - Advanced (fluent conversation, literature study, Quranic Arabic mastery). Students take a placement test to determine their starting level.",
+      "q3": "What is Tajweed and why is it important?",
+      "a3": "Tajweed is the set of rules governing the proper pronunciation and recitation of the Quran. It's essential because the Quran was revealed with specific phonetic characteristics, and learning Tajweed ensures you recite it correctly, as intended by Allah. Proper Tajweed preserves the meanings of words (incorrect pronunciation can change meanings), beautifies your recitation, and fulfills the obligation to read the Quran properly. Our Tajweed courses cover all fundamental and advanced rules with practical application.",
+      "q4": "How long does it take to complete a course?",
+      "a4": "Course duration varies by program and your learning pace: Basic Quran Reading: 3-6 months, Tajweed Fundamentals: 4-8 months, Quran Memorization (Juz Amma): 6-12 months, Complete Quran Memorization: 2-4 years, Arabic Language (one level): 6-9 months, Tafsir Studies: 12-18 months. These are average timelines; your actual completion time depends on class frequency, practice commitment, and individual learning speed.",
+      "q5": "Do you offer one-on-one or group classes?",
+      "a5": "We offer both formats to suit different learning preferences and budgets. One-on-One Classes provide personalized attention, flexible scheduling, customized learning pace, and direct instructor interaction (ideal for memorization and advanced studies). Group Classes (max 5-6 students) offer peer learning opportunities, collaborative exercises, lower cost, and scheduled class times. Both formats feature qualified instructors and comprehensive curriculum.",
+      "q6": "Can I switch between courses or change my learning path?",
+      "a6": "Yes, you have complete flexibility! Students can switch courses, add supplementary courses, adjust learning pace, or change from group to private classes at any time. Simply contact our academic advisor through your student dashboard, and they'll guide you through the transition process. If you've already paid for a course, we'll apply the remaining balance to your new course selection according to our transfer policy."
+    },
+    "enrollment": {
+      "q1": "How do I create a student account?",
+      "a1": "Creating an account is quick and easy! Click 'Sign Up' in the top navigation, fill in your basic information (name, email, password), verify your email address through the confirmation link we send, complete your student profile with learning goals and preferences, and select your time zone for accurate scheduling. For students under 18, a parent or guardian must complete the registration and provide consent.",
+      "q2": "Is parental consent required for minors?",
+      "a2": "Yes, for all students under 18 years of age, we require parental or guardian consent before enrollment. The parent/guardian must: create the student account using their own email, provide their contact information for communications, review and accept our Student Safety Policy and Code of Conduct, and authorize payment for course fees. Parents receive full access to monitor their child's progress, attendance, and communication with instructors.",
+      "q3": "How do I select my instructor?",
+      "a3": "We offer two options for instructor selection. In our Instructor Matching System, you complete a brief questionnaire about your learning style, goals, and preferences, and our system recommends the best-matched instructors. You can review their profiles, qualifications, teaching specialties, student reviews, and sample lesson videos. Alternatively, you can Browse All Instructors in our directory, watch introduction videos, read detailed biographies, check availability calendars, and directly request your preferred instructor. If you're not satisfied after the first class, you can request a different instructor at no cost.",
+      "q4": "Can I change my schedule after enrollment?",
+      "a4": "Yes, we understand that schedules can change. You can modify your class schedule through your student dashboard with 24-hour advance notice (without penalty), request temporary schedule holds for up to 4 weeks (for vacations or emergencies), permanently change your regular class times, or switch from morning to evening slots (subject to instructor availability). Frequent last-minute changes may be subject to our rescheduling policy, so we encourage planning ahead.",
+      "q5": "What happens after I register and pay?",
+      "a5": "Once your registration and payment are confirmed, you'll receive several communications: a Welcome Email with your course details and student dashboard access, Instructor Introduction with your teacher's profile and contact information, Class Schedule showing your confirmed class times and Zoom links, Student Handbook containing platform guidelines and learning tips, and Technical Setup Guide to help you prepare for your first class. Your first class typically begins within 3-5 days of enrollment, and our support team will contact you to ensure you're ready."
+    },
+    "support": {
+      "q1": "How do I contact my instructor outside of class time?",
+      "a1": "Each instructor has a dedicated communication channel through our platform. You can send messages via the Student Dashboard (responses within 24 hours), schedule Quick Questions sessions (15-minute slots for clarifications), use the Course Forum to ask questions that benefit all students, or email directly for urgent matters (contact provided in welcome email). Instructors typically respond within one business day. For immediate technical or administrative issues, contact our 24/7 support team.",
+      "q2": "What if I miss a class?",
+      "a2": "We understand that emergencies happen. If you miss a class with 24+ hours notice, you can reschedule without penalty to another available time slot. For same-day cancellations or no-shows, the class is counted as attended (except for emergencies with documentation). All one-on-one classes are recorded and available in your dashboard for 30 days, so you can review missed content. We recommend reviewing recordings before your next class to stay on track.",
+      "q3": "Do you offer makeup classes for missed sessions?",
+      "a3": "Yes! Students are entitled to makeup classes under these conditions: Classes cancelled by the instructor (rescheduled at your convenience), Technical issues on our platform (credited back to your account), Documented emergencies or illness (up to 3 per month with notification), or Scheduled holidays and breaks (communicated in advance). To request a makeup class, submit a request through your dashboard within 48 hours of the missed class, and our scheduling team will coordinate with your instructor.",
+      "q4": "How do you ensure student safety online, especially for children?",
+      "a4": "Student safety is our top priority. We implement multiple safeguards: All instructors undergo background checks and certification verification, Classes are recorded for quality assurance and safety monitoring, Parents have full access to view live classes and recorded sessions, Students and instructors use platform messaging (no personal contact exchange), We have a strict Code of Conduct and zero-tolerance policy for inappropriate behavior, and a dedicated Safety Team reviews flagged content within 24 hours. Children's accounts have additional parental controls and privacy settings.",
+      "q5": "What is your refund policy?",
+      "a5": "We offer a satisfaction-guaranteed refund policy: Full refund if you cancel within 7 days of enrollment and before attending any classes, Prorated refund (minus attended classes) if you cancel within the first month, No refund after 30 days, but you can pause your subscription or transfer to another course. Refunds are processed within 10-14 business days to your original payment method. If you're unsatisfied with your course, please contact our Student Support team to discuss options before requesting a refund."
+    },
+    "payment": {
+      "q1": "What are your course fees and pricing structure?",
+      "a1": "Our pricing is transparent and competitive. One-on-One Classes: $15-25 per hour (based on instructor experience and course level). Group Classes: $8-12 per hour per student. Monthly Subscription Plans: Unlimited access to self-paced courses starting at $49/month. Course Packages: Prepay for 20, 40, or 60 hours and save up to 20%. We also offer family discounts (15% off for 2+ family members), refer-a-friend bonuses ($20 credit for each referral), and scholarship programs for qualified students. All prices are in USD.",
+      "a2": "We accept multiple payment methods for your convenience: Credit/Debit Cards (Visa, MasterCard, Mada - instant confirmation), Bank Transfer (local or international - processes within 24-48 hours), Cryptocurrency (USDT TRC-20, USDC - instant confirmation with crypto wallet), PayPal (available in select countries), and Payment Plans (split larger course payments into installments). All transactions are secured with SSL encryption, and we never store your complete card details.",
+      "q2": "What payment methods do you accept?",
+      "a3": "Yes! We offer several family discount options: 2 Family Members: 15% off total tuition, 3 Family Members: 20% off total tuition, 4+ Family Members: 25% off total tuition. Family members must enroll from the same household/account and can take different courses at their respective levels. The discount applies automatically when you add family members during enrollment. Additionally, family subscription plans are available for unlimited access to self-paced courses.",
+      "q3": "Do you offer family discounts?",
+      "a4": "We offer flexible subscription models to fit your budget and learning commitment: Monthly Subscription ($49-99/month): Access to all self-paced courses, community forums, and recorded class library. No commitment, cancel anytime. Quarterly Subscription ($129-249): All monthly benefits plus 2 live Q&A sessions per month and priority instructor support. Save 15%. Annual Subscription ($499-899): All quarterly benefits plus certificate courses, priority class scheduling, and access to premium content. Save 30%. One-Time Course Purchase: Pay once for specific courses with lifetime access to materials."
+    },
+    "terms": {
+      "q1": "What are the platform usage rules and student conduct expectations?",
+      "a1": "All students must adhere to our Student Code of Conduct: Respect instructors and fellow students at all times, Attend classes punctually and come prepared with materials, Maintain appropriate Islamic etiquette and dress during video classes, Complete assignments and practice exercises as instructed, Use platform communication channels appropriately (no spam or harassment), Respect intellectual property (no unauthorized recording or sharing of course materials), and Provide honest feedback to help improve our services. Violations may result in warnings, suspension, or account termination depending on severity.",
+      "a2": "We take data privacy seriously and comply with international data protection standards. Your personal information is encrypted and stored securely, used only for educational services and communication, never sold or shared with third parties without consent, and accessible only to authorized instructors and staff. Students can request a copy of their data, request data corrections or updates, delete their account and associated data (subject to legal retention requirements), and opt-out of marketing communications. For complete details, please review our comprehensive Privacy Policy.",
+      "q2": "How is my data protected and privacy maintained?",
+      "a3": "Yes, you can cancel your subscription at any time through your account settings. Cancellation terms vary by plan type: Monthly subscriptions cancel at the end of the current billing period (no refund for partial month), Quarterly and annual subscriptions are prorated with refund for unused months (minus a $25 processing fee), and Course packages must be cancelled within 30 days for prorated refund. After cancellation, you retain access to downloaded materials and certificates earned. You can reactivate your account anytime without penalty.",
+      "q3": "Can I cancel my subscription anytime?",
+      "q4": "What are the instructor qualifications and how are they verified?",
+      "a4": "All Al-Amal instructors meet rigorous qualification standards: Education: Minimum bachelor's degree from recognized Islamic university or equivalent certification in Quranic studies, Arabic, or Islamic education. Experience: At least 2+ years of teaching experience with proven track record. Certification: Valid Ijazah (for Quran courses) or teaching credentials, and fluency in Arabic and English (or Russian for Russian-speaking students). Each instructor undergoes background verification, teaching demo evaluation, student feedback reviews, and continuous professional development. You can view detailed credentials on each instructor's profile page."
+    }
+  }
 }
