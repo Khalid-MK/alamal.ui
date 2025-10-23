@@ -3,11 +3,11 @@
     <button
       :id="`accordion-button-${id}`"
       type="button"
-      class="accordion-button w-full text-left font-semibold text-lg transition-all duration-300 relative"
+      class="accordion-button w-full text-left font-normal text-lg transition-all duration-300 relative"
       :class="[
         isExpanded
           ? 'bg-primary text-white rounded-t-lg px-7 py-5'
-          : 'bg-transparent text-heading rounded-lg px-7 py-5 hover:bg-primary hover:text-white'
+          : 'bg-transparent text-heading rounded-lg px-7 py-5'
       ]"
       :aria-expanded="isExpanded"
       :aria-controls="`accordion-content-${id}`"
