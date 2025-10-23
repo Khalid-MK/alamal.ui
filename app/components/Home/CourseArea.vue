@@ -406,7 +406,7 @@ onBeforeUnmount(() => {
 	}
 
 	.title {
-		font-size: 48px;
+		font-size: 36px;
 		font-weight: 700;
 		color: var(--color-heading);
 		line-height: 1.3;

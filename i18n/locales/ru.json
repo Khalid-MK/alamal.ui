@@ -395,5 +395,19 @@
             }
         }
     },
-    "ourCourses": "Наши курсы"
+    "ourCourses": "Наши курсы",
+    "_comment PrivacyPolicy": "Этот раздел предназначен для переводов страницы политики конфиденциальности",
+    "Pages": "Страницы",
+    "Search": "Поиск",
+    "Tags": "Теги",
+    "PrivacyPolicyIntro": "Введение и ваша конфиденциальность имеет значение",
+    "InformationWeCollect": "Информация, которую мы собираем",
+    "HowWeUseInformation": "Как мы используем вашу информацию",
+    "DataProtectionSecurity": "Защита данных и безопасность",
+    "StudentPrivacyMinors": "Конфиденциальность студентов и защита несовершеннолетних",
+    "ThirdPartyServices": "Сторонние сервисы",
+    "CookiesTracking": "Файлы cookie и технологии отслеживания",
+    "YourRights": "Ваши права на конфиденциальность",
+    "PolicyUpdates": "Обновления этой политики",
+    "ContactUs": "Свяжитесь с нами"
 }

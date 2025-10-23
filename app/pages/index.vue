@@ -10,7 +10,6 @@
     <HomeTeamArea />
     <HomeEvents />
     <HomeBlogAndPrayer />
-    <HomeUniversityCTA />
   </main>
 </template>
 

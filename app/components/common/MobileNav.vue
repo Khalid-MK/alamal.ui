@@ -83,6 +83,13 @@
       </li>
 
       <li>
+        <NuxtLink to="/privacy-policy"
+          class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
+          {{ $t("PrivacyPolicy") }}
+        </NuxtLink>
+      </li>
+
+      <li>
         <NuxtLink to="/events"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("Events") }}

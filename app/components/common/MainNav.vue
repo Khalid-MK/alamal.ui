@@ -65,6 +65,12 @@
         {{ $t("FAQs") }}
       </NuxtLink>
 
+      <!-- Privacy Policy Link -->
+      <NuxtLink to="/privacy-policy"
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
+        {{ $t("PrivacyPolicy") }}
+      </NuxtLink>
+
       <!-- Events Link -->
       <NuxtLink to="/events"
         class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">

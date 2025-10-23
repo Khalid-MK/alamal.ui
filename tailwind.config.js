@@ -100,5 +100,7 @@ export default {
   experimental: {
     matchVariant: true,
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

@@ -2,6 +2,7 @@
   <main>
     <Header />
     <slot></slot>
+    <HomeUniversityCTA />
     <FooterOne />
     <!-- Floating Prayer Times Widget -->
     <PrayerTimesFloatingWidget />

@@ -395,5 +395,19 @@
       }
     }
   },
-  "ourCourses": "Our Courses"
+  "ourCourses": "Our Courses",
+  "_comment PrivacyPolicy": "This section is for Privacy Policy page translations",
+  "Pages": "Pages",
+  "Search": "Search",
+  "Tags": "Tags",
+  "PrivacyPolicyIntro": "Introduction & Your Privacy Matters",
+  "InformationWeCollect": "Information We Collect",
+  "HowWeUseInformation": "How We Use Your Information",
+  "DataProtectionSecurity": "Data Protection & Security",
+  "StudentPrivacyMinors": "Student Privacy & Protection of Minors",
+  "ThirdPartyServices": "Third-Party Services",
+  "CookiesTracking": "Cookies & Tracking Technologies",
+  "YourRights": "Your Privacy Rights",
+  "PolicyUpdates": "Updates to This Policy",
+  "ContactUs": "Contact Us"
 }

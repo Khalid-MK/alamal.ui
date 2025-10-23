@@ -94,6 +94,9 @@
               <NuxtLink to="/contact" class="hover:text-white transition-colors duration-300">Help & Support</NuxtLink>
             </li>
             <li>
+              <NuxtLink to="/privacy-policy" class="hover:text-white transition-colors duration-300">Privacy Policy</NuxtLink>
+            </li>
+            <li>
               <NuxtLink to="/course" class="hover:text-white transition-colors duration-300">Community</NuxtLink>
             </li>
             <li>

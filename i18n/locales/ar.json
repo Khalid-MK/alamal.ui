@@ -391,5 +391,19 @@
       }
     }
   },
-  "ourCourses": "دوراتنا"
+  "ourCourses": "دوراتنا",
+  "_comment PrivacyPolicy": "هذا القسم مخصص لترجمات صفحة سياسة الخصوصية",
+  "Pages": "الصفحات",
+  "Search": "بحث",
+  "Tags": "الوسوم",
+  "PrivacyPolicyIntro": "المقدمة وخصوصيتك تهمنا",
+  "InformationWeCollect": "المعلومات التي نجمعها",
+  "HowWeUseInformation": "كيف نستخدم معلوماتك",
+  "DataProtectionSecurity": "حماية البيانات والأمان",
+  "StudentPrivacyMinors": "خصوصية الطلاب وحماية القُصّر",
+  "ThirdPartyServices": "خدمات الطرف الثالث",
+  "CookiesTracking": "ملفات تعريف الارتباط وتقنيات التتبع",
+  "YourRights": "حقوقك في الخصوصية",
+  "PolicyUpdates": "تحديثات هذه السياسة",
+  "ContactUs": "اتصل بنا"
 }
