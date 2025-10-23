@@ -169,6 +169,7 @@
   "Category": "Category",
   "FAQs": "FAQs",
   "Events": "Events",
+  "Instructors": "Instructors",
   "Timezone": "Timezone",
   "Country": "Country",
   "TelegramNumber": "Telegram Number",
@@ -394,6 +395,14 @@
         "designation": "Teacher"
       }
     }
+  },
+  "_comment InstructorsPage": "This section is for the instructors page",
+  "instructorsPage": {
+    "pageTitle": "Our Expert Instructors",
+    "breadcrumb": "Instructors",
+    "sectionPreTitle": "Instructors",
+    "sectionTitle": "Meet Our Qualified Teachers",
+    "leadershipInstruction": "Leadership Instruction"
   },
   "ourCourses": "Our Courses",
   "_comment PrivacyPolicy": "This section is for Privacy Policy page translations",

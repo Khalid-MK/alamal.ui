@@ -134,6 +134,7 @@
   "About": "عنا",
   "FAQs": "الأسئلة الشائعة",
   "Events": "الفعاليات",
+  "Instructors": "المعلمون",
   "Arabic": "العربية",
   "Category": "التصنيف",
   "FirstName": "الاسم الأول",
@@ -390,6 +391,14 @@
         "designation": "معلم"
       }
     }
+  },
+  "_comment InstructorsPage": "هذا القسم لصفحة المعلمين",
+  "instructorsPage": {
+    "pageTitle": "معلمونا الخبراء",
+    "breadcrumb": "المعلمون",
+    "sectionPreTitle": "المعلمون",
+    "sectionTitle": "تعرف على معلمينا المؤهلين",
+    "leadershipInstruction": "التعليم القيادي"
   },
   "ourCourses": "دوراتنا",
   "_comment PrivacyPolicy": "هذا القسم مخصص لترجمات صفحة سياسة الخصوصية",

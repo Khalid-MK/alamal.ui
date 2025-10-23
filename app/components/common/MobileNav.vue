@@ -76,6 +76,13 @@
       </li>
 
       <li>
+        <NuxtLink to="/instructors"
+          class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
+          {{ $t("Instructors") }}
+        </NuxtLink>
+      </li>
+
+      <li>
         <NuxtLink to="/faqs"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("FAQs") }}

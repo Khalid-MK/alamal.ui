@@ -169,6 +169,7 @@
     "Category": "Категория",
     "FAQs": "Часто задаваемые вопросы",
     "Events": "События",
+    "Instructors": "Преподаватели",
     "Timezone": "Часовой пояс",
     "Country": "Страна",
     "TelegramNumber": "Номер Telegram",
@@ -394,6 +395,14 @@
                 "designation": "Преподаватель"
             }
         }
+    },
+    "_comment InstructorsPage": "Этот раздел для страницы преподавателей",
+    "instructorsPage": {
+        "pageTitle": "Наши опытные преподаватели",
+        "breadcrumb": "Преподаватели",
+        "sectionPreTitle": "Преподаватели",
+        "sectionTitle": "Познакомьтесь с нашими квалифицированными учителями",
+        "leadershipInstruction": "Руководящее обучение"
     },
     "ourCourses": "Наши курсы",
     "_comment PrivacyPolicy": "Этот раздел предназначен для переводов страницы политики конфиденциальности",

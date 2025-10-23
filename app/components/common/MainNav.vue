@@ -59,6 +59,12 @@
         {{ $t("About") }}
       </NuxtLink>
 
+      <!-- Instructors Link -->
+      <NuxtLink to="/instructors"
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
+        {{ $t("Instructors") }}
+      </NuxtLink>
+
       <!-- FAQs Link -->
       <NuxtLink to="/faqs"
         class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
