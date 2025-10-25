@@ -28,7 +28,7 @@
 					v-for="(member, index) in teamMembers"
 					:key="member.id"
 					ref="teamCardsRef"
-					class="opacity-0 transition-all duration-800 d-flex"
+					class="opacity-0 transition-all duration-800 flex"
 					:class="{ 'animate-fade-up': areCardsVisible[index] }"
 					:style="{ transitionDelay: `${index * 100}ms` }"
 				>
