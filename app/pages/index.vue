@@ -8,6 +8,7 @@
     <HomeCampus />
     <!-- <HomeZoomSection/> -->
     <HomeTeamArea />
+    <HomeTestimonials />
     <HomeEvents />
     <HomeBlogAndPrayer />
   </main>

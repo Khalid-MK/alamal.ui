@@ -15,7 +15,10 @@
       "Read(//c/Users/Khalid/Downloads/themeforest-JMxnbnCV-edublink-online-education-course-html-template/edublink-the-next-gen-education-html-template/.claude/**)",
       "Bash(npm run dev)",
       "Read(//c/Users/Khalid/Downloads/1x-20251025T091729Z-1-001/1x/**)",
-      "Bash(node --version:*)"
+      "Bash(node --version:*)",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__select_page"
     ],
     "deny": [],
     "ask": []

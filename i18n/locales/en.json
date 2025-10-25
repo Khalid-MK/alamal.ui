@@ -396,6 +396,13 @@
       }
     }
   },
+  "_comment Testimonials": "This section is for the testimonials area",
+  "testimonials": {
+    "preTitle": "Testimonials",
+    "title": "What Our Students Have To Say",
+    "description": "Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor incididunt labore dolore magna aliquaenim ad minim.",
+    "viewAll": "View All"
+  },
   "_comment InstructorsPage": "This section is for the instructors page",
   "instructorsPage": {
     "pageTitle": "Our Expert Instructors",
