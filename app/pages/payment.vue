@@ -211,6 +211,9 @@ const datasets: Record<string, Dataset> = {
 const route = useRoute();
 const { t, locale, localeProperties } = useI18n();
 
+// Set page title and meta description with i18n
+usePageMeta('pageTitles.payment', 'pageDescriptions.payment')
+
 const direction = computed(() => localeProperties.value?.dir ?? 'ltr');
 const pageLead = computed(() => t('PaymentLead'));
 const pageTitle = computed(() => t('PaymentTitle'));

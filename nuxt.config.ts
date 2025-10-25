@@ -63,7 +63,28 @@ export default defineNuxtConfig({
   css: ["~/assets/css/tailwind.scss", "~/assets/css/vendor/icomoon.css", "~/assets/css/flaticon.css"],
   app: {
     head: {
+      title: 'Al-Amal Academy - Islamic Education',
+      titleTemplate: '%s',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'description',
+          content: 'Learn Quran, Arabic, and Tajweed online with certified instructors at Al-Amal Academy. Join thousands of students worldwide in our Islamic education programs.'
+        },
+        { name: 'format-detection', content: 'telephone=no' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Al-Amal Academy' },
+        { name: 'theme-color', content: '#1ab69d' }
+      ],
       link: [
+        // Favicons - generate these files using instructions in /public/FAVICON-README.md
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+        // Fonts
         {
           rel: "preconnect",
           href: "https://fonts.googleapis.com",

@@ -16,6 +16,9 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
 
+// Set page title and meta description
+usePageMeta('pageTitles.home', 'pageDescriptions.home')
+
 onMounted(() => {
   console.log("Index page mounted - JavaScript is working!");
 });

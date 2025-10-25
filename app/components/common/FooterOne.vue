@@ -6,7 +6,7 @@
         <!-- Logo & About -->
         <div class="flex-1 max-w-sm">
           <NuxtLink to="/" class="inline-block mb-4">
-            <img src="/img/logo/coliouredlogo&text.svg" alt="footer-logo" class="h-12" />
+            <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-12" />
           </NuxtLink>
           <p class="text-gray-400 text-sm lg:text-base mb-6 leading-relaxed">
             Great lesson ideas and lesson plans for ESL teachers! Educators can

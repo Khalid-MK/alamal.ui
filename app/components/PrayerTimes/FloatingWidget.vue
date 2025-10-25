@@ -205,7 +205,7 @@ const { prayerData, isLoading, error, fetchPrayerTimes, refreshPrayerTimes } =
   usePrayerTimes();
 
 // State
-const isExpanded = ref(false);
+const isExpanded = ref(true);
 const isSettingsOpen = ref(false);
 const currentLocation = ref<any>(null);
 const floatingButton = ref<HTMLButtonElement | null>(null);

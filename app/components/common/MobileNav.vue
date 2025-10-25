@@ -1,5 +1,12 @@
 <template>
   <nav class="mobile-nav">
+    <!-- Mobile Nav Logo -->
+    <div class="mobile-nav-logo mb-6 pb-4 border-b border-gray-200">
+      <NuxtLink to="/" class="flex justify-center">
+        <img src="/img/logo/logo-primary.png" alt="Al-Amal Academy Logo" class="h-16" />
+      </NuxtLink>
+    </div>
+
     <ul class="space-y-2">
       <!-- Home Link -->
       <!-- <li>

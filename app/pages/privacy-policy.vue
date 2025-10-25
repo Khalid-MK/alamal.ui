@@ -139,14 +139,9 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-// SEO Meta Tags
-useHead({
-  title: 'Privacy Policy - Al-Amal Islamic Education',
+// Set page title and meta description with i18n
+usePageMeta('pageTitles.privacyPolicy', 'pageDescriptions.privacyPolicy', {
   meta: [
-    {
-      name: 'description',
-      content: 'Learn about how Al-Amal Islamic Education Platform protects your privacy and handles your personal information.'
-    },
     {
       name: 'keywords',
       content: 'privacy policy, data protection, Al-Amal, Islamic education, student privacy'

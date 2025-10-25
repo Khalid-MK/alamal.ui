@@ -13,7 +13,9 @@
       "mcp__chrome-devtools__evaluate_script",
       "Read(//c/Users/Khalid/Downloads/themeforest-JMxnbnCV-edublink-online-education-course-html-template/edublink-the-next-gen-education-html-template/edublink/**)",
       "Read(//c/Users/Khalid/Downloads/themeforest-JMxnbnCV-edublink-online-education-course-html-template/edublink-the-next-gen-education-html-template/.claude/**)",
-      "Bash(npm run dev)"
+      "Bash(npm run dev)",
+      "Read(//c/Users/Khalid/Downloads/1x-20251025T091729Z-1-001/1x/**)",
+      "Bash(node --version:*)"
     ],
     "deny": [],
     "ask": []

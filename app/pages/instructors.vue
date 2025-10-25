@@ -41,14 +41,9 @@ import { instructors } from '~/constant/instructors'
 const { t, locale, localeProperties } = useI18n()
 const direction = computed(() => localeProperties.value.dir)
 
-// SEO Meta Tags
-useHead({
-  title: 'Our Expert Instructors - Al-Amal Islamic Education',
+// Set page title and meta description with i18n
+usePageMeta('pageTitles.instructors', 'pageDescriptions.instructors', {
   meta: [
-    {
-      name: 'description',
-      content: 'Meet our qualified instructors at Al-Amal Islamic Education Platform. Expert teachers in Quran, Arabic, Tajweed, and Islamic Studies.'
-    },
     {
       name: 'keywords',
       content: 'instructors, teachers, Quran teachers, Arabic teachers, Tajweed experts, Islamic education, Al-Amal'

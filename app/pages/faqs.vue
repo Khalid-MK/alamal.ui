@@ -56,14 +56,9 @@
 const { t, localeProperties } = useI18n()
 const direction = computed(() => localeProperties.value.dir)
 
-// SEO Meta Tags
-useHead({
-  title: 'Frequently Asked Questions - Al-Amal Islamic Education',
+// Set page title and meta description with i18n
+usePageMeta('pageTitles.faqs', 'pageDescriptions.faqs', {
   meta: [
-    {
-      name: 'description',
-      content: 'Find answers to common questions about Al-Amal Islamic Education Platform, Quran courses, Arabic learning, Tajweed, enrollment, and more.'
-    },
     {
       name: 'keywords',
       content: 'FAQ, Quran courses, Arabic learning, Tajweed, Islamic education, online learning, Al-Amal'

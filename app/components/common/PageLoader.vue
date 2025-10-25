@@ -3,9 +3,9 @@
     <div v-if="isLoading" class="page-loader-overlay">
       <div class="loader-content">
         <div class="logo-container">
-          <img 
-            src="/img/logo/coliouredlogo&text.svg" 
-            alt="Al-Amal Logo" 
+          <img
+            src="/img/logo/logo-primary.png"
+            alt="Al-Amal Academy Logo"
             class="app-logo pulse"
           />
         </div>

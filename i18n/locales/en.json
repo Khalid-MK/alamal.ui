@@ -505,5 +505,28 @@
       "q4": "What are the instructor qualifications and how are they verified?",
       "a4": "All Al-Amal instructors meet rigorous qualification standards: Education: Minimum bachelor's degree from recognized Islamic university or equivalent certification in Quranic studies, Arabic, or Islamic education. Experience: At least 2+ years of teaching experience with proven track record. Certification: Valid Ijazah (for Quran courses) or teaching credentials, and fluency in Arabic and English (or Russian for Russian-speaking students). Each instructor undergoes background verification, teaching demo evaluation, student feedback reviews, and continuous professional development. You can view detailed credentials on each instructor's profile page."
     }
+  },
+  "_comment PageTitles": "This section contains page titles and meta descriptions for SEO and browser tabs",
+  "pageTitles": {
+    "home": "Al-Amal Academy - Islamic Education | Learn Quran, Arabic & Tajweed Online",
+    "faqs": "Frequently Asked Questions - Al-Amal Academy",
+    "instructors": "Our Expert Instructors - Al-Amal Academy",
+    "privacyPolicy": "Privacy Policy - Al-Amal Academy",
+    "payment": "Secure Payment & Enrollment - Al-Amal Academy",
+    "courseDetails": "{courseName} - Course Details | Al-Amal Academy",
+    "about": "About Us - Al-Amal Islamic Education Academy",
+    "contact": "Contact Us - Al-Amal Academy",
+    "events": "Islamic Events & Programs - Al-Amal Academy",
+    "shop": "Browse Courses - Al-Amal Academy"
+  },
+  "pageDescriptions": {
+    "home": "Join Al-Amal Academy for online Islamic education. Learn Quran memorization, Arabic language, and Tajweed recitation from certified instructors. Enroll in free trial lessons today!",
+    "faqs": "Find answers to common questions about Al-Amal Islamic Education Platform, Quran courses, Arabic learning, Tajweed, enrollment process, payment options, and student support.",
+    "instructors": "Meet our certified Islamic scholars and experienced instructors teaching Quran, Arabic language, and Tajweed. All teachers are qualified with Ijazah and years of teaching experience.",
+    "privacyPolicy": "Read our comprehensive privacy policy to understand how Al-Amal Academy protects your personal data, ensures student safety, and respects your privacy rights.",
+    "payment": "Secure enrollment and flexible payment options for Al-Amal Academy courses. Choose from credit card, bank transfer, or cryptocurrency payment methods.",
+    "about": "Learn about Al-Amal Academy's mission to provide accessible Islamic education worldwide through Quran, Arabic, and Tajweed courses with qualified instructors.",
+    "contact": "Contact Al-Amal Academy for inquiries about our Islamic education programs, technical support, or enrollment assistance. We're here to help you begin your learning journey.",
+    "events": "Discover upcoming Islamic events, webinars, and special programs at Al-Amal Academy. Join our community for Quran competitions, lectures, and cultural celebrations."
   }
 }

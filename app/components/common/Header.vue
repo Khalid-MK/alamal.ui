@@ -27,7 +27,7 @@
           <!-- Left (Logo + Nav) -->
           <div class="flex items-center gap-6">
             <NuxtLink to="/">
-              <img src="/img/logo/coliouredlogo&text.svg" alt="logo" class="h-10" />
+              <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-10" />
             </NuxtLink>
             <!-- Desktop Menu -->
             <div class="hidden md:block">
