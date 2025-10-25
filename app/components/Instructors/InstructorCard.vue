@@ -17,19 +17,6 @@
             </div>
           </NuxtLink>
         </div>
-
-        <!-- Social Share Icons -->
-        <!-- <ul v-if="socials && socials.length > 0"
-          class="absolute top-1/2 left-0 right-0 -translate-y-1/2 text-center flex justify-center gap-2.5">
-          <li v-for="(social, index) in socials" :key="social.platform"
-            class="translate-x-2.5 opacity-0 invisible transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible"
-            :style="{ transitionDelay: `${(index + 2) * 100}ms` }">
-            <a :href="social.url" :aria-label="`${social.platform} profile`"
-              class="social-link flex items-center justify-center w-10 h-10 rounded-full border-2 bg-primary border-primary text-white text-lg transition-all duration-300">
-              <i :class="social.icon"></i>
-            </a>
-          </li>
-        </ul> -->
       </div>
 
       <!-- Content Section -->
@@ -110,6 +97,10 @@ defineProps<Props>()
 /* Line height */
 .leading-relaxed {
   line-height: 1.73;
+}
+
+.instructor-card {
+  flex: 1;
 }
 
 /* Responsive adjustments */

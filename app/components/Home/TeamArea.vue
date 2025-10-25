@@ -24,10 +24,22 @@
 
 			<!-- Team Grid -->
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-				<div v-for="(member, index) in teamMembers" :key="member.id" ref="teamCardsRef"
-					class="opacity-0 transition-all duration-800" :class="{ 'animate-fade-up': areCardsVisible[index] }"
-					:style="{ transitionDelay: `${index * 100}ms` }">
-					<TeamCard :member="member" />
+				<div
+					v-for="(member, index) in teamMembers"
+					:key="member.id"
+					ref="teamCardsRef"
+					class="opacity-0 transition-all duration-800 d-flex"
+					:class="{ 'animate-fade-up': areCardsVisible[index] }"
+					:style="{ transitionDelay: `${index * 100}ms` }"
+				>
+					<InstructorsInstructorCard
+						:image="member.image"
+						:name="member.name[locale]"
+						:designation="member.designation[locale]"
+						:description="member.description[locale]"
+						:profileUrl="member.profileUrl"
+						:socials="member.socials"
+					/>
 				</div>
 			</div>
 		</div>
@@ -35,62 +47,17 @@
 </template>
 
 <script setup lang="ts">
-interface SocialLink {
-	platform: string;
-	url: string;
-	icon: string;
-}
-
-interface TeamMember {
-	id: string | number;
-	nameKey: string;
-	designationKey: string;
-	image: string;
-	socialLinks: SocialLink[];
-}
+import type { Instructor } from '~/constant/instructors'
+import { instructors } from '~/constant/instructors'
 
 // Refs for Intersection Observer
 const sectionTitleRef = ref<HTMLElement | null>(null);
 const teamCardsRef = ref<HTMLElement[]>([]);
 const isTitleVisible = ref(false);
-const areCardsVisible = ref<boolean[]>([false, false, false]);
+const teamMembers: Instructor[] = instructors.slice(0, 3);
+const areCardsVisible = ref<boolean[]>(Array(teamMembers.length).fill(false));
 
-// Team members data - store translation keys only
-const teamMembers: TeamMember[] = [
-	{
-		id: 1,
-		nameKey: "teamArea.members.member1.name",
-		designationKey: "teamArea.members.member1.designation",
-		image: "/img/team/team-22.webp",
-		socialLinks: [
-			{ platform: "Facebook", url: "#", icon: "icon-facebook" },
-			{ platform: "Twitter", url: "#", icon: "icon-twitter" },
-			{ platform: "LinkedIn", url: "#", icon: "icon-linkedin2" },
-		],
-	},
-	{
-		id: 2,
-		nameKey: "teamArea.members.member2.name",
-		designationKey: "teamArea.members.member2.designation",
-		image: "/img/team/team-23.webp",
-		socialLinks: [
-			{ platform: "Facebook", url: "#", icon: "icon-facebook" },
-			{ platform: "Twitter", url: "#", icon: "icon-twitter" },
-			{ platform: "LinkedIn", url: "#", icon: "icon-linkedin2" },
-		],
-	},
-	{
-		id: 3,
-		nameKey: "teamArea.members.member3.name",
-		designationKey: "teamArea.members.member3.designation",
-		image: "/img/team/team-24.webp",
-		socialLinks: [
-			{ platform: "Facebook", url: "#", icon: "icon-facebook" },
-			{ platform: "Twitter", url: "#", icon: "icon-twitter" },
-			{ platform: "LinkedIn", url: "#", icon: "icon-linkedin2" },
-		],
-	},
-];
+const { locale } = useI18n();
 
 // Intersection Observer for scroll animations
 if (typeof window !== 'undefined') {
