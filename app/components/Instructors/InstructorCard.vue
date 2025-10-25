@@ -7,45 +7,36 @@
       <!-- Thumbnail Wrapper -->
       <div class="relative mb-6">
         <!-- Image -->
-        <div class="mb-6">
+        <div class="mb-6 image-container">
           <NuxtLink :to="profileUrl || '#'" class="block relative rounded-lg overflow-hidden">
-            <img
-              :src="image"
-              :alt="name"
-              class="w-full rounded-lg transition-transform duration-300"
-            />
+            <img :src="image" :alt="name" class="w-full rounded-lg transition-transform duration-300" />
 
             <!-- Hover Overlay -->
-            <div class="absolute inset-0 bg-primary-light rounded-lg opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible"></div>
+            <div
+              class="absolute inset-0 bg-primary-light rounded-lg opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
+            </div>
           </NuxtLink>
         </div>
 
         <!-- Social Share Icons -->
-        <ul class="absolute top-1/2 left-0 right-0 -translate-y-1/2 text-center flex justify-center gap-2.5">
-          <li
-            v-for="(social, index) in socials"
-            :key="social.platform"
+        <!-- <ul v-if="socials && socials.length > 0"
+          class="absolute top-1/2 left-0 right-0 -translate-y-1/2 text-center flex justify-center gap-2.5">
+          <li v-for="(social, index) in socials" :key="social.platform"
             class="translate-x-2.5 opacity-0 invisible transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-hover:visible"
-            :style="{ transitionDelay: `${(index + 2) * 100}ms` }"
-          >
-            <a
-              :href="social.url"
-              :aria-label="`${social.platform} profile`"
-              class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white text-white text-lg transition-all duration-300 hover:bg-white hover:text-primary"
-            >
+            :style="{ transitionDelay: `${(index + 2) * 100}ms` }">
+            <a :href="social.url" :aria-label="`${social.platform} profile`"
+              class="social-link flex items-center justify-center w-10 h-10 rounded-full border-2 bg-primary border-primary text-white text-lg transition-all duration-300">
               <i :class="social.icon"></i>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
 
       <!-- Content Section -->
       <div class="text-center">
         <h5 class="mb-1">
-          <NuxtLink
-            :to="profileUrl || '#'"
-            class="text-h5 font-semibold text-heading hover:text-primary transition-colors"
-          >
+          <NuxtLink :to="profileUrl || '#'"
+            class="text-h5 font-semibold text-heading hover:text-primary transition-colors">
             {{ name }}
           </NuxtLink>
         </h5>
@@ -85,23 +76,26 @@ defineProps<Props>()
 <style scoped>
 /* Custom spacing */
 .px-7\.5 {
-  padding-left: 1.875rem; /* 30px */
+  padding-left: 1.875rem;
+  /* 30px */
   padding-right: 1.875rem;
 }
 
 .pb-9 {
-  padding-bottom: 2.25rem; /* 36px */
+  padding-bottom: 2.25rem;
+  /* 36px */
 }
 
 /* Heading size */
 .text-h5 {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
+  /* 18px */
 }
 
 /* Primary light background */
-.bg-primary-light {
+/* .bg-primary-light {
   background-color: rgba(26, 182, 157, 0.6);
-}
+} */
 
 /* Custom shadow for card */
 .shadow-card {
@@ -121,18 +115,78 @@ defineProps<Props>()
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .instructor-card {
-    padding-left: 1.25rem; /* 20px */
+    padding-left: 1.25rem;
+    /* 20px */
     padding-right: 1.25rem;
-    padding-bottom: 1.875rem; /* 30px */
+    padding-bottom: 1.875rem;
+    /* 30px */
   }
 
   .text-h5 {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
+    /* 16px */
   }
 }
 
 /* RTL Support */
 [dir="rtl"] .instructor-card {
   direction: rtl;
+}
+
+
+.image-container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+.image-container::after {
+  position: absolute;
+  content: '';
+
+  top: -40%;
+  left: -60%;
+
+  width: 80%;
+  height: 200%;
+
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255) 50%,
+      rgba(255, 255, 255, 0) 100%);
+
+
+  transform: translateX(0) rotate(24deg);
+  opacity: 0;
+
+  pointer-events: none;
+  box-shadow: 0 24px 48px -28px rgba(17, 24, 39, 0.45);
+}
+
+.instructor-card:hover .image-container::after {
+  animation: diagonalSweep 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 1;
+}
+
+@keyframes diagonalSweep {
+  0% {
+    transform: translateX(0%) rotate(24deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(180%) rotate(24deg);
+    opacity: 0;
+  }
+}
+
+
+.social-link {
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
 }
 </style>
