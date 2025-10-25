@@ -101,7 +101,9 @@ export const usePrayerTimes = (): UsePrayerTimesReturn => {
     let nextPrayer: PrayerTime | null = null;
 
     // Filter out Sunrise as it's not a prayer time
-    const actualPrayers = prayers.filter((p) => p.name !== "Sunrise");
+    const actualPrayers = prayers
+      .filter((p) => p.name !== "Sunrise")
+      .sort((a, b) => a.timestamp - b.timestamp);
 
     const updatedPrayers = actualPrayers.map((prayer) => {
       if (prayer.timestamp < currentTimestamp) {
@@ -116,7 +118,18 @@ export const usePrayerTimes = (): UsePrayerTimesReturn => {
 
     // If all prayers are completed, next prayer is Fajr of tomorrow
     if (!nextPrayer && updatedPrayers.length > 0) {
-      nextPrayer = { ...updatedPrayers[0], status: "active" as const };
+      const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+      const rolledPrayers = updatedPrayers.map((prayer, index) => {
+        const rolledTimestamp = prayer.timestamp + ONE_DAY_MS;
+        return {
+          ...prayer,
+          timestamp: rolledTimestamp,
+          status: index === 0 ? ("active" as const) : ("upcoming" as const),
+        };
+      });
+
+      nextPrayer = rolledPrayers[0] as PrayerTime;
+      return { updatedPrayers: rolledPrayers, nextPrayer };
     }
 
     return { updatedPrayers, nextPrayer };
