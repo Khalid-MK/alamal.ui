@@ -153,11 +153,6 @@ onBeforeUnmount(() => {
 		&.shape-1 {
 			top: 120px;
 			right: 20%;
-
-			[dir="rtl"] & {
-				right: auto;
-				left: 80px;
-			}
 		}
 
 		&.shape-2 {
@@ -174,11 +169,6 @@ onBeforeUnmount(() => {
 			top: 50%;
 			left: 20%;
 			transform: translateY(-50%);
-
-			[dir="rtl"] & {
-				right: auto;
-				left: -100px;
-			}
 		}
 
 		&.shape-4 {

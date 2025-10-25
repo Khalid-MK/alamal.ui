@@ -43,7 +43,7 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-lg font-medium text-white">{{ $t("PrayerTimes") }}</h3>
-              <p v-if="prayerData" class="text-sm text-white/90 mt-1">
+              <p v-if="prayerData" class="text-sm text-white/90">
                 {{ locationDisplay }}
               </p>
             </div>
