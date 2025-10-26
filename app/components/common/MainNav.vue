@@ -77,6 +77,12 @@
         {{ $t("PrivacyPolicy") }}
       </NuxtLink>
 
+      <!-- Blogs Link -->
+      <NuxtLink to="/blogs"
+        class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">
+        {{ $t("Blogs") }}
+      </NuxtLink>
+
       <!-- Events Link -->
       <NuxtLink to="/events"
         class="relative text-gray-700 hover:text-primary font-medium transition-colors duration-200 py-2 px-1 text-sm lg:text-base">

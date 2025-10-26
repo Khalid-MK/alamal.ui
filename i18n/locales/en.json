@@ -524,6 +524,7 @@
     "about": "About Us - Al-Amal Islamic Education Academy",
     "contact": "Contact Us - Al-Amal Academy",
     "events": "Islamic Events & Programs - Al-Amal Academy",
+    "blogs": "Islamic Education Blog & Articles - Al-Amal Academy",
     "shop": "Browse Courses - Al-Amal Academy"
   },
   "pageDescriptions": {
@@ -534,6 +535,40 @@
     "payment": "Secure enrollment and flexible payment options for Al-Amal Academy courses. Choose from credit card, bank transfer, or cryptocurrency payment methods.",
     "about": "Learn about Al-Amal Academy's mission to provide accessible Islamic education worldwide through Quran, Arabic, and Tajweed courses with qualified instructors.",
     "contact": "Contact Al-Amal Academy for inquiries about our Islamic education programs, technical support, or enrollment assistance. We're here to help you begin your learning journey.",
-    "events": "Discover upcoming Islamic events, webinars, and special programs at Al-Amal Academy. Join our community for Quran competitions, lectures, and cultural celebrations."
+    "events": "Discover upcoming Islamic events, webinars, and special programs at Al-Amal Academy. Join our community for Quran competitions, lectures, and cultural celebrations.",
+    "blogs": "Read the latest articles and insights on Quran learning, Tajweed tips, Arabic language lessons, and Islamic education from Al-Amal Academy's expert instructors."
+  },
+  "_comment Blog": "This section is for the blog/articles page and related translations",
+  "blog": {
+    "pageTitle": "Islamic Education Blog & Articles",
+    "breadcrumb": "Blog",
+    "readMore": "Read More",
+    "comments": "{count} Comments",
+    "commentsSingular": "{count} Comment",
+    "commentsNone": "No Comments",
+    "category": "Category",
+    "author": "Author",
+    "date": "Published",
+    "tags": "Tags",
+    "shareArticle": "Share this article",
+    "relatedArticles": "Related Articles",
+    "noArticlesFound": "No articles found",
+    "loadMore": "Load More Articles",
+    "categories": {
+      "all": "All Categories",
+      "quran": "Quran",
+      "tajweed": "Tajweed",
+      "arabic": "Arabic",
+      "islamicStudies": "Islamic Studies",
+      "education": "Education"
+    }
+  },
+  "_comment Pagination": "This section is for pagination component translations",
+  "pagination": {
+    "previous": "Previous Page",
+    "next": "Next Page",
+    "page": "Page {number}",
+    "of": "of {total}",
+    "showing": "Showing {from} to {to} of {total} results"
   }
 }

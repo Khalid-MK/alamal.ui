@@ -9,8 +9,8 @@
     <!-- <HomeZoomSection/> -->
     <HomeTeamArea />
     <HomeTestimonials />
-    <HomeEvents />
-    <HomeBlogAndPrayer />
+    <!-- <HomeEvents /> -->
+    <!-- <HomeBlogAndPrayer /> -->
   </main>
 </template>
 
