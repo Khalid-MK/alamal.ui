@@ -472,6 +472,47 @@
       "education": "التعليم"
     }
   },
+  "_comment Event": "هذا القسم مخصص لصفحة الفعاليات والترجمات ذات الصلة",
+  "event": {
+    "pageTitle": "الفعاليات وورش العمل الإسلامية",
+    "breadcrumb": "الفعاليات",
+    "viewDetails": "عرض التفاصيل",
+    "register": "سجل الآن",
+    "time": "الوقت",
+    "location": "الموقع",
+    "online": "عبر الإنترنت",
+    "price": "السعر",
+    "free": "مجاني",
+    "date": "التاريخ",
+    "registrationDeadline": "الموعد النهائي للتسجيل",
+    "spotsRemaining": "{count} أماكن متبقية",
+    "eventFull": "الفعالية ممتلئة",
+    "eventPassed": "انتهت الفعالية",
+    "upcomingEvents": "الفعاليات القادمة",
+    "pastEvents": "الفعاليات السابقة",
+    "noEventsFound": "لم يتم العثور على فعاليات",
+    "filterByCategory": "تصفية حسب الفئة",
+    "status": {
+      "open": "التسجيل مفتوح",
+      "closed": "التسجيل مغلق",
+      "full": "الفعالية ممتلئة",
+      "soon": "التسجيل قريباً"
+    },
+    "badge": {
+      "hot": "رائج",
+      "new": "جديد"
+    },
+    "categories": {
+      "all": "جميع الفعاليات",
+      "workshop": "ورشة عمل",
+      "webinar": "ندوة عبر الإنترنت",
+      "conference": "مؤتمر",
+      "studyCircle": "حلقة دراسية",
+      "seminar": "ندوة",
+      "competition": "مسابقة",
+      "lecture": "محاضرة"
+    }
+  },
   "_comment Pagination": "هذا القسم مخصص لترجمات مكون الترقيم",
   "pagination": {
     "previous": "الصفحة السابقة",

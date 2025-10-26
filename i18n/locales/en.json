@@ -563,6 +563,47 @@
       "education": "Education"
     }
   },
+  "_comment Event": "This section is for the events page and related translations",
+  "event": {
+    "pageTitle": "Islamic Events & Workshops",
+    "breadcrumb": "Events",
+    "viewDetails": "View Details",
+    "register": "Register Now",
+    "time": "Time",
+    "location": "Location",
+    "online": "Online",
+    "price": "Price",
+    "free": "Free",
+    "date": "Date",
+    "registrationDeadline": "Registration Deadline",
+    "spotsRemaining": "{count} spots remaining",
+    "eventFull": "Event Full",
+    "eventPassed": "Event Passed",
+    "upcomingEvents": "Upcoming Events",
+    "pastEvents": "Past Events",
+    "noEventsFound": "No events found",
+    "filterByCategory": "Filter by Category",
+    "status": {
+      "open": "Registration Open",
+      "closed": "Registration Closed",
+      "full": "Event Full",
+      "soon": "Opening Soon"
+    },
+    "badge": {
+      "hot": "Hot",
+      "new": "New"
+    },
+    "categories": {
+      "all": "All Events",
+      "workshop": "Workshop",
+      "webinar": "Webinar",
+      "conference": "Conference",
+      "studyCircle": "Study Circle",
+      "seminar": "Seminar",
+      "competition": "Competition",
+      "lecture": "Lecture"
+    }
+  },
   "_comment Pagination": "This section is for pagination component translations",
   "pagination": {
     "previous": "Previous Page",

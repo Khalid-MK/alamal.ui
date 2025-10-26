@@ -2,26 +2,30 @@
   <main>
     <!-- Breadcrumb -->
     <CommonPageBreadcrumb
-      :title="$t('blog.pageTitle')"
+      :title="$t('event.pageTitle')"
       :breadcrumbItems="breadcrumbItems"
     />
 
-    <!-- Blogs Section -->
+    <!-- Events Section -->
     <section class="py-section" :dir="direction">
       <div class="max-w-7xl mx-auto px-4">
-        <!-- Blog Grid -->
+        <!-- Events Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-10">
-          <BlogCard
-            v-for="blog in paginatedData.blogs"
-            :key="blog.id"
-            :title="blog.title[locale]"
-            :category="blog.category[locale]"
-            :category-slug="getCategorySlug(blog.category.en)"
-            :excerpt="blog.excerpt[locale]"
-            :image="blog.image"
-            :date="blog.date"
-            :comments-count="blog.commentsCount"
-            :slug="blog.slug"
+          <EventCard
+            v-for="event in paginatedData.events"
+            :key="event.id"
+            :title="event.title[locale]"
+            :category="event.category[locale]"
+            :category-slug="getCategorySlug(event.category.en)"
+            :excerpt="event.excerpt[locale]"
+            :image="event.image"
+            :date="event.date"
+            :time="event.time[locale]"
+            :location="event.location[locale]"
+            :registration-status="event.registrationStatus"
+            :price="event.price"
+            :badge="event.badge"
+            :slug="event.slug"
           />
         </div>
 
@@ -38,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { getPaginatedBlogs } from '~/constant/blogs'
+import { getPaginatedEvents } from '~/constant/events'
 
 const { t, locale, localeProperties } = useI18n()
 const route = useRoute()
@@ -46,11 +50,11 @@ const router = useRouter()
 const direction = computed(() => localeProperties.value.dir)
 
 // Set page title and meta description with i18n
-usePageMeta('pageTitles.blogs', 'pageDescriptions.blogs', {
+usePageMeta('pageTitles.events', 'pageDescriptions.events', {
   meta: [
     {
       name: 'keywords',
-      content: 'blog, Islamic education, Quran learning, Tajweed, Arabic lessons, Islamic studies, Al-Amal'
+      content: 'Islamic events, Quran workshops, Arabic classes, Islamic seminars, Tajweed webinars, Al-Amal Academy events'
     }
   ]
 })
@@ -58,12 +62,12 @@ usePageMeta('pageTitles.blogs', 'pageDescriptions.blogs', {
 // Breadcrumb navigation
 const breadcrumbItems = computed(() => [
   { label: t('Home'), path: '/' },
-  { label: t('blog.breadcrumb') }
+  { label: t('event.breadcrumb') }
 ])
 
 // Pagination state
 const currentPage = ref(1)
-const blogsPerPage = 9
+const eventsPerPage = 9
 
 // Initialize current page from URL query
 onMounted(() => {
@@ -76,9 +80,9 @@ onMounted(() => {
   }
 })
 
-// Get paginated blogs
+// Get paginated events
 const paginatedData = computed(() => {
-  return getPaginatedBlogs(currentPage.value, blogsPerPage)
+  return getPaginatedEvents(currentPage.value, eventsPerPage)
 })
 
 // Handle page change
@@ -87,7 +91,7 @@ const handlePageChange = (page: number) => {
 
   // Update URL query parameter
   router.push({
-    path: '/blogs',
+    path: '/events',
     query: { page: page > 1 ? page.toString() : undefined }
   })
 }
