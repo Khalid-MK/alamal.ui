@@ -2,21 +2,21 @@
 const slides = [
   {
     id: "quraan",
-    image: "/img/new_cover_quran.png",
+    image: "/img/slider/Artboard 1.png",
     title: "QuranCourses",
     subtitle: "HomeSlider2Subtitle",
     buttonText: "Slide2Button",
   },
   {
     id: "tjweed",
-    image: "/img/new_cover_tajweed.png",
+    image: "/img/slider/Artboard 2.png",
     title: "TajweedCourses",
     subtitle: "HomeSlider3Subtitle",
     buttonText: "Slide3Button",
   },
   {
     id: "arabic",
-    image: "/img/new_cover_arabic.png",
+    image: "/img/slider/Artboard 2.png",
     title: "QuranCourses",
     subtitle: "HomeSlider4Subtitle",
     buttonText: "Slide4Button",
@@ -159,9 +159,9 @@ only screen and (min-width: 576px) and (max-width: 767px) {
   border: 1px solid transparent;
 }
 
-/* 
+/*
 .edu-btn:hover {
-   background-color: #FFB013; 
+   background-color: #FFB013;
   color: #141517;
 } */
 

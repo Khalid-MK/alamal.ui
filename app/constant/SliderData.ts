@@ -17,17 +17,17 @@ export default {
         {
           title: "Connecting Hearts to the House of Allah",
           desc: "Interactive, Authentic, and Flexible Islamic Learning from Qualified Scholars. Explore Quran, Hadith, Fiqh",
-          imgSrc: "/img/home-slider/image-7.png",
+          imgSrc: "/img/slider/Artboard 1.png",
         },
         {
           title: "Empowering the Next Generation of Believers",
           desc: "Gain knowledge rooted in faith with accessible, engaging, and structured Islamic courses for all ages.",
-          imgSrc: "/img/home-slider/image-8.png",
+          imgSrc: "/img/slider/Artboard 2.png",
         },
         {
           title: "Your Journey of Faith and Knowledge Begins Here",
           desc: "Join our community to learn, grow, and connect with scholars dedicated to teaching authentic Islamic principles.",
-          imgSrc: "/img/home-slider/image-9.png",
+          imgSrc: "/img/slider/Artboard 3.png",
         },
       ],
     },
@@ -36,17 +36,17 @@ export default {
         {
           title: "ربط القلوب ببيت الله",
           desc: "تعلم إسلامي تفاعلي وموثوق ومرن من علماء مؤهلين. استكشف القرآن والحديث والفقه.",
-          imgSrc: "/img/home-slider/image-7.png",
+          imgSrc: "/img/slider/Artboard 1.png",
         },
         {
           title: "تمكين الجيل القادم من المؤمنين",
           desc: "اكتسب المعرفة المستندة إلى الإيمان من خلال دورات إسلامية منظمة وجذابة لجميع الأعمار.",
-          imgSrc: "/img/home-slider/image-8.png",
+          imgSrc: "/img/slider/Artboard 2.png",
         },
         {
           title: "رحلتك في الإيمان والمعرفة تبدأ من هنا",
           desc: "انضم إلى مجتمعنا لتتعلم وتنمو وتتواصل مع العلماء المكرسين لتعليم المبادئ الإسلامية الأصيلة.",
-          imgSrc: "/img/home-slider/image-9.png",
+          imgSrc: "/img/slider/Artboard 3.png",
         },
       ],
     },
@@ -55,17 +55,17 @@ export default {
         {
           title: "Соединяя сердца с Домом Аллаха",
           desc: "Интерактивное, подлинное и гибкое исламское обучение от квалифицированных учёных. Изучайте Коран, хадисы, фикх.",
-          imgSrc: "/img/home-slider/image-7.png",
+          imgSrc: "/img/slider/Artboard 1.png",
         },
         {
           title: "Даем силу новому поколению верующих",
           desc: "Получайте знания, основанные на вере, через доступные и структурированные исламские курсы для всех возрастов.",
-          imgSrc: "/img/home-slider/image-8.png",
+          imgSrc: "/img/slider/Artboard 2.png",
         },
         {
           title: "Ваш путь веры и знаний начинается здесь",
           desc: "Присоединяйтесь к нашему сообществу, чтобы учиться, развиваться и связываться с учёными, преданными исламским принципам.",
-          imgSrc: "/img/home-slider/image-9.png",
+          imgSrc: "/img/slider/Artboard 3.png",
         },
       ],
     },
