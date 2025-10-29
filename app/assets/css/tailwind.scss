@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import responsive typography utilities */
-@import './_responsive-typography.scss';
 html[lang="ar"] {
   direction: rtl;
   flex-direction: row-reverse;
