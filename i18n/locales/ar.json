@@ -376,7 +376,7 @@
   "_comment TeamArea": "هذا القسم لعرض المعلمين",
   "teamArea": {
     "preTitle": "المعلمون",
-    "ViewAllInstructors": "عرض جميع المدرسين",
+    "ViewAllInstructors": "عرض جميع المعلمون",
     "title": "معلمو الدورات",
     "viewProfile": "عرض ملف {name}",
     "members": {
