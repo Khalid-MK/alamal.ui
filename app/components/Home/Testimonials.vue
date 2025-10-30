@@ -247,17 +247,17 @@ onMounted(() => {
 
     // Set swiper parameters
     Object.assign(swiperContainer, {
-      // loop: true,
+      loop: true,
       speed: 500,
       slidesPerView: 1,
       centeredSlides: true,
       effect: 'coverflow',
       grabCursor: true,
-      // autoplay: {
-      //   delay: 3500,
-      //   disableOnInteraction: false,
-      //   pauseOnMouseEnter: true
-      // },
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
       coverflowEffect: {
         rotate: 0,
         slideShadows: false,

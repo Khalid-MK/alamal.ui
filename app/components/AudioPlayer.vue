@@ -218,10 +218,7 @@ const formatTime = (time: number) => {
     align-items: center;
     position: absolute;
     bottom: -32px;
-    /* margin-top: -157px; */
     z-index: 1000;
-    /* margin-bottom: 100px; */
-    /* position: relative; */
     left: 0%;
     width: 100%;
 
