@@ -76,49 +76,50 @@
       <!-- Other Navigation Links -->
 
       <li>
-        <NuxtLink to="/about"
+        <NuxtLink to="/about" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("About") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/instructors"
+        <NuxtLink to="/instructors" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("Instructors") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/faqs"
+        <NuxtLink to="/faqs" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("FAQs") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/privacy-policy"
+        <NuxtLink to="/privacy-policy" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("PrivacyPolicy") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/blogs"
+        <NuxtLink to="/blogs" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("Blogs") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/events"
+        <NuxtLink to="/events" @click="handleSidebarClose"
           class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4 border-b border-gray-100">
           {{ $t("Events") }}
         </NuxtLink>
       </li>
 
       <li>
-        <NuxtLink to="/contact" class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4">
+        <NuxtLink to="/contact" @click="handleSidebarClose"
+          class="block text-gray-700 hover:text-blue-600 font-medium py-3 px-4">
           {{ $t("Contact") }}
         </NuxtLink>
       </li>
@@ -141,6 +142,9 @@ import { useI18n } from "vue-i18n";
 import { ref } from "vue";
 import Arrow from "~/assets/icons/Arrow.vue";
 
+defineProps({
+  handleSidebarClose: Function
+})
 const { locale } = useI18n({ useScope: "global" });
 
 const isCoursesOpen = ref(false);
@@ -148,6 +152,12 @@ const openSections = ref([]);
 const openDepartments = ref([]);
 
 const router = useRouter();
+
+// onMounted(() => {
+//   router.afterEach(() => {
+//     handleSidebarClose?.();
+//   });
+// });
 
 function slugify(text) {
   return text
@@ -164,6 +174,7 @@ function slugify(text) {
 
 const goToCourse = (course) => {
   router.push(`/shop?course=${slugify(course[locale.value])}`);
+  handleSidebarClose()
 }
 
 function toggleCoursesMenu() {

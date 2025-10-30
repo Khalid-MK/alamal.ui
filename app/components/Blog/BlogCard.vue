@@ -4,56 +4,43 @@
       <!-- Thumbnail with hover effect -->
       <div class="thumbnail relative overflow-hidden rounded-xl image-container">
         <NuxtLink :to="`/blog/${slug}`" class="block relative">
-          <img
-            :src="image"
-            :alt="title"
-            class="w-full h-auto rounded-xl transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
+          <img :src="image" :alt="title"
+            class="w-full h-auto rounded-xl transition-transform duration-500 ease-in-out group-hover:scale-110" />
         </NuxtLink>
       </div>
 
       <!-- Content card (overlapping style) -->
       <div
-        class="content-card relative bg-white dark:bg-dark-surface rounded-xl shadow-darker mx-7 md:mx-6 sm:mx-4 -mt-44 md:-mt-32 sm:-mt-28 p-8 md:p-6 sm:p-5 transition-all duration-300"
-      >
+        class="content-card relative bg-white dark:bg-dark-surface rounded-xl shadow-darker mx-7 md:mx-6 sm:mx-4 -mt-44 md:-mt-32 sm:-mt-28 p-8 md:p-6 sm:p-5 transition-all duration-300">
         <!-- Read More Button (appears on hover) -->
         <div
           class="read-more-btn absolute -top-10 group-hover:-top-8 opacity-0 group-hover:opacity-100 transition-all duration-300"
-          :class="direction === 'rtl' ? 'left-8 md:left-6' : 'right-8 md:right-6'"
-        >
-          <NuxtLink
-            :to="`/blog/${slug}`"
+          :class="direction === 'rtl' ? 'left-8 md:left-6' : 'right-8 md:right-6'">
+          <NuxtLink :to="`/blog/${slug}`"
             class="flex items-center justify-center w-15 h-15 rounded-full bg-primary hover:bg-secondary text-white transition-all duration-300"
-            :aria-label="`${$t('blog.readMore')} - ${title}`"
-          >
+            :aria-label="`${$t('blog.readMore')} - ${title}`">
             <IconButton variant="round" icon="icon-4" aria-label="Navigate" />
           </NuxtLink>
         </div>
 
         <!-- Category Badge -->
         <div class="mb-3">
-          <NuxtLink
-            :to="`/blogs?category=${categorySlug}`"
-            class="inline-block uppercase text-sm font-medium text-body hover:text-primary transition-colors duration-300"
-          >
+          <NuxtLink :to="`/blogs?category=${categorySlug}`"
+            class="inline-block uppercase text-sm font-medium text-body hover:text-primary transition-colors duration-300">
             {{ category }}
           </NuxtLink>
         </div>
 
         <!-- Title -->
         <h5 class="mb-2.5">
-          <NuxtLink
-            :to="`/blog/${slug}`"
-            class="text-xl md:text-lg font-bold text-heading hover:text-primary transition-colors duration-300 line-clamp-2"
-          >
+          <NuxtLink :to="`/blog/${slug}`"
+            class="text-xl md:text-lg font-bold text-heading hover:text-primary transition-colors duration-300 line-clamp-2">
             {{ title }}
           </NuxtLink>
         </h5>
 
         <!-- Meta information -->
-        <ul
-          class="blog-meta flex items-center gap-4 md:gap-3 text-sm text-body mb-4.5 pb-4.5 border-b border-border"
-        >
+        <ul class="blog-meta flex items-center gap-4 md:gap-3 text-sm text-body mb-4.5 pb-4.5 border-b border-border">
           <li class="flex items-center gap-1.5">
             <i class="icon-27 text-primary"></i>
             <span>{{ formattedDate }}</span>
@@ -132,6 +119,16 @@ const formattedDate = computed(() => {
   margin-left: 1rem;
   margin-right: 1rem;
   color: var(--color-border);
+
+  @media (max-width:768px) {
+    margin-left: 0.5em;
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width:320px) {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
 }
 
 [dir='rtl'] .blog-meta li:not(:last-child)::after {

@@ -538,6 +538,7 @@ onBeforeUnmount(() => {
 .course-slide {
 	height: auto;
 	display: flex;
+	justify-content: center;
 }
 
 // Slider Navigation
