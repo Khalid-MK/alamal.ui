@@ -275,6 +275,7 @@
     "courseArea": {
         "preTitle": "Популярные курсы",
         "title": "Наши исламские программы",
+        "ViewAllCourses": "Посмотреть все курсы",
         "learnMore": "Узнать больше",
         "enrollNow": "Записаться сейчас",
         "filters": {
@@ -380,6 +381,7 @@
     "teamArea": {
         "preTitle": "Преподаватели",
         "title": "Преподаватели курсов",
+        "ViewAllInstructors": "Посмотреть всех преподавателей",
         "viewProfile": "Посмотреть профиль {name}",
         "members": {
             "member1": {

@@ -23,11 +23,11 @@
 
       <!-- Navbar -->
       <div ref="navbarRef" class="header-mainmenu bg-white shadow p-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-5">
           <!-- Left (Logo + Nav) -->
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-5">
             <NuxtLink to="/">
-              <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-10" />
+              <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-10 min-w-[120px]" />
             </NuxtLink>
             <!-- Desktop Menu -->
             <div class="hidden md:block">
@@ -36,7 +36,7 @@
           </div>
 
           <!-- Right -->
-          <div class="flex items-center gap-10">
+          <div class="flex items-center gap-5 lg:gap-10">
             <!-- Language Switch -->
             <div class="menu-item-has-children" :class="{ open: isOpen }">
               <button @click="toggleDropdown">
@@ -52,7 +52,7 @@
             </div>
 
             <!-- Auth -->
-            <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
+            <div class="hidden md:flex items-center gap-2 flex-col lg:flex-row" :class="{ 'flex-col': locale === 'ru' }">
               <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
               <EduButton variant="primary" size="small" to="/signup">
@@ -72,7 +72,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
+    <div v-if="showSidebar" class="fixed inset-0 z-[100] bg-black bg-opacity-50" @click="handleSidebarClose">
       <div class="absolute top-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto"
         :class="direction === 'rtl' ? 'left-0' : 'right-0'" @click.stop>
         <button class="absolute top-4 text-gray-600 text-xl font-bold hover:text-gray-800"

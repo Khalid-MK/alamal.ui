@@ -24,23 +24,19 @@
 
 			<!-- Team Grid -->
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-				<div
-					v-for="(member, index) in teamMembers"
-					:key="member.id"
-					ref="teamCardsRef"
+				<div v-for="(member, index) in teamMembers" :key="member.id" ref="teamCardsRef"
 					class="opacity-0 transition-all duration-800 flex"
 					:class="{ 'animate-fade-up': areCardsVisible[index] }"
-					:style="{ transitionDelay: `${index * 100}ms` }"
-				>
-					<InstructorsInstructorCard
-						:image="member.image"
-						:name="member.name[locale]"
-						:designation="member.designation[locale]"
-						:description="member.description[locale]"
-						:profileUrl="member.profileUrl"
-						:socials="member.socials"
-					/>
+					:style="{ transitionDelay: `${index * 100}ms` }">
+					<InstructorsInstructorCard :image="member.image" :name="member.name[locale]"
+						:designation="member.designation[locale]" :description="member.description[locale]"
+						:profileUrl="member.profileUrl" :socials="member.socials" />
 				</div>
+			</div>
+
+			<div class="w-full flex justify-center">
+				<CommonEduButton variant="secondary" icon="icon-4" class="mt-10">{{ $t("teamArea.ViewAllInstructors") }}
+				</CommonEduButton>
 			</div>
 		</div>
 	</div>
