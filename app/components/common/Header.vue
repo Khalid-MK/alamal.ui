@@ -23,20 +23,20 @@
 
       <!-- Navbar -->
       <div ref="navbarRef" class="header-mainmenu bg-white shadow p-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-5">
           <!-- Left (Logo + Nav) -->
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-5">
             <NuxtLink to="/">
-              <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-10" />
+              <img src="/img/logo/logo-horizontal-colored.png" alt="Al-Amal Academy Logo" class="h-10 min-w-[120px]" />
             </NuxtLink>
             <!-- Desktop Menu -->
-            <div class="hidden md:block">
+            <div class="min-[850px]:bg-blue-500 block-class">
               <CommonMainNav />
             </div>
           </div>
 
           <!-- Right -->
-          <div class="flex items-center gap-10">
+          <div class="flex items-center gap-5 lg:gap-10">
             <!-- Language Switch -->
             <div class="menu-item-has-children" :class="{ open: isOpen }">
               <button @click="toggleDropdown">
@@ -52,7 +52,8 @@
             </div>
 
             <!-- Auth -->
-            <div class="hidden md:flex items-center gap-2" :class="{ 'flex-col': locale === 'ru' }">
+            <div class="signIn-container items-center gap-2 flex-col lg:flex-row"
+              :class="{ 'flex-col': locale === 'ru' }">
               <NuxtLink to="/signin" class="flex items-center justify-center text-gray-700 hover:text-primary">{{
                 $t("SignIn") }}</NuxtLink>
               <EduButton variant="primary" size="small" to="/signup">
@@ -61,7 +62,7 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button class="md:hidden flex flex-col gap-1" @click="handleSidebar">
+            <button class="mobile-menu-toggle-class flex-col gap-1" @click="handleSidebar">
               <span class="w-6 h-0.5 bg-gray-800"></span>
               <span class="w-6 h-0.5 bg-gray-800"></span>
               <span class="w-6 h-0.5 bg-gray-800"></span>
@@ -72,7 +73,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div v-if="showSidebar" class="fixed inset-0 z-50 bg-black bg-opacity-50" @click="handleSidebarClose">
+    <div v-if="showSidebar" class="fixed inset-0 z-[100] bg-black bg-opacity-50" @click="handleSidebarClose">
       <div class="absolute top-0 w-64 h-full bg-white shadow-lg p-6 overflow-y-auto"
         :class="direction === 'rtl' ? 'left-0' : 'right-0'" @click.stop>
         <button class="absolute top-4 text-gray-600 text-xl font-bold hover:text-gray-800"
@@ -80,7 +81,7 @@
           ✕
         </button>
         <div class="mt-8">
-          <MobileNav />
+          <MobileNav :handleSidebarClose=handleSidebarClose />
         </div>
       </div>
     </div>
@@ -88,10 +89,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, onMounted, onBeforeUnmount, watch } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 // import { useAuthStore } from "~/stores/authStore";
-
-import MainNav from "./MainNav.vue";
 import MobileNav from "./MobileNav.vue";
 import Translation from "~/assets/icons/Translation.vue";
 import EduButton from "~/components/common/EduButton.vue";
@@ -187,7 +186,35 @@ function changeLocale(locale: "en" | "ar" | "ru") {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.block-class {
+  display: block;
+
+  @media (max-width:863px) {
+    display: none;
+
+  }
+
+}
+
+.signIn-container {
+  display: flex;
+
+  @media (max-width:863px) {
+    display: none;
+
+  }
+}
+
+.mobile-menu-toggle-class {
+  display: none;
+
+  @media (max-width:863px) {
+    display: flex;
+
+  }
+}
+
 /* Header Top Bar - EduBlink University Style */
 .header-top-bar {
   background-color: #f7f5f2;

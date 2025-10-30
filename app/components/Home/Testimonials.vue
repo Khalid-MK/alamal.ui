@@ -1,16 +1,13 @@
 <template>
   <div class="testimonial-area py-16 lg:py-20 mb-16 lg:mb-20">
     <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-0">
-      <div class="flex lg:gap-10">
+      <div class="flex flex-col lg:flex-row lg:gap-10">
 
         <!-- LEFT COLUMN: Heading & CTA -->
         <div class="w-full lg:w-5/12 px-4 mb-8 lg:mb-0">
           <div class="lg:pr-12">
-            <div
-              ref="sectionTitleRef"
-              class="text-left opacity-0 transition-all duration-800"
-              :class="{ 'animate-fade-up': isTitleVisible }"
-            >
+            <div ref="sectionTitleRef" class="text-left opacity-0 transition-all duration-800"
+              :class="{ 'animate-fade-up': isTitleVisible }">
               <!-- Pre-title -->
               <span class="block text-sm text-[var(--color-grey)] font-semibold uppercase tracking-wide mb-4">
                 {{ $t('testimonials.preTitle') }}
@@ -31,7 +28,8 @@
                 {{ $t('testimonials.description') }}
               </p>
 
-              <EduButton variant="secondary" icon="icon-4" class="mt-4">{{ $t("ctaBanner.buttonText") || "Enroll Now" }}</EduButton>
+              <EduButton variant="secondary" icon="icon-4" class="mt-4">{{ $t("ctaBanner.buttonText") || "Enroll Now" }}
+              </EduButton>
             </div>
           </div>
         </div>
@@ -42,7 +40,7 @@
             <swiper-container ref="testimonialSwiperRef" class="testimonial-swiper" :init="false">
               <!-- TESTIMONIAL SLIDES -->
               <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-                <div class="testimonial-grid bg-white rounded-lg shadow-xl p-8 lg:p-12 relative overflow-hidden my-14">
+                <div class="testimonial-grid max-w-[365px] bg-white rounded-lg shadow-xl p-8 lg:p-12 relative overflow-hidden my-14">
                   <!-- Decorative Shape (top-right corner) -->
                   <div class="testimonial-shape absolute -top-1 -right-1 -z-10 w-24 h-24"></div>
 
@@ -51,14 +49,11 @@
 
                   <!-- Profile Image with Quote Badge -->
                   <div class="inline-block relative mb-8 z-20">
-                    <img
-                      :src="testimonial.image"
-                      :alt="testimonial.name"
-                      class="w-20 h-20 rounded-full object-cover"
-                    >
+                    <img :src="testimonial.image" :alt="testimonial.name" class="w-20 h-20 rounded-full object-cover">
 
                     <!-- Quote Icon Badge -->
-                    <span class="absolute -bottom-2 -right-3 w-9 h-9 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-xs border-4 border-white">
+                    <span
+                      class="absolute -bottom-2 -right-3 w-9 h-9 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-xs border-4 border-white">
                       <i class="icon-26"></i>
                     </span>
                   </div>
@@ -332,6 +327,7 @@ onBeforeUnmount(() => {
 
 .testimonial-swiper {
   overflow: visible;
+  /* width: 365px; */
   height: 540px;
 }
 
@@ -389,6 +385,7 @@ onBeforeUnmount(() => {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -402,6 +399,7 @@ onBeforeUnmount(() => {
 
 /* Mobile Responsive Adjustments */
 @media (max-width: 1199px) {
+
   .swiper-slide-prev .testimonial-grid,
   .swiper-slide-next .testimonial-grid {
     margin-left: 0;
@@ -410,6 +408,7 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 991px) {
+
   .swiper-slide-prev .testimonial-grid,
   .swiper-slide-next .testimonial-grid {
     margin-left: 40px;
@@ -419,6 +418,23 @@ onBeforeUnmount(() => {
 @media (max-width: 575px) {
   .testimonial-grid {
     margin: 55px 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .testimonial-grid {
+    margin: 40px 20px;
+  }
+}
+
+@media (max-width: 321px) {
+  .testimonial-grid {
+    margin: 30px 5px;
+  }
+
+  .swiper-slide-prev .testimonial-grid,
+  .swiper-slide-next .testimonial-grid {
+    margin: 30px 5px;
   }
 }
 
@@ -440,6 +456,7 @@ html[dir="rtl"] .testimonial-shape {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   .animate-fade-up,
   .testimonial-overlay {
     animation: none !important;
@@ -458,26 +475,26 @@ html[dir="rtl"] .testimonial-shape {
 }
 
 :deep(.swiper-slide-visible .testimonial-grid:before) {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 :deep(.testimonial-grid:after) {
-    content: url('/img/testimonial/shape-1.png');
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    z-index: 1;
+  content: url('/img/testimonial/shape-1.png');
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 1;
 }
 </style>

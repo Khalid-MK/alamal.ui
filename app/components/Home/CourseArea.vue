@@ -15,7 +15,8 @@
 				<!-- Filter Buttons -->
 				<div class="isotop-filter flex flex-wrap items-center justify-center gap-2 mb-12">
 					<button v-for="filter in filters" :key="filter.id"
-						:class="['filter-btn', { 'is-checked': activeFilter === filter.id }]" @click="activeFilter = filter.id">
+						:class="['filter-btn', { 'is-checked': activeFilter === filter.id }]"
+						@click="activeFilter = filter.id">
 						<span class="filter-text">{{ $t(`courseArea.filters.${filter.id}`) }}</span>
 						<span class="filter-arrow"></span>
 					</button>
@@ -39,6 +40,11 @@
 							<i class="icon-4"></i>
 						</button>
 					</div>
+					<div class="flex justify-center w-full">
+						<CommonEduButton variant="secondary" icon="icon-4" class="mt-10">{{ $t("courseArea.ViewAllCourses") }}
+						</CommonEduButton>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -480,7 +486,7 @@ onBeforeUnmount(() => {
 
 		// Arrow indicator
 		.filter-arrow {
-			content: "";
+			/* content: ""; */
 			width: 0;
 			height: 0;
 			border-left: 7px solid transparent;
@@ -532,6 +538,7 @@ onBeforeUnmount(() => {
 .course-slide {
 	height: auto;
 	display: flex;
+	justify-content: center;
 }
 
 // Slider Navigation

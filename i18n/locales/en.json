@@ -276,6 +276,7 @@
     "preTitle": "Popular Courses",
     "title": "Our Islamic Programs",
     "learnMore": "Learn More",
+    "ViewAllCourses": "View All Courses",
     "enrollNow": "Enroll Now",
     "filters": {
       "quran": "Quran Courses",
@@ -379,6 +380,7 @@
   "_comment TeamArea": "This section is for the team/instructors showcase",
   "teamArea": {
     "preTitle": "Instructors",
+    "ViewAllInstructors": "View All Instructors",
     "title": "Course Instructors",
     "viewProfile": "View {name} profile",
     "members": {

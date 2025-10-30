@@ -1,7 +1,7 @@
 <template>
   <nav :dir="direction">
     <!--  Link -->
-    <div class="flex space-y-4 flex-row items-center md:space-y-0 md:space-x-8">
+    <div class="flex space-y-4 flex-row items-center md:space-y-0 md:space-x-2">
       <ul>
         <li class="menu-item-has-children">
           <button @mouseenter="showDropdown" @mouseleave="hideDropdown" @click="toggleCoursesMenu"
